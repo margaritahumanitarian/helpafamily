@@ -1,50 +1,86 @@
 import Head from 'next/head'
-import Image from 'next/Image'
+import React, { useState } from 'react';
+import { useRouter } from 'next/router'
+
+const donationTypes = {
+  equity: {donations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}, recurringDonations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}},
+  immigrants: {donations: {75: 'https://buy.stripe.com/test_aEUeVa0Ks4bg5vG00d', 125: 'https://buy.stripe.com/test_eVa5kAal2gY29LW3ci', 250: 'https://buy.stripe.com/test_3cs9AQctaazEf6gdQX', 500: 'https://buy.stripe.com/test_00g5kA2SA37c5vG28d', 1000: 'https://buy.stripe.com/test_dR6cN2al2cHM3nybIM', 5000: 'https://buy.stripe.com/test_dR628octadLQ9LW28b'}, recurringDonations: {75: 'https://buy.stripe.com/test_8wM4gw78QgY2aQ06oA', 125: 'https://buy.stripe.com/test_5kAcN20KsdLQ3nybIT', 250: 'https://buy.stripe.com/test_7sI4gw50I37cbU44gq', 500: 'https://buy.stripe.com/test_aEUdR6eBi7nsbU4dQZ', 1000: 'https://buy.stripe.com/test_bIY7sI3WE8rw1fq28g', 5000: 'https://buy.stripe.com/test_bIY5kAfFm8rwaQ0aET'}},
+  students: {donations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}, recurringDonations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}},
+}
+
+
 
 function Form(){
+  const [donation, setDonation] = useState(0);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let paymentUrl = ""
+    if (event.target.recurring.checked) {
+      // TODO recurring
+      console.log(donationTypes[event.target.cause.value].recurringDonations)
+      paymentUrl = donationTypes[event.target.cause.value].recurringDonations[event.target.amount.value]
+    } else {
+      // TODO 1-time payment
+      console.log(donationTypes[event.target.cause.value].donations[event.target.amount.value])
+      paymentUrl = donationTypes[event.target.cause.value].donations[event.target.amount.value]
+    }
+    console.log(paymentUrl)
+    const router = useRouter()
+    router.push(paymentUrl)
+
+    // return {
+    //   amount: event.target.cause.value,
+    //   cause: event.target.cause.value,
+    //   paymentUrl
+    // }
+  }  
+
   return (
+    <form onSubmit={handleSubmit}>
+      <div className="p-6 card bordered bg-base-100">
+        <div className="form-control">
+          <label className="cursor-pointer label">
+            <span className="label-text">Health Equity for People of Color</span> 
+            <input type="radio" name="cause" className="radio radio-primary" value="equity"
+            ></input>
+          </label>
+        </div> 
+        <div className="form-control">
+          <label className="cursor-pointer label">
+            <span className="label-text">Immigrants in Need</span> 
+            <input type="radio" name="cause" className="radio radio-primary" value="immigrants"></input>
+          </label>
+        </div> 
+        <div className="form-control">
+          <label className="cursor-pointer label">
+            <span className="label-text">Students in Need</span> 
+            <input type="radio" name="cause" className="radio radio-primary" value="students"></input>
+          </label>
+        </div>    
 
-    <div className="p-6 card bordered bg-base-100">
-      <div className="form-control">
-        <label className="cursor-pointer label">
-          <span className="label-text">Health Equity for People of Color</span> 
-          <input type="radio" name="cause" className="radio radio-primary" value="health"></input>
-        </label>
-      </div> 
-      <div className="form-control">
-        <label className="cursor-pointer label">
-          <span className="label-text">Immigrants in Need</span> 
-          <input type="radio" name="cause" className="radio radio-primary" value="immigrants"></input>
-        </label>
-      </div> 
-      <div className="form-control">
-        <label className="cursor-pointer label">
-          <span className="label-text">Students in Need</span> 
-          <input type="radio" name="cause" className="radio radio-primary" value="students"></input>
-        </label>
-      </div>    
+        <select name="amount" className="select select-bordered select-info w-full max-w-xs text-blue-700">
+          <option disabled="disabled" selected="selected">Choose your donation amount</option> 
+          <option value="75">$75</option> 
+          <option value="125">$125</option> 
+          <option value="250">$250</option> 
+          <option value="500">$500</option> 
+          <option value="1000">$1000</option> 
+          <option value="5000">$5000</option> 
+        </select>    
 
-      <select className="select select-bordered select-info w-full max-w-xs text-blue-700">
-        <option disabled="disabled" selected="selected">Choose your donation amount</option> 
-        <option>$75</option> 
-        <option>$125</option> 
-        <option>$250</option> 
-        <option>$500</option> 
-        <option>$1000</option> 
-        <option>$5000</option> 
-      </select>    
+        <div className="divider"></div> 
 
-      <div className="divider"></div> 
+        <div className="form-control">
+          <label className="cursor-pointer label">
+            <span className="label-text">Monthly Recurring?</span> 
+            <input type="checkbox" name="recurring" className="checkbox checkbox-primary"></input>
+          </label>
+        </div>  
 
-      <div className="form-control">
-        <label className="cursor-pointer label">
-          <span className="label-text">Monthly Recurring?</span> 
-          <input type="checkbox" className="checkbox checkbox-primary"></input>
-        </label>
-      </div>  
-
-      <button className="btn btn-primary">Donate</button>
-    </div>    
+        <button className="btn btn-primary">Donate <span></span></button>
+      </div>   
+    </form> 
   )
 }
 
