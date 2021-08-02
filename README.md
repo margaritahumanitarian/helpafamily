@@ -1,6 +1,6 @@
 # donate.margaritahumanitarian.org
 
-This is the donate site for Margarita Humanitarian.
+This is the forthcoming "Donate" page for Margarita Humanitarian Foundation.
 
 ## Installation
 
