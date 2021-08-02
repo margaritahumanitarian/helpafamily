@@ -83,7 +83,8 @@ export default function Home() {
   return (
     <div className="md:container md:mx-auto">
       <Head>
-        <title>Donate to MHF Cares</title>
+        <title>Donate to Margarita Humanitarian
+           Foundation</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
