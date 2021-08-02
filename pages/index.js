@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import React, { useState } from 'react';
-import { useRouter } from 'next/router'
 
 const donationTypes = {
   equity: {donations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}, recurringDonations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}},
@@ -11,7 +10,6 @@ const donationTypes = {
 
 
 function Form(){
-  const [donation, setDonation] = useState(0);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,15 +23,11 @@ function Form(){
       console.log(donationTypes[event.target.cause.value].donations[event.target.amount.value])
       paymentUrl = donationTypes[event.target.cause.value].donations[event.target.amount.value]
     }
-    console.log(paymentUrl)
-    const router = useRouter()
-    router.push(paymentUrl)
+    // console.log(paymentUrl)
 
-    // return {
-    //   amount: event.target.cause.value,
-    //   cause: event.target.cause.value,
-    //   paymentUrl
-    // }
+    // Send patron to MHF payments
+    window.location.href = paymentUrl
+
   }  
 
   return (
