@@ -17,7 +17,7 @@ class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta
             name="description"
-            content="Donations for MHF Cares"
+            content="Donations for Margarita Humanitarian Foundation"
           />
           <meta
             name="keywords"
@@ -25,13 +25,13 @@ class MyDocument extends Document {
           />
           <meta
             property="og:site_name"
-            content="Donations for MHF Cares"
+            content="Donations for Margarita Humanitarian Foundation"
           />
-          <meta property="og:title" content="Octopus Energy USA" />
+          <meta property="og:title" content="Help a family through Margarita Humanitarian FoundationA" />
           <meta property="og:type" content="website" />
           <meta
             property="og:url"
-            content="https://my.octopusenergy.com"
+            content="https://helpafamily.margaritahumanitarian.org"
           />
 
           <meta
@@ -40,18 +40,18 @@ class MyDocument extends Document {
           />
 
           {/* Twitter card tags */}
-          <meta name="twitter:card" content="Donations for MHF Cares" />
-          <meta name="twitter:title" content="Donate to MHF Cares" />
+          <meta name="twitter:card" content="Donations for Margarita Humanitarian Foundation" />
+          <meta name="twitter:title" content="Donate to Margarita Humanitarian Foundation" />
           <meta
             name="twitter:description"
-            content="Donations for MHF Cares"
+            content="Donations for Margarita Humanitarian Foundation"
           />
           <meta
             name="twitter:image"
             content="/branding/social-share.png"
           />
-          <meta name="twitter:site" content="@mhfcares" />
-          <meta name="twitter:creator" content="@mhfcares" />
+          <meta name="twitter:site" content="@margaritahforg" />
+          <meta name="twitter:creator" content="@margaritahforg" />
 
           {/* Favicons */}
           <link
