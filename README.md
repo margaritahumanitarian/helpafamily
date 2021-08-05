@@ -9,6 +9,7 @@ This is the forthcoming "Donate" page for Margarita Humanitarian Foundation.
 ```
 git clone https://github.com/margaritahumanitarian/donate
 cd donate/
+cp .env.example .env
 yarn
 ```
 
