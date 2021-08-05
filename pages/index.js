@@ -45,7 +45,14 @@ function Form(){
       <div className="p-6 card bordered bg-base-100">
         <div className="form-control">
           <label className="cursor-pointer label">
-            <span className="label-text">Health Equity for People of Color</span> 
+            <span className="label-text">Students in Need</span> 
+            <input type="radio" name="cause" className="radio radio-primary" value="Studentså in Need"></input>
+          </label>
+        </div>    
+
+        <div className="form-control">
+          <label className="cursor-pointer label">
+            <span className="label-text">People of Color in Need</span> 
             <input type="radio" name="cause" className="radio radio-primary" value="Health Equity for People of Color"
             ></input>
           </label>
@@ -56,12 +63,7 @@ function Form(){
             <input type="radio" name="cause" className="radio radio-primary" value="Immigrants in Need"></input>
           </label>
         </div> 
-        <div className="form-control">
-          <label className="cursor-pointer label">
-            <span className="label-text">Students in Need</span> 
-            <input type="radio" name="cause" className="radio radio-primary" value="Studentså in Need"></input>
-          </label>
-        </div>    
+
 
         <select name="amount" className="select select-bordered select-info w-full max-w-xs text-blue-700">
           <option value="0" disabled="disabled" selected="selected">Choose your donation amount</option> 
