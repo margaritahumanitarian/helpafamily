@@ -8,7 +8,7 @@ export default async function helloAPI(req, res) {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: `Caring About ${req.body.cause}`,
+            name: `Help ${req.body.cause}`,
           },
           unit_amount: req.body.amount,
         },
