@@ -1,7 +1,6 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 export default async function helloAPI(req, res) {
-  console.log(req.body.amount)
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
