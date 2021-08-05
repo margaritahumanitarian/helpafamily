@@ -62,6 +62,12 @@ function Form(){
             <span className="label-text">Immigrants in Need</span> 
             <input type="radio" name="cause" className="radio radio-primary" value="Immigrants in Need"></input>
           </label>
+        </div>
+        <div className="form-control">
+          <label className="cursor-pointer label">
+            <span className="label-text">Seniors in Need</span> 
+            <input type="radio" name="cause" className="radio radio-primary" value="Seniors in Need"></input>
+          </label>
         </div> 
 
 
