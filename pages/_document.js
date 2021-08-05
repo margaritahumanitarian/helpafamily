@@ -27,7 +27,7 @@ class MyDocument extends Document {
             property="og:site_name"
             content="Donations for Margarita Humanitarian Foundation"
           />
-          <meta property="og:title" content="Help a family through Margarita Humanitarian FoundationA" />
+          <meta property="og:title" content="Help a family through Margarita Humanitarian Foundation" />
           <meta property="og:type" content="website" />
           <meta
             property="og:url"
