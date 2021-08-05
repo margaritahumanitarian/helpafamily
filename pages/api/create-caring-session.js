@@ -1,6 +1,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
 
 export default async function helloAPI(req, res) {
+  console.log(req.body.amount)
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
@@ -8,7 +9,7 @@ export default async function helloAPI(req, res) {
         price_data: {
           currency: 'usd',
           product_data: {
-            name: 'Caring',
+            name: `Caring About ${req.body.cause}`,
           },
           unit_amount: req.body.amount,
         },
@@ -21,12 +22,5 @@ export default async function helloAPI(req, res) {
     cancel_url: process.env.CANCEL_URL,
   });
 
-  // res.status(200).json({ name: 'John Doe' })
-  // console.log(session)
-  // console.log(session.url)
-  if (process.env.LOCAL_MODE){
-    res.status(200).json({ url: session.url })
-  } else {
-    res.redirect(session.url);
-  }
+  res.status(200).json({ url: session.url })
 }

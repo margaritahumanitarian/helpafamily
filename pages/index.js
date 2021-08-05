@@ -1,32 +1,42 @@
 import Head from 'next/head'
 import React, { useState } from 'react';
-
-const donationTypes = {
-  equity: {donations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}, recurringDonations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}},
-  immigrants: {donations: {75: 'https://buy.stripe.com/test_aEUeVa0Ks4bg5vG00d', 125: 'https://buy.stripe.com/test_eVa5kAal2gY29LW3ci', 250: 'https://buy.stripe.com/test_3cs9AQctaazEf6gdQX', 500: 'https://buy.stripe.com/test_00g5kA2SA37c5vG28d', 1000: 'https://buy.stripe.com/test_dR6cN2al2cHM3nybIM', 5000: 'https://buy.stripe.com/test_dR628octadLQ9LW28b'}, recurringDonations: {75: 'https://buy.stripe.com/test_8wM4gw78QgY2aQ06oA', 125: 'https://buy.stripe.com/test_5kAcN20KsdLQ3nybIT', 250: 'https://buy.stripe.com/test_7sI4gw50I37cbU44gq', 500: 'https://buy.stripe.com/test_aEUdR6eBi7nsbU4dQZ', 1000: 'https://buy.stripe.com/test_bIY7sI3WE8rw1fq28g', 5000: 'https://buy.stripe.com/test_bIY5kAfFm8rwaQ0aET'}},
-  students: {donations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}, recurringDonations: {75: '', 125: '', 250: '', 500: '', 1000: '', 5000: ''}},
-}
+import { useRouter } from 'next/router'
 
 
 
 function Form(){
+  const router = useRouter()
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    let paymentUrl = ""
-    if (event.target.recurring.checked) {
-      // TODO recurring
-      console.log(donationTypes[event.target.cause.value].recurringDonations)
-      paymentUrl = donationTypes[event.target.cause.value].recurringDonations[event.target.amount.value]
-    } else {
-      // TODO 1-time payment
-      console.log(donationTypes[event.target.cause.value].donations[event.target.amount.value])
-      paymentUrl = donationTypes[event.target.cause.value].donations[event.target.amount.value]
-    }
-    // console.log(paymentUrl)
 
-    // Send patron to MHF payments
-    window.location.href = paymentUrl
+    let succeed = true;
+
+    if (event.target.cause.value.trim().length === 0){
+      alert("Please choose a cause to support.")
+      succeed = false;
+    }
+
+    if (event.target.amount.value == 0){
+      alert("Please choose an amount to give")
+      succeed = false;
+    }    
+
+    if (succeed){
+      const response = await fetch('/api/create-caring-session', {
+        body: JSON.stringify({
+          amount: event.target.amount.value * 100,
+          cause: event.target.cause.value
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: 'POST'
+      })     
+      const result = await response.json() 
+      router.push(result.url)
+    }
+    
 
   }  
 
@@ -36,25 +46,25 @@ function Form(){
         <div className="form-control">
           <label className="cursor-pointer label">
             <span className="label-text">Health Equity for People of Color</span> 
-            <input type="radio" name="cause" className="radio radio-primary" value="equity"
+            <input type="radio" name="cause" className="radio radio-primary" value="Health Equity for People of Color"
             ></input>
           </label>
         </div> 
         <div className="form-control">
           <label className="cursor-pointer label">
             <span className="label-text">Immigrants in Need</span> 
-            <input type="radio" name="cause" className="radio radio-primary" value="immigrants"></input>
+            <input type="radio" name="cause" className="radio radio-primary" value="Immigrants in Need"></input>
           </label>
         </div> 
         <div className="form-control">
           <label className="cursor-pointer label">
             <span className="label-text">Students in Need</span> 
-            <input type="radio" name="cause" className="radio radio-primary" value="students"></input>
+            <input type="radio" name="cause" className="radio radio-primary" value="Studentså in Need"></input>
           </label>
         </div>    
 
         <select name="amount" className="select select-bordered select-info w-full max-w-xs text-blue-700">
-          <option disabled="disabled" selected="selected">Choose your donation amount</option> 
+          <option value="0" disabled="disabled" selected="selected">Choose your donation amount</option> 
           <option value="75">$75</option> 
           <option value="125">$125</option> 
           <option value="250">$250</option> 
@@ -65,12 +75,12 @@ function Form(){
 
         <div className="divider"></div> 
 
-        <div className="form-control">
+        {/* <div className="form-control">
           <label className="cursor-pointer label">
             <span className="label-text">Monthly Recurring?</span> 
             <input type="checkbox" name="recurring" className="checkbox checkbox-primary"></input>
           </label>
-        </div>  
+        </div>   */}
 
         <button className="btn btn-primary">Donate <span></span></button>
       </div>   
