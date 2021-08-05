@@ -65,12 +65,15 @@ function Form(){
 
         <select name="amount" className="select select-bordered select-info w-full max-w-xs text-blue-700">
           <option value="0" disabled="disabled" selected="selected">Choose your donation amount</option> 
+          <option value="50">$50</option> 
           <option value="75">$75</option> 
-          <option value="125">$125</option> 
+          <option value="125">$125</option>
           <option value="250">$250</option> 
           <option value="500">$500</option> 
-          <option value="1000">$1000</option> 
-          <option value="5000">$5000</option> 
+          <option value="1000">$1,000</option> 
+          <option value="5000">$5,000</option> 
+          <option value="10000">$10,000</option> 
+          <option value="25000">$25,000</option> 
         </select>    
 
         <div className="divider"></div> 
