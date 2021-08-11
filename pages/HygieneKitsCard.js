@@ -13,7 +13,7 @@ function HygieneKitsCard() {
           </p>
           <p>
             <a
-              class="btn btn-primary"
+              className="btn btn-primary"
               href="https://www.amazon.com/96-Kits-Hygiene-Travel-Charity/dp/B0881YKMBL"
             >
               96 Hygiene Kits for 153$
