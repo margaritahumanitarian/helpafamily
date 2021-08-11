@@ -2,6 +2,7 @@ import Head from "next/head"
 import HygieneKitsCard from "./HygieneKitsCard"
 import MainDonationForm from "./MainDonationForm"
 import React, { useState } from "react";
+import HealthWorkshopCard from "./HealthWorkshopCard";
 
 export default function Home() {
   return (
@@ -28,8 +29,9 @@ export default function Home() {
             </p>
             {/* <a className="btn btn-primary">Donate</a> */}
             <MainDonationForm></MainDonationForm>
-
             <HygieneKitsCard></HygieneKitsCard>
+            <br></br>
+            <HealthWorkshopCard></HealthWorkshopCard>
           </div>
         </div>
       </div>
