@@ -19,7 +19,7 @@ export default function MainDonationForm() {
     }
 
     if (succeed) {
-      const response = await fetch("/api/create-caring-session", {
+      const response = await fetch("/api/create-stripe-session", {
         body: JSON.stringify({
           amount: event.target.amount.value * 100,
           cause: event.target.cause.value,
