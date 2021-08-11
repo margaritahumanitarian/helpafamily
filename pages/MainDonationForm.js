@@ -36,7 +36,7 @@ export default function MainDonationForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-<div className="p-6 card bordered bg-base-100">
+<div className="p-6 mb-5 card bordered bg-base-100">
   <div className="form-control">
     <label className="cursor-pointer label">
       <span className="label-text">Students in Need</span>
