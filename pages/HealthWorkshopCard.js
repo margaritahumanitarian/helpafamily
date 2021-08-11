@@ -8,7 +8,7 @@ function HealthWorkshopCard() {
 
       const response = await fetch("/api/create-stripe-session", {
         body: JSON.stringify({
-          amount: 500*100,
+          amount: 5000*100,
           cause: "Producing Health Workshop",
         }),
         headers: {
