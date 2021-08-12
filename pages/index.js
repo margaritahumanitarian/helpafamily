@@ -1,5 +1,5 @@
 import Head from "next/head"
-import HygieneKitsCard from "./HygieneKitsCard"
+import HygieneKitsCard from "../components/HygieneKitsCard"
 import MainDonationForm from "./MainDonationForm"
 import React, { useState } from "react";
 import HealthWorkshopCard from "./HealthWorkshopCard";
