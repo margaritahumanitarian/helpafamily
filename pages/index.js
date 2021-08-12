@@ -3,6 +3,7 @@ import HygieneKitsCard from "./HygieneKitsCard"
 import MainDonationForm from "./MainDonationForm"
 import React, { useState } from "react";
 import HealthWorkshopCard from "./HealthWorkshopCard";
+import HotMealDayCard from "./HotMealDayCard";
 
 export default function Home() {
   return (
@@ -32,6 +33,8 @@ export default function Home() {
             <HygieneKitsCard></HygieneKitsCard>
             <br></br>
             <HealthWorkshopCard></HealthWorkshopCard>
+            <br></br>
+            <HotMealDayCard></HotMealDayCard>
           </div>
         </div>
       </div>
