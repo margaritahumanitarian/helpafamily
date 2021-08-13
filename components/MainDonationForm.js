@@ -90,6 +90,8 @@ export default function MainDonationForm() {
     <option value="0" disabled="disabled" selected="selected">
       Choose your donation amount
     </option>
+    <option value="5">$5</option>
+    <option value="25">$25</option>
     <option value="50">$50</option>
     <option value="75">$75</option>
     <option value="125">$125</option>
