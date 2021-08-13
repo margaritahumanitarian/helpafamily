@@ -1,9 +1,9 @@
 import Head from "next/head"
 import HygieneKitsCard from "../components/HygieneKitsCard"
-import MainDonationForm from "./MainDonationForm"
+import MainDonationForm from "../components/MainDonationForm"
 import React, { useState } from "react";
-import HealthWorkshopCard from "./HealthWorkshopCard";
-import HotMealDayCard from "./HotMealDayCard";
+import HealthWorkshopCard from "../components/HealthWorkshopCard";
+import HotMealDayCard from "../components/HotMealDayCard";
 
 export default function Home() {
   return (
@@ -32,9 +32,9 @@ export default function Home() {
             <MainDonationForm />
             <HygieneKitsCard />
             <br />
-            <HealthWorkshopCard />
-            <br />
             <HotMealDayCard />
+            <br />
+            <HealthWorkshopCard />
           </div>
         </div>
       </div>
