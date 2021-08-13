@@ -6,7 +6,7 @@ function HygieneKitsCard() {
         <p className="mb-3">
             Order a bulk pack of hygiene kits for us to share with people
             experiencing homelessness.
-            <br></br>
+            <br />
             Each hygiene kit allows an unhoused individual to freshen up and
             feel more confident about their hygiene for work, school, or even
             just to have a better day.
@@ -19,7 +19,7 @@ function HygieneKitsCard() {
               96 Hygiene Kits for $153
             </a>
           </p>
-        <div className="divider"></div> 
+        <div className="divider" /> 
         <h3>Ship the kits to:</h3>
         <p>1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550</p>
       </div>
