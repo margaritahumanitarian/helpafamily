@@ -20,3 +20,10 @@ yarn dev
 ```
 
 Open http://127.0.0.1:3000
+
+## How It Works
+
+This project uses:
+
+* [Next.js](https://nextjs.org/docs/)
+* [daisyUI Tailwind CSS Components](https://daisyui.com/)
