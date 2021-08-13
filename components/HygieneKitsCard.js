@@ -19,7 +19,7 @@ function HygieneKitsCard() {
               96 Hygiene Kits for $153
             </a>
           </p>
-        <div class="divider"></div> 
+        <div className="divider"></div> 
         <h3>Ship the kits to:</h3>
         <p>1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550</p>
       </div>
