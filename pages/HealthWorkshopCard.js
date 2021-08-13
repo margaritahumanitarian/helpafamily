@@ -30,7 +30,7 @@ function HealthWorkshopCard() {
             disparities in health conditions and care such as people of color,
             elders, young mothers including teen mothers, migrant workers,
             low-income families, foster families, unhoused families, and
-            families of incarcerated parents.<br></br>
+            families of incarcerated parents.<br />
             Your donation covers health-themed mini gift bags, raffle prizes to
             motivate people to attend a workshop, equipment to run the workshop
             such as trainer simulaids for edema and breast disease, costs to
@@ -40,7 +40,7 @@ function HealthWorkshopCard() {
           <p>
           <form onSubmit={handleSubmit}>
               <button className="btn btn-primary">
-              Produce 1 health workshop for $5000 <span></span>
+              Produce 1 health workshop for $5000 <span />
               </button>
             </form>
           </p>

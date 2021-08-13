@@ -45,7 +45,7 @@ export default function MainDonationForm() {
         name="cause"
         className="radio radio-primary"
         value="Students in Need"
-      ></input>
+       />
     </label>
   </div>
 
@@ -57,7 +57,7 @@ export default function MainDonationForm() {
         name="cause"
         className="radio radio-primary"
         value="People of Color in Need"
-      ></input>
+       />
     </label>
   </div>
   <div className="form-control">
@@ -68,7 +68,7 @@ export default function MainDonationForm() {
         name="cause"
         className="radio radio-primary"
         value="Immigrants in Need"
-      ></input>
+       />
     </label>
   </div>
   <div className="form-control">
@@ -79,7 +79,7 @@ export default function MainDonationForm() {
         name="cause"
         className="radio radio-primary"
         value="Seniors in Need"
-      ></input>
+       />
     </label>
   </div>
 
@@ -101,7 +101,7 @@ export default function MainDonationForm() {
     <option value="25000">$25,000</option>
   </select>
 
-  <div className="divider"></div>
+  <div className="divider" />
 
   {/* <div className="form-control">
     <label className="cursor-pointer label">
@@ -111,7 +111,7 @@ export default function MainDonationForm() {
   </div>   */}
 
   <button className="btn btn-primary">
-    Donate <span></span>
+    Donate <span />
   </button>
 </div>
 </form>
