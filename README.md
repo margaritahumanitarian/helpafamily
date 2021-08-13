@@ -25,5 +25,6 @@ Open http://127.0.0.1:3000
 
 This project uses:
 
+* [React](https://reactjs.org/)
 * [Next.js](https://nextjs.org/docs/)
 * [daisyUI Tailwind CSS Components](https://daisyui.com/)
