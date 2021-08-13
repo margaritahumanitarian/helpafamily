@@ -1,5 +1,5 @@
 function HygieneKitsCard() {
-  return <div>
+  return( 
     <div className="card lg:card-side bordered">
       <div className="card-body">
         <h2 className="card-title">Hygiene Kits</h2> 
@@ -24,7 +24,8 @@ function HygieneKitsCard() {
         <p>1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550</p>
       </div>
     </div>
-  </div>
+  
+  );
 }
 
 export default HygieneKitsCard

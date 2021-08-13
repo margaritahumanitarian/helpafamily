@@ -20,7 +20,7 @@ function HealthWorkshopCard() {
       router.push(result.url);
   };
   return (
-    <div>
+    
       <div className="card lg:card-side bordered">
         <div className="card-body">
           <h2 className="card-title">Health Education Workshop</h2>
@@ -46,7 +46,7 @@ function HealthWorkshopCard() {
           </p>
         </div>
       </div>
-    </div>
+    
   );
 }
 

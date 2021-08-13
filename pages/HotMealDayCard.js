@@ -20,7 +20,7 @@ function HotMealDayCard() {
     router.push(result.url);
   };
   return (
-    <div>
+  
       <div className="card lg:card-side bordered">
         <div className="card-body">
           <h2 className="card-title">Hot Meal Day</h2>
@@ -39,7 +39,7 @@ function HotMealDayCard() {
           </p>
         </div>
       </div>
-    </div>
+    
   );
 }
 
