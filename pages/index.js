@@ -1,9 +1,39 @@
-import Head from "next/head"
-import HygieneKitsCard from "../components/HygieneKitsCard"
-import MainDonationForm from "../components/MainDonationForm"
+import Head from "next/head";
+import HygieneKitsCard from "../components/HygieneKitsCard";
+import MainDonationForm from "../components/MainDonationForm";
 import React, { useState } from "react";
 import HealthWorkshopCard from "../components/HealthWorkshopCard";
 import HotMealDayCard from "../components/HotMealDayCard";
+
+const ListOfCards = [
+  {
+    card: <HealthWorkshopCard />,
+    amount: 5000,
+  },
+  {
+    card: <HygieneKitsCard />,
+    amount: 153,
+  },
+  {
+    card: <HotMealDayCard />,
+    amount: 250,
+  },
+  
+];
+const sortedcards = [...ListOfCards];
+sortedcards.sort((a, b) => a.amount - b.amount);
+
+function PrintCards() {
+
+  return sortedcards.map((item) => {
+      return(
+          <div>
+            {item.card}
+            <br/>
+          </div>
+        )
+  });
+}
 
 export default function Home() {
   return (
@@ -30,11 +60,7 @@ export default function Home() {
             </p>
             {/* <a className="btn btn-primary">Donate</a> */}
             <MainDonationForm />
-            <HygieneKitsCard />
-            <br />
-            <HotMealDayCard />
-            <br />
-            <HealthWorkshopCard />
+            <PrintCards />
           </div>
         </div>
       </div>
