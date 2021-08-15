@@ -29,4 +29,5 @@ This project uses:
 
 * [React](https://reactjs.org/)
 * [Next.js](https://nextjs.org/docs/)
+* [Tailwind CSS](https://tailwindcss.com/docs)
 * [daisyUI Tailwind CSS Components](https://daisyui.com/)
