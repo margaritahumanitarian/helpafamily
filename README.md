@@ -9,8 +9,8 @@ By [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
 ## Installation
 
 ```
-git clone https://github.com/margaritahumanitarian/donate
-cd donate/
+git clone <url-to-your-fork-of-helpafamily-here>
+cd helpafamily/
 cp .env.example .env
 yarn
 ```
