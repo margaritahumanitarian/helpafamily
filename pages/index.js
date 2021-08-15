@@ -61,7 +61,9 @@ export default function Home() {
             {/* <a className="btn btn-primary">Donate</a> */}
             <MainDonationForm />
             <PrintCards />
-            <p>Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US.</p>
+            <p>
+              {'Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US.'}
+            </p>
           </div>
         </div>
       </div>
