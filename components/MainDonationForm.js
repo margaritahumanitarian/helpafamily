@@ -39,12 +39,20 @@ export default function MainDonationForm() {
   };
 
   const [showAll, setShowAll] = React.useState(true);
+  const mainForm = React.createRef();
   const handleClick = (event) => {
     setShowAll(!showAll);
+    if (showAll) {
+      const form = mainForm.current;
+      const inputs = form.getElementsByClassName("donate-form-checkbox");
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+      }
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} ref={mainForm}>
 <div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
   <h2 className="card-title">Help us develop programs for:</h2>
 
@@ -57,6 +65,7 @@ export default function MainDonationForm() {
         className="toggle"
         value="Anyone in need"
         onClick={handleClick}
+        defaultChecked={false}
       />
     </label>
   </div>
@@ -66,7 +75,7 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="checkbox donate-form-checkbox"
         value="Students in Need"
         disabled={!showAll}
       />
@@ -78,7 +87,7 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="checkbox donate-form-checkbox"
         value="People of Color in Need"
         disabled={!showAll}
       />
@@ -90,7 +99,7 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="checkbox donate-form-checkbox"
         value="Immigrants in Need"
         disabled={!showAll}
       />
@@ -102,7 +111,7 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="checkbox donate-form-checkbox"
         value="Seniors in Need"
         disabled={!showAll}
       />
