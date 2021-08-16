@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import React from 'react';
 
 export default function MainDonationForm() {
   const router = useRouter();
@@ -7,7 +8,7 @@ export default function MainDonationForm() {
     event.preventDefault();
 
     let succeed = true;
-
+    
     if (event.target.amount.value == 0) {
       alert("Please choose an amount to give");
       succeed = false;
@@ -37,11 +38,28 @@ export default function MainDonationForm() {
     }
   };
 
+  const [showAll, setShowAll] = React.useState(true);
+  const handleClick = (event) => {
+    setShowAll(!showAll);
+  };
+
   return (
     <form onSubmit={handleSubmit}>
 <div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
   <h2 className="card-title">Help us develop programs for:</h2>
 
+  <div className="form-control">
+    <label className="cursor-pointer label">
+      <span className="label-text">Anyone in need</span>
+      <input
+        type="checkbox"
+        name="cause"
+        className="toggle"
+        value="Anyone in need"
+        onClick={handleClick}
+      />
+    </label>
+  </div>
   <div className="form-control">
     <label className="cursor-pointer label">
       <span className="label-text">Students in Need</span>
@@ -50,10 +68,10 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="Students in Need"
-       />
+        disabled={!showAll}
+      />
     </label>
   </div>
-
   <div className="form-control">
     <label className="cursor-pointer label">
       <span className="label-text">People of Color in Need</span>
@@ -62,7 +80,8 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="People of Color in Need"
-       />
+        disabled={!showAll}
+      />
     </label>
   </div>
   <div className="form-control">
@@ -73,7 +92,8 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="Immigrants in Need"
-       />
+        disabled={!showAll}
+      />
     </label>
   </div>
   <div className="form-control">
@@ -84,7 +104,8 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="Seniors in Need"
-       />
+        disabled={!showAll}
+      />
     </label>
   </div>
 
