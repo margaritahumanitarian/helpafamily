@@ -2,11 +2,15 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d3507a81-2fb2-4b84-91bf-81572286b110/deploy-status)](https://app.netlify.com/sites/helpafamily-margarita-humanitarian/deploys)
 
-Impactful ways to help families in need.
+Impactful ways to help families in need through donated meals, hygiene kits, and more.
 
-By [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
+This repo contains the code behind [helpafamily.margaritahumanitarian.org](https://helpafamily.margaritahumanitarian.org/). While the short-term goal is to provide ways for donors to help families in the Antelope Valley, the long-term goal is to help families in need at a global scale through international volunteers and partnering humanitarian organizations around the world.
+
+Learn more about [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
 
 ## Installation
+
+Fork this repo, then:
 
 ```
 git clone <url-to-your-fork-of-helpafamily-here>
@@ -15,7 +19,7 @@ cp .env.example .env
 yarn
 ```
 
-## Running
+## Running the project locally
 
 ```
 yarn dev
