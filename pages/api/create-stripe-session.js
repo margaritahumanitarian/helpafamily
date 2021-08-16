@@ -16,7 +16,7 @@ export default async function helloAPI(req, res) {
       },
     ],
     metadata: {
-      cause: req.body.cause,
+      'cause': `Help ${req.body.cause}`,
     },
     // mode: 'subscription',
     mode: 'payment',
