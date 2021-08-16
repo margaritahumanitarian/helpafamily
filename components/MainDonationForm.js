@@ -44,16 +44,26 @@ export default function MainDonationForm() {
 
   <div className="form-control">
     <label className="cursor-pointer label">
+      <span className="label-text">Anyone in need</span>
+      <input
+        type="checkbox"
+        name="cause"
+        className="checkbox"
+        value="Anyone in need"
+      />
+    </label>
+  </div>
+  <div className="form-control">
+    <label className="cursor-pointer label">
       <span className="label-text">Students in Need</span>
       <input
         type="checkbox"
         name="cause"
         className="checkbox"
         value="Students in Need"
-       />
+      />
     </label>
   </div>
-
   <div className="form-control">
     <label className="cursor-pointer label">
       <span className="label-text">People of Color in Need</span>
@@ -62,7 +72,7 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="People of Color in Need"
-       />
+      />
     </label>
   </div>
   <div className="form-control">
@@ -73,7 +83,7 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="Immigrants in Need"
-       />
+      />
     </label>
   </div>
   <div className="form-control">
@@ -84,7 +94,7 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="Seniors in Need"
-       />
+      />
     </label>
   </div>
 
