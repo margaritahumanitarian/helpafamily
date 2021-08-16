@@ -15,6 +15,9 @@ export default async function helloAPI(req, res) {
         quantity: 1,
       },
     ],
+    metadata: {
+      'cause': `Help ${req.body.cause}`,
+    },
     // mode: 'subscription',
     mode: 'payment',
     success_url: process.env.SUCCESS_URL,
