@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import React from 'react';
 
 export default function MainDonationForm() {
   const router = useRouter();
@@ -7,7 +8,7 @@ export default function MainDonationForm() {
     event.preventDefault();
 
     let succeed = true;
-
+    
     if (event.target.amount.value == 0) {
       alert("Please choose an amount to give");
       succeed = false;
@@ -37,6 +38,11 @@ export default function MainDonationForm() {
     }
   };
 
+  const [showAll, setShowAll] = React.useState(true);
+  const handleClick = (event) => {
+    setShowAll(!showAll);
+  };
+
   return (
     <form onSubmit={handleSubmit}>
 <div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
@@ -48,8 +54,9 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="toggle"
         value="Anyone in need"
+        onClick={handleClick}
       />
     </label>
   </div>
@@ -61,6 +68,7 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="Students in Need"
+        disabled={!showAll}
       />
     </label>
   </div>
@@ -72,6 +80,7 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="People of Color in Need"
+        disabled={!showAll}
       />
     </label>
   </div>
@@ -83,6 +92,7 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="Immigrants in Need"
+        disabled={!showAll}
       />
     </label>
   </div>
@@ -94,6 +104,7 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox"
         value="Seniors in Need"
+        disabled={!showAll}
       />
     </label>
   </div>
