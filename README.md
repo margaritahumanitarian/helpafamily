@@ -2,13 +2,15 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d3507a81-2fb2-4b84-91bf-81572286b110/deploy-status)](https://app.netlify.com/sites/helpafamily-margarita-humanitarian/deploys)
 
-This is the "Donate" page for [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
+Impactful ways to help families in need.
+
+By [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
 
 ## Installation
 
 ```
-git clone https://github.com/margaritahumanitarian/donate
-cd donate/
+git clone <url-to-your-fork-of-helpafamily-here>
+cd helpafamily/
 cp .env.example .env
 yarn
 ```
@@ -20,3 +22,12 @@ yarn dev
 ```
 
 Open http://127.0.0.1:3000
+
+## How It Works
+
+This project uses:
+
+* [React](https://reactjs.org/)
+* [Next.js](https://nextjs.org/docs/)
+* [Tailwind CSS](https://tailwindcss.com/docs)
+* [daisyUI Tailwind CSS Components](https://daisyui.com/)
