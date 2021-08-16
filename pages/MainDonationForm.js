@@ -14,10 +14,18 @@ export default function MainDonationForm() {
     }
 
     if (succeed) {
+      const causes = event.target.cause;
+      const validCause = [];
+      for (let i = 0; i < causes.length; i++) {
+        if (causes[i].checked) {
+          validCause.push(" " + causes[i].defaultValue);
+        }
+      }
+      
       const response = await fetch("/api/create-stripe-session", {
         body: JSON.stringify({
           amount: event.target.amount.value * 100,
-          cause: event.target.cause.value,
+          cause: validCause,
         }),
         headers: {
           "Content-Type": "application/json",
