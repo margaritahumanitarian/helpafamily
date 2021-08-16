@@ -8,21 +8,24 @@ export default function MainDonationForm() {
 
     let succeed = true;
 
-    if (event.target.cause.value.trim().length === 0) {
-      alert("Please choose a cause to support.");
-      succeed = false;
-    }
-
     if (event.target.amount.value == 0) {
       alert("Please choose an amount to give");
       succeed = false;
     }
 
     if (succeed) {
+      const causes = event.target.cause;
+      const validCause = [];
+      for (let i = 0; i < causes.length; i++) {
+        if (causes[i].checked) {
+          validCause.push(" " + causes[i].defaultValue);
+        }
+      }
+      
       const response = await fetch("/api/create-stripe-session", {
         body: JSON.stringify({
           amount: event.target.amount.value * 100,
-          cause: event.target.cause.value,
+          cause: validCause,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -36,14 +39,16 @@ export default function MainDonationForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-<div className="p-6 mb-5 card bordered bg-base-100">
+<div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
+  <h2 className="card-title">Help us develop programs for:</h2>
+
   <div className="form-control">
     <label className="cursor-pointer label">
       <span className="label-text">Students in Need</span>
       <input
-        type="radio"
+        type="checkbox"
         name="cause"
-        className="radio radio-primary"
+        className="checkbox"
         value="Students in Need"
        />
     </label>
@@ -53,9 +58,9 @@ export default function MainDonationForm() {
     <label className="cursor-pointer label">
       <span className="label-text">People of Color in Need</span>
       <input
-        type="radio"
+        type="checkbox"
         name="cause"
-        className="radio radio-primary"
+        className="checkbox"
         value="People of Color in Need"
        />
     </label>
@@ -64,9 +69,9 @@ export default function MainDonationForm() {
     <label className="cursor-pointer label">
       <span className="label-text">Immigrants in Need</span>
       <input
-        type="radio"
+        type="checkbox"
         name="cause"
-        className="radio radio-primary"
+        className="checkbox"
         value="Immigrants in Need"
        />
     </label>
@@ -75,9 +80,9 @@ export default function MainDonationForm() {
     <label className="cursor-pointer label">
       <span className="label-text">Seniors in Need</span>
       <input
-        type="radio"
+        type="checkbox"
         name="cause"
-        className="radio radio-primary"
+        className="checkbox"
         value="Seniors in Need"
        />
     </label>
@@ -85,7 +90,7 @@ export default function MainDonationForm() {
 
   <select
     name="amount"
-    className="select select-bordered select-info w-full max-w-xs text-blue-700"
+    className="select select-bordered select-info w-full max-w-xs text-white-700"
   >
     <option value="0" disabled="disabled" selected="selected">
       Choose your donation amount
