@@ -7,16 +7,19 @@ export default function MainDonationForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     
-    if (event.target.amount.value === 0) {
+    if (+event.target.amount.value === 0) {
       alert("Please choose an amount to give");
       return;
     }
 
-    const selectedCauses = [];
+    let selectedCauses = [];
     for (let i = 0; i < causes.length; i++) {
       if (causes[i].isChecked) {
         selectedCauses.push(" " + causes[i].text);
       }
+    }
+    if (isAnyoneInNeedToggled || causes.length === selectedCauses.length) {
+      selectedCauses = [" Anyone in need"];
     }
 
     if (selectedCauses.length === 0) {
