@@ -4,6 +4,7 @@ import MainDonationForm from "../components/MainDonationForm";
 import React, { useState } from "react";
 import HealthWorkshopCard from "../components/HealthWorkshopCard";
 import HotMealDayCard from "../components/HotMealDayCard";
+import LaptopForFamiliesCard from "../components/LaptopForFamiliesCard";
 
 const ListOfCards = [
   {
@@ -15,10 +16,14 @@ const ListOfCards = [
     amount: 153,
   },
   {
+    card: <LaptopForFamiliesCard />,
+    amount: 0,
+  },
+  {
     card: <HotMealDayCard />,
     amount: 250,
   },
-  
+
 ];
 const sortedcards = [...ListOfCards];
 sortedcards.sort((a, b) => a.amount - b.amount);
@@ -26,12 +31,12 @@ sortedcards.sort((a, b) => a.amount - b.amount);
 function PrintCards() {
 
   return sortedcards.map((item) => {
-      return(
-          <div>
-            {item.card}
-            <br/>
-          </div>
-        )
+    return (
+      <div>
+        {item.card}
+        <br />
+      </div>
+    )
   });
 }
 
