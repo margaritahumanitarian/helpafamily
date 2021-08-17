@@ -6,6 +6,7 @@ import HealthWorkshopCard from "../components/HealthWorkshopCard";
 import HotMealDayCard from "../components/HotMealDayCard";
 import FoodDistributionSupportCard from "../components/FoodDistributionSupportCard";
 import LaptopForFamiliesCard from "../components/LaptopForFamiliesCard";
+import HumanitarianClinicCard from "../components/HumanitarianClinicCard";
 
 const ListOfCards = [
   {
@@ -27,7 +28,11 @@ const ListOfCards = [
   {
     card: <FoodDistributionSupportCard />,
     amount: 150,
-  }
+  },
+  {
+    card: <HumanitarianClinicCard />,
+    amount: 300,
+  },
 ];
 const sortedcards = [...ListOfCards];
 sortedcards.sort((a, b) => a.amount - b.amount);
