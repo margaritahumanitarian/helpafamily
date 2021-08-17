@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Home() {
   return (
     <html>
@@ -17,7 +19,7 @@ export default function Home() {
               </p>
               <h2 className="m-5 text-3xl font-bold">Receipt to Follow</h2>
               <p>
-                Your donation is fully tax-deductible. We'll email you a
+                Your donation is fully tax-deductible. We&apos;ll email you a
                 fully-compliant IRS 501(c)(3) donation receipt for your records
                 shortly.
               </p>
@@ -28,7 +30,7 @@ export default function Home() {
               </p>
               <h3 className="m-5 text-xl font-bold">Improve our Donation Software</h3>
               <p>
-                This donation system is entirely open source on <a className="link link-secondary" href="https://github.com/margaritahumanitarian/helpafamily">GitHub</a>. We're
+                This donation system is entirely open source on <a className="link link-secondary" href="https://github.com/margaritahumanitarian/helpafamily">GitHub</a>. We&apos;re
                 looking for volunteer contributors to help make it better.
                 Report bugs or propose ideas for improvements by submitting
                 GitHub issues, or even submit little pull requests as proposals.

@@ -1,12 +1,14 @@
+import React from "react";
+
 function LaptopForFamiliesCard() {
   return (
     <div className="card lg:card-side bordered">
       <div className="card-body">
         <h2 className="card-title">Laptop for Families</h2>
         <p className="mb-3">
-          Mail us your used or new laptop. We'll set up the donated laptops in our public
+          Mail us your used or new laptop. We&apos;ll set up the donated laptops in our public
           computer room for the families to use for free. Some of the donated laptops will go to
-          the families who don't have home computers, or who don't have enough computers for
+          the families who don&apos;t have home computers, or who don&apos;t have enough computers for
           all their children to use.
         </p>
         <p>
@@ -16,8 +18,7 @@ function LaptopForFamiliesCard() {
         </p>
       </div>
     </div>
-
-  )
+  );
 }
 
-export default LaptopForFamiliesCard
+export default LaptopForFamiliesCard;

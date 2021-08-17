@@ -1,7 +1,7 @@
+import React from "react";
 import Head from "next/head";
 import HygieneKitsCard from "../components/HygieneKitsCard";
 import MainDonationForm from "../components/MainDonationForm";
-import React, { useState } from "react";
 import HealthWorkshopCard from "../components/HealthWorkshopCard";
 import HotMealDayCard from "../components/HotMealDayCard";
 import FoodDistributionSupportCard from "../components/FoodDistributionSupportCard";
@@ -34,13 +34,13 @@ sortedcards.sort((a, b) => a.amount - b.amount);
 
 function PrintCards() {
 
-  return sortedcards.map((item) => {
+  return sortedcards.map((item, index) => {
     return (
-      <div>
+      <div key={index}>
         {item.card}
         <br />
       </div>
-    )
+    );
   });
 }
 
@@ -71,7 +71,7 @@ export default function Home() {
             <MainDonationForm />
             <PrintCards />
             <p>
-              {'Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US.'}
+              {"Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US."}
             </p>
           </div>
         </div>

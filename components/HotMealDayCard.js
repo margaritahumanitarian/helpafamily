@@ -1,3 +1,4 @@
+import React from "react";
 import { useRouter } from "next/router";
 
 function HotMealDayCard() {
@@ -19,27 +20,26 @@ function HotMealDayCard() {
     const result = await response.json();
     router.push(result.url);
   };
+
   return (
-  
-      <div className="card lg:card-side bordered">
-        <div className="card-body">
-          <h2 className="card-title">Hot Meal Day</h2>
-          <p className="mb-3">
-            Buy ingredients for 1 hot meal for 60 hungry people. Sample meals
-            include spaghetti with Texas toast and caesar salad, chicken
-            alfredo, enchilada taquitos. Served as take-home meal boxes at Grace
-            Resources in Lancaster, California.
-          </p>
-          <p>
-            <form onSubmit={handleSubmit}>
-              <button className="btn btn-primary">
-                Feed 60 people for $250 <span />
-              </button>
-            </form>
-          </p>
-        </div>
+    <div className="card lg:card-side bordered">
+      <div className="card-body">
+        <h2 className="card-title">Hot Meal Day</h2>
+        <p className="mb-3">
+          Buy ingredients for 1 hot meal for 60 hungry people. Sample meals
+          include spaghetti with Texas toast and caesar salad, chicken
+          alfredo, enchilada taquitos. Served as take-home meal boxes at Grace
+          Resources in Lancaster, California.
+        </p>
+        <p>
+          <form onSubmit={handleSubmit}>
+            <button className="btn btn-primary">
+              Feed 60 people for $250 <span />
+            </button>
+          </form>
+        </p>
       </div>
-    
+    </div>    
   );
 }
 
