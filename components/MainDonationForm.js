@@ -38,8 +38,8 @@ export default function MainDonationForm() {
     }
   };
 
-  // showAll = true means that all the checkboxes are checked
-  const [showAll, setShowAll] = React.useState(true);
+  // isAnyoneInNeedToggled = stores the state of the "Anyone in need" toggle
+  const [isAnyoneInNeedToggled, setIsAnyoneInNeedToggled] = React.useState(true);
 
   // mainForm is the topmost form that is shown to the user
   const mainForm = React.createRef();
@@ -47,11 +47,11 @@ export default function MainDonationForm() {
   // handleClick is called via the onClick event when the user clicks 
   // on the "Anyone in need" toggle switch
   const handleClick = (event) => {
-    setShowAll(!showAll);
+    setIsAnyoneInNeedToggled(!isAnyoneInNeedToggled);
 
     // If the "Anyone in need" toggle is on, we need to uncheck all the 
     // checkboxes in the cause list
-    if (showAll) {
+    if (isAnyoneInNeedToggled) {
       const form = mainForm.current;
 
       // Loop through all the checkboxes in the cause list and uncheck them
@@ -76,7 +76,7 @@ export default function MainDonationForm() {
         className="toggle"
         value="Anyone in need"
         onClick={handleClick}
-        defaultChecked={false}
+        autoComplete="off"
       />
     </label>
   </div>
@@ -89,9 +89,15 @@ export default function MainDonationForm() {
         className="checkbox donate-form-checkbox"
         value="Students in Need"
 
+        // Prevents the browser from using cached checkbox states.
+        // The use of cached values caused interaction issues that were
+        // unintended.
+        autoComplete="off"
+
         // If the "Anyone in need" toggle is on, we need to uncheck all the
         // checkboxes in the cause list, such as this one
-        disabled={!showAll}
+        disabled={!isAnyoneInNeedToggled}
+        autoComplete="off"
       />
     </label>
   </div>
@@ -103,7 +109,8 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox donate-form-checkbox"
         value="People of Color in Need"
-        disabled={!showAll}
+        disabled={!isAnyoneInNeedToggled}
+        autoComplete="off"
       />
     </label>
   </div>
@@ -115,7 +122,8 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox donate-form-checkbox"
         value="Immigrants in Need"
-        disabled={!showAll}
+        disabled={!isAnyoneInNeedToggled}
+        autoComplete="off"
       />
     </label>
   </div>
@@ -127,7 +135,8 @@ export default function MainDonationForm() {
         name="cause"
         className="checkbox donate-form-checkbox"
         value="Seniors in Need"
-        disabled={!showAll}
+        disabled={!isAnyoneInNeedToggled}
+        autoComplete="off"
       />
     </label>
   </div>
