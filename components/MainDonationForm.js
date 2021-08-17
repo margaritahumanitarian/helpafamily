@@ -39,7 +39,7 @@ export default function MainDonationForm() {
   };
 
   // isAnyoneInNeedToggled = stores the state of the "Anyone in need" toggle
-  const [isAnyoneInNeedToggled, setIsAnyoneInNeedToggled] = React.useState(true);
+  const [isAnyoneInNeedToggled, setIsAnyoneInNeedToggled] = React.useState(false);
   const [causes, setCauses] = React.useState([
     {
       text: "Students in Need",
@@ -64,20 +64,20 @@ export default function MainDonationForm() {
 
   // handleClick is called via the onClick event when the user clicks 
   // on the "Anyone in need" toggle switch
-  const handleClick = (event) => {
-    setIsAnyoneInNeedToggled(!isAnyoneInNeedToggled);
-
+  const handleClick = () => {
     // If the "Anyone in need" toggle is on, we need to uncheck all the 
     // checkboxes in the cause list
-    if (isAnyoneInNeedToggled) {
+    if (!isAnyoneInNeedToggled) {
       const data = causes;
 
       // Loop through all the checkboxes in the cause list and uncheck them
       for (let i = 0; i < data.length; i++) {
-        data[i].isChecked = isAnyoneInNeedToggled;
+        data[i].isChecked = true;
       }
       setCauses(data);
     }
+
+    setIsAnyoneInNeedToggled(!isAnyoneInNeedToggled);
   };
 
   return (
@@ -93,8 +93,9 @@ export default function MainDonationForm() {
         name="cause"
         className="toggle"
         value="Anyone in need"
-        onClick={handleClick}
+        onChange={handleClick}
         autoComplete="off"
+        checked={isAnyoneInNeedToggled}
       />
     </label>
   </div>
@@ -113,6 +114,9 @@ export default function MainDonationForm() {
               checked={item.isChecked}
               onChange={() => {
                 const data = [...causes];
+                if (data[index].isChecked) {
+                  setIsAnyoneInNeedToggled(false);
+                }
                 data[index].isChecked = !data[index].isChecked;
                 setCauses(data);
               }}
@@ -123,7 +127,6 @@ export default function MainDonationForm() {
 
               // If the "Anyone in need" toggle is on, we need to uncheck all the
               // checkboxes in the cause list, such as this one
-              disabled={!isAnyoneInNeedToggled}
               autoComplete="off"
             />
           </label>
