@@ -1,6 +1,6 @@
 /* eslint-env node*/
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-
+import React from "react";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   // eslint-disable-next-line

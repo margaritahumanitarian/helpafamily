@@ -1,7 +1,7 @@
+import React from "react";
 import Head from "next/head";
 import HygieneKitsCard from "../components/HygieneKitsCard";
 import MainDonationForm from "../components/MainDonationForm";
-import React, { useState } from "react";
 import HealthWorkshopCard from "../components/HealthWorkshopCard";
 import HotMealDayCard from "../components/HotMealDayCard";
 import FoodDistributionSupportCard from "../components/FoodDistributionSupportCard";

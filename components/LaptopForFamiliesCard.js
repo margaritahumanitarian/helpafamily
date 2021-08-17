@@ -1,3 +1,5 @@
+import React from "react";
+
 function LaptopForFamiliesCard() {
   return (
     <div className="card lg:card-side bordered">
