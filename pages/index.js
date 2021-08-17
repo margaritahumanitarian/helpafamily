@@ -1,7 +1,7 @@
+import React from "react";
 import Head from "next/head";
 import HygieneKitsCard from "../components/HygieneKitsCard";
 import MainDonationForm from "../components/MainDonationForm";
-import React, { useState } from "react";
 import HealthWorkshopCard from "../components/HealthWorkshopCard";
 import HotMealDayCard from "../components/HotMealDayCard";
 import FoodDistributionSupportCard from "../components/FoodDistributionSupportCard";
@@ -11,38 +11,41 @@ const ListOfCards = [
   {
     card: <HealthWorkshopCard />,
     amount: 5000,
+    id: 'health workshop',
   },
   {
     card: <HygieneKitsCard />,
     amount: 153,
+    id: 'hygiene kits',
   },
   {
     card: <LaptopForFamiliesCard />,
     amount: 0,
+    id: 'laptop for families',
   },
   {
     card: <HotMealDayCard />,
     amount: 250,
+    id: 'hot meal day',
   },
   {
     card: <FoodDistributionSupportCard />,
     amount: 150,
+    id: 'food distribution support',
   }
 ];
-const sortedcards = [...ListOfCards];
-sortedcards.sort((a, b) => a.amount - b.amount);
 
-function PrintCards() {
+const sortedCards = [...ListOfCards];
+sortedCards.sort((a, b) => a.amount - b.amount);
 
-  return sortedcards.map((item) => {
-    return (
-      <div>
-        {item.card}
-        <br />
-      </div>
-    )
-  });
-}
+const Cards = () => 
+  sortedCards.map(({ card, id }) => (
+    <div key={id}>
+      {card}
+      <br />
+    </div>
+  )
+);
 
 export default function Home() {
   return (
@@ -56,7 +59,7 @@ export default function Home() {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: "url(" + "/images/marguerite_960_720.webp" + ")",
+          backgroundImage: "url(/images/marguerite_960_720.webp)",
         }}
       >
         <div className="hero-overlay bg-opacity-60" />
@@ -69,7 +72,7 @@ export default function Home() {
             </p>
             {/* <a className="btn btn-primary">Donate</a> */}
             <MainDonationForm />
-            <PrintCards />
+            <Cards />
             <p>
               {'Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US.'}
             </p>
