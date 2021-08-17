@@ -9,7 +9,7 @@ function HumanitarianClinicCard() {
     const response = await fetch("/api/create-stripe-session", {
       body: JSON.stringify({
         amount: 30 * 100,
-        cause: "Help 1 Patient for $30",
+        cause: "1 Patient for $30",
       }),
       headers: {
         "Content-Type": "application/json",
