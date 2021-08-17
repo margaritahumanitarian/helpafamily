@@ -9,6 +9,7 @@ export default function Home() {
           <div className="text-center hero-content">
             <div className="max-w-md">
               <h1 className="mb-5 text-5xl font-bold">Thank You</h1>
+              <p>With gratitude from Margarita Humanitarian Foundation.</p>
               <p>
                 Thanks so much for your generosity. We promise to use it to help
                 the causes you indicated your support for, and to be extra
