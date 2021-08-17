@@ -36,7 +36,7 @@ const ListOfCards = [
   },
   {
     card: <HumanitarianClinicCard />,
-    amount: 300,
+    amount: 30,
     id: 'humanitarian clinic',
   },
 ];
