@@ -38,13 +38,32 @@ export default function MainDonationForm() {
     }
   };
 
+  // showAll = true means that all the checkboxes are checked
   const [showAll, setShowAll] = React.useState(true);
+
+  // mainForm is the topmost form that is shown to the user
+  const mainForm = React.createRef();
+
+  // handleClick is called via the onClick event when the user clicks 
+  // on the "Anyone in need" toggle switch
   const handleClick = (event) => {
     setShowAll(!showAll);
+
+    // If the "Anyone in need" toggle is on, we need to uncheck all the 
+    // checkboxes in the cause list
+    if (showAll) {
+      const form = mainForm.current;
+
+      // Loop through all the checkboxes in the cause list and uncheck them
+      const inputs = form.getElementsByClassName("donate-form-checkbox");
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].checked = false;
+      }
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} ref={mainForm}>
 <div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
   <h2 className="card-title">Help us develop programs for:</h2>
 
@@ -57,6 +76,7 @@ export default function MainDonationForm() {
         className="toggle"
         value="Anyone in need"
         onClick={handleClick}
+        defaultChecked={false}
       />
     </label>
   </div>
@@ -66,8 +86,11 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="checkbox donate-form-checkbox"
         value="Students in Need"
+
+        // If the "Anyone in need" toggle is on, we need to uncheck all the
+        // checkboxes in the cause list, such as this one
         disabled={!showAll}
       />
     </label>
@@ -78,7 +101,7 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="checkbox donate-form-checkbox"
         value="People of Color in Need"
         disabled={!showAll}
       />
@@ -90,7 +113,7 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="checkbox donate-form-checkbox"
         value="Immigrants in Need"
         disabled={!showAll}
       />
@@ -102,7 +125,7 @@ export default function MainDonationForm() {
       <input
         type="checkbox"
         name="cause"
-        className="checkbox"
+        className="checkbox donate-form-checkbox"
         value="Seniors in Need"
         disabled={!showAll}
       />
