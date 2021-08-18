@@ -18,20 +18,18 @@ const ListOfCards = [
     card: <HotMealDayCard />,
     amount: 250,
   },
-  
 ];
 const sortedcards = [...ListOfCards];
 sortedcards.sort((a, b) => a.amount - b.amount);
 
 function PrintCards() {
-
   return sortedcards.map((item) => {
-      return(
-          <div>
-            {item.card}
-            <br/>
-          </div>
-        )
+    return (
+      <div>
+        {item.card}
+        <br />
+      </div>
+    );
   });
 }
 
@@ -52,7 +50,7 @@ export default function Home() {
       >
         <div className="hero-overlay bg-opacity-60" />
         <div className="text-center hero-content text-neutral-content">
-          <div className="max-w-md">
+          <div className="sm:max-w-md md:min-w-md">
             <h1 className="mb-5 text-4xl font-bold">Help Families in Need</h1>
             <p className="mb-5">
               Kindness First. Margarita Humanitarian Foundation helps those who
@@ -60,9 +58,13 @@ export default function Home() {
             </p>
             {/* <a className="btn btn-primary">Donate</a> */}
             <MainDonationForm />
-            <PrintCards />
+            <div className="grid grid-cols-3 space-x-4">
+              <PrintCards />
+            </div>
             <p>
-              {'Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US.'}
+              {
+                "Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US."
+              }
             </p>
           </div>
         </div>
