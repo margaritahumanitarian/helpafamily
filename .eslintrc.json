@@ -33,6 +33,8 @@
       "ignoreMemberSort": false,
       "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
       "allowSeparatedGroups": true
-  }]
+    }],
+    "comma-dangle": ["error", "always-multiline"],
+    "react/jsx-no-literals": ["error"]
   }
 }

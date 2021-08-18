@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
 
 MyApp.propTypes = {
   Component: PropTypes.func,
-  pageProps: PropTypes.object
+  pageProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
 };
 
 export default MyApp;
