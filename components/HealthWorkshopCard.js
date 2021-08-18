@@ -25,22 +25,17 @@ function HealthWorkshopCard() {
         <div className="card-body">
           <h2 className="card-title">Health Education Workshop</h2>
           <p className="mb-3">
-            Produce 1 free health education workshop for an audience who
-            urgently needs it, particularly for a community who faces major
-            disparities in health conditions and care such as people of color,
-            elders, young mothers including teen mothers, migrant workers,
-            low-income families, foster families, unhoused families, and
-            families of incarcerated parents.<br />
-            Your donation covers health-themed mini gift bags, raffle prizes to
-            motivate people to attend a workshop, equipment to run the workshop
-            such as trainer simulaids for edema and breast disease, costs to
-            hire public health educators to prepare presentation and take-home
-            materials, and any venue costs if not donated.
+          Helps in establishing One free health education workshop for a community that is facing major disparities in health conditions 
+          and to help those people who need care and attention like elders, young mothers including teen mothers, migrant workers, 
+          low-income families, foster families, unhoused families, and families of incarcerated parents.<br />
+          Also, Your donation will be put in service for health-themed mini gift bags, raffle prizes to motivate people to attend a workshop, 
+          equipment to run the workshop such as trainer simulaids for edema and breast disease, 
+          and to hire public health educators to prepare presentations...
           </p>
           <p>
           <form onSubmit={handleSubmit}>
               <button className="btn btn-primary">
-              Produce 1 health workshop for $5000 <span />
+              Help in Creating One health workshop for $5000 <span />
               </button>
             </form>
           </p>
