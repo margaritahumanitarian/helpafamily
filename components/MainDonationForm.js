@@ -169,7 +169,7 @@ export default function MainDonationForm() {
           </label>
         </div>   */}
 
-        <button className="btn btn-primary">
+        <button className="btn btn-primary" type="submit">
           {'Donate'}
         </button>
       </div>

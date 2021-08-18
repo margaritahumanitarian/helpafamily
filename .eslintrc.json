@@ -35,6 +35,7 @@
       "allowSeparatedGroups": true
     }],
     "comma-dangle": ["error", "always-multiline"],
-    "react/jsx-no-literals": ["error"]
+    "react/jsx-no-literals": ["error"],
+    "react/button-has-type": ["error"]
   }
 }

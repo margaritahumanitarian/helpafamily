@@ -29,7 +29,7 @@ function HumanitarianClinicCard() {
         </p>
         <p>
           <form onSubmit={handleSubmit}>
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" type="submit">
               {'Help 1 Patient for $30'}
             </button>
           </form>

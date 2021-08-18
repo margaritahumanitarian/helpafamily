@@ -30,7 +30,7 @@ function HotMealDayCard() {
         </p>
         <p>
           <form onSubmit={handleSubmit}>
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" type="submit">
               {'Feed 60 people for $250'}
             </button>
           </form>

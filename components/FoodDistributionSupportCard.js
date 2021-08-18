@@ -30,7 +30,7 @@ function FoodDistributionSupportCard() {
         </p>
         <p>
           <form onSubmit={handleSubmit}>
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" type="submit">
               {'Support Food Distribution for $150'}
             </button>
           </form>
