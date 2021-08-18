@@ -7,19 +7,25 @@ export default function MainDonationForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     
+    // Alert the user if they haven't selected a donation amount
     if (+event.target.amount.value === 0) {
       alert("Please choose an amount to give");
       return;
     }
 
+    // Create an array of all selected checkboxes
+    // selectedCauses becomes the string used on the Stripe checkout page
     let selectedCauses = [];
     for (let i = 0; i < causes.length; i++) {
       if (causes[i].isChecked) {
         selectedCauses.push(" " + causes[i].text);
       }
     }
+
+    // If the "Anyone" toggle is on, or if all causes are selected,
+    // summarize all causes as "Anyone in Need"
     if (isAnyoneInNeedToggled || causes.length === selectedCauses.length) {
-      selectedCauses = [" Anyone in need"];
+      selectedCauses = [" Anyone in Need"];
     }
 
     if (selectedCauses.length === 0) {
@@ -27,6 +33,7 @@ export default function MainDonationForm() {
       return;
     }
     
+    // Create the Stripe checkout session and forward to the checkout page
     const response = await fetch("/api/create-stripe-session", {
       body: JSON.stringify({
         amount: event.target.amount.value * 100,
