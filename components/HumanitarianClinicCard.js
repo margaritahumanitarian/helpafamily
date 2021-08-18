@@ -1,4 +1,5 @@
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
 
 function HumanitarianClinicCard() {
   const router = useRouter();
@@ -6,39 +7,35 @@ function HumanitarianClinicCard() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("/api/create-stripe-session", {
+    const response = await fetch('/api/create-stripe-session', {
       body: JSON.stringify({
         amount: 30 * 100,
-        cause: "1 patient at a free humanitarian clinic",
+        cause: '1 patient at a free humanitarian clinic',
       }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      method: "POST",
+      method: 'POST',
     });
     const result = await response.json();
     router.push(result.url);
   };
   return (
-  
-      <div className="card lg:card-side bordered">
-        <div className="card-body">
-          <h2 className="card-title">Humanitarian Clinic</h2>
-          <p className="mb-3">
-          Provide a free, anonymous phone or video telehealth consultation 
-          for someone afraid to see a doctor, such as a migrant or refugee 
-          who lacks identification.
-          </p>
-          <p>
-            <form onSubmit={handleSubmit}>
-              <button className="btn btn-primary">
-              Help 1 Patient for $30 <span />
-              </button>
-            </form>
-          </p>
-        </div>
+    <div className="card lg:card-side bordered">
+      <div className="card-body">
+        <h2 className="card-title">{'Humanitarian Clinic'}</h2>
+        <p className="mb-3">
+          {'Provide a free, anonymous phone or video telehealth consultation for someone afraid to see a doctor, such as a migrant or refugee who lacks identification.'}
+        </p>
+        <p>
+          <form onSubmit={handleSubmit}>
+            <button className="btn btn-primary" type="submit">
+              {'Help 1 Patient for $30'}
+            </button>
+          </form>
+        </p>
       </div>
-    
+    </div>
   );
 }
 

@@ -8,12 +8,15 @@
   "dependencies": {
     "daisyui": "^1.10.0",
     "next": "latest",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "stripe": "^8.168.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
   }
