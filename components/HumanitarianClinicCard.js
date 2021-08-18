@@ -23,16 +23,14 @@ function HumanitarianClinicCard() {
   return (
     <div className="card lg:card-side bordered">
       <div className="card-body">
-        <h2 className="card-title">Humanitarian Clinic</h2>
+        <h2 className="card-title">{'Humanitarian Clinic'}</h2>
         <p className="mb-3">
-        Provide a free, anonymous phone or video telehealth consultation 
-        for someone afraid to see a doctor, such as a migrant or refugee 
-        who lacks identification.
+          {'Provide a free, anonymous phone or video telehealth consultation for someone afraid to see a doctor, such as a migrant or refugee who lacks identification.'}
         </p>
         <p>
           <form onSubmit={handleSubmit}>
             <button className="btn btn-primary">
-            Help 1 Patient for $30 <span />
+              {'Help 1 Patient for $30'}
             </button>
           </form>
         </p>

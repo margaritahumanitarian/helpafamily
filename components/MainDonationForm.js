@@ -65,11 +65,11 @@ export default function MainDonationForm() {
   return (
     <form onSubmit={handleSubmit} ref={mainForm}>
       <div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
-        <h2 className="card-title">Help us develop programs for:</h2>
+        <h2 className="card-title">{'Help us develop programs for:'}</h2>
 
         <div className="form-control">
           <label className="cursor-pointer label">
-            <span className="label-text">Anyone in need</span>
+            <span className="label-text">{'Anyone in need'}</span>
             <input
               type="checkbox"
               name="cause"
@@ -82,7 +82,7 @@ export default function MainDonationForm() {
         </div>
         <div className="form-control">
           <label className="cursor-pointer label">
-            <span className="label-text">Students in Need</span>
+            <span className="label-text">{'Students in Need'}</span>
             <input
               type="checkbox"
               name="cause"
@@ -102,7 +102,7 @@ export default function MainDonationForm() {
         </div>
         <div className="form-control">
           <label className="cursor-pointer label">
-            <span className="label-text">People of Color in Need</span>
+            <span className="label-text">{'People of Color in Need'}</span>
             <input
               type="checkbox"
               name="cause"
@@ -115,7 +115,7 @@ export default function MainDonationForm() {
         </div>
         <div className="form-control">
           <label className="cursor-pointer label">
-            <span className="label-text">Immigrants in Need</span>
+            <span className="label-text">{'Immigrants in Need'}</span>
             <input
               type="checkbox"
               name="cause"
@@ -128,7 +128,7 @@ export default function MainDonationForm() {
         </div>
         <div className="form-control">
           <label className="cursor-pointer label">
-            <span className="label-text">Seniors in Need</span>
+            <span className="label-text">{'Seniors in Need'}</span>
             <input
               type="checkbox"
               name="cause"
@@ -145,19 +145,19 @@ export default function MainDonationForm() {
           className="select select-bordered select-info w-full max-w-xs text-white-700"
         >
           <option value="0" disabled="disabled" selected="selected">
-            Choose your donation amount
+            {'Choose your donation amount'}
           </option>
-          <option value="5">$5</option>
-          <option value="25">$25</option>
-          <option value="50">$50</option>
-          <option value="75">$75</option>
-          <option value="125">$125</option>
-          <option value="250">$250</option>
-          <option value="500">$500</option>
-          <option value="1000">$1,000</option>
-          <option value="5000">$5,000</option>
-          <option value="10000">$10,000</option>
-          <option value="25000">$25,000</option>
+          <option value="5">{'$5'}</option>
+          <option value="25">{'$25'}</option>
+          <option value="50">{'$50'}</option>
+          <option value="75">{'$75'}</option>
+          <option value="125">{'$125'}</option>
+          <option value="250">{'$250'}</option>
+          <option value="500">{'$500'}</option>
+          <option value="1000">{'$1,000'}</option>
+          <option value="5000">{'$5,000'}</option>
+          <option value="10000">{'$10,000'}</option>
+          <option value="25000">{'$25,000'}</option>
         </select>
 
         <div className="divider" />
@@ -170,7 +170,7 @@ export default function MainDonationForm() {
         </div>   */}
 
         <button className="btn btn-primary">
-          Donate <span />
+          {'Donate'}
         </button>
       </div>
     </form>
