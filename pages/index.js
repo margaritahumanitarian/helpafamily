@@ -55,7 +55,7 @@ const Cards = () =>
 
 export default function Home() {
   return (
-    <div className="w-screen">
+    <div>
       <Head>
         <title>{'Donate to Margarita Humanitarian Foundation'}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -80,7 +80,7 @@ export default function Home() {
               }
             </p>
             {/* <a className="btn btn-primary">Donate</a> */}
-            <div className="md:flex md:justify-center">
+            <div className=" md:flex md:justify-center">
               <MainDonationForm />
             </div>
             <div className="md:grid md:grid-cols-3 md:space-x-4">
