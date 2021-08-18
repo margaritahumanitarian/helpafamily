@@ -42,23 +42,23 @@ export default function MainDonationForm() {
   };
 
   // isAnyoneInNeedToggled = stores the state of the "Anyone in need" toggle
-  const [isAnyoneInNeedToggled, setIsAnyoneInNeedToggled] = React.useState(false);
+  const [isAnyoneInNeedToggled, setIsAnyoneInNeedToggled] = React.useState(true);
   const [causes, setCauses] = React.useState([
     {
       text: "Students in Need",
-      isChecked: false,
+      isChecked: true,
     },
     {
       text: "People of Color in Need",
-      isChecked: false,
+      isChecked: true,
     },
     {
       text: "Immigrants in Need",
-      isChecked: false,
+      isChecked: true,
     },
     {
       text: "Seniors in Need",
-      isChecked: false,
+      isChecked: true,
     },
   ]);
 
