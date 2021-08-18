@@ -140,6 +140,8 @@ export default function MainDonationForm() {
     })
   }
 
+  <div style={{marginBottom: '10px'}} />
+
   <select
     name="amount"
     className="select select-bordered select-info w-full max-w-xs text-white-700"
