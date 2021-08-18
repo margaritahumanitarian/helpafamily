@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-function HotMealDayCard() {
+function HumanitarianClinicCard() {
   const router = useRouter();
 
   const handleSubmit = async (event) => {
@@ -9,8 +9,8 @@ function HotMealDayCard() {
 
     const response = await fetch('/api/create-stripe-session', {
       body: JSON.stringify({
-        amount: 250 * 100,
-        cause: 'Hot Meal for 60 Hungry People.',
+        amount: 30 * 100,
+        cause: '1 patient at a free humanitarian clinic',
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -20,27 +20,25 @@ function HotMealDayCard() {
     const result = await response.json();
     router.push(result.url);
   };
-
   return (
     <div className="card lg:card-side bordered">
       <div className="card-body">
-        <h2 className="card-title">Hot Meal Day</h2>
+        <h2 className="card-title">Humanitarian Clinic</h2>
         <p className="mb-3">
-          Buy ingredients for 1 hot meal for 60 hungry people. Sample meals
-          include spaghetti with Texas toast and caesar salad, chicken
-          alfredo, enchilada taquitos. Served as take-home meal boxes at Grace
-          Resources in Lancaster, California.
+        Provide a free, anonymous phone or video telehealth consultation 
+        for someone afraid to see a doctor, such as a migrant or refugee 
+        who lacks identification.
         </p>
         <p>
           <form onSubmit={handleSubmit}>
             <button className="btn btn-primary">
-              Feed 60 people for $250 <span />
+            Help 1 Patient for $30 <span />
             </button>
           </form>
         </p>
       </div>
-    </div>    
+    </div>
   );
 }
 
-export default HotMealDayCard;
+export default HumanitarianClinicCard;

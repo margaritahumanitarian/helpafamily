@@ -1,5 +1,5 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
 
 export default function MainDonationForm() {
   const router = useRouter();
@@ -10,7 +10,7 @@ export default function MainDonationForm() {
     let succeed = true;
     
     if (event.target.amount.value == 0) {
-      alert("Please choose an amount to give");
+      alert('Please choose an amount to give');
       succeed = false;
     }
 
@@ -19,19 +19,19 @@ export default function MainDonationForm() {
       const validCause = [];
       for (let i = 0; i < causes.length; i++) {
         if (causes[i].checked) {
-          validCause.push(" " + causes[i].defaultValue);
+          validCause.push(' ' + causes[i].defaultValue);
         }
       }
       
-      const response = await fetch("/api/create-stripe-session", {
+      const response = await fetch('/api/create-stripe-session', {
         body: JSON.stringify({
           amount: event.target.amount.value * 100,
           cause: validCause,
         }),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-        method: "POST",
+        method: 'POST',
       });
       const result = await response.json();
       router.push(result.url);
@@ -55,7 +55,7 @@ export default function MainDonationForm() {
       const form = mainForm.current;
 
       // Loop through all the checkboxes in the cause list and uncheck them
-      const inputs = form.getElementsByClassName("donate-form-checkbox");
+      const inputs = form.getElementsByClassName('donate-form-checkbox');
       for (let i = 0; i < inputs.length; i++) {
         inputs[i].checked = false;
       }

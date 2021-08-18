@@ -1,48 +1,57 @@
-import React from "react";
-import Head from "next/head";
-import HygieneKitsCard from "../components/HygieneKitsCard";
-import MainDonationForm from "../components/MainDonationForm";
-import HealthWorkshopCard from "../components/HealthWorkshopCard";
-import HotMealDayCard from "../components/HotMealDayCard";
-import FoodDistributionSupportCard from "../components/FoodDistributionSupportCard";
-import LaptopForFamiliesCard from "../components/LaptopForFamiliesCard";
+import Head from 'next/head';
+import React from 'react';
+
+import HygieneKitsCard from '../components/HygieneKitsCard';
+import HealthWorkshopCard from '../components/HealthWorkshopCard';
+import MainDonationForm from '../components/MainDonationForm';
+import HotMealDayCard from '../components/HotMealDayCard';
+import FoodDistributionSupportCard from '../components/FoodDistributionSupportCard';
+import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
+import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
 
 const ListOfCards = [
   {
     card: <HealthWorkshopCard />,
     amount: 5000,
+    id: 'health workshop',
   },
   {
     card: <HygieneKitsCard />,
     amount: 153,
+    id: 'hygiene kits',
   },
   {
     card: <LaptopForFamiliesCard />,
     amount: 0,
+    id: 'laptop for families',
   },
   {
     card: <HotMealDayCard />,
     amount: 250,
+    id: 'hot meal day',
   },
   {
     card: <FoodDistributionSupportCard />,
     amount: 150,
-  }
+    id: 'food distribution support',
+  },
+  {
+    card: <HumanitarianClinicCard />,
+    amount: 30,
+    id: 'humanitarian clinic',
+  },
 ];
-const sortedcards = [...ListOfCards];
-sortedcards.sort((a, b) => a.amount - b.amount);
 
-function PrintCards() {
+const sortedCards = [...ListOfCards];
+sortedCards.sort((a, b) => a.amount - b.amount);
 
-  return sortedcards.map((item, index) => {
-    return (
-      <div key={index}>
-        {item.card}
-        <br />
-      </div>
-    );
-  });
-}
+const Cards = () => 
+  sortedCards.map(({ card, id }) => (
+    <div key={id}>
+      {card}
+      <br />
+    </div>
+  ));
 
 export default function Home() {
   return (
@@ -56,7 +65,7 @@ export default function Home() {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: "url(" + "/images/marguerite_960_720.webp" + ")",
+          backgroundImage: 'url(/images/marguerite_960_720.webp)',
         }}
       >
         <div className="hero-overlay bg-opacity-60" />
@@ -69,9 +78,9 @@ export default function Home() {
             </p>
             {/* <a className="btn btn-primary">Donate</a> */}
             <MainDonationForm />
-            <PrintCards />
+            <Cards />
             <p>
-              {"Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US."}
+              {'Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US.'}
             </p>
           </div>
         </div>

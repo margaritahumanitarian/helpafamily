@@ -1,5 +1,5 @@
-import React from "react";
-import { useRouter } from "next/router";
+import React from 'react';
+import { useRouter } from 'next/router';
 
 function FoodDistributionSupportCard() {
   const router = useRouter();
@@ -7,15 +7,15 @@ function FoodDistributionSupportCard() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const response = await fetch("/api/create-stripe-session", {
+    const response = await fetch('/api/create-stripe-session', {
       body: JSON.stringify({
         amount: 150*100,
-        cause: "Producing Food Distribution",
+        cause: 'Producing Food Distribution',
       }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      method: "POST",
+      method: 'POST',
     });
     const result = await response.json();
     router.push(result.url);
