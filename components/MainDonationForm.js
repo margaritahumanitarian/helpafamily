@@ -106,7 +106,9 @@ export default function MainDonationForm() {
   {
     causes.map((item, index) => {
       return (
-        <div className="form-control" key={index}>
+        <div className="form-control" key={index} style={isAnyoneInNeedToggled ? {
+          display: 'none'
+        } : {}}>
           <label className="cursor-pointer label">
             <span className="label-text">{item.text}</span>
             <input
