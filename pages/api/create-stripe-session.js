@@ -1,6 +1,4 @@
-import {
-  StatusCodes,
-} from 'http-status-codes';
+import { StatusCodes } from 'http-status-codes';
 
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 

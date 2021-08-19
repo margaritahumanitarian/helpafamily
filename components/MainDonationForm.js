@@ -121,8 +121,8 @@ export default function MainDonationForm() {
               style={
                 isAnyoneInNeedToggled
                   ? {
-                    display: 'none',
-                  }
+                      display: 'none',
+                    }
                   : {}
               }
             >

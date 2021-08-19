@@ -6,7 +6,9 @@ function LaptopForFamiliesCard() {
       <div className="card-body">
         <h2 className="card-title">{'Laptop for Families'}</h2>
         <p className="mb-3">
-          {'Mail us your used or new laptop. We\'ll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don\'t have home computers, or who don\'t have enough computers for all their children to use.'}
+          {
+            "Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use."
+          }
         </p>
         <p>
           <div className="divider" />

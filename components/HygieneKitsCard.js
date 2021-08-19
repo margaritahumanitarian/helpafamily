@@ -1,14 +1,18 @@
 import React from 'react';
 
 function HygieneKitsCard() {
-  return( 
+  return (
     <div className="card lg:card-side bordered">
       <div className="card-body">
-        <h2 className="card-title">{'Hygiene Kits'}</h2> 
+        <h2 className="card-title">{'Hygiene Kits'}</h2>
         <p className="mb-3">
-          {'Order a bulk pack of hygiene kits for us to share with people experiencing homelessness.'}
+          {
+            'Order a bulk pack of hygiene kits for us to share with people experiencing homelessness.'
+          }
           <br />
-          {'Each hygiene kit allows an unhoused individual to freshen up and feel more confident about their hygiene for work, school, or even just to have a better day.'}
+          {
+            'Each hygiene kit allows an unhoused individual to freshen up and feel more confident about their hygiene for work, school, or even just to have a better day.'
+          }
         </p>
         <p>
           <a
@@ -18,7 +22,7 @@ function HygieneKitsCard() {
             {'96 Hygiene Kits for $153'}
           </a>
         </p>
-        <div className="divider" /> 
+        <div className="divider" />
         <h3>{'Ship the kits to:'}</h3>
         <p>{'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}</p>
       </div>

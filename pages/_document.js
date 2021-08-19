@@ -19,37 +19,37 @@ class MyDocument extends Document {
             name="description"
             content="Donations for Margarita Humanitarian Foundation"
           />
-          <meta
-            name="keywords"
-            content="donate"
-          />
+          <meta name="keywords" content="donate" />
           <meta
             property="og:site_name"
             content="Donations for Margarita Humanitarian Foundation"
           />
-          <meta property="og:title" content="Help a family through Margarita Humanitarian Foundation" />
+          <meta
+            property="og:title"
+            content="Help a family through Margarita Humanitarian Foundation"
+          />
           <meta property="og:type" content="website" />
           <meta
             property="og:url"
             content="https://helpafamily.margaritahumanitarian.org"
           />
 
-          <meta
-            property="og:image"
-            content="/branding/social-share.jpg"
-          />
+          <meta property="og:image" content="/branding/social-share.jpg" />
 
           {/* Twitter card tags */}
-          <meta name="twitter:card" content="Donations for Margarita Humanitarian Foundation" />
-          <meta name="twitter:title" content="Donate to Margarita Humanitarian Foundation" />
+          <meta
+            name="twitter:card"
+            content="Donations for Margarita Humanitarian Foundation"
+          />
+          <meta
+            name="twitter:title"
+            content="Donate to Margarita Humanitarian Foundation"
+          />
           <meta
             name="twitter:description"
             content="Donations for Margarita Humanitarian Foundation"
           />
-          <meta
-            name="twitter:image"
-            content="/branding/social-share.png"
-          />
+          <meta name="twitter:image" content="/branding/social-share.png" />
           <meta name="twitter:site" content="@margaritahforg" />
           <meta name="twitter:creator" content="@margaritahforg" />
 

@@ -20,13 +20,15 @@ function FallPreventionForEldersCard() {
     const result = await response.json();
     router.push(result.url);
   };
-  
+
   return (
     <div className="card lg:card-side bordered">
       <div className="card-body">
         <h2 className="card-title">{'Fall Prevention Class'}</h2>
         <p className="mb-3">
-          {'Provide an elderly person with a 6 week course in fall prevention while covering costs such as insurance, curriculum development and review.'}
+          {
+            'Provide an elderly person with a 6 week course in fall prevention while covering costs such as insurance, curriculum development and review.'
+          }
         </p>
         <p>
           <form onSubmit={handleSubmit}>
