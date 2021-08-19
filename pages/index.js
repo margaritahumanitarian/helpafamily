@@ -79,8 +79,7 @@ export default function Home() {
                 'Kindness First. Margarita Humanitarian Foundation helps those who need help the most.'
               }
             </p>
-            {/* <a className="btn btn-primary">Donate</a> */}
-            <div className=" md:flex md:justify-center">
+            <div className="md:flex md:justify-center">
               <MainDonationForm />
             </div>
             <div className="md:grid md:grid-cols-3 md:space-x-4">
