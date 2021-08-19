@@ -22,8 +22,11 @@ function FallPreventionForEldersCard() {
   };
 
   return (
-    <div className="card lg:card-side bordered">
-      <div className="card-body">
+    <div className="card shadow-xl image-full">
+      <figure>
+        <img src="/images/FallPrevention.jpg" />
+      </figure>
+      <div className="justify-end card-body">
         <h2 className="card-title">{'Fall Prevention Class'}</h2>
         <p className="mb-3">
           {
@@ -31,6 +34,7 @@ function FallPreventionForEldersCard() {
           }
         </p>
         <p>
+          <br />
           <form onSubmit={handleSubmit}>
             <button className="btn btn-primary" type="submit">
               {'Provide 1 Seat for $100'}

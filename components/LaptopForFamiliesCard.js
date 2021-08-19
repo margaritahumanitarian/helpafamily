@@ -2,8 +2,11 @@ import React from 'react';
 
 function LaptopForFamiliesCard() {
   return (
-    <div className="card lg:card-side bordered">
-      <div className="card-body">
+    <div className="card shadow-xl image-full">
+      <figure>
+        <img src="/images/Laptop.jpeg" />
+      </figure>
+      <div className="justify-end card-body">
         <h2 className="card-title">{'Laptop for Families'}</h2>
         <p className="mb-3">
           {
@@ -11,7 +14,7 @@ function LaptopForFamiliesCard() {
           }
         </p>
         <p>
-          <div className="divider" />
+          <br />
           <h3>{'Ship the laptops to:'}</h3>
           <p>{'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}</p>
         </p>

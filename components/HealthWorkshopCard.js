@@ -5,7 +5,7 @@ function HealthWorkshopCard() {
   const router = useRouter();
 
   // API takes "amount" in cents. The cost of the health workshop is $5000 multiplied by 100 to get correct amount in cents
-  const healthWorkshopCost = 5000;
+  const healthWorkshopCost = 2000;
   const dollarsToCentsMultiplier = 100;
 
   const handleSubmit = async (event) => {
@@ -14,7 +14,7 @@ function HealthWorkshopCard() {
     const response = await fetch('/api/create-stripe-session', {
       body: JSON.stringify({
         amount: healthWorkshopCost * dollarsToCentsMultiplier,
-        cause: 'Producing Health Workshop',
+        cause: 'Creating a Health Workshop',
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -26,8 +26,11 @@ function HealthWorkshopCard() {
   };
 
   return (
-    <div className="card lg:card-side bordered">
-      <div className="card-body">
+    <div className="card shadow-xl image-full">
+      <figure>
+        <img src="/images/HealthWorkshop.jpg" />
+      </figure>
+      <div className="justify-end card-body">
         <h2 className="card-title">{'Health Education Workshop'}</h2>
         <p className="mb-3">
           {
@@ -40,9 +43,10 @@ function HealthWorkshopCard() {
           }
         </p>
         <p>
+          <br />
           <form onSubmit={handleSubmit}>
-            <button className="btn btn-primary" type="submit">
-              {'Help Create 1 Health Workshop for $5000'}
+            <button className="btn btn-primary " type="submit">
+              {'Create 1 Workshop for $2000 '}
             </button>
           </form>
         </p>

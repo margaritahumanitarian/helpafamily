@@ -53,7 +53,7 @@ sortedCards.sort((a, b) => a.amount - b.amount);
 
 const Cards = () =>
   sortedCards.map(({ card, id }) => (
-    <div key={id}>
+    <div className="md:flex md:items-stretch" key={id}>
       {card}
       <br />
     </div>
@@ -88,7 +88,7 @@ export default function Home() {
             <div className="md:flex md:justify-center">
               <MainDonationForm />
             </div>
-            <div className="md:grid md:grid-cols-3 md:space-x-4">
+            <div className="md:grid md:grid-cols-3 md:gap-5 md:space-x-4 ">
               <Cards />
             </div>
             <p>
