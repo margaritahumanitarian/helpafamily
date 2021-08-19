@@ -24,14 +24,17 @@ function FoodDistributionSupportCard() {
     const result = await response.json();
     router.push(result.url);
   };
-  
-  return (  
+
+  return (
     <div className="card lg:card-side bordered">
       <div className="card-body">
         <h2 className="card-title">{'Food Distribution Support'}</h2>
         <p className="mb-3">
-          {'Help us cover our staffing costs for providing free food boxes for hungry families, such as paid time to manage volunteers for food distribution events or coordination with community groups.'}
+          {
+            'Help us cover our staffing costs for providing free food boxes for hungry families, such as paid time to manage volunteers for food distribution events or coordination with community groups.'
+          }
         </p>
+        <br />
         <p>
           <form onSubmit={handleSubmit}>
             <button className="btn btn-primary" type="submit">
@@ -39,6 +42,11 @@ function FoodDistributionSupportCard() {
             </button>
           </form>
         </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </div>
   );
