@@ -35,3 +35,11 @@ This project uses:
 * [Next.js](https://nextjs.org/docs/)
 * [Tailwind CSS](https://tailwindcss.com/docs)
 * [daisyUI Tailwind CSS Components](https://daisyui.com/)
+
+## Sync Frequently
+
+This project is getting quite active, so sync your local working branches frequently. 
+
+See [Syncing your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch). 
+
+The graphical GitHub Desktop app is the easiest way to do this.
