@@ -182,7 +182,7 @@ export default function MainDonationForm() {
     </label>
   </div>   */}
 
-        <button type="button" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           {'Donate'}
         </button>
       </div>
