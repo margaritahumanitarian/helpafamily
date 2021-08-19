@@ -26,13 +26,17 @@ function FoodDistributionSupportCard() {
   };
   
   return (  
-    <div className="card lg:card-side bordered">
-      <div className="card-body">
+    <div className="card shadow-xl image-full">
+      <figure>
+        <img src="/images/FoodDistribution.jpg"/>
+      </figure> 
+      <div className="justify-end card-body">
         <h2 className="card-title">{'Food Distribution Support'}</h2>
         <p className="mb-3">
           {'Help us cover our staffing costs for providing free food boxes for hungry families, such as paid time to manage volunteers for food distribution events or coordination with community groups.'}
         </p>
         <p>
+          <br/>
           <form onSubmit={handleSubmit}>
             <button className="btn btn-primary" type="submit">
               {'Support Food Distribution for $150'}
@@ -41,6 +45,7 @@ function FoodDistributionSupportCard() {
         </p>
       </div>
     </div>
+
   );
 }
 

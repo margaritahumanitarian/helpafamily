@@ -2,8 +2,11 @@ import React from 'react';
 
 function HygieneKitsCard() {
   return( 
-    <div className="card lg:card-side bordered">
-      <div className="card-body">
+    <div className="card shadow-xl image-full">
+      <figure>
+        <img src="/images/HygieneKit.webp"/>
+      </figure> 
+      <div className="justify-end card-body">
         <h2 className="card-title">{'Hygiene Kits'}</h2> 
         <p className="mb-3">
           {'Order a bulk pack of hygiene kits for us to share with people experiencing homelessness.'}
@@ -18,7 +21,7 @@ function HygieneKitsCard() {
             {'96 Hygiene Kits for $153'}
           </a>
         </p>
-        <div className="divider" /> 
+        <br/>
         <h3>{'Ship the kits to:'}</h3>
         <p>{'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}</p>
       </div>

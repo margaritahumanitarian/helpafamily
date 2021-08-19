@@ -26,13 +26,17 @@ function HotMealDayCard() {
   };
 
   return (
-    <div className="card lg:card-side bordered">
-      <div className="card-body">
-        <h2 className="card-title">{'Hot Meal Day'}</h2>
+    <div className="card shadow-xl image-full">
+      <figure>
+        <img src="/images/HotMealDay.jpg"/>
+      </figure> 
+      <div className="justify-end card-body">
+        <h2 className="card-title">{'Hot Meal Day'}</h2> 
         <p className="mb-3">
           {'Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California.'}
         </p>
         <p>
+          <br/>
           <form onSubmit={handleSubmit}>
             <button className="btn btn-primary" type="submit">
               {'Feed 60 people for $250'}
@@ -40,7 +44,7 @@ function HotMealDayCard() {
           </form>
         </p>
       </div>
-    </div>    
+    </div>
   );
 }
 

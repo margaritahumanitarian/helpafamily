@@ -25,21 +25,23 @@ function HumanitarianClinicCard() {
     router.push(result.url);
   };
   return (
-    <div className="card lg:card-side bordered">
-      <div className="card-body">
-        <h2 className="card-title">{'Humanitarian Clinic'}</h2>
-        <p className="mb-3">
-          {'Provide a free, anonymous phone or video telehealth consultation for someone afraid to see a doctor, such as a migrant or refugee who lacks identification.'}
-        </p>
+    <div className="card shadow-xl image-full">
+      <figure>
+        <img src="/images/Humanitarian.jpg"/>
+      </figure> 
+      <div className="justify-end card-body">
+        <h2 className="card-title">{'Humanitarian Clinic'}</h2> 
+        <p className="mb-3">{'Provide a free, anonymous phone or video telehealth consultation for someone afraid to see a doctor, such as a migrant or refugee who lacks identification.'}</p> 
         <p>
+          <br/>
           <form onSubmit={handleSubmit}>
-            <button className="btn btn-primary" type="submit">
+            <button className="btn btn-primary " type="submit">
               {'Help 1 Patient for $30'}
             </button>
           </form>
         </p>
       </div>
-    </div>
+    </div> 
   );
 }
 

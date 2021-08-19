@@ -26,8 +26,11 @@ function HealthWorkshopCard() {
   };
   
   return (
-    <div className="card lg:card-side bordered">
-      <div className="card-body">
+    <div className="card shadow-xl image-full">
+      <figure>
+        <img src="/images/HealthWorkshop.jpg"/>
+      </figure> 
+      <div className="justify-end card-body">
         <h2 className="card-title">{'Health Education Workshop'}</h2>
         <p className="mb-3">
           {'Help in establishing one free health education workshop for a community that is facing major disparities in health conditions and to help those people who need care and attention.'}
@@ -36,14 +39,16 @@ function HealthWorkshopCard() {
           {'Also, your donation will go toward health-themed mini gift bags to motivate people to attend a workshop, equipment such as trainer simulaids for edema and breast disease, venue costs, and to hire public health educators to prepare presentations.'}
         </p>
         <p>
+          <br/>
           <form onSubmit={handleSubmit}>
-            <button className="btn btn-primary" type="submit">
-              {'Help Create 1 Health Workshop for $5000'}
+            <button className="btn btn-primary " type="submit">
+              {'Create 1 Health Workshop for $5000 '}
             </button>
           </form>
         </p>
       </div>
     </div>
+
   );
 }
 
