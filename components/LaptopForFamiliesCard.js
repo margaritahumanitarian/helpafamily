@@ -1,26 +1,15 @@
 import React from 'react';
 
-function LaptopForFamiliesCard() {
-  return (
-    <div className="card shadow-xl image-full">
-      <figure>
-        <img src="/images/Laptop.jpeg" />
-      </figure>
-      <div className="justify-end card-body">
-        <h2 className="card-title">{'Laptop for Families'}</h2>
-        <p className="mb-3">
-          {
-            "Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use."
-          }
-        </p>
-        <p>
-          <br />
-          <h3>{'Ship the laptops to:'}</h3>
-          <p>{'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}</p>
-        </p>
-      </div>
-    </div>
-  );
-}
+import Card from './Card';
+
+const LaptopForFamiliesCard = () => (
+  <Card
+    address="1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550"
+    addressLabel="Ship the laptops to:"
+    backgroundImageSource="/images/Laptop.jpeg"
+    text="Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use."
+    title="Laptop for Families"
+  />
+);
 
 export default LaptopForFamiliesCard;
