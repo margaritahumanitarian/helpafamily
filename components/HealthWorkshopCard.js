@@ -42,7 +42,7 @@ function HealthWorkshopCard() {
           <br/>
           <form onSubmit={handleSubmit}>
             <button className="btn btn-primary " type="submit">
-              {'Help Create 1 Health Workshop for $5000 '}
+              {'Create 1 Health Workshop for $5000 '}
             </button>
           </form>
         </p>
