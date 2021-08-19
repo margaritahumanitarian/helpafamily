@@ -13,19 +13,21 @@ export default function MainDonationForm() {
       return;
     }
 
-    // Create an array of all selected checkboxes
+    // Create an array to hold the selected causes
     // selectedCauses becomes the string used on the Stripe checkout page
     let selectedCauses = [];
-    for (let i = 0; i < causes.length; i++) {
-      if (causes[i].isChecked) {
-        selectedCauses.push(' ' + causes[i].text);
-      }
-    }
 
     // If the "Anyone" toggle is on, or if all causes are selected,
     // summarize all causes as "Anyone in Need"
-    if (isAnyoneInNeedToggled || causes.length === selectedCauses.length) {
+    if (isAnyoneInNeedToggled) {
       selectedCauses = [' Anyone in Need'];
+    } else {
+      // Else we want to include all of the selected causes into our array
+      for (let i = 0; i < causes.length; i++) {
+        if (causes[i].isChecked) {
+          selectedCauses.push(' ' + causes[i].text);
+        }
+      }
     }
 
     if (selectedCauses.length === 0) {
@@ -70,9 +72,6 @@ export default function MainDonationForm() {
     },
   ]);
 
-  // mainForm is the topmost form that is shown to the user
-  const mainForm = React.createRef();
-
   // handleClick is called via the onClick event when the user clicks
   // on the "Anyone in need" toggle switch
   const handleClick = () => {
@@ -94,7 +93,7 @@ export default function MainDonationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} ref={mainForm}>
+    <form onSubmit={handleSubmit}>
       <div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
         <h2 className="card-title">{'Help us develop programs for:'}</h2>
 
