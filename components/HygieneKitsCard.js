@@ -25,9 +25,10 @@ function HygieneKitsCard() {
             {'96 Hygiene Kits for $153'}
           </a>
         </p>
-        <br />
-        <h3>{'Ship the kits to:'}</h3>
-        <p>{'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}</p>
+        <p className="shaded-text mt-3">
+          <h3>{'Ship the kits to:'}</h3>
+          <p>{'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}</p>
+        </p>
       </div>
     </div>
   );
