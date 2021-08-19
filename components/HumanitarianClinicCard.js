@@ -4,12 +4,16 @@ import { useRouter } from 'next/router';
 function HumanitarianClinicCard() {
   const router = useRouter();
 
+  // API takes "amount" in cents. The cost of the humanitarian clinic is $30 multiplied by 100 to get correct amount in cents
+  const humanitarianClinicCost = 30;
+  const dollarsToCentsMultiplier = 100;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const response = await fetch('/api/create-stripe-session', {
       body: JSON.stringify({
-        amount: 30 * 100,
+        amount: humanitarianClinicCost * dollarsToCentsMultiplier,
         cause: '1 patient at a free humanitarian clinic',
       }),
       headers: {

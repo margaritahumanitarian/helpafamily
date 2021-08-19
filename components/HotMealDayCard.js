@@ -4,12 +4,16 @@ import { useRouter } from 'next/router';
 function HotMealDayCard() {
   const router = useRouter();
 
+  // API takes "amount" in cents. The cost of the a hot meal day is $250 multiplied by 100 to get correct amount in cents
+  const hotMealDayCost = 250;
+  const dollarsToCentsMultiplier = 100;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const response = await fetch('/api/create-stripe-session', {
       body: JSON.stringify({
-        amount: 250 * 100,
+        amount: hotMealDayCost * dollarsToCentsMultiplier,
         cause: 'Hot Meal for 60 Hungry People.',
       }),
       headers: {

@@ -4,12 +4,16 @@ import { useRouter } from 'next/router';
 function FoodDistributionSupportCard() {
   const router = useRouter();
 
+  // API takes "amount" in cents. The cost of the food distribution is $150 multiplied by 100 to get correct amount in cents
+  const foodDistributionCost = 150;
+  const dollarsToCentsMultiplier = 100;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     const response = await fetch('/api/create-stripe-session', {
       body: JSON.stringify({
-        amount: 150*100,
+        amount: foodDistributionCost * dollarsToCentsMultiplier,
         cause: 'Producing Food Distribution',
       }),
       headers: {
