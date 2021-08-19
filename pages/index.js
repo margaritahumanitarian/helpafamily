@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 
+import FallPreventionForEldersCard from '../components/FallPreventionForEldersCard';
 import FoodDistributionSupportCard from '../components/FoodDistributionSupportCard';
 import HealthWorkshopCard from '../components/HealthWorkshopCard';
 import HotMealDayCard from '../components/HotMealDayCard';
@@ -39,6 +40,11 @@ const ListOfCards = [
     card: <HumanitarianClinicCard />,
     amount: 30,
     id: 'humanitarian clinic',
+  },
+  {
+    card: <FallPreventionForEldersCard />,
+    amount: 100,
+    id: 'fall prevention',
   },
 ];
 
