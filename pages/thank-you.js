@@ -29,6 +29,7 @@ export default function Home() {
                 <a className="link link-secondary" href="https://github.com/margaritahumanitarian/helpafamily">{'GitHub'}</a>
                 {'. We\'re looking for volunteer contributors to help make it better. Report bugs or propose ideas for improvements by submitting GitHub issues, or even submit little pull requests as proposals.'}
               </p>
+              <h3 className="m-5 text-xl font-bold">{'Reach out us at'}</h3>
               <p>
                 {'Follow Margarita Humanitarian Foundation for more updates '}
                 <a className="link link-secondary" href="https://www.instagram.com/margaritahforg/">{'Instagram'}</a> {'and'}
