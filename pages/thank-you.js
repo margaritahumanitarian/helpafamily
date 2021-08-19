@@ -46,6 +46,12 @@ export default function Home() {
                   ". We're looking for volunteer contributors to help make it better. Report bugs or propose ideas for improvements by submitting GitHub issues, or even submit little pull requests as proposals."
                 }
               </p>
+              <h3 className="m-5 text-xl font-bold">{'Reach Out to Us'}</h3>
+              <p>
+                {'Follow Margarita Humanitarian Foundation for more updates: '}
+                <a className="link link-secondary" href="https://www.instagram.com/margaritahforg/">{'Instagram'}</a> {'and'}
+                <a className="link link-secondary" href="https://twitter.com/margaritahforg">{'Twitter'}</a>
+              </p>
             </div>
           </div>
         </div>
