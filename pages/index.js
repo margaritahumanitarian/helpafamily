@@ -88,7 +88,7 @@ export default function Home() {
             <div className="md:flex md:justify-center">
               <MainDonationForm />
             </div>
-            <div className="md:grid md:grid-cols-3 md:gap-5 ">
+            <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
               <Cards />
             </div>
             <p>
