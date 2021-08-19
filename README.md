@@ -43,3 +43,17 @@ This project is getting quite active, so sync your local working branches freque
 See [Syncing your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch). 
 
 The graphical GitHub Desktop app is the easiest way to do this.
+
+## Community
+
+Our community is made up of people from all over the world, so times when people 
+are active online vary.
+
+Come say hi in:
+
+* Our [#mhf chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
+* Our [virtual world on Topia](https://topia.io/kindness-first-free-hny48949j)
+  * Next meet-and-greet in here is Thursday, August 19, 2021 at 3pm PST
+
+We're still getting this started, so be patient and hang around if no one's there.
+Soon it'll get more active.
