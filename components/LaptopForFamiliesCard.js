@@ -2,7 +2,7 @@ import React from 'react';
 
 function LaptopForFamiliesCard() {
   return (
-    <div className="card shadow-xl image-full">
+    <div className="card shadow-xl image-full hover:ring-4">
       <figure>
         <img src="/images/Laptop.jpeg" />
       </figure>

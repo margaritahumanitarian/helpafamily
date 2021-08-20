@@ -2,7 +2,7 @@ import React from 'react';
 
 function HygieneKitsCard() {
   return (
-    <div className="card shadow-xl image-full">
+    <div className="card shadow-xl image-full hover:ring-4">
       <figure>
         <img src="/images/HygieneKit.webp" />
       </figure>

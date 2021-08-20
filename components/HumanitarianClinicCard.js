@@ -25,7 +25,7 @@ function HumanitarianClinicCard() {
     router.push(result.url);
   };
   return (
-    <div className="card shadow-xl image-full">
+    <div className="card shadow-xl image-full hover:ring-4">
       <figure>
         <img src="/images/Humanitarian.jpg" />
       </figure>
