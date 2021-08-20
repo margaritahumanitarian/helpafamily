@@ -1,52 +1,72 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Card = ({
-  action,
-  actionLabel,
-  address,
-  addressLabel,
-  backgroundImageSource,
-  children,
-  text,
-  title,
-}) => (
-  <div className="card shadow-xl image-full">
-    {backgroundImageSource && (
-      <figure>
-        <img src={backgroundImageSource} />
-      </figure>
-    )}
-    <div className="card-body justify-end">
-      {title && <span className="card-title">{title}</span>}
-      {text && <span className="mb-3">{text}</span>}
-      {action && (
-        <div className="pt-6">
-          <button className="btn btn-primary" onClick={action} type="button">
-            {actionLabel}
-          </button>
-        </div>
+function Card({ backgroundImageSource, children }) {
+  return (
+    <div className="card shadow-xl image-full">
+      {backgroundImageSource && (
+        <figure>
+          <img src={backgroundImageSource} />
+        </figure>
       )}
-      {children}
-      {address && (
-        <div className="pt-6">
-          <div>{addressLabel}</div>
-          <span>{address}</span>
-        </div>
-      )}
+      <div className="card-body justify-end">{children}</div>
     </div>
-  </div>
-);
+  );
+}
 
 Card.propTypes = {
-  action: PropTypes.func,
-  actionLabel: PropTypes.string,
-  addressLabel: PropTypes.string,
-  address: PropTypes.string,
   backgroundImageSource: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+export function CardTitle({ children }) {
+  return <span className="card-title">{children}</span>;
+}
+
+CardTitle.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export function CardParagraph({ children }) {
+  return <span className="mb-3">{children}</span>;
+}
+
+CardParagraph.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export function CardAction({ children, isPending, onClick }) {
+  return (
+    <div className="pt-6">
+      <button
+        className={`btn btn-primary ${isPending ? 'loading' : ''}`}
+        onClick={onClick}
+        type="button"
+      >
+        {children}
+      </button>
+    </div>
+  );
+}
+
+CardAction.propTypes = {
   children: PropTypes.node,
-  text: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  isPending: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
+};
+
+export function CardAddress({ children, label }) {
+  return (
+    <div className="pt-6">
+      <div>{label}</div>
+      <span>{children}</span>
+    </div>
+  );
+}
+
+CardAddress.propTypes = {
+  children: PropTypes.node,
+  label: PropTypes.string,
 };
 
 export default Card;
