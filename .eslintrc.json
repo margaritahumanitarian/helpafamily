@@ -37,6 +37,8 @@
     ],
     "comma-dangle": ["error", "always-multiline"],
     "react/jsx-no-literals": ["error"],
-    "react/button-has-type": ["error"]
+    "react/button-has-type": ["error"],
+    "react/no-multi-comp": ["error", { "ignoreStateless": true }],
+    "react/require-default-props": ["off"]
   }
 }
