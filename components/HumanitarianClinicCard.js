@@ -5,7 +5,7 @@ import useStripeSession from '../hooks/useStripeSession';
 
 const actionCost = 30;
 
-const HumanitarianClinicCard = () => {
+function HumanitarianClinicCard() {
   const [handleSubmit, isPending] = useStripeSession({
     amount: actionCost,
     cause: '1 patient at a free humanitarian clinic',
@@ -24,6 +24,6 @@ const HumanitarianClinicCard = () => {
       </CardAction>
     </Card>
   );
-};
+}
 
 export default HumanitarianClinicCard;
