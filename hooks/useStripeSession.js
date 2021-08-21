@@ -7,9 +7,7 @@ const useStripeSession = ({ amount, cause }) => {
   const [isPending, setIsPending] = React.useState(false);
   const router = useRouter();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleSubmit = async () => {
     setIsPending(true);
 
     const response = await fetch('/api/create-stripe-session', {
