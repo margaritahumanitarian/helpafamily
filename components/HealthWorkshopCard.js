@@ -26,7 +26,7 @@ function HealthWorkshopCard() {
   };
 
   return (
-    <div className="card shadow-xl image-full hover:ring-4">
+    <div className="card shadow-xl image-full hover:ring-4 hover:ring-opacity-30 hover:ring-white">
       <figure>
         <img src="/images/HealthWorkshop.jpg" />
       </figure>
