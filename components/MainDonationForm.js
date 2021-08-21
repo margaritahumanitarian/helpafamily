@@ -70,9 +70,6 @@ export default function MainDonationForm() {
     },
   ]);
 
-  // mainForm is the topmost form that is shown to the user
-  const mainForm = React.createRef();
-
   // handleClick is called via the onClick event when the user clicks
   // on the "Anyone in need" toggle switch
   const handleClick = () => {
@@ -89,12 +86,10 @@ export default function MainDonationForm() {
       }
       setCauses(data);
     }
-
-    setIsAnyoneInNeedToggled(!isAnyoneInNeedToggled);
   };
 
   return (
-    <form onSubmit={handleSubmit} ref={mainForm}>
+    <form onSubmit={handleSubmit}>
       <div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
         <h2 className="card-title">{'Help us develop programs for:'}</h2>
 
@@ -183,7 +178,7 @@ export default function MainDonationForm() {
     </label>
   </div>   */}
 
-        <button type="button" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           {'Donate'}
         </button>
       </div>
