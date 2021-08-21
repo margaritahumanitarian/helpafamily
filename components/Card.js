@@ -9,7 +9,7 @@ function Card({ backgroundImageSource, children }) {
           <img src={backgroundImageSource} />
         </figure>
       )}
-      <div className="card-body justify-end">{children}</div>
+      <div className="card-body justify-end space-y-3">{children}</div>
     </div>
   );
 }
@@ -20,7 +20,7 @@ Card.propTypes = {
 };
 
 export function CardTitle({ children }) {
-  return <span className="card-title">{children}</span>;
+  return <span className="card-title m-0">{children}</span>;
 }
 
 CardTitle.propTypes = {
@@ -28,23 +28,29 @@ CardTitle.propTypes = {
 };
 
 export function CardParagraph({ children }) {
-  return <span className="mb-3">{children}</span>;
+  return <span>{children}</span>;
 }
 
 CardParagraph.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export function CardAction({ children, isPending, onClick }) {
+export function CardAction({ children, linkTo, isPending, onClick }) {
   return (
-    <div className="pt-6">
-      <button
-        className={`btn btn-primary ${isPending ? 'loading' : ''}`}
-        onClick={onClick}
-        type="button"
-      >
-        {children}
-      </button>
+    <div className="pt-5">
+      {linkTo ? (
+        <a className="btn btn-primary" href={linkTo}>
+          {children}
+        </a>
+      ) : (
+        <button
+          className={`btn btn-primary ${isPending ? 'loading' : ''}`}
+          onClick={onClick}
+          type="button"
+        >
+          {children}
+        </button>
+      )}
     </div>
   );
 }
@@ -52,12 +58,13 @@ export function CardAction({ children, isPending, onClick }) {
 CardAction.propTypes = {
   children: PropTypes.node,
   isPending: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
+  linkTo: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 export function CardAddress({ children, label }) {
   return (
-    <div className="pt-6">
+    <div className="shaded-text">
       <div>{label}</div>
       <span>{children}</span>
     </div>

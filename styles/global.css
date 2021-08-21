@@ -4,10 +4,10 @@
 
 @layer components {
   .btn {
-    @apply tracking-wider shadow-2xl transform transition hover:-translate-y-0.5;  
+    @apply tracking-wider shadow-2xl transform transition hover:-translate-y-0.5;
   }
 
-  .shaded-text{
+  .shaded-text {
     @apply bg-black bg-opacity-10 py-2 rounded-lg;
   }
 }

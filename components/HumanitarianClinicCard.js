@@ -20,7 +20,7 @@ const HumanitarianClinicCard = () => {
         }
       </CardParagraph>
       <CardAction isPending={isPending} onClick={handleSubmit}>
-        {`Help 1 Patient for ${actionCost}`}
+        {`Help 1 Patient for $${actionCost}`}
       </CardAction>
     </Card>
   );
