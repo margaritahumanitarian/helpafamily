@@ -52,7 +52,6 @@ are active online vary.
 Come say hi in:
 
 * Our [#mhf chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
-* Our [virtual world on Topia](https://topia.io/kindness-first-free-hny48949j)
   * Next meet-and-greet in here is Thursday, August 19, 2021 at 3pm PST
 
 We're still getting this started, so be patient and hang around if no one's there.
