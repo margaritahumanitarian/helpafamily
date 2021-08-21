@@ -13,8 +13,7 @@ function LaptopForFamiliesCard() {
             "Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use."
           }
         </p>
-        <p>
-          <br />
+        <p className="shaded-text">
           <h3>{'Ship the laptops to:'}</h3>
           <p>{'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}</p>
         </p>

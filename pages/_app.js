@@ -1,4 +1,5 @@
-import 'tailwindcss/tailwind.css';
+// import 'tailwindcss/tailwind.css';
+import '../styles/global.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 
