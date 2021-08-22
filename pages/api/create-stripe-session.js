@@ -1,8 +1,14 @@
 import { StatusCodes } from 'http-status-codes';
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+// PROD_STRIPE_SECRET_KEY only exists on the Netlify deployment server
+// STRIPE_SECRET_KEY exists everywhere else
+const stripeSecretKey =
+  process.env.CONTEXT && process.env.CONTEXT === 'production'
+    ? process.env.PROD_STRIPE_SECRET_KEY
+    : process.env.TEST_STRIPE_SECRET_KEY;
+const stripe = require('stripe')(stripeSecretKey);
 
-export default async function helloAPI(req, res) {
+export default async function stripeCheckoutSessionCreate(req, res) {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
