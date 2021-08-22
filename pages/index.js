@@ -68,13 +68,8 @@ export default function Home() {
       </Head>
 
       {/* <!-- Hero --> */}
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage: 'url(/images/marguerite_960_720.webp)',
-        }}
-      >
-        <div className="hero-overlay bg-opacity-60" />
+      <div className="hero min-h-screen bg-gradient-to-r from-green-400 to-blue-500 ">
+        <div className="hero-overlay bg-opacity-50" />
         <div className="text-center hero-content text-neutral-content">
           <div className="w-lg">
             <h1 className="mb-5 text-4xl font-bold">
