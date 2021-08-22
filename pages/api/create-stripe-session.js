@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 // PROD_STRIPE_SECRET_KEY only exists on the Netlify deployment server
 // STRIPE_SECRET_KEY exists everywhere else
 const stripeSecretKey =
-  process.env.ENVIRONMENT && process.env.ENVIRONMENT === 'production'
+  process.env.ENVIRONMENT == 'production'
     ? process.env.PROD_STRIPE_SECRET_KEY
     : process.env.TEST_STRIPE_SECRET_KEY;
 const stripe = require('stripe')(stripeSecretKey);
