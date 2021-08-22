@@ -5,7 +5,7 @@ import { StatusCodes } from 'http-status-codes';
 const stripeSecretKey =
   process.env.CONTEXT && process.env.CONTEXT === 'production'
     ? process.env.PROD_STRIPE_SECRET_KEY
-    : process.env.STRIPE_SECRET_KEY;
+    : process.env.TEST_STRIPE_SECRET_KEY;
 const stripe = require('stripe')(stripeSecretKey);
 
 export default async function stripeCheckoutSessionCreate(req, res) {
