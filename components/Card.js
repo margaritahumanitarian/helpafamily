@@ -11,8 +11,7 @@ function Card({ backgroundImageSource, children }) {
       )}
       <div className="card-body justify-end space-y-3">{children}</div>
     </div>
-
-  )
+  );
 }
 
 Card.propTypes = {

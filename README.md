@@ -29,27 +29,27 @@ Open http://127.0.0.1:3000
 
 This project uses:
 
-* [React](https://reactjs.org/)
-* [Next.js](https://nextjs.org/docs/)
-* [Tailwind CSS](https://tailwindcss.com/docs)
-* [daisyUI Tailwind CSS Components](https://daisyui.com/)
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/docs/)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [daisyUI Tailwind CSS Components](https://daisyui.com/)
 
 ## Sync Frequently
 
-This project is getting quite active, so sync your local working branches frequently. 
+This project is getting quite active, so sync your local working branches frequently.
 
-See [Syncing your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch). 
+See [Syncing your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch).
 
 The graphical GitHub Desktop app is the easiest way to do this.
 
 ## Community
 
-Our community is made up of people from all over the world, so times when people 
+Our community is made up of people from all over the world, so times when people
 are active online vary.
 
 Come say hi in:
 
-* Our [#mhf chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
+- Our [#mhf chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
 
 We're still getting this started, so be patient and hang around if no one's there.
 Soon it'll get more active.
