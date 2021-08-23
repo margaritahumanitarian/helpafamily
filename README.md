@@ -27,11 +27,9 @@ Open http://127.0.0.1:3000
 
 ## Sync Frequently
 
-This project is getting quite active, so sync your local working branches frequently.
+This project is getting quite active, so sync your local working branches frequently. [GitHub Desktop](https://desktop.github.com/) is the easiest way to sync.
 
 See [Syncing your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch).
-
-The graphical GitHub Desktop app is the easiest way to do this.
 
 ## Community
 
