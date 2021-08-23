@@ -18,7 +18,7 @@ export default function MainDonationForm() {
     let selectedCauses = [];
     for (let i = 0; i < causes.length; i++) {
       if (causes[i].isChecked) {
-        selectedCauses.push(' ' + causes[i].text);
+        selectedCauses.push(`  ${causes[i].text}`);
       }
     }
 
@@ -97,13 +97,13 @@ export default function MainDonationForm() {
           <label className="cursor-pointer label">
             <span className="label-text">{'Anyone in Need'}</span>
             <input
-              type="checkbox"
-              name="cause"
-              className="toggle"
-              value="Anyone in Need"
-              onChange={handleClick}
               autoComplete="off"
               checked={isAnyoneInNeedToggled}
+              className="toggle"
+              name="cause"
+              onChange={handleClick}
+              type="checkbox"
+              value="Anyone in Need"
             />
           </label>
         </div>
@@ -124,11 +124,13 @@ export default function MainDonationForm() {
               <label className="cursor-pointer label">
                 <span className="label-text">{item.text}</span>
                 <input
-                  type="checkbox"
-                  name="cause"
-                  className="checkbox donate-form-checkbox"
-                  value={item.text}
+                  // Prevents the browser from using cached checkbox states.
+                  // The use of cached values caused interaction issues that were
+                  // unintended.
+                  autoComplete="off"
                   checked={item.isChecked}
+                  className="checkbox donate-form-checkbox"
+                  name="cause"
                   onChange={() => {
                     const data = [...causes];
                     if (data[index].isChecked) {
@@ -137,10 +139,8 @@ export default function MainDonationForm() {
                     data[index].isChecked = !data[index].isChecked;
                     setCauses(data);
                   }}
-                  // Prevents the browser from using cached checkbox states.
-                  // The use of cached values caused interaction issues that were
-                  // unintended.
-                  autoComplete="off"
+                  type="checkbox"
+                  value={item.text}
                 />
               </label>
             </div>
@@ -150,10 +150,10 @@ export default function MainDonationForm() {
         <div style={{ marginBottom: '10px' }} />
 
         <select
-          name="amount"
           className="select select-bordered select-info w-full max-w-xs text-white-700"
+          name="amount"
         >
-          <option value="0" disabled="disabled" selected="selected">
+          <option disabled="disabled" selected="selected" value="0">
             {'Choose your donation amount'}
           </option>
           <option value="5">{'$5'}</option>
@@ -178,7 +178,7 @@ export default function MainDonationForm() {
     </label>
   </div>   */}
 
-        <button type="submit" className="btn btn-primary">
+        <button className="btn btn-primary" type="submit">
           {'Donate'}
         </button>
       </div>
