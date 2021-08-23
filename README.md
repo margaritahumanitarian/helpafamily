@@ -1,7 +1,5 @@
 # helpafamily.margaritahumanitarian.org
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d3507a81-2fb2-4b84-91bf-81572286b110/deploy-status)](https://app.netlify.com/sites/helpafamily-margarita-humanitarian/deploys)
-
 Impactful ways to help families in need through donated meals, hygiene kits, and more.
 
 This repo contains the code behind [helpafamily.margaritahumanitarian.org](https://helpafamily.margaritahumanitarian.org/). While the short-term goal is to provide ways for donors to help families in the Antelope Valley, the long-term goal is to help families in need at a global scale through international volunteers and partnering humanitarian organizations around the world.
@@ -56,4 +54,4 @@ Come say hi in:
 We're still getting this started, so be patient and hang around if no one's there.
 Soon it'll get more active.
 
-![Powered by Vercel](public/images/powered-by-vercel.svg)
+[![Powered by Vercel](public/images/powered-by-vercel.svg)](https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss)
