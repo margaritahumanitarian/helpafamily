@@ -72,40 +72,36 @@ export default function Home() {
 
       <Navbar />
 
-      {/* <!-- Hero --> */}
-      <div className="hero min-h-screen bg-gradient-to-r from-green-400 to-blue-500 ">
-        <div className="hero-overlay bg-opacity-50" />
-        <div className="text-center hero-content text-neutral-content">
-          <div className="w-lg">
-            <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5">
-              <div className="md:col-span-1">
-                <Image 
-                  src="/images/MHF-Color-300x300.png"
-                  alt="Margarita Humanitarian Foundation"
-                  width={280}
-                  height={280}
-                />
-              </div>
-              <div className="md:col-span-1">
-                <h1 className="text-3xl font-bold mb-4">
-                  {'Help Families in Need'}
-                </h1>
-                <p className="text-xl leading-tight">
-                  {
-                    'Margarita Humanitarian Foundation is a non-profit organization that provides humanitarian aid to families in need. We are a 501(c)(3) organization and are registered with the IRS as a charitable organization.'
-                  }
-                </p>
-              </div>
-              <div className="md:col-span-1">
-                <MainDonationForm />
-              </div>
+      <div className="text-center hero-content text-neutral-content">
+        <div className="w-lg">
+          <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5">
+            <div className="md:col-span-1">
+              <Image
+                src="/images/MHF-Color-300x300.png"
+                alt="Margarita Humanitarian Foundation"
+                width={280}
+                height={280}
+              />
             </div>
-
-            <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
-              <Cards />
+            <div className="md:col-span-1">
+              <h1 className="text-3xl font-bold m-4">
+                {'Help Families in Need'}
+              </h1>
+              <p className="text-xl leading-tight">
+                {
+                  'Margarita Humanitarian Foundation is a non-profit organization that provides humanitarian aid to families in need. We are a 501(c)(3) organization and are registered with the IRS as a charitable organization.'
+                }
+              </p>
             </div>
-            <Footer />
+            <div className="md:col-span-1">
+              <MainDonationForm />
+            </div>
           </div>
+
+          <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
+            <Cards />
+          </div>
+          <Footer />
         </div>
       </div>
     </div>
