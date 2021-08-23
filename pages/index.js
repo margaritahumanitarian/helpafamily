@@ -3,6 +3,7 @@ import React from 'react';
 
 import FallPreventionForEldersCard from '../components/FallPreventionForEldersCard';
 import FoodDistributionSupportCard from '../components/FoodDistributionSupportCard';
+import Footer from '../components/Footer';
 import HealthWorkshopCard from '../components/HealthWorkshopCard';
 import HotMealDayCard from '../components/HotMealDayCard';
 import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
@@ -86,11 +87,7 @@ export default function Home() {
             <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
               <Cards />
             </div>
-            <p>
-              {
-                'Margarita Humanitarian Foundation is a 501(c)(3) nonprofit registered in the US.'
-              }
-            </p>
+            <Footer />
           </div>
         </div>
       </div>

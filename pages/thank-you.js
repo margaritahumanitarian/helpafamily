@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Footer from '../components/Footer';
+
 export default function Home() {
   return (
     <html>
@@ -63,6 +65,7 @@ export default function Home() {
                   {'Twitter'}
                 </a>
               </p>
+              <Footer />
             </div>
           </div>
         </div>
