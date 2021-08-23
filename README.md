@@ -25,15 +25,6 @@ yarn dev
 
 Open http://127.0.0.1:3000
 
-## How It Works
-
-This project uses:
-
-- [React](https://reactjs.org/)
-- [Next.js](https://nextjs.org/docs/)
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [daisyUI Tailwind CSS Components](https://daisyui.com/)
-
 ## Sync Frequently
 
 This project is getting quite active, so sync your local working branches frequently.
@@ -53,5 +44,14 @@ Come say hi in:
 
 We're still getting this started, so be patient and hang around if no one's there.
 Soon it'll get more active.
+
+## How It Works
+
+This project uses:
+
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/docs/)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [daisyUI Tailwind CSS Components](https://daisyui.com/)
 
 [![Powered by Vercel](public/images/powered-by-vercel.svg)](https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss)
