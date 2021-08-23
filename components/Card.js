@@ -12,12 +12,13 @@ function Card({ backgroundImageSource, children }) {
       <div className="card-body justify-end space-y-3">{children}</div>
     </div>
   );
+
 }
 
 Card.propTypes = {
   backgroundImageSource: PropTypes.string,
   children: PropTypes.node.isRequired,
-};
+}
 
 export function CardTitle({ children }) {
   return <span className="card-title m-0">{children}</span>;
