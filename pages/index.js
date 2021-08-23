@@ -72,9 +72,9 @@ export default function Home() {
 
       <Navbar />
 
-      <div className="text-center hero-content">
+      <div className="text-center hero-content md:m-auto">
         <div className="w-lg">
-          <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5">
+          <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5 items-center">
             <div className="md:col-span-1">
               <Image
                 alt="Margarita Humanitarian Foundation"
