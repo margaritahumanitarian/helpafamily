@@ -73,17 +73,22 @@ export default function Home() {
         <div className="hero-overlay bg-opacity-50" />
         <div className="text-center hero-content text-neutral-content">
           <div className="w-lg">
-            <h1 className="mb-5 text-4xl font-bold">
-              {'Help Families in Need'}
-            </h1>
-            <p className="mb-5">
-              {
-                'Kindness First. Margarita Humanitarian Foundation helps those who need help the most.'
-              }
-            </p>
-            <div className="md:flex md:justify-center">
-              <MainDonationForm />
+            <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5">
+              <div className="md:col-span-1">
+                <h1 className="text-3xl font-bold mb-4">
+                  {'Help Families in Need'}
+                </h1>
+                <p className="text-xl leading-tight">
+                  {
+                    'Margarita Humanitarian Foundation is a non-profit organization that provides humanitarian aid to families in need. We are a 501(c)(3) organization and are registered with the IRS as a charitable organization.'
+                  }
+                </p>
+              </div>
+              <div className="md:col-span-2">
+                <MainDonationForm />
+              </div>
             </div>
+            
             <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
               <Cards />
             </div>
