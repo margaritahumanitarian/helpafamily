@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 
 import FallPreventionForEldersCard from '../components/FallPreventionForEldersCard';
@@ -78,6 +79,14 @@ export default function Home() {
           <div className="w-lg">
             <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5">
               <div className="md:col-span-1">
+                <Image 
+                  src="/images/MHF-Color-300x300.png"
+                  alt="Margarita Humanitarian Foundation"
+                  width={280}
+                  height={280}
+                />
+              </div>
+              <div className="md:col-span-1">
                 <h1 className="text-3xl font-bold mb-4">
                   {'Help Families in Need'}
                 </h1>
@@ -87,7 +96,7 @@ export default function Home() {
                   }
                 </p>
               </div>
-              <div className="md:col-span-2">
+              <div className="md:col-span-1">
                 <MainDonationForm />
               </div>
             </div>

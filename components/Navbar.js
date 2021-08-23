@@ -15,6 +15,7 @@ export default function Navbar() {
         </div>
       </div>
       <div class="flex-none">
+        {'Help Families in Need'}
         <button class="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
