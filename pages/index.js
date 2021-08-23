@@ -10,6 +10,7 @@ import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
 import HygieneKitsCard from '../components/HygieneKitsCard';
 import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
 import MainDonationForm from '../components/MainDonationForm';
+import Navbar from '../components/Navbar';
 
 const ListOfCards = [
   {
@@ -68,6 +69,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
+
       {/* <!-- Hero --> */}
       <div className="hero min-h-screen bg-gradient-to-r from-green-400 to-blue-500 ">
         <div className="hero-overlay bg-opacity-50" />
@@ -88,7 +91,7 @@ export default function Home() {
                 <MainDonationForm />
               </div>
             </div>
-            
+
             <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
               <Cards />
             </div>
