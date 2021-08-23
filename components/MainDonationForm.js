@@ -90,8 +90,10 @@ export default function MainDonationForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="p-6 mb-5 card bordered bg-base-100" data-theme="dark">
-        <h2 className="card-title">{'Help us develop programs for:'}</h2>
+      <div className="p-6 mb-5 card bordered bg-base-100" data-theme="cupcake">
+        <h2 className="card-title" data-theme="light">
+          {'Help us develop programs for:'}
+        </h2>
 
         <div className="form-control">
           <label className="cursor-pointer label">

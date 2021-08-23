@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 
 import FallPreventionForEldersCard from '../components/FallPreventionForEldersCard';
@@ -10,6 +11,7 @@ import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
 import HygieneKitsCard from '../components/HygieneKitsCard';
 import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
 import MainDonationForm from '../components/MainDonationForm';
+import Navbar from '../components/Navbar';
 
 const ListOfCards = [
   {
@@ -68,27 +70,38 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <!-- Hero --> */}
-      <div className="hero min-h-screen bg-gradient-to-r from-green-400 to-blue-500 ">
-        <div className="hero-overlay bg-opacity-50" />
-        <div className="text-center hero-content text-neutral-content">
-          <div className="w-lg">
-            <h1 className="mb-5 text-4xl font-bold">
-              {'Help Families in Need'}
-            </h1>
-            <p className="mb-5">
-              {
-                'Kindness First. Margarita Humanitarian Foundation helps those who need help the most.'
-              }
-            </p>
-            <div className="md:flex md:justify-center">
+      <Navbar />
+
+      <div className="text-center hero-content">
+        <div className="w-lg">
+          <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5">
+            <div className="md:col-span-1">
+              <Image
+                src="/images/MHF-Color-300x300.png"
+                alt="Margarita Humanitarian Foundation"
+                width={280}
+                height={280}
+              />
+            </div>
+            <div className="md:col-span-1">
+              <h1 className="text-3xl font-bold m-4">
+                {'Help Families in Need'}
+              </h1>
+              <p className="text-xl leading-tight">
+                {
+                  'Margarita Humanitarian Foundation is a non-profit organization that provides humanitarian aid to families in need. We are a 501(c)(3) organization and are registered with the IRS as a charitable organization.'
+                }
+              </p>
+            </div>
+            <div className="md:col-span-1">
               <MainDonationForm />
             </div>
-            <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
-              <Cards />
-            </div>
-            <Footer />
           </div>
+
+          <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
+            <Cards />
+          </div>
+          <Footer />
         </div>
       </div>
     </div>
