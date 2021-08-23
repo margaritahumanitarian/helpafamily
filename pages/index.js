@@ -67,7 +67,7 @@ export default function Home() {
     <div>
       <Head>
         <title>{'Donate to Margarita Humanitarian Foundation'}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link href="/favicon.ico" rel="icon" />
       </Head>
 
       <Navbar />
@@ -77,10 +77,10 @@ export default function Home() {
           <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5">
             <div className="md:col-span-1">
               <Image
-                src="/images/MHF-Color-300x300.png"
                 alt="Margarita Humanitarian Foundation"
-                width={280}
                 height={280}
+                src="/images/MHF-Color-300x300.png"
+                width={280}
               />
             </div>
             <div className="md:col-span-1">

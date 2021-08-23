@@ -12,8 +12,8 @@ export default function Footer() {
       <p>
         <a href="https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss">
           <Image
-            src="/images/powered-by-vercel.svg"
             height="44"
+            src="/images/powered-by-vercel.svg"
             width="212"
           ></Image>
         </a>

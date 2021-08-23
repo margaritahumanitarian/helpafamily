@@ -24,6 +24,14 @@
     }
   },
   "rules": {
+    "comma-dangle": ["error", "always-multiline"],
+    "prefer-template": ["error"],
+    "react/button-has-type": ["error"],
+    "react/jsx-no-literals": ["error"],
+    "react/jsx-props-no-spreading": ["off"],
+    "react/jsx-sort-props": ["error"],
+    "react/no-multi-comp": ["error", { "ignoreStateless": true }],
+    "react/require-default-props": ["off"],
     "semi": ["error", "always"],
     "sort-imports": [
       "error",
@@ -34,11 +42,6 @@
         "memberSyntaxSortOrder": ["none", "all", "multiple", "single"],
         "allowSeparatedGroups": true
       }
-    ],
-    "comma-dangle": ["error", "always-multiline"],
-    "react/jsx-no-literals": ["error"],
-    "react/button-has-type": ["error"],
-    "react/no-multi-comp": ["error", { "ignoreStateless": true }],
-    "react/require-default-props": ["off"]
+    ]
   }
 }

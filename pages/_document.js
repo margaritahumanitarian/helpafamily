@@ -12,73 +12,73 @@ class MyDocument extends Document {
   // eslint-disable-next-line
   render() {
     return (
-      <Html lang="en-us" data-theme="light">
+      <Html data-theme="light" lang="en-us">
         <Head>
           <meta charSet="UTF-8" />
           <meta
+            content="Donations for Margarita Humanitarian Foundation"
             name="description"
-            content="Donations for Margarita Humanitarian Foundation"
           />
-          <meta name="keywords" content="donate" />
+          <meta content="donate" name="keywords" />
           <meta
+            content="Donations for Margarita Humanitarian Foundation"
             property="og:site_name"
-            content="Donations for Margarita Humanitarian Foundation"
           />
           <meta
-            property="og:title"
             content="Help a family through Margarita Humanitarian Foundation"
+            property="og:title"
           />
-          <meta property="og:type" content="website" />
+          <meta content="website" property="og:type" />
           <meta
-            property="og:url"
             content="https://helpafamily.margaritahumanitarian.org"
+            property="og:url"
           />
 
-          <meta property="og:image" content="/branding/social-share.jpg" />
+          <meta content="/branding/social-share.jpg" property="og:image" />
 
           {/* Twitter card tags */}
           <meta
+            content="Donations for Margarita Humanitarian Foundation"
             name="twitter:card"
-            content="Donations for Margarita Humanitarian Foundation"
           />
           <meta
-            name="twitter:title"
             content="Donate to Margarita Humanitarian Foundation"
+            name="twitter:title"
           />
           <meta
-            name="twitter:description"
             content="Donations for Margarita Humanitarian Foundation"
+            name="twitter:description"
           />
-          <meta name="twitter:image" content="/branding/social-share.png" />
-          <meta name="twitter:site" content="@margaritahforg" />
-          <meta name="twitter:creator" content="@margaritahforg" />
+          <meta content="/branding/social-share.png" name="twitter:image" />
+          <meta content="@margaritahforg" name="twitter:site" />
+          <meta content="@margaritahforg" name="twitter:creator" />
 
           {/* Favicons */}
           <link
+            href="/branding/favicons/apple-touch-icon.png"
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/branding/favicons/apple-touch-icon.png"
           />
           <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
             href="/branding/favicons/favicon-32x32.png"
-          />
-          <link
             rel="icon"
+            sizes="32x32"
             type="image/png"
-            sizes="16x16"
-            href="/branding/favicons/favicon-16x16.png"
           />
           <link
-            rel="mask-icon"
-            href="/branding/favicons/safari-pinned-tab.svg"
+            href="/branding/favicons/favicon-16x16.png"
+            rel="icon"
+            sizes="16x16"
+            type="image/png"
+          />
+          <link
             color="#f050f8"
+            href="/branding/favicons/safari-pinned-tab.svg"
+            rel="mask-icon"
           />
           {/* Windows Tile colour */}
-          <meta name="msapplication-TileColor" content="#100030" />
-          <meta name="theme-color" content="#100030" />
+          <meta content="#100030" name="msapplication-TileColor" />
+          <meta content="#100030" name="theme-color" />
         </Head>
         <body>
           <Main />
