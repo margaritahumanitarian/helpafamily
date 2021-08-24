@@ -6,28 +6,8 @@ This repo contains the code behind [helpafamily.margaritahumanitarian.org](https
 
 Learn more about [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
 
-## Installation
-
-Fork this repo, then:
-
-```
-git clone <url-to-your-fork-of-helpafamily-here>
-cd helpafamily/
-cp .env.example .env
-yarn
-```
-
-## Running the project locally
-
-```
-yarn dev
-```
-
-Open http://127.0.0.1:3000
-
-## Sync Frequently
-
-This project is very active, so sync your local working branches frequently. [GitHub Desktop](https://desktop.github.com/) is the easiest way to [sync your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch).
+## Contributing and installation
+If you would like to help us with this project you can learn more [here](CONTRIBUTING.md)
 
 ## Community
 
