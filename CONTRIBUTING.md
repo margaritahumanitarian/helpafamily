@@ -25,7 +25,7 @@ Please ensure your repository is up to date before making a pull request, this p
 
 We will then review your pull request, during this process you may receive feedback and questions about your request.
 
-We may request or make changes where necessary. Feedback will always be positive! We are very grateful for all contributions!
+We may request or make changes where necessary. Feedback will always be kind, considerate, and constructive! We are very grateful for all contributions!
 
 ## Installation
 
