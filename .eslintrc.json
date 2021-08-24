@@ -28,11 +28,13 @@
     "comma-dangle": ["error", "always-multiline"],
     "prefer-template": ["error"],
     "react/button-has-type": ["error"],
+    "react/jsx-max-depth": ["off"],
     "react/jsx-no-literals": ["error"],
     "react/jsx-props-no-spreading": ["off"],
     "react/jsx-sort-props": ["error"],
     "react/no-multi-comp": ["error", { "ignoreStateless": true }],
     "react/require-default-props": ["off"],
+    "react/self-closing-comp": ["error"],
     "semi": ["error", "always"],
     "sort-imports": [
       "error",

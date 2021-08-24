@@ -15,7 +15,7 @@ export default function Footer() {
           height="44"
           src="/images/powered-by-vercel.svg"
           width="212"
-        ></Image>
+        />
       </a>
     </footer>
   );
