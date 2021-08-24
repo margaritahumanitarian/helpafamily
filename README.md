@@ -7,6 +7,7 @@ This repo contains the code behind [helpafamily.margaritahumanitarian.org](https
 Learn more about [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
 
 ## Contributing and installation
+
 If you would like to help us with this project you can learn more [here](CONTRIBUTING.md)
 
 ## Community

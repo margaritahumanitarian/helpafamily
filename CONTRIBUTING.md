@@ -23,10 +23,9 @@ Want to contribute to this repo? That's great! These instructions will help you 
 
 Please ensure your repository is up to date before making a pull request, this project is very active so something may have been changed already! [Learn to sync your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch).
 
-We will then review your pull request, during this process you may receive feedback and questions about your request. 
+We will then review your pull request, during this process you may receive feedback and questions about your request.
 
 We may request or make changes where necessary. Feedback will always be positive! We are very grateful for all contributions!
-
 
 ## Installation
 
@@ -42,9 +41,11 @@ yarn install
 ## Running the project locally
 
 Once you have finished the [Installation](#installation) process you can run the project with
+
 ```
 yarn dev
 ```
+
 and opening [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
 ## FAQ
