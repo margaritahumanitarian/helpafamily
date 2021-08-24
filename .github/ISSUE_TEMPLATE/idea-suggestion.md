@@ -3,7 +3,7 @@ name: Idea suggestion
 about: Suggest an idea for this project
 title: "[Idea] "
 labels: enhancement
-assignees: RedFox0x20
+assignees: ''
 
 ---
 
