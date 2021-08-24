@@ -2,13 +2,6 @@
 
 Want to contribute to this repo? That's great! These instructions will help you contribute.
 
-## Contribution Workflow
-
-- Fork this project by clicking the "Fork" button.
-- Optional, but get bonus points if you create a branch named after the change you're making, e.g. `fix-card-sort-order`
-- Make your code change.
-- Send a pull request.
-
 ## Be Kind
 
 - Always be kind and have empathy for others.
@@ -20,6 +13,39 @@ Want to contribute to this repo? That's great! These instructions will help you 
 - Post a comment on the GitHub issue you're working on, with details about where you got stuck.
 - If no issue applies to your situation, you can create a new [GitHub issue](https://github.com/margaritahumanitarian/helpafamily/issues).
 - You can also ask for help in the [Margarita Humanitarian Foundation chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
+
+## Contribution Workflow
+
+1. Please follow the [Installation](#installation) steps.
+2. Please create a new branch and name it with the changes you are making. E.g. `fix-card-sort-order`
+3. Make your code changes. You can preview your changes by [Running the project locally](#running-the-project-locally)
+4. Send us a pull request.
+
+Please ensure your repository is up to date before making a pull request, this project is very active so something may have been changed already! [Learn to sync your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch).
+
+We will then review your pull request, during this process you may receive feedback and questions about your request. 
+
+We may request or make changes where necessary. Feedback will always be positive! We are very grateful for all contributions!
+
+
+## Installation
+
+Fork this repo, then:
+
+```
+git clone <url-to-your-fork-of-helpafamily-here>
+cd helpafamily/
+cp .env.example .env
+yarn install
+```
+
+## Running the project locally
+
+Once you have finished the [Installation](#installation) process you can run the project with
+```
+yarn dev
+```
+and opening [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
 ## FAQ
 
