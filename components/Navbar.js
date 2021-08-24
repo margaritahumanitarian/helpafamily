@@ -30,7 +30,7 @@ export default function Navbar() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-            ></path>
+            />
           </svg>
         </button>
       </div>
@@ -47,7 +47,7 @@ export default function Navbar() {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-            ></path>
+            />
           </svg>
         </button>
       </div>
