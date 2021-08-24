@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function Navbar() {
@@ -10,10 +11,20 @@ export default function Navbar() {
       </div>
       <div className="flex-1 px-2 mx-2">
         <div className="items-stretch hidden lg:flex">
-          <a className="btn btn-ghost btn-sm rounded-btn">{'Home'}</a>
-          <a className="btn btn-ghost btn-sm rounded-btn">{'In-Kind'}</a>
-          <a className="btn btn-ghost btn-sm rounded-btn">{'Fund'}</a>
-          <a className="btn btn-ghost btn-sm rounded-btn">{'Give Your Time'}</a>
+          <Link href="/">
+            <a className="btn btn-ghost btn-sm rounded-btn">{'Home'}</a>
+          </Link>
+          <Link href="/in-kind">
+            <a className="btn btn-ghost btn-sm rounded-btn">{'In-Kind'}</a>
+          </Link>
+          <Link href="/fund">
+            <a className="btn btn-ghost btn-sm rounded-btn">{'Fund'}</a>
+          </Link>
+          <Link href="/give-your-time">
+            <a className="btn btn-ghost btn-sm rounded-btn">
+              {'Give Your Time'}
+            </a>
+          </Link>
         </div>
       </div>
       <div className="flex-none">

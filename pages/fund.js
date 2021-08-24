@@ -5,17 +5,13 @@ import FoodDistributionSupportCard from '../components/FoodDistributionSupportCa
 import HealthWorkshopCard from '../components/HealthWorkshopCard';
 import HotMealDayCard from '../components/HotMealDayCard';
 import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
-import HygieneKitsCard from '../components/HygieneKitsCard';
-import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
 
-export default function Home() {
+export default function FundPage() {
   return (
     <>
-      <LaptopForFamiliesCard />
       <HumanitarianClinicCard />
       <FallPreventionForEldersCard />
       <FoodDistributionSupportCard />
-      <HygieneKitsCard />
       <HotMealDayCard />
       <HealthWorkshopCard />
     </>
