@@ -4,7 +4,7 @@ import React from 'react';
 
 function Card({ backgroundImageSource, children }) {
   return (
-    <div className="card shadow-xl image-full">
+    <div className="card shadow-xl image-full mb-5">
       {backgroundImageSource && (
         <figure>
           <Image alt="" layout="fill" src={backgroundImageSource} />
