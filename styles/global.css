@@ -5,6 +5,7 @@
 @layer components {
   .btn {
     @apply tracking-wider shadow-2xl transform transition hover:-translate-y-0.5;
+    height: auto;
   }
 
   .shaded-text {
