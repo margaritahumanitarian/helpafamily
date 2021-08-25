@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Navbar() {
   return (
-    <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content">
+    <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content overflow-hidden">
       <div className="flex-none px-2 mx-2">
         <span className="text-lg font-bold">
           {'Margarita Humanitarian Foundation'}
