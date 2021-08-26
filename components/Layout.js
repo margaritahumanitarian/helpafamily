@@ -15,9 +15,9 @@ export default function Layout({ children }) {
       <Navbar />
       <main>
         <HeroSection />
-        <div className="text-center hero-content md:m-auto">
+        <div className="text-center hero-content m-auto">
           <div className="w-lg">
-            <div className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-5">
+            <div className="md:grid md:grid-cols-2 xl:grid-cols-3 md:gap-x-8 md:gap-y-5">
               {children}
             </div>
           </div>
