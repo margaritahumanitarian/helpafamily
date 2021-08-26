@@ -45,7 +45,7 @@ export function CardAction({ children, linkTo, isPending, onClick }) {
         </a>
       ) : (
         <button
-          className={`btn btn-primary ${isPending ? 'loading' : ''}`}
+          className={`btn btn-primary h-16 md:h-13 ${isPending ? 'loading' : ''}`}
           onClick={onClick}
           type="button"
         >
