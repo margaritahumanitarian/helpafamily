@@ -19,7 +19,7 @@ export default function Home() {
       <HygieneKitsCard />
       <HotMealDayCard />
       <HealthWorkshopCard />
-      <ElectronicsDropOffCard/>
+      <ElectronicsDropOffCard />
     </>
   );
 }
