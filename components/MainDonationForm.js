@@ -114,7 +114,7 @@ export default function MainDonationForm() {
           return (
             <div
               className="form-control"
-              key={index}
+              key={index.toString()}
               style={
                 isAnyoneInNeedToggled
                   ? {
