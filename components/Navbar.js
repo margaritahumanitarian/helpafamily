@@ -25,6 +25,11 @@ export default function Navbar() {
               {'Give Your Time'}
             </a>
           </Link>
+          <Link href="/partner-with-us">
+            <a className="btn btn-ghost btn-sm rounded-btn">
+              {'Partner With Us'}
+            </a>
+          </Link>
         </div>
       </div>
       <div className="flex-none hidden sm:flex">
