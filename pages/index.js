@@ -8,10 +8,11 @@ import HotMealDayCard from '../components/HotMealDayCard';
 import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
 import HygieneKitsCard from '../components/HygieneKitsCard';
 import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
+import PrimaryLayout from '../components/PrimaryLayout';
 
 export default function Home() {
   return (
-    <>
+    <PrimaryLayout>
       <LaptopForFamiliesCard />
       <HumanitarianClinicCard />
       <FallPreventionForEldersCard />
@@ -20,6 +21,6 @@ export default function Home() {
       <HotMealDayCard />
       <HealthWorkshopCard />
       <ElectronicsDropOffCard />
-    </>
+    </PrimaryLayout>
   );
 }
