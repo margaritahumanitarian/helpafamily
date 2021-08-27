@@ -26,13 +26,7 @@ function DoctorsAsVolunteer() {
 
       <CardParagraph>{'Requirements:'}</CardParagraph>
 
-      <ul
-        style={{
-          listStyle: 'disc',
-          textAlign: 'left',
-          paddingLeft: '1.5rem',
-        }}
-      >
+      <ul className="list-disc text-left pl-6">
         <li>{'Current Medical Board of California license'}</li>
         <li>{'Fluency in English or Spanish'}</li>
       </ul>
