@@ -4,6 +4,28 @@ import { useRouter } from 'next/router';
 export default function MainDonationForm() {
   const router = useRouter();
 
+  // isAnyoneInNeedToggled = stores the state of the "Anyone in need" toggle
+  const [isAnyoneInNeedToggled, setIsAnyoneInNeedToggled] =
+    React.useState(true);
+  const [causes, setCauses] = React.useState([
+    {
+      text: 'Students in Need',
+      isChecked: true,
+    },
+    {
+      text: 'People of Color in Need',
+      isChecked: true,
+    },
+    {
+      text: 'Immigrants in Need',
+      isChecked: true,
+    },
+    {
+      text: 'Seniors in Need',
+      isChecked: true,
+    },
+  ]);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -47,28 +69,6 @@ export default function MainDonationForm() {
     const result = await response.json();
     router.push(result.url);
   };
-
-  // isAnyoneInNeedToggled = stores the state of the "Anyone in need" toggle
-  const [isAnyoneInNeedToggled, setIsAnyoneInNeedToggled] =
-    React.useState(true);
-  const [causes, setCauses] = React.useState([
-    {
-      text: 'Students in Need',
-      isChecked: true,
-    },
-    {
-      text: 'People of Color in Need',
-      isChecked: true,
-    },
-    {
-      text: 'Immigrants in Need',
-      isChecked: true,
-    },
-    {
-      text: 'Seniors in Need',
-      isChecked: true,
-    },
-  ]);
 
   // handleClick is called via the onClick event when the user clicks
   // on the "Anyone in need" toggle switch
