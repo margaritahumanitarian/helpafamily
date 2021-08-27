@@ -5,7 +5,7 @@ import Footer from './Footer';
 import HeroSection from './HeroSection';
 import Navbar from './Navbar';
 
-export default function Layout({ children }) {
+export default function PrimaryLayout({ children }) {
   return (
     <>
       <Head>
