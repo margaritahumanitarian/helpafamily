@@ -14,10 +14,10 @@ function ElectronicsDropOffCard() {
       <CardAddress label="Email Hi to learn more at:">
         {
           <a
-            style={{ color: 'yellow' }}
             href="https://www.margaritahumanitarian.org/"
+            style={{ color: 'yellow' }}
           >
-            Margarita Humanitarian Foundation
+            {'Margarita Humanitarian Foundation'}
           </a>
         }
       </CardAddress>
