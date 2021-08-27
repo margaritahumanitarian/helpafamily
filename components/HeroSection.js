@@ -7,7 +7,7 @@ function HeroSection() {
   return (
     <div className="text-center hero-content md:m-auto">
       <div className="w-lg">
-        <div className="md:grid md:grid-cols-3 md:gap-x-8 md-gap-y-5 items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 gap-y-5 items-center">
           <div className="md:col-span-1">
             <Image
               alt="Margarita Humanitarian Foundation"
@@ -26,7 +26,7 @@ function HeroSection() {
               }
             </p>
           </div>
-          <div className="md:col-span-1">
+          <div className="sm:col-span-2 md:col-span-1">
             <MainDonationForm />
           </div>
         </div>
