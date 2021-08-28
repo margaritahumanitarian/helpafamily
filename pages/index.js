@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ElectronicsDropOffCard from '../components/ElectronicsDropOffCard';
 import FallPreventionForEldersCard from '../components/FallPreventionForEldersCard';
 import FoodDistributionSupportCard from '../components/FoodDistributionSupportCard';
 import HealthWorkshopCard from '../components/HealthWorkshopCard';
@@ -19,6 +20,7 @@ export default function Home() {
       <HygieneKitsCard />
       <HotMealDayCard />
       <HealthWorkshopCard />
+      <ElectronicsDropOffCard />
     </PrimaryLayout>
   );
 }
