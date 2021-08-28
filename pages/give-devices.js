@@ -11,13 +11,18 @@ export default function GiveYourTimePage() {
       <body>
         <div className="m-auto w-3/4 p-10 my-20 bg-green-300 border border-gray-300">
           <div className="bg-gray-100 flex justify-center mb-5">
-          <p className="mt-1 text-xl text-black-600">
-                    {'This section is still being worked on, please contact us at the following email instead: '}
-                  <a href="mailto:hi@mhfcares.org" className="mt-1 text-xl underline">
-                    {'hi@mhfcares.org'}
-                  </a>
-                  </p>
-                  <br/>
+            <p className="mt-1 text-xl text-black-600">
+              {
+                'This section is still being worked on, please contact us at the following email instead: '
+              }
+              <a
+                className="mt-1 text-xl underline"
+                href="mailto:hi@mhfcares.org"
+              >
+                {'hi@mhfcares.org'}
+              </a>
+            </p>
+            <br />
           </div>
           <div className="mt-10 sm:mt-0">
             <div className="md:grid md:grid-cols-3 md:gap-6">
