@@ -2,10 +2,10 @@ import React from 'react';
 
 import Card, { CardParagraph, CardTitle } from './Card';
 
-function DoctorsAsVolunteer() {
+function DoctorsAsVolunteers() {
   return (
     <Card backgroundImageSource="/images/Volunteer.jpg">
-      <CardTitle>{'Doctors as Volunteer'}</CardTitle>
+      <CardTitle>{'Doctors as Volunteers'}</CardTitle>
 
       <CardParagraph>{'Doctors, NPs, PAs: Give 1-4 Hours/Week'}</CardParagraph>
 
@@ -27,7 +27,7 @@ function DoctorsAsVolunteer() {
       <CardParagraph>{'Requirements:'}</CardParagraph>
 
       <ul className="list-disc text-left pl-6">
-        <li>{'Current Medical Board of California license'}</li>
+        <li>{'Current medical board license for your region and country'}</li>
         <li>{'Fluency in English or Spanish'}</li>
       </ul>
     </Card>
