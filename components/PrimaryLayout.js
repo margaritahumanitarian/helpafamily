@@ -9,7 +9,7 @@ export default function PrimaryLayout({ children }) {
   return (
     <>
       <Head>
-        <title>{'Donate to Margarita Humanitarian Foundation'}</title>
+        <title>{'Help a Family in Need'}</title>
         <link href="/favicon.ico" rel="icon" />
       </Head>
       <Navbar />
