@@ -1,0 +1,44 @@
+{
+  "cities": [
+    {
+      "name": "Palmdale",
+      "latitude": 34.5794,
+      "longitude": -118.1164
+    },
+    {
+      "name": "Riga",
+      "latitude": 56.9496,
+      "longitude": 24.1052
+    },
+    {
+      "name": "San Francisco",
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    {
+      "name": "Los Angeles",
+      "latitude": 34.0522,
+      "longitude": -118.2437
+    },
+    {
+      "name": "Bremen",
+      "latitude": 53.0796,
+      "longitude": 8.7813
+    },
+    {
+      "name": "Bulverde",
+      "latitude": 43.5,
+      "longitude": -5.5
+    },
+    {
+      "name": "Houston",
+      "latitude": 29.7628,
+      "longitude": -95.3832
+    },
+    {
+      "name": "Layton",
+      "latitude": 41.6826,
+      "longitude": -111.9735
+    }
+  ]
+}
