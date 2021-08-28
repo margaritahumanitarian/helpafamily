@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Footer from './Footer';
@@ -27,3 +28,7 @@ export default function PrimaryLayout({ children }) {
     </>
   );
 }
+
+PrimaryLayout.propTypes = {
+  children: PropTypes.node
+};
