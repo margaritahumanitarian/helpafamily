@@ -12,7 +12,7 @@ function LaptopForFamiliesCard() {
         }
       </CardParagraph>
 
-      <CardAction>{`Donate`}</CardAction>
+      <CardAction linkTo="/give-devices">{`Donate`}</CardAction>
     </Card>
   );
 }
