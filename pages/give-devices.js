@@ -10,6 +10,15 @@ export default function GiveYourTimePage() {
       </head>
       <body>
         <div className="m-auto w-3/4 p-10 my-20 bg-green-300 border border-gray-300">
+          <div className="bg-gray-100 flex justify-center mb-5">
+          <p className="mt-1 text-xl text-black-600">
+                    {'This section is still being worked on, please contact us at the following email instead: '}
+                  <a href="mailto:hi@mhfcares.org" className="mt-1 text-xl underline">
+                    {'hi@mhfcares.org'}
+                  </a>
+                  </p>
+                  <br/>
+          </div>
           <div className="mt-10 sm:mt-0">
             <div className="md:grid md:grid-cols-3 md:gap-6">
               <div className="md:col-span-1">
@@ -162,6 +171,7 @@ export default function GiveYourTimePage() {
                     <div className="px-4 py-3 bg-gray-50 text-center sm:px-6">
                       <button
                         className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        disabled="disabled"
                         type="submit"
                       >
                         {'Save'}
