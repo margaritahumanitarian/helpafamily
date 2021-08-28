@@ -9,7 +9,7 @@ export default function GiveYourTimePage() {
         <title> {'Donate Devices'} </title>
       </head>
       <body>
-        <div className="m-auto w-3/4 p-10 my-20 bg-white border border-gray-300">
+        <div className="m-auto w-3/4 p-10 my-20 bg-green-300 border border-gray-300">
           <div className="mt-10 sm:mt-0">
             <div className="md:grid md:grid-cols-3 md:gap-6">
               <div className="md:col-span-1">
