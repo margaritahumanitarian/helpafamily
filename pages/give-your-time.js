@@ -6,7 +6,7 @@ import PrimaryLayout from '../components/PrimaryLayout';
 export default function GiveYourTimePage() {
   return (
     <PrimaryLayout>
-      <DoctorsAsvolunteer />
+      <DoctorsAsVolunteers />
     </PrimaryLayout>
   );
 }

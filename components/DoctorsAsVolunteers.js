@@ -34,4 +34,4 @@ function DoctorsAsVolunteers() {
   );
 }
 
-export default DoctorsAsVolunteer;
+export default DoctorsAsVolunteers;
