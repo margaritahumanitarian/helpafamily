@@ -30,5 +30,5 @@ export default function PrimaryLayout({ children }) {
 }
 
 PrimaryLayout.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
