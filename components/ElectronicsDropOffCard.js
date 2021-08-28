@@ -14,7 +14,7 @@ function ElectronicsDropOffCard() {
       <CardAddress label="Email us to learn more at:">
         {
           <a
-            href="https://www.margaritahumanitarian.org/"
+            href="mailto:hi@mhfcares.org?subject=Electronics%20Drop-Off%20Box"
             style={{ color: 'yellow' }}
           >
             {'hi@mhfcares.org'}
