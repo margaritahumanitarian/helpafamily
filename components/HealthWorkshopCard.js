@@ -12,7 +12,7 @@ function HealthWorkshopCard() {
   });
 
   return (
-    <Card backgroundImageSource="/images/HealthWorkshop.jpg">
+    <Card backgroundImageSource="/images/HealthWorkshop.jpg"  backgroundImageAltText="Card about Health Education Workshop">
       <CardTitle>{'Health Education Workshop'}</CardTitle>
       <CardParagraph>
         {
