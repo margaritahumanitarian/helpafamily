@@ -12,7 +12,7 @@ function FallPreventionForEldersCard() {
   });
 
   return (
-    <Card backgroundImageSource="/images/FallPrevention.jpg">
+    <Card backgroundImageSource="/images/FallPrevention.jpg"  backgroundImageAltText="Fall Prevention Card Provide an elderly person with a 6 week course in fall prevention">
       <CardTitle>{'Fall Prevention Class'}</CardTitle>
       <CardParagraph>
         {
