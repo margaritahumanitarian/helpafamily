@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DoctorsAsvolunteer from '../components/DoctorsAsVoulenters';
+import DoctorsAsVolunteers from '../components/DoctorsAsVolunteers';
 import PrimaryLayout from '../components/PrimaryLayout';
 
 export default function GiveYourTimePage() {
