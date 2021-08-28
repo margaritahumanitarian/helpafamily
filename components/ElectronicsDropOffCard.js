@@ -17,7 +17,7 @@ function ElectronicsDropOffCard() {
             href="https://www.margaritahumanitarian.org/"
             style={{ color: 'yellow' }}
           >
-            {'Margarita Humanitarian Foundation'}
+            {'hi@mhfcares.org'}
           </a>
         }
       </CardAddress>
