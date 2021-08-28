@@ -12,7 +12,7 @@ function HotMealDayCard() {
   });
 
   return (
-    <Card backgroundImageSource="/images/HotMealDay.jpg">
+    <Card backgroundImageSource="/images/HotMealDay.jpg" backgroundImageAltText="Card about Hot Meal Day">
       <CardTitle>{'Hot Meal Day'}</CardTitle>
       <CardParagraph>
         {
