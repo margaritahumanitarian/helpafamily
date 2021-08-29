@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write . && eslint . --fix"
   },
   "dependencies": {
     "daisyui": "^1.10.0",
