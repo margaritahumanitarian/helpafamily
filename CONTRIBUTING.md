@@ -19,7 +19,8 @@ Want to contribute to this repo? That's great! These instructions will help you 
 1. Please follow the [Installation](#installation) steps.
 2. Please create a new branch and name it with the changes you are making. E.g. `fix-card-sort-order`
 3. Make your code changes. You can preview your changes by [Running the project locally](#running-the-project-locally)
-4. Send us a pull request.
+4. Run `eslint . --fix` to ensure your code is following our linter rules, you may have to fix some issues manually.
+5. Send us a pull request.
 
 Please ensure your repository is up to date before making a pull request, this project is very active so something may have been changed already! [Learn to sync your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch).
 
