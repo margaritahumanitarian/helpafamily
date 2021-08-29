@@ -7,7 +7,11 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
     <div className="card shadow-xl image-full">
       {backgroundImageSource && (
         <figure>
-          <Image alt={backgroundImageAltText} layout="fill" src={backgroundImageSource} />
+          <Image
+            alt={backgroundImageAltText}
+            layout="fill"
+            src={backgroundImageSource}
+          />
         </figure>
       )}
       <div className="card-body justify-end space-y-3">{children}</div>

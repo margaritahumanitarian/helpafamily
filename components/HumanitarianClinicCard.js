@@ -12,7 +12,10 @@ function HumanitarianClinicCard() {
   });
 
   return (
-    <Card backgroundImageSource="/images/Humanitarian.jpg" backgroundImageAltText="Card about Humanitarian Clinic" >
+    <Card
+      backgroundImageAltText="Card about Humanitarian Clinic"
+      backgroundImageSource="/images/Humanitarian.jpg"
+    >
       <CardTitle>{'Humanitarian Clinic'}</CardTitle>
       <CardParagraph>
         {

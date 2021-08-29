@@ -4,7 +4,10 @@ import Card, { CardAction, CardParagraph, CardTitle } from './Card';
 
 function LaptopForFamiliesCard() {
   return (
-    <Card backgroundImageSource="/images/Laptop.jpeg" backgroundImageAltText="Card about Laptops for families">
+    <Card
+      backgroundImageAltText="Card about Laptops for families"
+      backgroundImageSource="/images/Laptop.jpeg"
+    >
       <CardTitle>{'Laptop for Families'}</CardTitle>
       <CardParagraph>
         {
