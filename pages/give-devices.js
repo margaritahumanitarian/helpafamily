@@ -102,6 +102,11 @@ export default function GiveYourTimePage() {
                             <option> {'United States'} </option>
                             <option> {'Canada'} </option>
                             <option> {'Mexico'} </option>
+                            <option> {'Germany'} </option>
+                            <option> {'Latvia'} </option>
+                            <option> {'India'} </option>
+                            <option> {'Bangladesh'} </option>
+                            <option> {'Philippines'} </option>
                           </select>
                         </div>
                         <div className="col-span-6">
