@@ -28,6 +28,7 @@
     "comma-dangle": ["error", "always-multiline"],
     "prefer-template": ["error"],
     "react/button-has-type": ["error"],
+    "react/display-name": ["off"],
     "react/jsx-max-depth": ["off"],
     "react/jsx-no-literals": ["error"],
     "react/jsx-props-no-spreading": ["off"],
