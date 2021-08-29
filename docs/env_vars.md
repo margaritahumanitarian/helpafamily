@@ -34,3 +34,18 @@ If you're just using this key for local development, it's okay to leave *Key res
 A production key should have these restrictions:
 
 ![Google Maps JS API Key Restrictions: Prod Environment](./images/gmaps-key-restrictions-prod.jpg)
+
+## Setting Your Key for Local Development
+
+When you run `yarn dev`, if your Google Maps JS API Key isn't set yet you'll get an error in the browser JS console like:
+
+> js?v=3.exp&libraries=geometry,drawing,places&key=undefined:100 Google Maps JavaScript API error: InvalidKeyMapError
+> https://developers.google.com/maps/documentation/javascript/error-messages#invalid-key-map-error
+
+To fix that:
+
+1. Set this in `.env`, replacing it with your actual key:
+
+REACT_APP_GOOGLE_KEY = "<your Google Maps JavaScript API Key here>"
+
+2. ???
