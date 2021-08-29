@@ -1,7 +1,3 @@
-import React, { useState } from 'react';
-
-import * as laptopCitiesData from '../data/laptop-cities.json';
-
 import {
   GoogleMap,
   InfoWindow,
@@ -9,17 +5,28 @@ import {
   withGoogleMap,
   withScriptjs,
 } from 'react-google-maps';
+import React, { useState } from 'react';
+
+import * as laptopCitiesData from '../data/laptop-cities.json';
 
 function Map() {
-  const [selectedcity, setSelectedcity] = useState(null);
-
+  const [selectedCity, setSelectedCity] = useState(null);
+  ///The MHF office at 1543 E Palmdale Blvd. Suite E, Palmdale, CA 93550 to (Default zoom)
+  const MAP_CENTER_MHF_OFFICE = [34.5794, -118.1164];
+  const DEFAULT_ZOOM = 4;
   return (
-    <GoogleMap defaultCenter={{ lat: 34.5794, lng: -118.1164 }} defaultZoom={4}>
+    <GoogleMap
+      defaultCenter={{
+        lat: MAP_CENTER_MHF_OFFICE[0],
+        lng: MAP_CENTER_MHF_OFFICE[1],
+      }}
+      defaultZoom={DEFAULT_ZOOM}
+    >
       {laptopCitiesData.cities.map((city) => (
         <Marker
           key={laptopCitiesData.name}
           onClick={() => {
-            setSelectedcity(city);
+            setSelectedCity(city);
           }}
           position={{
             lat: city.latitude,
@@ -28,18 +35,18 @@ function Map() {
         />
       ))}
 
-      {selectedcity && (
+      {selectedCity && (
         <InfoWindow
           onCloseClick={() => {
-            setSelectedcity(null);
+            setSelectedCity(null);
           }}
           position={{
-            lat: selectedcity.latitude,
-            lng: selectedcity.longitude,
+            lat: selectedCity.latitude,
+            lng: selectedCity.longitude,
           }}
         >
           <div>
-            <h2>{selectedcity.name}</h2>
+            <h2>{selectedCity.name}</h2>
           </div>
         </InfoWindow>
       )}
