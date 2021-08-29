@@ -1,8 +1,8 @@
 ---
 name: Idea suggestion
 about: Suggest an idea for this project
-title: "[Idea] "
-labels: enhancement
+title: ""
+labels: idea
 assignees: ''
 
 ---
