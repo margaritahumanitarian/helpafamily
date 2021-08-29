@@ -9,7 +9,10 @@ import Card, {
 
 function HygieneKitsCard() {
   return (
-    <Card backgroundImageSource="/images/HygieneKit.webp" backgroundImageAltText="Card about Hygiene Kits">
+    <Card
+      backgroundImageAltText="Card about Hygiene Kits"
+      backgroundImageSource="/images/HygieneKit.webp"
+    >
       <CardTitle>{'Hygiene Kits'}</CardTitle>
       <CardParagraph>
         {
