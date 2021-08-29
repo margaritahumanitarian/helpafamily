@@ -925,10 +925,10 @@ cssnano-simple@3.0.0:
   dependencies:
     cssnano-preset-simple "^3.0.0"
 
-daisyui@^1.10.0:
-  version "1.10.0"
-  resolved "https://registry.npmjs.org/daisyui/-/daisyui-1.10.0.tgz"
-  integrity sha512-rpmcOXpRG7upsjNx6krswKi6MfvMZSKRMqTrYvDUkE/xv07tc0LgeizcIUqbE1AfPSLLztmW+1NNnmv0kexlzQ==
+daisyui@^1.14.0:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-1.14.0.tgz#1d63658c0dd87f9795d333e7068cedbb0b0a52a6"
+  integrity sha512-50ccXdJMi0TS7raItKfUOJppPRvluOUCO4m6i7QPOVOdDZVP6awjqUoGmLzqFepO6b6QpVotswDvaXIKSZ/2aw==
 
 damerau-levenshtein@^1.0.6:
   version "1.0.7"
