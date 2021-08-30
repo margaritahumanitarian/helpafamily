@@ -24,6 +24,7 @@ const options = {
 
 export async function getServerSideProps() {
   const client = createClient({
+    environment: process.env.CONTENTFUL_ENVIRONMENT,
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
@@ -70,7 +71,6 @@ export default function Home({
     fields: { cards },
   },
 }) {
-  console.log(cards);
   return (
     <PrimaryLayout>
       {cards.map((card) => {
