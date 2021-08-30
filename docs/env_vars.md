@@ -21,7 +21,7 @@ Instructions for getting this key: [Maps JavaScript API: Using API Keys > Creati
 
 In the Google console, name it something like **REACT_APP_GOOGLE_KEY (Dev, audreyfeldroy)** or **REACT_APP_GOOGLE_KEY (Prod)**:
 
-![Google Maps JS API Key Naming](./images/gmaps-key-naming.jpg)
+![Google Maps JS API Key Naming](./images/gmaps-key-naming.png)
 
 That will help you identify which key is for which environment.
 
@@ -29,11 +29,11 @@ That will help you identify which key is for which environment.
 
 If you're just using this key for local development, it's okay to leave *Key restrictions* as None like this:
 
-![Google Maps JS API Key Restrictions: Dev Environment](./images/gmaps-key-restrictions-dev.jpg)
+<img alt="Google Maps JS API Key Restrictions: Dev Environment" src="./images/gmaps-key-restrictions-dev.png" width="600"/>
 
 A production key should have these restrictions:
 
-![Google Maps JS API Key Restrictions: Prod Environment](./images/gmaps-key-restrictions-prod.jpg)
+<img alt="Google Maps JS API Key Restrictions: Prod Environment" src="./images/gmaps-key-restrictions-prod.png" width="600"/>
 
 ## Setting Your Key for Local Development
 
