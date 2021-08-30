@@ -9,16 +9,21 @@ import React, { useState } from 'react';
 
 import * as laptopCitiesData from '../data/laptop-cities.json';
 
+///The MHF office at 1543 E Palmdale Blvd. Suite E, Palmdale, CA 93550 to (Default zoom)
+const MAP_CENTER_MHF_OFFICE = {
+  latitude: 34.5794,
+  longitude: -118.1164,
+};
+const DEFAULT_ZOOM = 4;
+const API_KEY = process.env.REACT_APP_GOOGLE_KEY;
+
 function Map() {
   const [selectedCity, setSelectedCity] = useState(null);
-  ///The MHF office at 1543 E Palmdale Blvd. Suite E, Palmdale, CA 93550 to (Default zoom)
-  const MAP_CENTER_MHF_OFFICE = [34.5794, -118.1164];
-  const DEFAULT_ZOOM = 4;
   return (
     <GoogleMap
       defaultCenter={{
-        lat: MAP_CENTER_MHF_OFFICE[0],
-        lng: MAP_CENTER_MHF_OFFICE[1],
+        lat: MAP_CENTER_MHF_OFFICE.latitude,
+        lng: MAP_CENTER_MHF_OFFICE.longitude,
       }}
       defaultZoom={DEFAULT_ZOOM}
     >
@@ -61,7 +66,7 @@ export default function GiftingCitiesMap() {
     <div className="h-screen w-screen">
       <MapWrapped
         containerElement={<div className="h-full" />}
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${API_KEY}`}
         loadingElement={<div className="h-full" />}
         mapElement={<div className="h-full" />}
       />
