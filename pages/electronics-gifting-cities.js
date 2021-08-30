@@ -11,21 +11,15 @@ import * as laptopCitiesData from '../data/laptop-cities.json';
 
 ///The MHF office at 1543 E Palmdale Blvd. Suite E, Palmdale, CA 93550 to (Default zoom)
 const MAP_CENTER_MHF_OFFICE = {
-  latitude: 34.5794,
-  longitude: -118.1164,
+  lat: 34.5794,
+  lng: -118.1164,
 };
 const DEFAULT_ZOOM = 4;
 
 function Map() {
   const [selectedCity, setSelectedCity] = useState(null);
   return (
-    <GoogleMap
-      defaultCenter={{
-        lat: MAP_CENTER_MHF_OFFICE.latitude,
-        lng: MAP_CENTER_MHF_OFFICE.longitude,
-      }}
-      defaultZoom={DEFAULT_ZOOM}
-    >
+    <GoogleMap defaultCenter={MAP_CENTER_MHF_OFFICE} defaultZoom={DEFAULT_ZOOM}>
       {laptopCitiesData.cities.map((city) => (
         <Marker
           key={laptopCitiesData.name}
