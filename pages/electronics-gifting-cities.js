@@ -15,7 +15,6 @@ const MAP_CENTER_MHF_OFFICE = {
   longitude: -118.1164,
 };
 const DEFAULT_ZOOM = 4;
-const API_KEY = process.env.REACT_APP_GOOGLE_KEY;
 
 function Map() {
   const [selectedCity, setSelectedCity] = useState(null);
@@ -66,7 +65,7 @@ export default function GiftingCitiesMap() {
     <div className="h-screen w-screen">
       <MapWrapped
         containerElement={<div className="h-full" />}
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${API_KEY}`}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.NEXT_PUBLIC_GMAPS_JS_API_KEY}`}
         loadingElement={<div className="h-full" />}
         mapElement={<div className="h-full" />}
       />
