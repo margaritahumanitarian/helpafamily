@@ -2,12 +2,16 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function Card({ backgroundImageSource, children }) {
+function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
     <div className="card shadow-xl image-full">
       {backgroundImageSource && (
         <figure>
-          <Image alt="" layout="fill" src={backgroundImageSource} />
+          <Image
+            alt={backgroundImageAltText}
+            layout="fill"
+            src={backgroundImageSource}
+          />
         </figure>
       )}
       <div className="card-body justify-end space-y-3">{children}</div>
@@ -17,6 +21,7 @@ function Card({ backgroundImageSource, children }) {
 
 Card.propTypes = {
   backgroundImageSource: PropTypes.string,
+  backgroundImageAltText: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 
