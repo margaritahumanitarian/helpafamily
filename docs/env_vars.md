@@ -46,6 +46,6 @@ To fix that:
 
 1. Set this in `.env`, replacing it with your actual key:
 
-REACT_APP_GOOGLE_KEY = "<your Google Maps JavaScript API Key here>"
+NEXT_PUBLIC_GMAPS_JS_API_KEY = "<your Google Maps JavaScript API Key here>"
 
 2. ???
