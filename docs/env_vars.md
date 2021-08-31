@@ -30,6 +30,7 @@ That will help you identify which key is for which environment.
 If you're just using this key for local development, it's okay to leave *Key restrictions* as None like this:
 
 <img alt="Google Maps JS API Key Restrictions: Dev Environment" src="./images/gmaps-key-restrictions-dev.png" width="600"/>
+For the Vercel preview key, the *Website restrictions* setting will be something like:
 
 A production key should have these restrictions:
 
