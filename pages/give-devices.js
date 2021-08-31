@@ -41,36 +41,21 @@ export default function GiveYourTimePage() {
                   <div className="shadow  sm:rounded-md">
                     <div className="px-4 py-5 bg-white border border-gray-300 sm:p-6 ">
                       <div className="grid grid-cols-6 gap-6">
-                        <div className="col-span-6 sm:col-span-3">
+                      <div className="col-span-6 sm:col-span-6">
                           <label
                             className="block text-sm font-medium text-gray-700"
-                            htmlFor="first-name"
+                            htmlFor="name"
                           >
-                            {'First name'}
+                            {'Name'}
                           </label>
                           <input
-                            autoComplete="given-name"
+                            autoComplete="name"
                             className="mt-1 block w-full shadow-sm sm:text-lg border border-gray-300 bg-white rounded-md "
-                            id="first-name"
-                            name="first-name"
+                            id="name"
+                            name="name"
                             type="text"
                           />
-                        </div>
-                        <div className="col-span-6 sm:col-span-3">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="last-name"
-                          >
-                            {'Last name'}
-                          </label>
-                          <input
-                            autoComplete="family-name"
-                            className="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-4 rounded-md"
-                            id="last-name"
-                            name="last-name"
-                            type="text"
-                          />
-                        </div>
+                        </div>                        
                         <div className="col-span-6 sm:col-span-4">
                           <label
                             className="block text-sm font-medium text-gray-700"
@@ -167,6 +152,36 @@ export default function GiveYourTimePage() {
                             type="text"
                           />
                         </div>
+                        <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                          <label
+                            className="block text-sm font-medium text-gray-700"
+                            htmlFor="phone-number"
+                          >
+                            {'Phone Number'}
+                          </label>
+                          <input
+                            autoComplete="phone-number"
+                            className="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
+                            id="phone-number"
+                            name="phone-number"
+                            type="text"
+                          />
+                        </div>                          
+                        <div className="col-span-6 sm:col-span-3 lg:col-span-2">
+                          <label
+                            className="block text-sm font-medium text-gray-700"
+                            htmlFor="value-of-device"
+                          >
+                            {'Value of Device'}
+                          </label>
+                          <input
+                            autoComplete="value-of-device"
+                            className="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
+                            id="value-of-device"
+                            name="value-of-device"
+                            type="text"
+                          />
+                        </div>                        
                         <div className="col-span-6 ">
                           <div className="form-control">
                             <textarea
