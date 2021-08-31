@@ -6,14 +6,14 @@ We use environment variables to store secrets such as API keys.
 
 To set environment variables in each environment:
 
-* Dev: Copy *.env.example* to *.env* then replace any sample values with real ones as per below
-* Prod: Set the Preview and Production values in [Vercel > Settings > Environment Variables](https://vercel.com/margaritahumanitarian/helpafamily/settings/environment-variables)
+- Dev: Copy _.env.example_ to _.env_ then replace any sample values with real ones as per below
+- Prod: Set the Preview and Production values in [Vercel > Settings > Environment Variables](https://vercel.com/margaritahumanitarian/helpafamily/settings/environment-variables)
 
 ## Google Maps API Key
 
 `NEXT_PUBLIC_GMAPS_JS_API_KEY `
 
-API key for the Maps JavaScript API. 
+API key for the Maps JavaScript API.
 
 ### Getting a Key
 
@@ -27,7 +27,7 @@ That will help you identify which key is for which environment.
 
 ### Key Restrictions
 
-If you're just using this key for local development, it's okay to leave *Key restrictions* as None like this:
+If you're just using this key for local development, it's okay to leave _Key restrictions_ as None like this:
 
 <img alt="Google Maps JS API Key Restrictions: Dev Environment" src="./images/gmaps-key-restrictions-dev.png" width="600"/>
 For the Vercel preview key, the *Website restrictions* setting will be something like:
