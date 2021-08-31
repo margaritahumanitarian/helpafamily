@@ -13,6 +13,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-google-maps": "^9.4.5",
     "stripe": "^8.168.0"
   },
   "devDependencies": {
