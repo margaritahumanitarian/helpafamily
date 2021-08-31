@@ -19,7 +19,7 @@ API key for the Maps JavaScript API.
 
 Instructions for getting this key: [Maps JavaScript API: Using API Keys > Creating API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key#creating-api-keys)
 
-In the Google console, name it something like **REACT_APP_GOOGLE_KEY (Dev, audreyfeldroy)** or **REACT_APP_GOOGLE_KEY (Prod)**:
+In the Google console, name it something like ** NEXT_PUBLIC_GMAPS_JS_API_KEY (Dev, audreyfeldroy)** or ** NEXT_PUBLIC_GMAPS_JS_API_KEY (Prod)**:
 
 ![Google Maps JS API Key Naming](./images/gmaps-key-naming.png)
 
