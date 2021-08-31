@@ -11,7 +11,7 @@ To set environment variables in each environment:
 
 ## Google Maps API Key
 
-`REACT_APP_GOOGLE_KEY`
+`NEXT_PUBLIC_GMAPS_JS_API_KEY `
 
 API key for the Maps JavaScript API. 
 
