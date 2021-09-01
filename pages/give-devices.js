@@ -1,15 +1,56 @@
+import Head from 'next/head';
 import React from 'react';
 
 import Footer from '../components/Footer';
+import InputFormControl from '../components/form/InputFormControl';
+import Navbar from '../components/Navbar';
+import SelectFormControl from '../components/form/SelectFormControl';
+import TextareaFormControl from '../components/form/TextareaFormControl';
 
-export default function GiveYourTimePage() {
+const COUNTRIES = [
+  { id: 'united-states', label: 'United States' },
+  { id: 'canada', label: 'Canada' },
+  { id: 'mexico', label: 'Mexico' },
+  { id: 'germany', label: 'Germany' },
+  { id: 'latvia', label: 'Latvia' },
+  { id: 'india', label: 'India' },
+  { id: 'bangladesh', label: 'Bangladesh' },
+  { id: 'philippines', label: 'Philippines' },
+];
+
+export default function GiveDevicesPage() {
+  const [firstName, setFirstName] = React.useState('');
+  const [lastName, setLastName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [country, setCountry] = React.useState(COUNTRIES[0].id);
+  const [city, setCity] = React.useState('');
+  const [state, setState] = React.useState('');
+  const [postalCode, setPostalCode] = React.useState('');
+  const [about, setAbout] = React.useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log({
+      firstName,
+      lastName,
+      email,
+      country,
+      city,
+      state,
+      postalCode,
+      about,
+    });
+  };
+
   return (
-    <html>
-      <head>
-        <title> {'Donate Devices'} </title>
-      </head>
-      <body>
-        <div className="m-auto w-3/4 p-10 my-20 bg-green-300 border border-gray-300">
+    <>
+      <Head>
+        <title>{'Donate Devices'}</title>
+      </Head>
+      <Navbar />
+      <main>
+        <div className="m-auto w-3/4 p-10 my-10 bg-green-300 border border-gray-300">
           <div className="bg-gray-100 flex justify-center mb-5">
             <p className="mt-1 text-xl text-black-600">
               {
@@ -22,7 +63,6 @@ export default function GiveYourTimePage() {
                 {'hi@mhfcares.org'}
               </a>
             </p>
-            <br />
           </div>
           <div className="mt-10 sm:mt-0">
             <div className="md:grid md:grid-cols-3 md:gap-6">
@@ -37,164 +77,78 @@ export default function GiveYourTimePage() {
                 </div>
               </div>
               <div className="mt-5 md:mt-0 md:col-span-2">
-                <form action="#" method="POST">
-                  <div className="shadow  sm:rounded-md">
-                    <div className="px-4 py-5 bg-white border border-gray-300 sm:p-6 ">
-                      <div className="grid grid-cols-6 gap-6">
-                        <div className="col-span-6 sm:col-span-3">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="first-name"
-                          >
-                            {'First name'}
-                          </label>
-                          <input
-                            autoComplete="given-name"
-                            className="mt-1 block w-full shadow-sm sm:text-lg border border-gray-300 bg-white rounded-md "
-                            id="first-name"
-                            name="first-name"
-                            type="text"
-                          />
-                        </div>
-                        <div className="col-span-6 sm:col-span-3">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="last-name"
-                          >
-                            {'Last name'}
-                          </label>
-                          <input
-                            autoComplete="family-name"
-                            className="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-4 rounded-md"
-                            id="last-name"
-                            name="last-name"
-                            type="text"
-                          />
-                        </div>
-                        <div className="col-span-6 sm:col-span-4">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="email-address"
-                          >
-                            {'Email address'}
-                          </label>
-                          <input
-                            autoComplete="email"
-                            className="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                            id="email-address"
-                            name="email-address"
-                            type="text"
-                          />
-                        </div>
-                        <div className="col-span-6 sm:col-span-3">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="country"
-                          >
-                            {'Country / Region'}
-                          </label>
-                          <select
-                            autoComplete="country"
-                            className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-lg"
-                            id="country"
-                            name="country"
-                          >
-                            <option> {'United States'} </option>
-                            <option> {'Canada'} </option>
-                            <option> {'Mexico'} </option>
-                            <option> {'Germany'} </option>
-                            <option> {'Latvia'} </option>
-                            <option> {'India'} </option>
-                            <option> {'Bangladesh'} </option>
-                            <option> {'Philippines'} </option>
-                          </select>
-                        </div>
-                        <div className="col-span-6">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="street-address"
-                          >
-                            {'Street address'}
-                          </label>
-                          <input
-                            autoComplete="street-address"
-                            className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border border-gray-300 rounded-md"
-                            id="street-address"
-                            name="street-address"
-                            type="text"
-                          />
-                        </div>
-                        <div className="col-span-6 sm:col-span-6 lg:col-span-2">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="city"
-                          >
-                            {'City'}
-                          </label>
-                          <input
-                            className="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                            id="city"
-                            name="city"
-                            type="text"
-                          />
-                        </div>
-                        <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="state"
-                          >
-                            {'State / Province'}
-                          </label>
-                          <input
-                            className="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                            id="state"
-                            name="state"
-                            type="text"
-                          />
-                        </div>
-                        <div className="col-span-6 sm:col-span-3 lg:col-span-2">
-                          <label
-                            className="block text-sm font-medium text-gray-700"
-                            htmlFor="postal-code"
-                          >
-                            {'ZIP / Postal'}
-                          </label>
-                          <input
-                            autoComplete="postal-code"
-                            className="mt-1 border focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-lg border-gray-300 rounded-md"
-                            id="postal-code"
-                            name="postal-code"
-                            type="text"
-                          />
-                        </div>
-                        <div className="col-span-6 ">
-                          <div className="form-control">
-                            <textarea
-                              className="textarea h-24 textarea-bordered"
-                              placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
-                            />
-                          </div>
-                        </div>
+                <div className="card bordered">
+                  <div className="card-body bg-white">
+                    <form onSubmit={handleSubmit}>
+                      <InputFormControl
+                        id="first-name"
+                        label="First name"
+                        onChange={setFirstName}
+                        value={firstName}
+                      />
+                      <InputFormControl
+                        id="last-name"
+                        label="Last name"
+                        onChange={setLastName}
+                        value={lastName}
+                      />
+                      <InputFormControl
+                        id="email-address"
+                        label="Email address"
+                        onChange={setEmail}
+                        type="email"
+                        value={email}
+                      />
+                      <SelectFormControl
+                        id="country"
+                        label="Country / Region"
+                        onChange={setCountry}
+                        options={COUNTRIES}
+                        value={country}
+                      />
+                      <InputFormControl
+                        id="street-address"
+                        label="Street address"
+                      />
+                      <InputFormControl
+                        id="city"
+                        label="City"
+                        onChange={setCity}
+                        value={city}
+                      />
+                      <InputFormControl
+                        id="state"
+                        label="State / Province"
+                        onChange={setState}
+                        value={state}
+                      />
+                      <InputFormControl
+                        id="postal-code"
+                        label="ZIP / Postal"
+                        onChange={setPostalCode}
+                        value={postalCode}
+                      />
+                      <TextareaFormControl
+                        id="about"
+                        label="Additional information"
+                        onChange={setAbout}
+                        placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
+                        value={about}
+                      />
+                      <div className="flex items-center justify-center py-2">
+                        <button className="btn btn-primary" type="submit">
+                          {'Send'}
+                        </button>
                       </div>
-                    </div>
-
-                    <div className="px-4 py-3 bg-gray-50 text-center sm:px-6">
-                      <button
-                        className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        disabled="disabled"
-                        type="submit"
-                      >
-                        {'Save'}
-                      </button>
-                    </div>
+                    </form>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <Footer />
-      </body>
-    </html>
+      </main>
+    </>
   );
 }
