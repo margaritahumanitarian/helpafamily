@@ -23,6 +23,7 @@ export default function GiveDevicesPage() {
   const [lastName, setLastName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [country, setCountry] = React.useState(COUNTRIES[0].id);
+  const [streetAddress, setStreetAddress] = React.useState('');
   const [city, setCity] = React.useState('');
   const [state, setState] = React.useState('');
   const [postalCode, setPostalCode] = React.useState('');
@@ -36,6 +37,7 @@ export default function GiveDevicesPage() {
       lastName,
       email,
       country,
+      streetAddress,
       city,
       state,
       postalCode,
@@ -109,6 +111,8 @@ export default function GiveDevicesPage() {
                       <InputFormControl
                         id="street-address"
                         label="Street address"
+                        onChange={setStreetAddress}
+                        value={streetAddress}
                       />
                       <InputFormControl
                         id="city"

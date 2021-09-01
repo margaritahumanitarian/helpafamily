@@ -16,9 +16,9 @@ function SelectFormControl({ id, label, options, value, onChange }) {
         onChange={handleChange}
         value={value}
       >
-        {options.map(({ id, label }) => (
+        {options.map(({ id, label: optionLabel }) => (
           <option key={id} value={id}>
-            {label}
+            {optionLabel}
           </option>
         ))}
       </select>
@@ -29,7 +29,12 @@ function SelectFormControl({ id, label, options, value, onChange }) {
 SelectFormControl.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ),
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
