@@ -16,8 +16,8 @@ function SelectFormControl({ id, label, options, value, onChange }) {
         onChange={handleChange}
         value={value}
       >
-        {options.map(({ id, label: optionLabel }) => (
-          <option key={id} value={id}>
+        {options.map(({ id: optionId, label: optionLabel }) => (
+          <option key={optionId} value={optionId}>
             {optionLabel}
           </option>
         ))}
