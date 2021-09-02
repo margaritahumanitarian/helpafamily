@@ -25,7 +25,16 @@
     }
   },
   "rules": {
-    "comma-dangle": ["error", "always-multiline"],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "never"
+      }
+    ],
     "prefer-template": ["error"],
     "react/button-has-type": ["error"],
     "react/display-name": ["off"],
