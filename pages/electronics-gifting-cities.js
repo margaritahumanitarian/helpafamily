@@ -7,7 +7,7 @@ import {
 } from 'react-google-maps';
 import React, { useState } from 'react';
 
-import * as laptopCitiesData from '../data/laptop-cities.json';
+import laptopCitiesData from '../data/laptop-cities.json';
 
 ///The MHF office at 1543 E Palmdale Blvd. Suite E, Palmdale, CA 93550 to (Default zoom)
 const MAP_CENTER_MHF_OFFICE = {
