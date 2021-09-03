@@ -2,6 +2,22 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import Modal from './Modal';
+import SelectFormControl from './form/SelectFormControl';
+
+const AMOUNTS = [
+  { value: 0, label: 'Choose your donation amount', disabled: true },
+  { value: 5, label: '$5' },
+  { value: 25, label: '$25 ' },
+  { value: 50, label: '$50' },
+  { value: 75, label: '$75' },
+  { value: 125, label: '$125' },
+  { value: 250, label: '$250' },
+  { value: 500, label: '$500' },
+  { value: 1000, label: '$1,000' },
+  { value: 5000, label: '$5,000' },
+  { value: 10000, label: '$10,000' },
+  { value: 25000, label: '$25,000' },
+];
 
 export default function MainDonationForm() {
   const router = useRouter();
@@ -14,10 +30,6 @@ export default function MainDonationForm() {
   const showModal = (message) => {
     setModalText(message);
     setModalOpen(true);
-  };
-
-  const handleChangeAmount = (event) => {
-    setAmount(event.target.value);
   };
 
   // isAnyoneInNeedToggled = stores the state of the "Anyone in need" toggle
@@ -108,7 +120,7 @@ export default function MainDonationForm() {
     <>
       <form onSubmit={handleSubmit}>
         <div
-          className="p-6 mb-5 card bordered bg-base-100"
+          className="p-6 mb-5 card bordered bg-base-100 space-y-3"
           data-theme="cupcake"
         >
           <h2 className="card-title" data-theme="light">
@@ -169,39 +181,12 @@ export default function MainDonationForm() {
             );
           })}
 
-          <div style={{ marginBottom: '10px' }} />
-
-          <select
-            className="select select-bordered select-info w-full max-w-xs text-white-700"
-            name="amount"
-            onChange={handleChangeAmount}
+          <SelectFormControl
+            id="amount"
+            onChange={setAmount}
+            options={AMOUNTS}
             value={amount}
-          >
-            <option disabled="disabled" value="0">
-              {'Choose your donation amount'}
-            </option>
-            <option value="5">{'$5'}</option>
-            <option value="25">{'$25'}</option>
-            <option value="50">{'$50'}</option>
-            <option value="75">{'$75'}</option>
-            <option value="125">{'$125'}</option>
-            <option value="250">{'$250'}</option>
-            <option value="500">{'$500'}</option>
-            <option value="1000">{'$1,000'}</option>
-            <option value="5000">{'$5,000'}</option>
-            <option value="10000">{'$10,000'}</option>
-            <option value="25000">{'$25,000'}</option>
-          </select>
-
-          <div className="divider" />
-
-          {/* <div className="form-control">
-  <label className="cursor-pointer label">
-    <span className="label-text">Monthly Recurring?</span> 
-    <input type="checkbox" name="recurring" className="checkbox checkbox-primary"></input>
-  </label>
-</div>   */}
-
+          />
           <button className="btn btn-primary" type="submit">
             {'Donate'}
           </button>

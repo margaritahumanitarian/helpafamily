@@ -8,14 +8,14 @@ import SelectFormControl from '../components/form/SelectFormControl';
 import TextareaFormControl from '../components/form/TextareaFormControl';
 
 const COUNTRIES = [
-  { id: 'united-states', label: 'United States' },
-  { id: 'canada', label: 'Canada' },
-  { id: 'mexico', label: 'Mexico' },
-  { id: 'germany', label: 'Germany' },
-  { id: 'latvia', label: 'Latvia' },
-  { id: 'india', label: 'India' },
-  { id: 'bangladesh', label: 'Bangladesh' },
-  { id: 'philippines', label: 'Philippines' },
+  { value: 'united-states', label: 'United States' },
+  { value: 'canada', label: 'Canada' },
+  { value: 'mexico', label: 'Mexico' },
+  { value: 'germany', label: 'Germany' },
+  { value: 'latvia', label: 'Latvia' },
+  { value: 'india', label: 'India' },
+  { value: 'bangladesh', label: 'Bangladesh' },
+  { value: 'philippines', label: 'Philippines' },
 ];
 
 export default function GiveDevicesPage() {

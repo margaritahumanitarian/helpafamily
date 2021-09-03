@@ -6,9 +6,11 @@ function InputFormControl({ id, label, placeholder, type, value, onChange }) {
 
   return (
     <div className="form-control">
-      <label className="label" htmlFor={id}>
-        <span className="label-text">{label}</span>
-      </label>
+      {label && (
+        <label className="label" htmlFor={id}>
+          <span className="label-text">{label}</span>
+        </label>
+      )}
       <input
         className="input input-bordered input-sm"
         id={id}
@@ -24,7 +26,7 @@ function InputFormControl({ id, label, placeholder, type, value, onChange }) {
 
 InputFormControl.propTypes = {
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   placeholder: PropTypes.string,
   type: PropTypes.string,
   value: PropTypes.string.isRequired,

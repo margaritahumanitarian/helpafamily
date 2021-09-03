@@ -6,9 +6,11 @@ function TextareaFormControl({ id, label, placeholder, value, onChange }) {
 
   return (
     <div className="form-control">
-      <label className="label" htmlFor={id}>
-        <span className="label-text">{label}</span>
-      </label>
+      {label && (
+        <label className="label" htmlFor={id}>
+          <span className="label-text">{label}</span>
+        </label>
+      )}
       <textarea
         className="textarea h-24 textarea-bordered"
         id={id}
@@ -23,7 +25,7 @@ function TextareaFormControl({ id, label, placeholder, value, onChange }) {
 
 TextareaFormControl.propTypes = {
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
