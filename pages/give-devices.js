@@ -19,28 +19,30 @@ const COUNTRIES = [
 ];
 
 export default function GiveDevicesPage() {
-  const [firstName, setFirstName] = React.useState('');
-  const [lastName, setLastName] = React.useState('');
+  const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [country, setCountry] = React.useState(COUNTRIES[0].id);
   const [streetAddress, setStreetAddress] = React.useState('');
   const [city, setCity] = React.useState('');
   const [state, setState] = React.useState('');
   const [postalCode, setPostalCode] = React.useState('');
+  const [phoneNumber, setPhoneNumber] = React.useState('');
+  const [valueOfDevice, setValueOfDevice] = React.useState('');
   const [about, setAbout] = React.useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     console.log({
-      firstName,
-      lastName,
+      name,
       email,
       country,
       streetAddress,
       city,
       state,
       postalCode,
+      phoneNumber,
+      valueOfDevice,
       about,
     });
   };
@@ -83,16 +85,10 @@ export default function GiveDevicesPage() {
                   <div className="card-body bg-white">
                     <form onSubmit={handleSubmit}>
                       <InputFormControl
-                        id="first-name"
-                        label="First name"
-                        onChange={setFirstName}
-                        value={firstName}
-                      />
-                      <InputFormControl
-                        id="last-name"
-                        label="Last name"
-                        onChange={setLastName}
-                        value={lastName}
+                        id="name"
+                        label="Name"
+                        onChange={setName}
+                        value={name}
                       />
                       <InputFormControl
                         id="email-address"
@@ -131,6 +127,19 @@ export default function GiveDevicesPage() {
                         label="ZIP / Postal"
                         onChange={setPostalCode}
                         value={postalCode}
+                      />
+                      <InputFormControl
+                        id="phone-number"
+                        label="Phone Number"
+                        onChange={setPhoneNumber}
+                        type="tel"
+                        value={phoneNumber}
+                      />
+                      <InputFormControl
+                        id="value-of-device"
+                        label="Value of Device"
+                        onChange={setValueOfDevice}
+                        value={valueOfDevice}
                       />
                       <TextareaFormControl
                         id="about"
