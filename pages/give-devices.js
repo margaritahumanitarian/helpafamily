@@ -136,8 +136,8 @@ export default function GiveDevicesPage() {
                         value={phoneNumber}
                       />
                       <InputFormControl
-                        id="value-of-device"
-                        label="Value of Device"
+                        id="original-purchase-price"
+                        label="Original Purchase Price"
                         onChange={setValueOfDevice}
                         value={valueOfDevice}
                       />
