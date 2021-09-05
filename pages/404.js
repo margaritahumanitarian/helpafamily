@@ -11,7 +11,10 @@ export default function NotFound() {
         <CardTitle>{'404 Page Not Found'}</CardTitle>
         <CardParagraph>
           {
-            ' The page you requested was not found. Always act in kindness by reporting errors like this at https://github.com/margaritahumanitarian/helpafamily/issues/new/choose'
+ 'The page you requested was not found. Always act in kindness by reporting errors like this'}
+<Link href="https://github.com/margaritahumanitarian/helpafamily/issues/new/choose"
+{"here"}
+</Link>           
           }
         </CardParagraph>
       </Card>
