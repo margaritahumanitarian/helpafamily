@@ -16,7 +16,7 @@ Our community is made up of people from all over the world, so times when people
 
 Come say hi in:
 
-- Our [\#mhf chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
+* Our [\#mhf chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
 
 We're still getting this started, so be patient and hang around if no one's there. Soon it'll get more active.
 
@@ -24,9 +24,10 @@ We're still getting this started, so be patient and hang around if no one's ther
 
 This project uses:
 
-- [React](https://reactjs.org/)
-- [Next.js](https://nextjs.org/docs/)
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [daisyUI Tailwind CSS Components](https://daisyui.com/)
+* [React](https://reactjs.org/)
+* [Next.js](https://nextjs.org/docs/)
+* [Tailwind CSS](https://tailwindcss.com/docs)
+* [daisyUI Tailwind CSS Components](https://daisyui.com/)
 
 [![Powered by Vercel](.gitbook/assets/powered-by-vercel.svg)](https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss)
+
