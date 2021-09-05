@@ -6,8 +6,8 @@ We use environment variables to store secrets such as API keys.
 
 To set environment variables in each environment:
 
-* Dev: Copy _.env.example_ to _.env_ then replace any sample values with real ones as per below
-* Prod: Set the Preview and Production values in [Vercel &gt; Settings &gt; Environment Variables](https://vercel.com/margaritahumanitarian/helpafamily/settings/environment-variables)
+- Dev: Copy _.env.example_ to _.env_ then replace any sample values with real ones as per below
+- Prod: Set the Preview and Production values in [Vercel &gt; Settings &gt; Environment Variables](https://vercel.com/margaritahumanitarian/helpafamily/settings/environment-variables)
 
 ## Google Maps API Key
 
@@ -19,7 +19,7 @@ API key for the Maps JavaScript API.
 
 Instructions for getting this key: [Maps JavaScript API: Using API Keys &gt; Creating API Keys](https://developers.google.com/maps/documentation/javascript/get-api-key#creating-api-keys)
 
-In the Google console, name it something like  **NEXT\_PUBLIC\_GMAPS\_JS\_API\_KEY \(Dev, audreyfeldroy\)** or  **NEXT\_PUBLIC\_GMAPS\_JS\_API\_KEY \(Prod\)**:
+In the Google console, name it something like **NEXT_PUBLIC_GMAPS_JS_API_KEY \(Dev, audreyfeldroy\)** or **NEXT_PUBLIC_GMAPS_JS_API_KEY \(Prod\)**:
 
 ![Google Maps JS API Key Naming](../.gitbook/assets/gmaps-key-naming.png)
 
@@ -45,7 +45,6 @@ To fix that:
 
 1. Set this in `.env`, replacing it with your actual key:
 
-NEXT\_PUBLIC\_GMAPS\_JS\_API\_KEY = ""
+NEXT_PUBLIC_GMAPS_JS_API_KEY = ""
 
 1. ???
-

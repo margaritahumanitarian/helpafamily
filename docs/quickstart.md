@@ -22,6 +22,3 @@ yarn dev
 ```
 
 Open a browser to [http://127.0.0.1:3000](http://127.0.0.1:3000) to see the Help a Family web app running in your browser.
-
-
-
