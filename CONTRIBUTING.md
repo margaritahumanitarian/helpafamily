@@ -12,13 +12,13 @@ Want to contribute to this repo? That's great! These instructions will help you 
 
 - Post a comment on the GitHub issue you're working on, with details about where you got stuck.
 - If no issue applies to your situation, you can create a new [GitHub issue](https://github.com/margaritahumanitarian/helpafamily/issues).
-- You can also ask for help in the [Margarita Humanitarian Foundation chat room on Element](https://app.element.io/#/room/#mhf:matrix.org).
+- You can also ask for help in the [Margarita Humanitarian Foundation chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
 
 ## Contribution Workflow
 
-1. Set up the project on your computer by following the [Getting Started](docs/getting-started.md) instructions.
-2. Create a new branch and name it with the changes you are making. E.g. `fix-card-sort-order`
-3. Make your code changes. You can preview your changes in your browser by running the project locally.
+1. Please follow the [Installation](#installation) steps.
+2. Please create a new branch and name it with the changes you are making. E.g. `fix-card-sort-order`
+3. Make your code changes. You can preview your changes by [Running the project locally](#running-the-project-locally)
 4. Run `yarn format` to ensure your code is following our linter and formatter rules. You may have to fix some linting issues manually.
 5. Send us a pull request.
 
@@ -27,6 +27,27 @@ Please ensure your repository is up to date before making a pull request, this p
 We will then review your pull request, during this process you may receive feedback and questions about your request.
 
 We may request or make changes where necessary. Feedback will always be kind, considerate, and constructive! We are very grateful for all contributions!
+
+## Installation
+
+Fork this repo, then:
+
+```
+git clone <url-to-your-fork-of-helpafamily-here>
+cd helpafamily/
+cp .env.example .env
+yarn install
+```
+
+## Running the project locally
+
+Once you have finished the [Installation](#installation) process you can run the project with
+
+```
+yarn dev
+```
+
+and opening [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
 ## FAQ
 
