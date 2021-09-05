@@ -6,9 +6,11 @@ function SelectFormControl({ id, label, options, value, onChange }) {
 
   return (
     <div className="form-control">
-      <label className="label" htmlFor={id}>
-        <span className="label-text">{label}</span>
-      </label>
+      {label && (
+        <label className="label" htmlFor={id}>
+          <span className="label-text">{label}</span>
+        </label>
+      )}
       <select
         className="select select-bordered w-full max-w-xs select-sm"
         id={id}
@@ -16,8 +18,8 @@ function SelectFormControl({ id, label, options, value, onChange }) {
         onChange={handleChange}
         value={value}
       >
-        {options.map(({ id: optionId, label: optionLabel }) => (
-          <option key={optionId} value={optionId}>
+        {options.map(({ disabled, label: optionLabel, value: optionValue }) => (
+          <option disabled={disabled} key={optionValue} value={optionValue}>
             {optionLabel}
           </option>
         ))}
@@ -28,7 +30,7 @@ function SelectFormControl({ id, label, options, value, onChange }) {
 
 SelectFormControl.propTypes = {
   id: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
+  label: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
