@@ -18,6 +18,14 @@ const COUNTRIES = [
   { value: 'philippines', label: 'Philippines' },
 ];
 
+function validateField(name, value, errors){
+  value = value || ''
+  if (value.trim().length === 0){
+    errors.push(name)
+  }
+  return errors
+}
+
 export default function GiveDevicesPage() {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -32,6 +40,19 @@ export default function GiveDevicesPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    let errors = [];
+
+    errors = validateField("name", name, errors);
+    errors = validateField("email", email, errors);
+    errors = validateField("country", country, errors);
+    errors = validateField("streetAddress", streetAddress, errors);
+    errors = validateField("city", city, errors);
+    errors = validateField("state", state, errors);
+    errors = validateField("postalCode", postalCode, errors);
+
+    if (errors.length >= 0){
+      alert(`Missing fields: ${errors}`)
+    }
 
     console.log({
       name,
@@ -42,8 +63,8 @@ export default function GiveDevicesPage() {
       state,
       postalCode,
       phoneNumber,
-      valueOfDevice,
-      about,
+      originalPurchasePrice,
+      description,
     });
   };
 
@@ -84,6 +105,7 @@ export default function GiveDevicesPage() {
                 <div className="card bordered">
                   <div className="card-body bg-white">
                     <form onSubmit={handleSubmit}>
+                      <h3 className="text-lg font-medium leading-6 text-red-900">{'Required fields'}</h3>
                       <InputFormControl
                         id="name"
                         label="Name"
@@ -128,6 +150,8 @@ export default function GiveDevicesPage() {
                         onChange={setPostalCode}
                         value={postalCode}
                       />
+                      <hr />
+                      <h3 className="text-lg font-medium leading-6 text-gray-900">{'Optional fields'}</h3>
                       <InputFormControl
                         id="phone"
                         label="Phone Number"
