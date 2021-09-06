@@ -38,8 +38,8 @@ export default function GiveDevicesPage() {
   const [city, setCity] = React.useState('');
   const [state, setState] = React.useState('');
   const [postalCode, setPostalCode] = React.useState('');
-  const [phoneNumber, setPhoneNumber] = React.useState('');
-  const [valueOfDevice, setValueOfDevice] = React.useState('');
+  const [phone, setPhone] = React.useState('');
+  const [originalPurchasePrice, setOriginalPurchasePrice] = React.useState('');
   const [description, setDescription] = React.useState('');
 
   const handleSubmit = async (event) => {
@@ -58,7 +58,7 @@ export default function GiveDevicesPage() {
       return;
     }
 
-    // Create the Stripe checkout session and forward to the checkout page
+    // Create the donate device request forward to the checkout page
     const response = await fetch('/api/process-device-donation', {
       body: JSON.stringify({
         name,
@@ -68,8 +68,8 @@ export default function GiveDevicesPage() {
         city,
         state,
         postalCode,
-        phoneNumber,
-        valueOfDevice,
+        phone,
+        originalPurchasePrice,
         description
       }),
       headers: {
@@ -169,15 +169,15 @@ export default function GiveDevicesPage() {
                       <InputFormControl
                         id="phone"
                         label="Phone Number"
-                        onChange={setPhoneNumber}
+                        onChange={setPhone}
                         type="tel"
-                        value={phoneNumber}
+                        value={phone}
                       />
                       <InputFormControl
                         id="originalPurchasePrice"
                         label="Original Purchase Price"
-                        onChange={setValueOfDevice}
-                        value={valueOfDevice}
+                        onChange={setOriginalPurchasePrice}
+                        value={originalPurchasePrice}
                       />
                       <TextareaFormControl
                         id="description"

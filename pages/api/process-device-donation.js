@@ -1,9 +1,12 @@
+import admin from 'firebase-admin';
 import { StatusCodes } from 'http-status-codes';
 
 import db from "../../firebase.config";
 
 
 export default async function processDeviceDonation(req, res) {
+
+  console.log(req.method)
 
   const data =  {
     city: req.body.city || "",
@@ -15,7 +18,9 @@ export default async function processDeviceDonation(req, res) {
     phone: req.body.phone || "",
     postalCode: req.body.postalCode || "",
     state: req.body.state || "",
-    streetAddress: req.body.streetAddress || ""
+    streetAddress: req.body.streetAddress || "",
+    timestamp: admin.firestore.FieldValue.serverTimestamp(),
+    debug: req.method === 'GET'
   };
   
   const result = await db.collection('DeviceDonations').add(data);
