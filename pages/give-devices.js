@@ -29,6 +29,7 @@ export default function GiveDevicesPage() {
   const [email, setEmail] = React.useState('');
   const [country, setCountry] = React.useState(COUNTRIES[0].value);
   const [streetAddress, setStreetAddress] = React.useState('');
+  const [streetAddress2, setStreetAddress2] = React.useState('');
   const [city, setCity] = React.useState('');
   const [state, setState] = React.useState('');
   const [postalCode, setPostalCode] = React.useState('');
@@ -83,6 +84,7 @@ export default function GiveDevicesPage() {
         email,
         country,
         streetAddress,
+        streetAddress2,
         city,
         state,
         postalCode,
@@ -124,57 +126,60 @@ export default function GiveDevicesPage() {
                   <div className="card-body bg-white">
                     <form onSubmit={handleSubmit}>
                       <h3 className="text-lg font-medium leading-6 text-red-900">
-                        {'Required fields'}
+                        {'Required fields are marked with *'}
                       </h3>
                       <InputFormControl
                         id="name"
-                        label="Name"
+                        label="Name *"
                         onChange={setName}
                         value={name}
                       />
                       <InputFormControl
                         id="email"
-                        label="Email address"
+                        label="Email address *"
                         onChange={setEmail}
                         type="email"
                         value={email}
                       />
                       <SelectFormControl
                         id="country"
-                        label="Country / Region"
+                        label="Country / Region *"
                         onChange={setCountry}
                         options={COUNTRIES}
                         value={country}
                       />
                       <InputFormControl
                         id="streetAddress"
-                        label="Street address"
+                        label="Street address *"
                         onChange={setStreetAddress}
                         placeholder="Use an address where you can receive mail."
                         value={streetAddress}
                       />
                       <InputFormControl
+                        id="streetAddress2"
+                        label="Street address 2"
+                        onChange={setStreetAddress2}
+                        placeholder="Extra address data can go here"
+                        value={streetAddress2}
+                      />                      
+                      <InputFormControl
                         id="city"
-                        label="City"
+                        label="City *"
                         onChange={setCity}
                         value={city}
                       />
                       <InputFormControl
                         id="state"
-                        label="State / Province"
+                        label="State / Province *"
                         onChange={setState}
                         value={state}
                       />
                       <InputFormControl
                         id="postalCode"
-                        label="ZIP / Postal"
+                        label="ZIP / Postal *"
                         onChange={setPostalCode}
                         value={postalCode}
                       />
-                      <div className="divider" />
-                      <h3 className="text-lg font-medium leading-6 text-gray-900">
-                        {'Optional fields'}
-                      </h3>
                       <InputFormControl
                         id="phone"
                         label="Phone Number"

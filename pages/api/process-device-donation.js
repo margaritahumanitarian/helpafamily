@@ -17,6 +17,7 @@ export default async function processDeviceDonation(req, res) {
     postalCode: req.body.postalCode || '',
     state: req.body.state || '',
     streetAddress: req.body.streetAddress || '',
+    streetAddress2: req.body.streetAddress2 || '',
     timestamp: admin.firestore.FieldValue.serverTimestamp(),
     debug: req.method === 'GET',
   };
