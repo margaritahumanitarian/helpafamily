@@ -33,7 +33,7 @@ export default function GiveDevicesPage() {
   const router = useRouter();
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
-  const [country, setCountry] = React.useState(COUNTRIES[0].id);
+  const [country, setCountry] = React.useState(COUNTRIES[0].value);
   const [streetAddress, setStreetAddress] = React.useState('');
   const [city, setCity] = React.useState('');
   const [state, setState] = React.useState('');
@@ -164,7 +164,7 @@ export default function GiveDevicesPage() {
                         onChange={setPostalCode}
                         value={postalCode}
                       />
-                      <div class="divider"></div> 
+                      <div className="divider"></div> 
                       <h3 className="text-lg font-medium leading-6 text-gray-900">{'Optional fields'}</h3>
                       <InputFormControl
                         id="phone"
