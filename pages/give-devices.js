@@ -91,7 +91,7 @@ export default function GiveDevicesPage() {
                         value={name}
                       />
                       <InputFormControl
-                        id="email-address"
+                        id="email"
                         label="Email address"
                         onChange={setEmail}
                         type="email"
@@ -105,7 +105,7 @@ export default function GiveDevicesPage() {
                         value={country}
                       />
                       <InputFormControl
-                        id="street-address"
+                        id="streetAddress"
                         label="Street address"
                         onChange={setStreetAddress}
                         value={streetAddress}
@@ -123,26 +123,26 @@ export default function GiveDevicesPage() {
                         value={state}
                       />
                       <InputFormControl
-                        id="postal-code"
+                        id="postalCode"
                         label="ZIP / Postal"
                         onChange={setPostalCode}
                         value={postalCode}
                       />
                       <InputFormControl
-                        id="phone-number"
+                        id="phone"
                         label="Phone Number"
                         onChange={setPhoneNumber}
                         type="tel"
                         value={phoneNumber}
                       />
                       <InputFormControl
-                        id="original-purchase-price"
+                        id="originalPurchasePrice"
                         label="Original Purchase Price"
                         onChange={setValueOfDevice}
                         value={valueOfDevice}
                       />
                       <TextareaFormControl
-                        id="about"
+                        id="description"
                         label="Additional information"
                         onChange={setAbout}
                         placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
