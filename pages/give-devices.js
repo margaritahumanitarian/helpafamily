@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import Footer from '../components/Footer';
 import InputFormControl from '../components/form/InputFormControl';
+import Modal from '../components/Modal';
 import Navbar from '../components/Navbar';
 import SelectFormControl from '../components/form/SelectFormControl';
 import TextareaFormControl from '../components/form/TextareaFormControl';
@@ -20,16 +21,10 @@ const COUNTRIES = [
   { value: 'PH', label: 'Philippines' },
 ];
 
-function validateField(name, value, errors) {
-  value = value || '';
-  if (value.trim().length === 0) {
-    errors.push(name);
-  }
-  return errors;
-}
-
 export default function GiveDevicesPage() {
   const router = useRouter();
+  const [modalText, setModalText] = React.useState('');
+  const [isModalOpen, setModalOpen] = React.useState(false);
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [country, setCountry] = React.useState(COUNTRIES[0].value);
@@ -41,19 +36,43 @@ export default function GiveDevicesPage() {
   const [originalPurchasePrice, setOriginalPurchasePrice] = React.useState('');
   const [description, setDescription] = React.useState('');
 
+  const hideModal = () => setModalOpen(false);
+
+  const showModal = (message) => {
+    setModalText(message);
+    setModalOpen(true);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    let errors = [];
 
-    errors = validateField('name', name, errors);
-    errors = validateField('email', email, errors);
-    errors = validateField('streetAddress', streetAddress, errors);
-    errors = validateField('city', city, errors);
-    errors = validateField('state', state, errors);
-    errors = validateField('postalCode', postalCode, errors);
+    if (name.trim().length === 0) {
+      showModal('Please add your name.');
+      return;
+    }
 
-    if (errors.length > 0) {
-      alert(`Missing fields: ${errors}`);
+    if (email.trim().length === 0) {
+      showModal('Please add your email address.');
+      return;
+    }
+
+    if (streetAddress.trim().length === 0) {
+      showModal('Please add your street address.');
+      return;
+    }
+
+    if (city.trim().length === 0) {
+      showModal('Please add your city.');
+      return;
+    }
+
+    if (state.trim().length === 0) {
+      showModal('Please add your state or province.');
+      return;
+    }
+
+    if (postalCode.trim().length === 0) {
+      showModal('Please add your postal code.');
       return;
     }
 
@@ -88,28 +107,15 @@ export default function GiveDevicesPage() {
       <Navbar />
       <main>
         <div className="m-auto w-3/4 p-10 my-10 bg-green-300 border border-gray-300">
-          <div className="bg-gray-100 flex justify-center mb-5">
-            <p className="mt-1 text-xl text-black-600">
-              {
-                'This section is still being worked on, please contact us at the following email instead: '
-              }
-              <a
-                className="mt-1 text-xl underline"
-                href="mailto:hi@mhfcares.org"
-              >
-                {'hi@mhfcares.org'}
-              </a>
-            </p>
-          </div>
           <div className="mt-10 sm:mt-0">
             <div className="md:grid md:grid-cols-3 md:gap-6">
               <div className="md:col-span-1">
                 <div className="px-4 sm:px-0">
                   <h3 className="text-lg font-medium leading-6 text-gray-900">
-                    {'Personal Information'}
+                    {'Laptop Donations for Families'}
                   </h3>
                   <p className="mt-1 text-sm text-gray-600">
-                    {'Use a permanent address where you can receive mail.'}
+                    {`Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use.`}
                   </p>
                 </div>
               </div>
@@ -144,6 +150,7 @@ export default function GiveDevicesPage() {
                         id="streetAddress"
                         label="Street address"
                         onChange={setStreetAddress}
+                        placeholder="Use an address where you can receive mail."
                         value={streetAddress}
                       />
                       <InputFormControl
@@ -202,6 +209,9 @@ export default function GiveDevicesPage() {
         </div>
         <Footer />
       </main>
+      <Modal isOpen={isModalOpen} onClose={hideModal}>
+        {modalText}
+      </Modal>
     </>
   );
 }
