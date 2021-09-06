@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 import Footer from '../components/Footer';
@@ -26,7 +27,12 @@ export default function Home() {
             </div>
           </div>
           <div className="self-center">
-            <img src="/images/MHF-color-300x300.png" />
+            <Image
+              alt="Logo of the Margarita Humanitarian Foundation"
+              height="300"
+              src="/images/MHF-color-300x300.png"
+              width="300"
+            />
           </div>
           <div className="self-center text-center">
             <h3 className="m-0 mt-10 mb-2 text-3xl font-bold">
