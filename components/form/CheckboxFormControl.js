@@ -1,42 +1,28 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function Checkbox({ id, isChecked = false, isToggle = false, onChange }) {
+function CheckboxFormControl({
+  id,
+  isChecked = false,
+  isToggle = false,
+  label,
+  onChange,
+}) {
   const handleChange = (event) => onChange(event.target.checked);
 
   return (
-    <input
-      checked={isChecked}
-      className={isToggle ? 'toggle' : 'checkbox'}
-      id={id}
-      name={id}
-      onChange={handleChange}
-      type="checkbox"
-    />
-  );
-}
-
-function CheckboxFormControl({ id, label, isChecked, isToggle, onChange }) {
-  return (
     <div className="form-control">
-      {label ? (
-        <label className="cursor-pointer label">
-          <span className="label-text">{label}</span>
-          <Checkbox
-            id={id}
-            isChecked={isChecked}
-            isToggle={isToggle}
-            onChange={onChange}
-          />
-        </label>
-      ) : (
-        <Checkbox
+      <label className="cursor-pointer label">
+        <span className="label-text">{label}</span>
+        <input
+          checked={isChecked}
+          className={isToggle ? 'toggle' : 'checkbox'}
           id={id}
-          isChecked={isChecked}
-          isToggle={isToggle}
-          onChange={onChange}
+          name={id}
+          onChange={handleChange}
+          type="checkbox"
         />
-      )}
+      </label>
     </div>
   );
 }
@@ -47,7 +33,8 @@ CheckboxFormControl.propTypes = {
     PropTypes.number.isRequired,
   ]),
   isChecked: PropTypes.bool,
-  label: PropTypes.string,
+  isToggle: PropTypes.bool,
+  label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
 
