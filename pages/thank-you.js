@@ -30,7 +30,7 @@ export default function Home() {
             <Image
               alt="Logo of the Margarita Humanitarian Foundation"
               height="300"
-              src="/images/MHF-color-300x300.png"
+              src="/images/MHF-Color-300x300.png"
               width="300"
             />
           </div>
