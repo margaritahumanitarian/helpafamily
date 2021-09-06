@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
+import { useRouter } from 'next/router';
+
 
 import Footer from '../components/Footer';
 import InputFormControl from '../components/form/InputFormControl';
@@ -7,15 +9,16 @@ import Navbar from '../components/Navbar';
 import SelectFormControl from '../components/form/SelectFormControl';
 import TextareaFormControl from '../components/form/TextareaFormControl';
 
+// Use ISO 3166 country codes per https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 const COUNTRIES = [
-  { value: 'united-states', label: 'United States' },
-  { value: 'canada', label: 'Canada' },
-  { value: 'mexico', label: 'Mexico' },
-  { value: 'germany', label: 'Germany' },
-  { value: 'latvia', label: 'Latvia' },
-  { value: 'india', label: 'India' },
-  { value: 'bangladesh', label: 'Bangladesh' },
-  { value: 'philippines', label: 'Philippines' },
+  { value: 'US', label: 'United States' },
+  { value: 'CA', label: 'Canada' },
+  { value: 'MX', label: 'Mexico' },
+  { value: 'DE', label: 'Germany' },
+  { value: 'LV', label: 'Latvia' },
+  { value: 'IN', label: 'India' },
+  { value: 'BD', label: 'Bangladesh' },
+  { value: 'PH', label: 'Philippines' },
 ];
 
 function validateField(name, value, errors){
@@ -27,6 +30,7 @@ function validateField(name, value, errors){
 }
 
 export default function GiveDevicesPage() {
+  const router = useRouter();
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [country, setCountry] = React.useState(COUNTRIES[0].id);
@@ -36,36 +40,46 @@ export default function GiveDevicesPage() {
   const [postalCode, setPostalCode] = React.useState('');
   const [phoneNumber, setPhoneNumber] = React.useState('');
   const [valueOfDevice, setValueOfDevice] = React.useState('');
-  const [about, setAbout] = React.useState('');
+  const [description, setDescription] = React.useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     let errors = [];
 
     errors = validateField("name", name, errors);
     errors = validateField("email", email, errors);
-    errors = validateField("country", country, errors);
     errors = validateField("streetAddress", streetAddress, errors);
     errors = validateField("city", city, errors);
     errors = validateField("state", state, errors);
     errors = validateField("postalCode", postalCode, errors);
 
-    if (errors.length >= 0){
+    if (errors.length > 0){
       alert(`Missing fields: ${errors}`)
+      return;
     }
 
-    console.log({
-      name,
-      email,
-      country,
-      streetAddress,
-      city,
-      state,
-      postalCode,
-      phoneNumber,
-      originalPurchasePrice,
-      description,
+    // Create the Stripe checkout session and forward to the checkout page
+    const response = await fetch('/api/process-device-donation', {
+      body: JSON.stringify({
+        name,
+        email,
+        country,
+        streetAddress,
+        city,
+        state,
+        postalCode,
+        phoneNumber,
+        valueOfDevice,
+        description
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
     });
+    const result = await response.json();
+    router.push('/thank-you');    
+
   };
 
   return (
@@ -150,7 +164,7 @@ export default function GiveDevicesPage() {
                         onChange={setPostalCode}
                         value={postalCode}
                       />
-                      <hr />
+                      <div class="divider"></div> 
                       <h3 className="text-lg font-medium leading-6 text-gray-900">{'Optional fields'}</h3>
                       <InputFormControl
                         id="phone"
@@ -168,9 +182,9 @@ export default function GiveDevicesPage() {
                       <TextareaFormControl
                         id="description"
                         label="Additional information"
-                        onChange={setAbout}
+                        onChange={setDescription}
                         placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
-                        value={about}
+                        value={description}
                       />
                       <div className="flex items-center justify-center py-2">
                         <button className="btn btn-primary" type="submit">
