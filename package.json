@@ -12,6 +12,7 @@
     "@contentful/rich-text-types": "^15.1.0",
     "contentful": "^8.5.0",
     "daisyui": "^1.14.0",
+    "firebase-admin": "^9.11.1",
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
