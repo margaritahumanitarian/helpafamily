@@ -40,6 +40,14 @@ export default function MainDonationForm() {
   });
 
   React.useEffect(() => {
+    const allSelected = Object.values(selectedCauses).filter(Boolean);
+    if (allSelected.length === CAUSES.length) {
+      setIsAnyoneInNeed(true);
+      setSelectedCauses({});
+    }
+  }, [selectedCauses]);
+
+  React.useEffect(() => {
     if (isAnyoneInNeed) {
       setCause('Anyone in Need');
     } else {
