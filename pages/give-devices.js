@@ -2,7 +2,6 @@ import Head from 'next/head';
 import React from 'react';
 import { useRouter } from 'next/router';
 
-
 import Footer from '../components/Footer';
 import InputFormControl from '../components/form/InputFormControl';
 import Navbar from '../components/Navbar';
@@ -21,12 +20,12 @@ const COUNTRIES = [
   { value: 'PH', label: 'Philippines' },
 ];
 
-function validateField(name, value, errors){
-  value = value || ''
-  if (value.trim().length === 0){
-    errors.push(name)
+function validateField(name, value, errors) {
+  value = value || '';
+  if (value.trim().length === 0) {
+    errors.push(name);
   }
-  return errors
+  return errors;
 }
 
 export default function GiveDevicesPage() {
@@ -46,15 +45,15 @@ export default function GiveDevicesPage() {
     event.preventDefault();
     let errors = [];
 
-    errors = validateField("name", name, errors);
-    errors = validateField("email", email, errors);
-    errors = validateField("streetAddress", streetAddress, errors);
-    errors = validateField("city", city, errors);
-    errors = validateField("state", state, errors);
-    errors = validateField("postalCode", postalCode, errors);
+    errors = validateField('name', name, errors);
+    errors = validateField('email', email, errors);
+    errors = validateField('streetAddress', streetAddress, errors);
+    errors = validateField('city', city, errors);
+    errors = validateField('state', state, errors);
+    errors = validateField('postalCode', postalCode, errors);
 
-    if (errors.length > 0){
-      alert(`Missing fields: ${errors}`)
+    if (errors.length > 0) {
+      alert(`Missing fields: ${errors}`);
       return;
     }
 
@@ -70,16 +69,15 @@ export default function GiveDevicesPage() {
         postalCode,
         phone,
         originalPurchasePrice,
-        description
+        description,
       }),
       headers: {
         'Content-Type': 'application/json',
       },
       method: 'POST',
     });
-    const result = await response.json();
-    router.push('/thank-you');    
-
+    await response.json();
+    router.push('/thank-you');
   };
 
   return (
@@ -119,7 +117,9 @@ export default function GiveDevicesPage() {
                 <div className="card bordered">
                   <div className="card-body bg-white">
                     <form onSubmit={handleSubmit}>
-                      <h3 className="text-lg font-medium leading-6 text-red-900">{'Required fields'}</h3>
+                      <h3 className="text-lg font-medium leading-6 text-red-900">
+                        {'Required fields'}
+                      </h3>
                       <InputFormControl
                         id="name"
                         label="Name"
@@ -164,8 +164,10 @@ export default function GiveDevicesPage() {
                         onChange={setPostalCode}
                         value={postalCode}
                       />
-                      <div className="divider"></div> 
-                      <h3 className="text-lg font-medium leading-6 text-gray-900">{'Optional fields'}</h3>
+                      <div className="divider" />
+                      <h3 className="text-lg font-medium leading-6 text-gray-900">
+                        {'Optional fields'}
+                      </h3>
                       <InputFormControl
                         id="phone"
                         label="Phone Number"
