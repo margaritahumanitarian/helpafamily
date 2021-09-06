@@ -36,16 +36,29 @@ Fork this repo, then:
 git clone <url-to-your-fork-of-helpafamily-here>
 cd helpafamily/
 cp .env.example .env
-yarn install
 ```
 
+Then, 
+
+### If you're familiar with Docker:
+`<docker-compose build>` (it builds the docker container - needed only the first time or whenever the container gets removed)
+
+
+### If you don't wish to use Docker:
+`<yarn install>`
+
 ## Running the project locally
+
+### without Docker
 
 Once you have finished the [Installation](#installation) process you can run the project with
 
 ```
 yarn dev
 ```
+
+### with Docker
+`<docker-compose up>` (it runs the app inside the container)
 
 and opening [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
