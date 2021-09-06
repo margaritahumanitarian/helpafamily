@@ -41,11 +41,11 @@ cp .env.example .env
 Then, 
 
 ### If you're familiar with Docker:
-`<docker-compose build>` (it builds the docker container - needed only the first time or whenever the container gets removed)
+`docker-compose build` (it builds the docker container - needed only the first time or whenever the container gets removed)
 
 
 ### If you don't wish to use Docker:
-`<yarn install>`
+`yarn install`
 
 ## Running the project locally
 
@@ -58,7 +58,7 @@ yarn dev
 ```
 
 ### with Docker
-`<docker-compose up>` (it runs the app inside the container)
+`docker-compose up` (it runs the app inside the container)
 
 and opening [http://127.0.0.1:3000](http://127.0.0.1:3000)
 
