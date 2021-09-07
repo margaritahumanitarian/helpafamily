@@ -23,6 +23,6 @@ export default async function processDeviceDonation(req, res) {
   };
 
   const result = await db.collection('DeviceDonations').add(data);
-  // TODO send email
+  // TODO send email per https://github.com/margaritahumanitarian/helpafamily/issues/166
   res.status(StatusCodes.OK).json({ receiptNumber: result.id, data });
 }
