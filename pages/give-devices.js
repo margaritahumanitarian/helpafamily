@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 import { useRouter } from 'next/router';
 
@@ -109,7 +110,7 @@ export default function GiveDevicesPage() {
       <Navbar />
       <main>
         <div className="p-12" style={{ marginTop: '-.5rem' }}>
-          <div className="mt-10 sm:mt-0">
+          <div className="sm:mt-0 md-mt-10">
             <div className="md:grid md:grid-cols-3 md:gap-6">
               <div className="md:col-span-1">
                 <div className="px-4 mt-1 sm:px-0">
@@ -121,7 +122,7 @@ export default function GiveDevicesPage() {
                   </p>
                 </div>
               </div>
-              <div className="mt-5 md:mt-0 md:col-span-2">
+              <div className="md:mt-0 md-mt-10 md:col-span-2">
                 <div
                   className="card bordered"
                   style={{ border: '2px solid #42B2B8' }}
