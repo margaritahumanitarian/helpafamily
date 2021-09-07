@@ -109,7 +109,7 @@ export default function GiveDevicesPage() {
       <Navbar />
       <main>
         <div className="p-12" style={{ marginTop: '-.5rem' }}>
-          <div className="sm:mt-0 md-mt-10">
+          <div className="sm:mt-0 md-mt-10 mb-5">
             <div className="md:grid md:grid-cols-3 md:gap-6">
               <div className="md:col-span-1">
                 <div className="px-4 mt-1 sm:px-0">
