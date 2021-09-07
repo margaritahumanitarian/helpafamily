@@ -33,11 +33,17 @@ SelectFormControl.propTypes = {
   label: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired,
+      ]),
     })
   ),
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
   onChange: PropTypes.func.isRequired,
 };
 
