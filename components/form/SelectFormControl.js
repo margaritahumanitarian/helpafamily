@@ -12,7 +12,7 @@ function SelectFormControl({ id, label, options, value, onChange }) {
         </label>
       )}
       <select
-        className="select select-bordered w-full max-w-xs select-sm"
+        className="select select-bordered w-full select-sm"
         id={id}
         name={id}
         onChange={handleChange}

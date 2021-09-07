@@ -4,7 +4,7 @@ import React from 'react';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
-    <div className="card shadow-xl image-full">
+    <div className="card transition duration-500 ease-in-out transform hover:-translate-y-4 filter brightness-105 shadow-xl image-full">
       {backgroundImageSource && (
         <figure>
           <Image
@@ -14,7 +14,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
           />
         </figure>
       )}
-      <div className="card-body justify-end space-y-3">{children}</div>
+      <div className="card-body space-y-3">{children}</div>
     </div>
   );
 }
@@ -43,14 +43,14 @@ CardParagraph.propTypes = {
 
 export function CardAction({ children, linkTo, isPending, onClick }) {
   return (
-    <div className="pt-5">
+    <div className="pt-5" style={{ marginTop: 'auto' }}>
       {linkTo ? (
-        <a className="btn btn-primary" href={linkTo}>
+        <a className="btn btn-accent" href={linkTo}>
           {children}
         </a>
       ) : (
         <button
-          className={`btn btn-primary h-16 md:h-13 ${
+          className={`btn btn-accent w-full h-auto ${
             isPending ? 'loading' : ''
           }`}
           onClick={onClick}
@@ -72,8 +72,8 @@ CardAction.propTypes = {
 
 export function CardAddress({ children, label }) {
   return (
-    <div className="shaded-text">
-      <div>{label}</div>
+    <div className="shaded-text" style={{ marginTop: 'auto' }}>
+      <div className="font-semibold">{label}</div>
       <span>{children}</span>
     </div>
   );

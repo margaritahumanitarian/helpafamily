@@ -27,6 +27,7 @@ function HygieneKitsCard() {
       <CardAction linkTo="https://www.amazon.com/96-Kits-Hygiene-Travel-Charity/dp/B0881YKMBL">
         {'96 Hygiene Kits for $153'}
       </CardAction>
+      <br />
       <CardAddress label="Ship the kits to:">
         {'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}
       </CardAddress>
