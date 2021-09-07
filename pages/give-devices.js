@@ -108,11 +108,11 @@ export default function GiveDevicesPage() {
       </Head>
       <Navbar />
       <main>
-        <div className="m-auto w-3/4 p-10 my-10 bg-green-300 border border-gray-300">
+        <div className="p-12" style={{ marginTop: '-.5rem' }}>
           <div className="mt-10 sm:mt-0">
             <div className="md:grid md:grid-cols-3 md:gap-6">
               <div className="md:col-span-1">
-                <div className="px-4 sm:px-0">
+                <div className="px-4 mt-1 sm:px-0">
                   <h3 className="text-lg font-medium leading-6 text-gray-900">
                     {'Laptop Donations for Families'}
                   </h3>
@@ -122,7 +122,10 @@ export default function GiveDevicesPage() {
                 </div>
               </div>
               <div className="mt-5 md:mt-0 md:col-span-2">
-                <div className="card bordered">
+                <div
+                  className="card bordered"
+                  style={{ border: '2px solid #42B2B8' }}
+                >
                   <div className="card-body bg-white">
                     <form onSubmit={handleSubmit}>
                       <h3 className="text-lg font-medium leading-6 text-red-900">
@@ -200,8 +203,8 @@ export default function GiveDevicesPage() {
                         placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
                         value={description}
                       />
-                      <div className="flex items-center justify-center py-2">
-                        <button className="btn btn-primary" type="submit">
+                      <div className="mt-4 py-2">
+                        <button className="btn btn-accent w-1/3" type="submit">
                           {'Send'}
                         </button>
                       </div>
