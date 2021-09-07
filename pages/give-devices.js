@@ -161,7 +161,7 @@ export default function GiveDevicesPage() {
                         onChange={setStreetAddress2}
                         placeholder="Extra address data can go here"
                         value={streetAddress2}
-                      />                      
+                      />
                       <InputFormControl
                         id="city"
                         label="City *"
