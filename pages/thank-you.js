@@ -11,7 +11,7 @@ export default function Home() {
       </head>
       <body>
         <div className="min-h-screen bg-base-200 flex flex-col justify-evenly">
-          <div className="hero">
+          <div className="hero my-4">
             <div className="text-center hero-content">
               <div className="max-w-md">
                 <h1 className="mb-5 text-5xl font-bold">{'Thank You!'}</h1>
@@ -34,29 +34,9 @@ export default function Home() {
               width="300"
             />
           </div>
+
           <div className="self-center text-center">
-            <h3 className="m-0 mt-10 mb-2 text-3xl font-bold">
-              {'Reach Out to Us'}
-            </h3>
-            <p>
-              {'Follow Margarita Humanitarian Foundation for more updates: '}
-            </p>
-            <a
-              className="link link-secondary"
-              href="https://www.instagram.com/margaritahforg/"
-            >
-              {'Instagram'}
-            </a>
-            {'and '}
-            <a
-              className="link link-secondary"
-              href="https://twitter.com/margaritahforg"
-            >
-              {'Twitter'}
-            </a>
-          </div>
-          <div className="flex flex-row justify-evenly grid-cols-3 inset-x-0 bottom-0 ">
-            <div className="max-w-lg text-center">
+            <div className="max-w-xl px-4">
               <h2 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'Receipt to Follow'}
               </h2>
@@ -66,7 +46,10 @@ export default function Home() {
                 }
               </p>
             </div>
-            <div className="max-w-lg text-center">
+          </div>
+
+          <div className="self-center text-center">
+            <div className="max-w-3xl px-4">
               <h2 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'About Our Donation Software'}
               </h2>
@@ -76,8 +59,10 @@ export default function Home() {
                 }
               </p>
             </div>
+          </div>
 
-            <div className="max-w-lg text-center">
+          <div className="self-center text-center">
+            <div className="max-w-3xl px-4">
               <h3 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'Improve our Donation Software'}
               </h3>
@@ -95,8 +80,34 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <Footer />
+
+          <div className="self-center text-center">
+            <div className="max-w-md px-4">
+              <h3 className="m-0 mt-10 mb-2 text-3xl font-bold">
+                {'Reach Out to Us'}
+              </h3>
+              <p>
+                {'Follow Margarita Humanitarian Foundation for more updates: '}
+              </p>
+            </div>
+            <div className="self-center text-center">
+              <a
+                className="link link-secondary"
+                href="https://www.instagram.com/margaritahforg/"
+              >
+                {'Instagram'}
+              </a>
+              {' and '}
+              <a
+                className="link link-secondary"
+                href="https://twitter.com/margaritahforg"
+              >
+                {'Twitter'}
+              </a>
+            </div>
+          </div>
         </div>
+        <Footer />
       </body>
     </html>
   );
