@@ -84,7 +84,7 @@ export function PositionRequirements({ label, children }) {
 }
 
 PositionRequirements.propTypes = {
-  listItems: PropTypes.array,
+  label: PropTypes.string,
   children: PropTypes.node,
 };
 
