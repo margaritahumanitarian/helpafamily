@@ -1,18 +1,31 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function InputFormControl({ id, label, placeholder, type, value, onChange }) {
+function InputFormControl({
+  error,
+  id,
+  label,
+  placeholder,
+  required = false,
+  type,
+  value,
+  onChange,
+}) {
   const handleChange = (event) => onChange(event.target.value);
 
   return (
     <div className="form-control">
       {label && (
         <label className="label" htmlFor={id}>
-          <span className="label-text">{label}</span>
+          <span className="label-text">{`${label}${
+            required ? ' *' : ''
+          }`}</span>
         </label>
       )}
       <input
-        className="input input-bordered input-sm"
+        className={`input input-bordered input-sm ${
+          error ? 'input-error' : ''
+        }`}
         id={id}
         name={id}
         onChange={handleChange}
@@ -20,6 +33,11 @@ function InputFormControl({ id, label, placeholder, type, value, onChange }) {
         type={type || 'text'}
         value={value}
       />
+      {error && (
+        <label className="label">
+          <span className="label-text-alt text-red-500">{error}</span>
+        </label>
+      )}
     </div>
   );
 }
