@@ -145,3 +145,6 @@ dist
 
 #.idea files
 .idea
+
+# vs-code
+.devcontainer
