@@ -1,50 +1,104 @@
 import Head from 'next/head';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 import Footer from '../components/Footer';
 import InputFormControl from '../components/form/InputFormControl';
+import Modal from '../components/Modal';
 import Navbar from '../components/Navbar';
 import SelectFormControl from '../components/form/SelectFormControl';
 import TextareaFormControl from '../components/form/TextareaFormControl';
 
+// Use ISO 3166 country codes per https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 const COUNTRIES = [
-  { value: 'united-states', label: 'United States' },
-  { value: 'canada', label: 'Canada' },
-  { value: 'mexico', label: 'Mexico' },
-  { value: 'germany', label: 'Germany' },
-  { value: 'latvia', label: 'Latvia' },
-  { value: 'india', label: 'India' },
-  { value: 'bangladesh', label: 'Bangladesh' },
-  { value: 'philippines', label: 'Philippines' },
+  { value: 'US', label: 'United States' },
+  { value: 'CA', label: 'Canada' },
+  { value: 'MX', label: 'Mexico' },
+  { value: 'DE', label: 'Germany' },
+  { value: 'LV', label: 'Latvia' },
+  { value: 'IN', label: 'India' },
+  { value: 'BD', label: 'Bangladesh' },
+  { value: 'PH', label: 'Philippines' },
 ];
 
 export default function GiveDevicesPage() {
+  const router = useRouter();
+  const [modalText, setModalText] = React.useState('');
+  const [isModalOpen, setModalOpen] = React.useState(false);
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
-  const [country, setCountry] = React.useState(COUNTRIES[0].id);
+  const [country, setCountry] = React.useState(COUNTRIES[0].value);
   const [streetAddress, setStreetAddress] = React.useState('');
+  const [streetAddress2, setStreetAddress2] = React.useState('');
   const [city, setCity] = React.useState('');
   const [state, setState] = React.useState('');
   const [postalCode, setPostalCode] = React.useState('');
-  const [phoneNumber, setPhoneNumber] = React.useState('');
-  const [valueOfDevice, setValueOfDevice] = React.useState('');
-  const [about, setAbout] = React.useState('');
+  const [phone, setPhone] = React.useState('');
+  const [originalPurchasePrice, setOriginalPurchasePrice] = React.useState('');
+  const [description, setDescription] = React.useState('');
 
-  const handleSubmit = (event) => {
+  const hideModal = () => setModalOpen(false);
+
+  const showModal = (message) => {
+    setModalText(message);
+    setModalOpen(true);
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    console.log({
-      name,
-      email,
-      country,
-      streetAddress,
-      city,
-      state,
-      postalCode,
-      phoneNumber,
-      valueOfDevice,
-      about,
+    if (name.trim().length === 0) {
+      showModal('Please add your name.');
+      return;
+    }
+
+    if (email.trim().length === 0) {
+      showModal('Please add your email address.');
+      return;
+    }
+
+    if (streetAddress.trim().length === 0) {
+      showModal('Please add your street address.');
+      return;
+    }
+
+    if (city.trim().length === 0) {
+      showModal('Please add your city.');
+      return;
+    }
+
+    if (state.trim().length === 0) {
+      showModal('Please add your state or province.');
+      return;
+    }
+
+    if (postalCode.trim().length === 0) {
+      showModal('Please add your postal code.');
+      return;
+    }
+
+    // Create the donate device request forward to the checkout page
+    const response = await fetch('/api/process-device-donation', {
+      body: JSON.stringify({
+        name,
+        email,
+        country,
+        streetAddress,
+        streetAddress2,
+        city,
+        state,
+        postalCode,
+        phone,
+        originalPurchasePrice,
+        description,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
     });
+    await response.json();
+    router.push('/thank-you');
   };
 
   return (
@@ -55,28 +109,15 @@ export default function GiveDevicesPage() {
       <Navbar />
       <main>
         <div className="m-auto w-3/4 p-10 my-10 bg-green-300 border border-gray-300">
-          <div className="bg-gray-100 flex justify-center mb-5">
-            <p className="mt-1 text-xl text-black-600">
-              {
-                'This section is still being worked on, please contact us at the following email instead: '
-              }
-              <a
-                className="mt-1 text-xl underline"
-                href="mailto:hi@mhfcares.org"
-              >
-                {'hi@mhfcares.org'}
-              </a>
-            </p>
-          </div>
           <div className="mt-10 sm:mt-0">
             <div className="md:grid md:grid-cols-3 md:gap-6">
               <div className="md:col-span-1">
                 <div className="px-4 sm:px-0">
                   <h3 className="text-lg font-medium leading-6 text-gray-900">
-                    {'Personal Information'}
+                    {'Laptop Donations for Families'}
                   </h3>
                   <p className="mt-1 text-sm text-gray-600">
-                    {'Use a permanent address where you can receive mail.'}
+                    {`Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use.`}
                   </p>
                 </div>
               </div>
@@ -84,69 +125,80 @@ export default function GiveDevicesPage() {
                 <div className="card bordered">
                   <div className="card-body bg-white">
                     <form onSubmit={handleSubmit}>
+                      <h3 className="text-lg font-medium leading-6 text-red-900">
+                        {'Required fields are marked with *'}
+                      </h3>
                       <InputFormControl
                         id="name"
-                        label="Name"
+                        label="Name *"
                         onChange={setName}
                         value={name}
                       />
                       <InputFormControl
-                        id="email-address"
-                        label="Email address"
+                        id="email"
+                        label="Email address *"
                         onChange={setEmail}
                         type="email"
                         value={email}
                       />
                       <SelectFormControl
                         id="country"
-                        label="Country / Region"
+                        label="Country / Region *"
                         onChange={setCountry}
                         options={COUNTRIES}
                         value={country}
                       />
                       <InputFormControl
-                        id="street-address"
-                        label="Street address"
+                        id="streetAddress"
+                        label="Street address *"
                         onChange={setStreetAddress}
+                        placeholder="Use an address where you can receive mail."
                         value={streetAddress}
                       />
                       <InputFormControl
+                        id="streetAddress2"
+                        label="Street address 2"
+                        onChange={setStreetAddress2}
+                        placeholder="Extra address data can go here"
+                        value={streetAddress2}
+                      />
+                      <InputFormControl
                         id="city"
-                        label="City"
+                        label="City *"
                         onChange={setCity}
                         value={city}
                       />
                       <InputFormControl
                         id="state"
-                        label="State / Province"
+                        label="State / Province *"
                         onChange={setState}
                         value={state}
                       />
                       <InputFormControl
-                        id="postal-code"
-                        label="ZIP / Postal"
+                        id="postalCode"
+                        label="ZIP / Postal *"
                         onChange={setPostalCode}
                         value={postalCode}
                       />
                       <InputFormControl
-                        id="phone-number"
+                        id="phone"
                         label="Phone Number"
-                        onChange={setPhoneNumber}
+                        onChange={setPhone}
                         type="tel"
-                        value={phoneNumber}
+                        value={phone}
                       />
                       <InputFormControl
-                        id="original-purchase-price"
+                        id="originalPurchasePrice"
                         label="Original Purchase Price"
-                        onChange={setValueOfDevice}
-                        value={valueOfDevice}
+                        onChange={setOriginalPurchasePrice}
+                        value={originalPurchasePrice}
                       />
                       <TextareaFormControl
-                        id="about"
+                        id="description"
                         label="Additional information"
-                        onChange={setAbout}
+                        onChange={setDescription}
                         placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
-                        value={about}
+                        value={description}
                       />
                       <div className="flex items-center justify-center py-2">
                         <button className="btn btn-primary" type="submit">
@@ -162,6 +214,9 @@ export default function GiveDevicesPage() {
         </div>
         <Footer />
       </main>
+      <Modal isOpen={isModalOpen} onClose={hideModal}>
+        {modalText}
+      </Modal>
     </>
   );
 }
