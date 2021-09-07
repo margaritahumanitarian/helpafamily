@@ -2,7 +2,7 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function Card({ backgroundImageSource, backgroundImageAltText, children }) {
+function VolunteerCard({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
     <div className="card transition duration-500 ease-in-out transform hover:-translate-y-4 filter brightness-105 shadow-xl image-full">
       {backgroundImageSource && (
@@ -19,7 +19,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   );
 }
 
-Card.propTypes = {
+VolunteerCard.propTypes = {
   backgroundImageSource: PropTypes.string,
   backgroundImageAltText: PropTypes.string,
   children: PropTypes.node.isRequired,
@@ -88,4 +88,4 @@ PositionRequirements.propTypes = {
   children: PropTypes.node,
 };
 
-export default Card;
+export default VolunteerCard;
