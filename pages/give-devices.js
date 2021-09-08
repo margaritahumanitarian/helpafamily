@@ -122,9 +122,7 @@ export default function GiveDevicesPage() {
                 </div>
               </div>
               <div className="md:mt-0 md-mt-10 md:col-span-2">
-                <div
-                  className="card shadow-2xl"
-                >
+                <div className="card shadow-2xl">
                   <div className="card-body bg-green-50">
                     <form onSubmit={handleSubmit}>
                       <h3 className="text-lg font-medium leading-6 text-red-900">
