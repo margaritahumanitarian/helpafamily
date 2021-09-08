@@ -2,7 +2,11 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function VolunteerCard({ backgroundImageSource, backgroundImageAltText, children }) {
+function VolunteerCard({
+  backgroundImageSource,
+  backgroundImageAltText,
+  children,
+}) {
   return (
     <div className="card transition duration-500 ease-in-out transform hover:-translate-y-4 filter brightness-105 shadow-xl image-full">
       {backgroundImageSource && (
@@ -75,8 +79,8 @@ export function PositionRequirements({ label, children }) {
     <div className="p-2 shaded-text" style={{ marginTop: 'auto' }}>
       <span className="font-semibold">{label}</span>
       <ul className="list-disc text-left pl-6">
-        {children.map(function(listItem, index){
-          return <li key={ index }>{listItem}</li>;
+        {children.map(function (listItem, index) {
+          return <li key={index}>{listItem}</li>;
         })}
       </ul>
     </div>

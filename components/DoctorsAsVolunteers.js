@@ -1,6 +1,10 @@
 import React from 'react';
 
-import VolunteerCard, { PositionRequirements, CardParagraph, CardTitle } from './VolunteerCard';
+import VolunteerCard, {
+  CardParagraph,
+  CardTitle,
+  PositionRequirements,
+} from './VolunteerCard';
 
 function DoctorsAsVolunteers() {
   return (
