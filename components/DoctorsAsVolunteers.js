@@ -1,15 +1,10 @@
 import React from 'react';
 
-import {
-  CardParagraph,
-  CardTitle,
-  PositionRequirements,
-  VolunteerCard,
-} from './Card';
+import Card, { CardParagraph, CardTitle, PositionRequirements } from './Card';
 
 function DoctorsAsVolunteers() {
   return (
-    <VolunteerCard backgroundImageSource="/images/Volunteer.jpg">
+    <Card backgroundImageSource="/images/Volunteer.jpg">
       <CardTitle>{'Doctors as Volunteers'}</CardTitle>
 
       <CardParagraph>{'Doctors, NPs, PAs: Give 1-4 Hours/Week'}</CardParagraph>
@@ -33,7 +28,7 @@ function DoctorsAsVolunteers() {
         {'Current medical board license for your region and country'}
         {'Fluency in English or Spanish'}
       </PositionRequirements>
-    </VolunteerCard>
+    </Card>
   );
 }
 

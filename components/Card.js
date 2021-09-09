@@ -89,40 +89,13 @@ export function PositionRequirements({ label, children }) {
     <div className="p-2 mt-auto shaded-text">
       <span className="font-semibold">{label}</span>
       <ul className="list-disc text-left pl-6">
-        {children.map(function (listItem, index) {
-          return <li key={index}>{listItem}</li>;
-        })}
+        {children.map((listItem, index) => (
+          <li key={index}>{listItem}</li>
+        ))}
       </ul>
     </div>
   );
 }
-
-export function VolunteerCard({
-  backgroundImageSource,
-  backgroundImageAltText,
-  children,
-}) {
-  return (
-    <div className="card transition duration-500 ease-in-out transform hover:-translate-y-4 filter brightness-105 shadow-xl image-full">
-      {backgroundImageSource && (
-        <figure>
-          <Image
-            alt={backgroundImageAltText}
-            layout="fill"
-            src={backgroundImageSource}
-          />
-        </figure>
-      )}
-      <div className="card-body space-y-3">{children}</div>
-    </div>
-  );
-}
-
-VolunteerCard.propTypes = {
-  backgroundImageSource: PropTypes.string,
-  backgroundImageAltText: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
 
 PositionRequirements.propTypes = {
   label: PropTypes.string,
