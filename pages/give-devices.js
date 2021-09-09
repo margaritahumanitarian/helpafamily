@@ -108,104 +108,109 @@ export default function GiveDevicesPage() {
       </Head>
       <Navbar />
       <main>
-        <div className="p-12">
-          <div className="sm:mt-0 md-mt-10 mb-5">
-            <div className="md:grid md:grid-cols-3 md:gap-6">
-              <div className="md:col-span-1 mb-5">
-                <div className="px-4 sm:px-0">
-                  <h3 className="text-lg font-medium leading-6 text-gray-900">
-                    {'Laptop Donations for Families'}
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-600">
-                    {`Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use.`}
-                  </p>
+        <div className="p-4">
+          <div className="sm:p-8">
+            <div className="sm:mt-0 md-mt-10 mb-5">
+              <div className="md:grid md:grid-cols-3 md:gap-6">
+                <div className="md:col-span-1 mb-5">
+                  <div className="px-4 sm:px-0">
+                    <h3 className="text-lg font-medium leading-6 text-gray-900">
+                      {'Laptop Donations for Families'}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-600">
+                      {`Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use.`}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className="md:mt-0 md-mt-10 md:col-span-2">
-                <div className="card shadow-2xl">
-                  <div className="card-body bg-green-50">
-                    <form onSubmit={handleSubmit}>
-                      <h3 className="text-lg font-medium leading-6 text-red-900">
-                        {'Required fields are marked with *'}
-                      </h3>
-                      <InputFormControl
-                        id="name"
-                        label="Name *"
-                        onChange={setName}
-                        value={name}
-                      />
-                      <InputFormControl
-                        id="email"
-                        label="Email address *"
-                        onChange={setEmail}
-                        type="email"
-                        value={email}
-                      />
-                      <SelectFormControl
-                        id="country"
-                        label="Country / Region *"
-                        onChange={setCountry}
-                        options={COUNTRIES}
-                        value={country}
-                      />
-                      <InputFormControl
-                        id="streetAddress"
-                        label="Street address *"
-                        onChange={setStreetAddress}
-                        placeholder="Use an address where you can receive mail."
-                        value={streetAddress}
-                      />
-                      <InputFormControl
-                        id="streetAddress2"
-                        label="Street address 2"
-                        onChange={setStreetAddress2}
-                        placeholder="Extra address data can go here"
-                        value={streetAddress2}
-                      />
-                      <InputFormControl
-                        id="city"
-                        label="City *"
-                        onChange={setCity}
-                        value={city}
-                      />
-                      <InputFormControl
-                        id="state"
-                        label="State / Province *"
-                        onChange={setState}
-                        value={state}
-                      />
-                      <InputFormControl
-                        id="postalCode"
-                        label="ZIP / Postal *"
-                        onChange={setPostalCode}
-                        value={postalCode}
-                      />
-                      <InputFormControl
-                        id="phone"
-                        label="Phone Number"
-                        onChange={setPhone}
-                        type="tel"
-                        value={phone}
-                      />
-                      <InputFormControl
-                        id="originalPurchasePrice"
-                        label="Original Purchase Price"
-                        onChange={setOriginalPurchasePrice}
-                        value={originalPurchasePrice}
-                      />
-                      <TextareaFormControl
-                        id="description"
-                        label="Additional information"
-                        onChange={setDescription}
-                        placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
-                        value={description}
-                      />
-                      <div className="py-2">
-                        <button className="btn btn-accent w-2/5" type="submit">
-                          {'Send'}
-                        </button>
-                      </div>
-                    </form>
+                <div className="md:mt-0 md-mt-10 md:col-span-2">
+                  <div className="card shadow-2xl">
+                    <div className="card-body bg-green-50">
+                      <form onSubmit={handleSubmit}>
+                        <h3 className="text-lg font-medium leading-6 text-red-900">
+                          {'Required fields are marked with *'}
+                        </h3>
+                        <InputFormControl
+                          id="name"
+                          label="Name *"
+                          onChange={setName}
+                          value={name}
+                        />
+                        <InputFormControl
+                          id="email"
+                          label="Email address *"
+                          onChange={setEmail}
+                          type="email"
+                          value={email}
+                        />
+                        <SelectFormControl
+                          id="country"
+                          label="Country / Region *"
+                          onChange={setCountry}
+                          options={COUNTRIES}
+                          value={country}
+                        />
+                        <InputFormControl
+                          id="streetAddress"
+                          label="Street address *"
+                          onChange={setStreetAddress}
+                          placeholder="Use an address where you can receive mail."
+                          value={streetAddress}
+                        />
+                        <InputFormControl
+                          id="streetAddress2"
+                          label="Street address 2"
+                          onChange={setStreetAddress2}
+                          placeholder="Extra address data can go here"
+                          value={streetAddress2}
+                        />
+                        <InputFormControl
+                          id="city"
+                          label="City *"
+                          onChange={setCity}
+                          value={city}
+                        />
+                        <InputFormControl
+                          id="state"
+                          label="State / Province *"
+                          onChange={setState}
+                          value={state}
+                        />
+                        <InputFormControl
+                          id="postalCode"
+                          label="ZIP / Postal *"
+                          onChange={setPostalCode}
+                          value={postalCode}
+                        />
+                        <InputFormControl
+                          id="phone"
+                          label="Phone Number"
+                          onChange={setPhone}
+                          type="tel"
+                          value={phone}
+                        />
+                        <InputFormControl
+                          id="originalPurchasePrice"
+                          label="Original Purchase Price"
+                          onChange={setOriginalPurchasePrice}
+                          value={originalPurchasePrice}
+                        />
+                        <TextareaFormControl
+                          id="description"
+                          label="Additional information"
+                          onChange={setDescription}
+                          placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
+                          value={description}
+                        />
+                        <div className="py-2">
+                          <button
+                            className="btn btn-accent w-2/5"
+                            type="submit"
+                          >
+                            {'Send'}
+                          </button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
