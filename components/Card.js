@@ -4,7 +4,7 @@ import React from 'react';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
-    <div className="card transition duration-500 ease-in-out transform hover:-translate-y-4 filter brightness-105 shadow-xl image-full">
+    <div className="card filter brightness-105 shadow-xl image-full">
       {backgroundImageSource && (
         <figure>
           <Image
