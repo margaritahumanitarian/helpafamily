@@ -8,7 +8,7 @@ Learn more about [Margarita Humanitarian Foundation](https://www.margaritahumani
 
 ## Contributing and installation
 
-If you would like to help us with this project you can learn more [here](CONTRIBUTING.md)
+If you would like to help us with this project you can learn more [here](https://margaritahumanitarian.gitbook.io/help-a-family-manual/)
 
 ## Community
 
