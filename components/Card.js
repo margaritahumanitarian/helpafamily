@@ -86,7 +86,7 @@ CardAddress.propTypes = {
 
 export function PositionRequirements({ label, children }) {
   return (
-    <div className="p-2 shaded-text" style={{ marginTop: 'auto' }}>
+    <div className="p-2 mt-auto shaded-text">
       <span className="font-semibold">{label}</span>
       <ul className="list-disc text-left pl-6">
         {children.map(function (listItem, index) {
