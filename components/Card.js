@@ -84,4 +84,22 @@ CardAddress.propTypes = {
   label: PropTypes.string,
 };
 
+export function PositionRequirements({ label, children }) {
+  return (
+    <div className="p-2 mt-auto shaded-text">
+      <span className="font-semibold">{label}</span>
+      <ul className="list-disc text-left pl-6">
+        {children.map((listItem, index) => (
+          <li key={index}>{listItem}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+PositionRequirements.propTypes = {
+  label: PropTypes.string,
+  children: PropTypes.node,
+};
+
 export default Card;
