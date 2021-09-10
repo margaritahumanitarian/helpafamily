@@ -12,7 +12,6 @@ export default function NotFound() {
       <body>
         <div className="hero min-h-screen bg-base-200">
           <div className="text-center hero-content">
-            <div className="">
               <div className="flex justify-center items-center">
                 <div className="lg:w-1/2 pr-4 pl-4">
                   <Image alt="gif" src={ImageGif404} />
@@ -21,7 +20,6 @@ export default function NotFound() {
                   {'hello world'}
                 </h1>
               </div>
-            </div>
           </div>
         </div>
       </body>
