@@ -19,7 +19,8 @@ Want to contribute to this repo? That's great! These instructions will help you 
 1. Please follow the [Installation](#installation) steps.
 2. Please create a new branch and name it with the changes you are making. E.g. `fix-card-sort-order`
 3. Make your code changes. You can preview your changes by [Running the project locally](#running-the-project-locally)
-4. Send us a pull request.
+4. Run `yarn format` to ensure your code is following our linter and formatter rules. You may have to fix some linting issues manually.
+5. Send us a pull request.
 
 Please ensure your repository is up to date before making a pull request, this project is very active so something may have been changed already! [Learn to sync your branch](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch).
 
@@ -35,16 +36,31 @@ Fork this repo, then:
 git clone <url-to-your-fork-of-helpafamily-here>
 cd helpafamily/
 cp .env.example .env
-yarn install
 ```
 
+Then,
+
+### If you're familiar with Docker:
+
+`docker-compose build` (it builds the docker container - needed only the first time or whenever the container gets removed)
+
+### If you don't wish to use Docker:
+
+`yarn install`
+
 ## Running the project locally
+
+### without Docker
 
 Once you have finished the [Installation](#installation) process you can run the project with
 
 ```
 yarn dev
 ```
+
+### with Docker
+
+`docker-compose up` (it runs the app inside the container)
 
 and opening [http://127.0.0.1:3000](http://127.0.0.1:3000)
 

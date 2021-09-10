@@ -12,7 +12,10 @@ function FoodDistributionSupportCard() {
   });
 
   return (
-    <Card backgroundImageSource="/images/FoodDistribution.jpg">
+    <Card
+      backgroundImageAltText="Food Distribution Support Card Provide free food boxes for hungry families"
+      backgroundImageSource="/images/FoodDistribution.jpg"
+    >
       <CardTitle>{'Food Distribution Support'}</CardTitle>
       <CardParagraph>
         {
