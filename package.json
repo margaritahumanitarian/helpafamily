@@ -10,6 +10,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.2.0",
     "@contentful/rich-text-types": "^15.1.0",
+    "clsx": "^1.1.1",
     "contentful": "^8.5.0",
     "daisyui": "^1.14.0",
     "firebase-admin": "^9.11.1",

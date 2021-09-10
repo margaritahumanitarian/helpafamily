@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import clsx from 'clsx';
+
+import styles from './InputFormControl.module.css';
 
 function InputFormControl({
   error,
@@ -17,9 +20,9 @@ function InputFormControl({
     <div className="form-control">
       {label && (
         <label className="label" htmlFor={id}>
-          <span className="label-text">{`${label}${
-            required ? ' *' : ''
-          }`}</span>
+          <span className={clsx('label-text', { [styles.required]: required })}>
+            {label}
+          </span>
         </label>
       )}
       <input
