@@ -26,9 +26,9 @@ function InputFormControl({
         </label>
       )}
       <input
-        className={`input input-bordered input-sm ${
-          error ? 'input-error' : ''
-        }`}
+        className={clsx('input input-bordered input-sm', {
+          'input-error': error,
+        })}
         id={id}
         name={id}
         onChange={handleChange}
