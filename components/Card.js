@@ -4,7 +4,7 @@ import React from 'react';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
-    <div className="card transition duration-500 ease-in-out transform hover:-translate-y-4 filter brightness-105 shadow-xl image-full">
+    <div className="card filter brightness-105 shadow-xl image-full">
       {backgroundImageSource && (
         <figure>
           <Image
@@ -82,6 +82,24 @@ export function CardAddress({ children, label }) {
 CardAddress.propTypes = {
   children: PropTypes.node,
   label: PropTypes.string,
+};
+
+export function PositionRequirements({ label, children }) {
+  return (
+    <div className="p-2 mt-auto shaded-text">
+      <span className="font-semibold">{label}</span>
+      <ul className="list-disc text-left pl-6">
+        {children.map((listItem, index) => (
+          <li key={index}>{listItem}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+PositionRequirements.propTypes = {
+  label: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Card;
