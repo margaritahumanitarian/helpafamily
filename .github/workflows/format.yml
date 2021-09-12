@@ -1,7 +1,7 @@
 name: Format
 on:
   push:
-    branches: [main]
+    branches: [main, add_light_house]
 jobs:
   format:
     runs-on: ubuntu-latest
