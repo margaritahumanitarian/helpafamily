@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import React from 'react';
+import clsx from 'clsx';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
@@ -50,9 +51,9 @@ export function CardAction({ children, linkTo, isPending, onClick }) {
         </a>
       ) : (
         <button
-          className={`btn btn-accent w-full h-auto ${
-            isPending ? 'loading' : ''
-          }`}
+          className={clsx('btn btn-accent w-full h-auto', {
+            loading: isPending,
+          })}
           onClick={onClick}
           type="button"
         >
@@ -72,7 +73,7 @@ CardAction.propTypes = {
 
 export function CardAddress({ children, label }) {
   return (
-    <div className="shaded-text" style={{ marginTop: 'auto' }}>
+    <div className="shaded-text my-auto">
       <div className="font-semibold">{label}</div>
       <span>{children}</span>
     </div>
