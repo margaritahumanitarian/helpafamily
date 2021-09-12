@@ -38,12 +38,12 @@ export default function Navbar() {
       <div className="flex-none hidden sm:flex">
         {'Help Families in Need'}
         <button className="btn btn-square btn-ghost" type="button">
-          {<FaRegHeart className="inline-block w-5 h-5 stroke-current" />}
+          <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
         </button>
       </div>
       <div className="flex-none hidden sm:flex">
         <button className="btn btn-square btn-ghost" type="button">
-          {<BsSearch className="inline-block w-5 h-5 stroke-current" />}
+          <BsSearch className="inline-block w-5 h-5 stroke-current" />
         </button>
       </div>
     </div>
