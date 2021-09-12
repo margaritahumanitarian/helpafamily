@@ -29,7 +29,7 @@ export default function NotFound() {
                   {
                     'The page you requested was not found. Always act in kindness by reporting errors like this '
                   }
-                  <Link href="https://github.com/margaritahumanitarian/helpafamily/issues/new/choose">
+                  <Link href="https://github.com/margaritahumanitarian/helpafamily/issues/new/choose" passHref>
                     <span className="text-blue-700">{'here'}</span>
                   </Link>
                 </p>
