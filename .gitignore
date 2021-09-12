@@ -145,3 +145,6 @@ dist
 
 #.idea files
 .idea
+
+# Lighthouse performance testing
+.lighthouseci/ 
