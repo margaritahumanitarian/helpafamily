@@ -16,7 +16,7 @@ export default function NotFound() {
             <div className="">
               <div className="flex justify-center items-center">
                 <div className="lg:w-1/2 pr-4 pl-4">
-                  <Image alt="404-gif" src={ImageGif404} />
+                  <Image alt="Caveman accidentally getting electrocuted" src={ImageGif404} />
                 </div>
                 <h1 className="mx-auto mb-2 text-3xl font-bold leading-10">
                   {'Oops!!!'}
