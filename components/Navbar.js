@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 
+import { BsSearch } from 'react-icons/bs';
+import { FaRegHeart } from 'react-icons/fa';
+
 export default function Navbar() {
   return (
     <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content justify-center sticky top-0 z-50">
@@ -35,36 +38,12 @@ export default function Navbar() {
       <div className="flex-none hidden sm:flex">
         {'Help Families in Need'}
         <button className="btn btn-square btn-ghost" type="button">
-          <svg
-            className="inline-block w-6 h-6 stroke-current"
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-            />
-          </svg>
+          {<FaRegHeart className="inline-block w-5 h-5 stroke-current" />}
         </button>
       </div>
       <div className="flex-none hidden sm:flex">
         <button className="btn btn-square btn-ghost" type="button">
-          <svg
-            className="inline-block w-6 h-6 stroke-current"
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-            />
-          </svg>
+          {<BsSearch className="inline-block w-5 h-5 stroke-current" />}
         </button>
       </div>
     </div>
