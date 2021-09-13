@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import CheckboxFormControl from './form/CheckboxFormControl';
 import Modal from './Modal';
@@ -118,7 +119,7 @@ export default function MainDonationForm() {
             value={amount}
           />
           <button
-            className={`btn btn-primary ${isPending ? 'loading' : ''}`}
+            className={clsx('btn btn-primary', { loading: isPending })}
             type="submit"
           >
             {'Donate'}
