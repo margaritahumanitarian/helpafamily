@@ -1,11 +1,250 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
+import Footer from '../components/Footer';
+import Head from 'next/head';
+// import Link from 'next/link';
+import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 
-const landingPage = () => {
+// import { BsSearch } from 'react-icons/bs';
+import { FaRegHeart } from 'react-icons/fa';
+
+/**
+ * ## Large Hero Section
+ * This component fits inside of the `LargeHeroSection` component.
+ *
+ * ### Modify using tailwind classes or css
+ * - `opacity` : "bg-opacity-`opcaity`" | Example: `"30"` | Tailwind opacity => https://tailwindcss.com/docs/background-opacity
+ * - `heroHeight` : Use standard css (vh | px | %) :  Example: `"70vh"`
+ *
+ * @param {Object} props - bgImage, mainTextSize, opacity, title, titleSize
+ * @param {String} props.bgImage - Background image url
+ * @param {String} props.heroHeight Use standard css (vh | px | %) :  Example: `"70vh"`
+ * @param {String} props.opacity "bg-opacity-`opcaity`" | Example: `"30"` | Tailwind opacity => https://tailwindcss.com/docs/background-opacity
+ * @returns {JSX} JSX
+ */
+
+const LargeHeroSection = ({
+  bgImage,
+  children,
+  heroHeight = '100vh',
+  opacity = '60',
+}) => {
   return (
-    <div>
-      <h1>Landing Page</h1>
-    </div>
-  )
-}
+    <>
+      <div className="hero min-height background">
+        <div className={`hero-overlay bg-opacity-${opacity}`} />
+        {children}
+      </div>
+      <style jsx>{`
+        .background {
+          background-image: url(${bgImage});
+        }
+        .min-height {
+          height: ${heroHeight};
+        }
+      `}</style>
+    </>
+  );
+};
 
-export default landingPage
+LargeHeroSection.propTypes = {
+  children: PropTypes.node.isRequired,
+  bgImage: PropTypes.string,
+  mainTextSize: PropTypes.string,
+  opacity: PropTypes.string,
+};
+
+/**
+ * ## Large Hero Content
+ * This component goes full width and height of the page by default. Modify with props.
+ *
+ * ### Modify using tailwind classes or css
+ * - `titleSize` : "text-`titleSize`" | Tailwind text sizes => https://tailwindcss.com/docs/font-size
+ * - `mainTextSize` : "max-w-`mainSize`" | Tailwind max-width sizes => https://tailwindcss.com/docs/max-width
+ *
+ * @param {Object} props - bgImage, mainTextSize, opacity, title, titleSize
+ * @param {String} props.mainTextSize - change the size of main section "max-w-`mainSize`" | Tailwind max-width sizes => https://tailwindcss.com/docs/max-width
+ * @param {String} props.fadeInSpeed - change the speed of fade in "ease-in-out-`fadeInSpeed`" | Example: `"0.8s"`
+ * @param {String} props.title - The title of the hero section
+ * @param {String} props.titleSize - "text-`titleSize`" | Example: `"5xl"` Tailwind text sizes => https://tailwindcss.com/docs/font-size
+ * @returns {JSX} JSX
+ */
+
+const LargeHeroContent = ({
+  children,
+  mainTextSize = 'md',
+  title,
+  titleSize = '5xl',
+  fadeInSpeed = '0.8s',
+}) => {
+  const [fadeIn, setFadeIn] = useState(0);
+  useEffect(() => {
+    setFadeIn(1);
+  }, []);
+  return (
+    <div className="text-center hero-content text-neutral-content fade-in">
+      <div className={`max-w-${mainTextSize}`}>
+        <h1 className={`mb-6 text-${titleSize} font-bold`}>{title}</h1>
+        {children}
+      </div>
+      <style jsx>{`
+        .fade-in {
+          opacity: ${fadeIn};
+          transition: ease-in-out ${fadeInSpeed};
+        }
+      `}</style>
+    </div>
+  );
+};
+
+LargeHeroContent.propTypes = {
+  children: PropTypes.node,
+  fadeInSpeed: PropTypes.string,
+  mainTextSize: PropTypes.string,
+  title: PropTypes.string,
+  titleSize: PropTypes.string,
+};
+
+/**
+ * ### Landing Page Nav Bar
+ * This component is used to create the nav bar for the landing page which has opacity and fade in options to work in conjunction with the `LargeHeroSection` component.
+ * @param {Object} props - fadeInSpeed
+ * @param {String} props.fadeInSpeed - change the speed of fade in "ease-in-out-`fadeInSpeed`" | Example: `"0.8s"`
+ * @returns {JSX} JSX
+ */
+const LandingPageNav = ({ fadeInSpeed = '1.5s' }) => {
+  const [navOpacity, setnavOpacity] = useState(0);
+  useEffect(() => {
+    setnavOpacity(1);
+  }, []);
+  return (
+    <>
+      <div className="nav-area">
+        <div className="nav-bar mb-2 shadow-lg bg-neutral text-neutral-content justify-center sticky top-0 z-50">
+          <div className="flex-none px-6 mx-2">
+            <span className="text-lg font-bold">
+              {'Margarita Humanitarian Foundation'}
+            </span>
+          </div>
+          <div className="flex-1 px-2 mx-2 hidden md:flex">
+            {/* <div className="items-stretch hidden lg:flex">
+              <Link href="/">
+                <a className="btn btn-ghost btn-sm rounded-btn">{'Home'}</a>
+              </Link>
+              <Link href="/in-kind">
+                <a className="btn btn-ghost btn-sm rounded-btn">{'In-Kind'}</a>
+              </Link>
+              <Link href="/fund">
+                <a className="btn btn-ghost btn-sm rounded-btn">{'Fund'}</a>
+              </Link>
+              <Link href="/give-your-time">
+                <a className="btn btn-ghost btn-sm rounded-btn">
+                  {'Give Your Time'}
+                </a>
+              </Link>
+              <Link href="/partner-with-us">
+                <a className="btn btn-ghost btn-sm rounded-btn">
+                  {'Partner With Us'}
+                </a>
+              </Link>
+            </div> */}
+          </div>
+          <div className="pr-7">{'Help Families in Need'}</div>
+          <div className="flex-row hidden sm:flex">
+            <button className="btn btn-square btn-ghost pr-6" type="button">
+              <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
+            </button>
+          </div>
+
+          {/* <div className="flex-none hidden sm:flex">
+            <button className="btn btn-square btn-ghost" type="button">
+              <BsSearch className="inline-block w-5 h-5 stroke-current" />
+            </button>
+          </div> */}
+        </div>
+      </div>
+      <style jsx>{`
+        .nav-bar {
+          opacity: ${navOpacity};
+          background-color: #2159633d !important;
+          box-shadow: 0 0.3px 7.2px 0px rgba(0, 0, 0, 0.12);
+          z-index: 1;
+          position: fixed;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: ${navOpacity ? navOpacity - 1 : -3}rem;
+          left: 0;
+          right: 0;
+          height: 73px;
+          transition: all ${fadeInSpeed} ease-in-out;
+        }
+      `}</style>
+    </>
+  );
+};
+
+const LandingPage = () => {
+  const router = useRouter();
+  return (
+    <>
+      <Head>
+        <title>{'Help a Family in Need'}</title>
+        <meta content={'Help a Family in Need'} name="description" />
+        <link href="/favicon.ico" rel="icon" />
+      </Head>
+      <LandingPageNav fadeInSpeed="1.5s" />
+      <main className="body">
+        <LargeHeroSection
+          bgImage="/images/HotMealDay.jpg"
+          heroHeight="85vh"
+          opacity="20"
+        >
+          <LargeHeroContent
+            fadeInSpeed="0.8s"
+            mainTextSize="md"
+            title="Feed A Family Today"
+            titleSize="5xl"
+          >
+            <p className="mb-5">
+              {
+                'Families are in need more than ever. The pandemic coupled with trying economic times has really put the less fortunate in a difficult position as they try to maintain a functioning household. Give what you can today to help raise up those in need.'
+              }
+            </p>
+
+            <button
+              className="btn btn-accent rounded-full shadow-lg"
+              onClick={() => router.push('/in-kind')}
+              type="button"
+            >
+              {'Help Today'}
+            </button>
+          </LargeHeroContent>
+        </LargeHeroSection>
+        <section className="testimonial-section">
+          <div className="testimonial-card">{'Testimonial'}</div>
+          <div className="testimonial-card">{'Testimonial'}</div>
+          <div className="testimonial-card">{'Testimonial'}</div>
+        </section>
+
+        <style jsx>{`
+          .body {
+            //height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .testimonial-section {
+            display: flex;
+            align-items: center;
+            height: 800px;
+          }
+        `}</style>
+      </main>
+      <Footer />
+    </>
+  );
+};
+
+export default LandingPage;
