@@ -15,7 +15,7 @@ class AstronaoutLottie extends Component {
 
     return (
       <div>
-        <Lottie options={defaultOptions} height={400} width={400} />
+        <Lottie height={400} options={defaultOptions} width={400} />
       </div>
     );
   }
