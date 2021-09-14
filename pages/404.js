@@ -28,14 +28,20 @@ export default function NotFound() {
                   {
                     'The page you requested was not found. Always act in kindness by reporting errors like this '
                   }
-                  <Link href="https://github.com/margaritahumanitarian/helpafamily/issues/new/choose">
+                  <Link
+                    href="https://github.com/margaritahumanitarian/helpafamily/issues/new/choose"
+                    passHref
+                  >
                     <span className="text-blue-500">{'here'}</span>
                   </Link>
                 </p>
               </div>
               <div>
-                <Link href="/">
-                  <button class="bg-transparent mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                <Link href="/" passHref>
+                  <button
+                    className="bg-transparent mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+                    type="button"
+                  >
                     {'Home'}
                   </button>
                 </Link>
