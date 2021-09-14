@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../ lotties/astronaout.json';
+import animationData from '../ lotties/astronaut.json';
 
-class AstronaoutLottie extends Component {
+class AstronautLottie extends Component {
   render() {
     const defaultOptions = {
       loop: true,
@@ -21,4 +21,4 @@ class AstronaoutLottie extends Component {
   }
 }
 
-export default AstronaoutLottie;
+export default AstronautLottie;

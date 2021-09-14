@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import AstronaoutLottie from '../components/Astronaout';
+import AstronautLottie from '../components/Astronaout';
 
 export default function NotFound() {
   return (
@@ -15,7 +15,7 @@ export default function NotFound() {
             <div className="">
               <div className="flex justify-center items-center">
                 <div className="lg:w-1/2 pr-10 pl-4">
-                  <AstronaoutLottie />
+                  <AstronautLottie />
                 </div>
                 <h1 className="mx-auto mb-2 text-3xl font-bold leading-10">
                   {'Oops!!!'}
