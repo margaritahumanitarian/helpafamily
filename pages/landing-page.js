@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+// @ts-check
+// eslint-disable-next-line no-unused-vars
+import { ReactElement, useEffect, useState } from 'react'; // ReactElement is only imported for typechecking
 import Footer from '../components/Footer';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -22,9 +24,10 @@ import { FaRegHeart } from 'react-icons/fa';
  *
  * @param {Object} props - bgImage, mainTextSize, opacity, title, titleSize
  * @param {String} props.bgImage - Background image url
- * @param {String} props.heroHeight Use standard css (vh | px | %) :  Example: `"70vh"`
- * @param {String} props.opacity "bg-opacity-`opacity`" | Example: `"30"` | [Tailwind opacity](https://tailwindcss.com/docs/background-opacity)
- * @returns {JSX} JSX
+ * @param {String} [props.heroHeight = '100vh'] Use standard css (vh | px | %) :  Example: `"70vh"`
+ * @param {String} [props.opacity = '60' ]"bg-opacity-`opacity`" | Example: `"30"` | [Tailwind opacity](https://tailwindcss.com/docs/background-opacity)
+ * @param {*} props.children - Children elements
+ * @returns {ReactElement} JSX
  */
 
 const LargeHeroSection = ({
@@ -76,15 +79,16 @@ LargeHeroSection.propTypes = {
  * This component goes full width and height of the page by default. Modify with props.
  *
  * ### Modify using tailwind classes or css
- * - `titleSize` : "text-`titleSize`" | Tailwind text sizes => https://tailwindcss.com/docs/font-size
- * - `mainTextSize` : "max-w-`mainSize`" | Tailwind max-width sizes => https://tailwindcss.com/docs/max-width
+ * - `titleSize` : "text-`titleSize`" | Example: `"5xl"` | [Tailwind text sizes](https://tailwindcss.com/docs/font-size)
+ * - `mainTextSize` : "max-w-`mainSize`" | [Tailwind max-width sizes](https://tailwindcss.com/docs/max-width)
  *
- * @param {Object} props - bgImage, mainTextSize, opacity, title, titleSize
- * @param {String} props.mainTextSize - change the size of main section "max-w-`mainSize`" | Tailwind max-width sizes => https://tailwindcss.com/docs/max-width
- * @param {String} props.fadeInSpeed - change the speed of fade in "ease-in-out-`fadeInSpeed`" | Example: `"0.8s"`
+ * @param {Object} props - { mainTextSize, opacity, title, titleSize, fadeInSpeed }
+ * @param {String} [props.mainTextSize = 'md'] - change the size of main section "max-w-`mainSize`" | [Tailwind max-width sizes](https://tailwindcss.com/docs/max-width)
+ * @param {String} [props.fadeInSpeed = '0.8s'] - change the speed of fade in "ease-in-out-`fadeInSpeed`" | Example: `"0.8s"`
  * @param {String} props.title - The title of the hero section
- * @param {String} props.titleSize - "text-`titleSize`" | Example: `"5xl"` Tailwind text sizes => https://tailwindcss.com/docs/font-size
- * @returns {JSX} JSX
+ * @param {String} [props.titleSize = '5xl'] - "text-`titleSize`" | Example: `"5xl"` | [Tailwind text sizes](https://tailwindcss.com/docs/font-size)
+ * @param {*} props.children - The content of the hero section
+ * @returns {ReactElement} JSX
  */
 
 const LargeHeroContent = ({
@@ -140,8 +144,8 @@ LargeHeroContent.propTypes = {
  * ### Landing Page Nav Bar
  * This component is used to create the nav bar for the landing page which has opacity and fade in options to work in conjunction with the `LargeHeroSection` component.
  * @param {Object} props - fadeInSpeed
- * @param {String} props.fadeInSpeed - change the speed of fade in "ease-in-out-`fadeInSpeed`" | Example: `"0.8s"`
- * @returns {JSX} JSX
+ * @param {String} [props.fadeInSpeed = '1.5s' ]- change the speed of fade in "ease-in-out-`fadeInSpeed`" | Example: `"0.8s"`
+ * @returns {ReactElement} JSX
  */
 const LandingPageNav = ({ fadeInSpeed = '1.5s' }) => {
   const [navOpacity, setnavOpacity] = useState(0);
