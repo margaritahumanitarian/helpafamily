@@ -43,6 +43,11 @@ const LargeHeroSection = ({
         .min-height {
           height: ${heroHeight};
         }
+        @media (max-width: 768px) {
+          .hero {
+            height: 100vh;
+          }
+        }
       `}</style>
     </>
   );
@@ -92,6 +97,12 @@ const LargeHeroContent = ({
         .fade-in {
           opacity: ${fadeIn};
           transition: ease-in-out ${fadeInSpeed};
+        }
+        @media (max-width: 768px) {
+          .hero-content {
+            padding-top: 0;
+            height: 100vh;
+          }
         }
       `}</style>
     </div>
@@ -150,7 +161,7 @@ const LandingPageNav = ({ fadeInSpeed = '1.5s' }) => {
               </Link>
             </div> */}
           </div>
-          <div className="pr-7">{'Help Families in Need'}</div>
+          <div className="pr-7 hidden">{' Help Families in Need'}</div>
           <div className="flex-row hidden sm:flex">
             <button className="btn btn-square btn-ghost pr-6" type="button">
               <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
@@ -179,6 +190,14 @@ const LandingPageNav = ({ fadeInSpeed = '1.5s' }) => {
           right: 0;
           height: 73px;
           transition: all ${fadeInSpeed} ease-in-out;
+        }
+        @media (min-width: 768px) {
+          .nav-bar {
+            top: 0;
+          }
+          .hidden {
+            display: none;
+          }
         }
       `}</style>
     </>
@@ -257,7 +276,7 @@ const TestimonialSection = () => {
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          height: 1200px;
+          height: 1300px;
           padding: 10px;
         }
         .cards {
@@ -268,8 +287,8 @@ const TestimonialSection = () => {
           );
           padding: 70px;
           display: flex;
-          align-items: center;
-          height: 70vh;
+          align-items: flex-end;
+          height: 600px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2),
             0 2px 3px rgba(0, 0, 0, 0.2);
         }
@@ -286,7 +305,34 @@ const TestimonialSection = () => {
           color: #0d2529b4;
           font-size: 2.5rem;
           font-weight: 500;
-          padding-bottom: 100px;
+          padding-bottom: 200px;
+        }
+
+        @media (max-width: 768px) {
+          .testimonial-section {
+            height: auto;
+            padding: 100px 0;
+
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+          .cards {
+            flex-direction: column;
+            height: auto;
+            padding: 0;
+          }
+          .testimonial-card {
+            width: 100%;
+            height: 500px;
+            margin: 0;
+            border-radius: 0;
+            box-shadow: none;
+          }
+          .section-title {
+            font-size: 1.5rem;
+            padding-bottom: 50px;
+          }
         }
       `}</style>
     </section>
@@ -300,6 +346,7 @@ const LandingPage = () => {
       <Head>
         <title>{'Help a Family in Need'}</title>
         <meta content={'Help a Family in Need'} name="description" />
+        <link href="https://www.margaritahumanitarian.org/" rel="canonical" />
         <link href="/favicon.ico" rel="icon" />
       </Head>
       <LandingPageNav fadeInSpeed="1.5s" />
@@ -311,7 +358,7 @@ const LandingPage = () => {
         >
           <LargeHeroContent
             fadeInSpeed="0.8s"
-            mainTextSize="md"
+            mainTextSize="xl"
             title="Feed A Family Today"
             titleSize="5xl"
           >
