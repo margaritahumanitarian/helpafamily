@@ -176,6 +176,9 @@ const LandingPageNav = ({ fadeInSpeed = '1.5s' }) => {
         </div>
       </div>
       <style jsx>{`
+        .hidden {
+          display: block;
+        }
         .nav-bar {
           opacity: ${navOpacity};
           background-color: #2159633d !important;
@@ -191,7 +194,7 @@ const LandingPageNav = ({ fadeInSpeed = '1.5s' }) => {
           height: 73px;
           transition: all ${fadeInSpeed} ease-in-out;
         }
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
           .nav-bar {
             top: 0;
           }
