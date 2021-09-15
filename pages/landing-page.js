@@ -2,25 +2,28 @@ import { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Head from 'next/head';
 import Image from 'next/image';
-// import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 // import { BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
 
+// -----------------------------------------------------------------------------------------------------------------------
+// TODO: Export LargeHeroSection to components folder.
+// -----------------------------------------------------------------------------------------------------------------------
+
 /**
  * ## Large Hero Section
  * This component is the main `LargeHeroSection` component.
  *
  * ### Modify using tailwind classes or css
- * - `opacity` : "bg-opacity-`opacity`" | Example: `"30"` | Tailwind opacity => https://tailwindcss.com/docs/background-opacity
+ * - `opacity` : "bg-opacity-`opacity`" | Example: `"30"` | [Tailwind opacity](https://tailwindcss.com/docs/background-opacity)
  * - `heroHeight` : Use standard css (vh | px | %) :  Example: `"70vh"`
  *
  * @param {Object} props - bgImage, mainTextSize, opacity, title, titleSize
  * @param {String} props.bgImage - Background image url
  * @param {String} props.heroHeight Use standard css (vh | px | %) :  Example: `"70vh"`
- * @param {String} props.opacity "bg-opacity-`opacity`" | Example: `"30"` | Tailwind opacity => https://tailwindcss.com/docs/background-opacity
+ * @param {String} props.opacity "bg-opacity-`opacity`" | Example: `"30"` | [Tailwind opacity](https://tailwindcss.com/docs/background-opacity)
  * @returns {JSX} JSX
  */
 
@@ -59,6 +62,14 @@ LargeHeroSection.propTypes = {
   heroHeight: PropTypes.string,
   opacity: PropTypes.string,
 };
+
+// -----------------------------------------------------------------------------------------------------------------------
+// Export End.
+// -----------------------------------------------------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------------------------------------------------
+// TODO: Export LargeHeroContent to components folder.
+// -----------------------------------------------------------------------------------------------------------------------
 
 /**
  * ## Large Hero Content
@@ -113,9 +124,17 @@ LargeHeroContent.propTypes = {
   children: PropTypes.node,
   fadeInSpeed: PropTypes.string,
   mainTextSize: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   titleSize: PropTypes.string,
 };
+
+// -----------------------------------------------------------------------------------------------------------------------
+// Export LargeHeroContent end.
+// -----------------------------------------------------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------------------------------------------------
+// TODO: Export LandingPageNav to components folder.
+// -----------------------------------------------------------------------------------------------------------------------
 
 /**
  * ### Landing Page Nav Bar
@@ -207,6 +226,14 @@ const LandingPageNav = ({ fadeInSpeed = '1.5s' }) => {
   );
 };
 
+// -----------------------------------------------------------------------------------------------------------------------
+// Export LandingPageNav end.
+// -----------------------------------------------------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------------------------------------------------
+// TODO: Export TestimonialSection to components folder or leave it here as it's not the most reusable component.
+// -----------------------------------------------------------------------------------------------------------------------
+
 const TestimonialSection = () => {
   return (
     <section className="testimonial-section">
@@ -297,7 +324,7 @@ const TestimonialSection = () => {
         }
         .testimonial-card {
           display: flex;
-          width: 400px;
+          width: 350px;
           height: 600px;
           overflow: scroll;
           margin: 20px;
@@ -342,6 +369,14 @@ const TestimonialSection = () => {
   );
 };
 
+// -----------------------------------------------------------------------------------------------------------------------
+// Export TestimonialSection end.
+// -----------------------------------------------------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------------------------------------------------
+// Main Component for this page lives here.
+// -----------------------------------------------------------------------------------------------------------------------
+
 const LandingPage = () => {
   const router = useRouter();
   return (
@@ -361,7 +396,7 @@ const LandingPage = () => {
         >
           <LargeHeroContent
             fadeInSpeed="0.8s"
-            mainTextSize="xl"
+            mainTextSize="lg"
             title="Feed A Family Today"
             titleSize="5xl"
           >
