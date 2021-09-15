@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Head from 'next/head';
+import Image from 'next/image';
 // import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
@@ -48,9 +49,9 @@ const LargeHeroSection = ({
 };
 
 LargeHeroSection.propTypes = {
-  children: PropTypes.node.isRequired,
-  bgImage: PropTypes.string,
-  mainTextSize: PropTypes.string,
+  children: PropTypes.node,
+  bgImage: PropTypes.string.isRequired,
+  heroHeight: PropTypes.string,
   opacity: PropTypes.string,
 };
 
@@ -72,10 +73,10 @@ LargeHeroSection.propTypes = {
 
 const LargeHeroContent = ({
   children,
+  fadeInSpeed = '0.8s',
   mainTextSize = 'md',
   title,
   titleSize = '5xl',
-  fadeInSpeed = '0.8s',
 }) => {
   const [fadeIn, setFadeIn] = useState(0);
   useEffect(() => {
@@ -184,6 +185,114 @@ const LandingPageNav = ({ fadeInSpeed = '1.5s' }) => {
   );
 };
 
+const TestimonialSection = () => {
+  return (
+    <section className="testimonial-section">
+      <div className="section-title">
+        <h2>{'See What People Are Saying'}</h2>
+      </div>
+      <div className="cards">
+        <div className="testimonial-card">
+          <div className="card glass lg:card text-neutral-content">
+            <figure className="p-0">
+              <Image
+                alt="testimonial"
+                className="shadow-lg"
+                height={340}
+                layout="responsive"
+                src="/images/HealthWorkShop.jpg"
+                width={500}
+              />
+            </figure>
+            <div className="max-w-md card-body">
+              <h2 className="card-title">{'Lovely People'}</h2>
+              <p>{"We haven't met a more generous group of giving souls."}</p>
+            </div>
+          </div>
+        </div>
+        <div className="testimonial-card">
+          <div className="card glass lg:card text-neutral-content">
+            <figure className="p-0">
+              <Image
+                alt="testimonial"
+                className="shadow-lg"
+                height={340}
+                layout="responsive"
+                src="/images/Volunteer.jpg"
+                width={500}
+              />
+            </figure>
+            <div className="max-w-md card-body">
+              <h2 className="card-title">{'Very Happy'}</h2>
+              <p>
+                {"I couldn't be more pleased with the way I've been treated."}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="testimonial-card">
+          <div className="card glass lg:card text-neutral-content">
+            <figure className="p-0">
+              <Image
+                alt="testimonial"
+                className="shadow-lg"
+                height={340}
+                layout="responsive"
+                src="/images/Humanitarian.jpg"
+                width={500}
+              />
+            </figure>
+            <div className="max-w-md card-body">
+              <h2 className="card-title">{'They Care'}</h2>
+              <p>
+                {"I couldn't be more pleased with the way I've been treated."}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style jsx>{`
+        .testimonial-section {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 1200px;
+          padding: 10px;
+        }
+        .cards {
+          background: linear-gradient(
+            90deg,
+            rgba(91, 164, 167, 0.699) 0%,
+            rgba(206, 117, 66, 0.336) 100%
+          );
+          padding: 70px;
+          display: flex;
+          align-items: center;
+          height: 70vh;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2),
+            0 2px 3px rgba(0, 0, 0, 0.2);
+        }
+        .testimonial-card {
+          display: flex;
+          width: 400px;
+          height: 600px;
+          overflow: scroll;
+          margin: 20px;
+          border-radius: 10px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .section-title {
+          color: #0d2529b4;
+          font-size: 2.5rem;
+          font-weight: 500;
+          padding-bottom: 100px;
+        }
+      `}</style>
+    </section>
+  );
+};
+
 const LandingPage = () => {
   const router = useRouter();
   return (
@@ -221,24 +330,13 @@ const LandingPage = () => {
             </button>
           </LargeHeroContent>
         </LargeHeroSection>
-        <section className="testimonial-section">
-          <div className="testimonial-card">{'Testimonial'}</div>
-          <div className="testimonial-card">{'Testimonial'}</div>
-          <div className="testimonial-card">{'Testimonial'}</div>
-        </section>
+        <TestimonialSection />
 
         <style jsx>{`
           .body {
-            //height: 100vh;
-            width: 100vw;
             display: flex;
             flex-direction: column;
             align-items: center;
-          }
-          .testimonial-section {
-            display: flex;
-            align-items: center;
-            height: 800px;
           }
         `}</style>
       </main>
