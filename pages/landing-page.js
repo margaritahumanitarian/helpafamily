@@ -11,16 +11,16 @@ import { FaRegHeart } from 'react-icons/fa';
 
 /**
  * ## Large Hero Section
- * This component fits inside of the `LargeHeroSection` component.
+ * This component is the main `LargeHeroSection` component.
  *
  * ### Modify using tailwind classes or css
- * - `opacity` : "bg-opacity-`opcaity`" | Example: `"30"` | Tailwind opacity => https://tailwindcss.com/docs/background-opacity
+ * - `opacity` : "bg-opacity-`opacity`" | Example: `"30"` | Tailwind opacity => https://tailwindcss.com/docs/background-opacity
  * - `heroHeight` : Use standard css (vh | px | %) :  Example: `"70vh"`
  *
  * @param {Object} props - bgImage, mainTextSize, opacity, title, titleSize
  * @param {String} props.bgImage - Background image url
  * @param {String} props.heroHeight Use standard css (vh | px | %) :  Example: `"70vh"`
- * @param {String} props.opacity "bg-opacity-`opcaity`" | Example: `"30"` | Tailwind opacity => https://tailwindcss.com/docs/background-opacity
+ * @param {String} props.opacity "bg-opacity-`opacity`" | Example: `"30"` | Tailwind opacity => https://tailwindcss.com/docs/background-opacity
  * @returns {JSX} JSX
  */
 
