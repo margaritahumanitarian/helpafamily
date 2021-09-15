@@ -8,10 +8,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "14.x"
-      - run: yarn
+      - run: |
+          yarn
+          yarn build
       - name: run Lighthouse CI
         run: |
-          yarn add @lhci/cli@0.3.x
+          yarn global add @lhci/cli@0.8.x
           lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
+  
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
