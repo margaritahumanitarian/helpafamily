@@ -148,3 +148,6 @@ dist
 
 # Lighthouse performance testing
 .lighthouseci/ 
+
+# vs code
+/.vscode/

@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 
 const dollarsToCentsMultiplier = 100;
 
-const useStripeSession = ({ amount, cause }) => {
+const useStripeSession = () => {
   const [isPending, setIsPending] = React.useState(false);
   const router = useRouter();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async ({ amount, cause }) => {
     setIsPending(true);
 
     const response = await fetch('/api/create-stripe-session', {

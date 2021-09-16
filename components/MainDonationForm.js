@@ -9,7 +9,7 @@ import useStripeSession from '../hooks/useStripeSession';
 const AMOUNTS = [
   { value: 0, label: 'Choose your donation amount', disabled: true },
   { value: 5, label: '$5' },
-  { value: 25, label: '$25 ' },
+  { value: 25, label: '$25' },
   { value: 50, label: '$50' },
   { value: 75, label: '$75' },
   { value: 125, label: '$125' },
@@ -35,10 +35,7 @@ export default function MainDonationForm() {
   const [selectedCauses, setSelectedCauses] = React.useState({});
   const [isAnyoneInNeed, setIsAnyoneInNeed] = React.useState(true);
   const [cause, setCause] = React.useState('');
-  const [handleSubmit, isPending] = useStripeSession({
-    amount,
-    cause,
-  });
+  const [handleSubmit, isPending] = useStripeSession();
 
   React.useEffect(() => {
     const allSelected = Object.values(selectedCauses).filter(Boolean);
@@ -82,7 +79,7 @@ export default function MainDonationForm() {
       return;
     }
 
-    handleSubmit();
+    handleSubmit({ amount, cause });
   };
 
   return (
