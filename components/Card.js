@@ -5,13 +5,15 @@ import clsx from 'clsx';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
-    <div className="card filter brightness-105 shadow-xl image-full">
+    <div className="card filter brightness-105 shadow-xl">
       {backgroundImageSource && (
         <figure>
           <Image
             alt={backgroundImageAltText}
-            layout="fill"
+            layout="fixed"
             src={backgroundImageSource}
+            width="350"
+            height="250"
           />
         </figure>
       )}
