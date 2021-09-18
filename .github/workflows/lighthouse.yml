@@ -9,7 +9,7 @@ jobs:
         with:
           node-version: "14.x"
       - run: |
-          yarn
+          yarn install
           yarn build
       - name: run Lighthouse CI
         run: |
