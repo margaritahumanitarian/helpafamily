@@ -4,9 +4,9 @@ import { ReactElement, useEffect, useState } from 'react'; // ReactElement is on
 import LandingPageNav from '../components/LandingPageNav';
 import LargeHeroContent from '../components/LargeHeroContent';
 import LargeHeroSection from '../components/LargeHeroSection';
+import TestimonialCard from '../components/TestimonialCard';
 import Footer from '../components/Footer';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
@@ -25,41 +25,11 @@ import PropTypes from 'prop-types';
 
 
 // -----------------------------------------------------------------------------------------------------------------------
-// TODO: Export LandingPageNav to components folder.
-// FIXME: The commented out code is for @Audrey to decide whether or not she wants to use the links in the nav.
-// -----------------------------------------------------------------------------------------------------------------------
-
-
-
-// -----------------------------------------------------------------------------------------------------------------------
-// Export LandingPageNav end.
-// -----------------------------------------------------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------------------------------------------------
 // TODO: Export TestimonialCard to components folder or leave it here as it's not the most reusable component.
 // FIXME: Find correct images for these cards and fix the sizing issues
 // -----------------------------------------------------------------------------------------------------------------------
 
-const TestimonialCard = ({ content, image, title }) => {
-  return (
-    <div className="m-5 w-72 h-96 card glass lg:card text-neutral-content">
-      <figure className="p-0">
-        <Image
-          alt="testimonial"
-          className="shadow-lg"
-          height={340}
-          layout="responsive"
-          src={image}
-          width={500}
-        />
-      </figure>
-      <div className="max-w-md card-body">
-        <h2 className="card-title">{title}</h2>
-        <p>{content}</p>
-      </div>
-    </div>
-  );
-};
+
 
 // -----------------------------------------------------------------------------------------------------------------------
 // Export LandingPageNav end.
