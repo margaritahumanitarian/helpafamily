@@ -395,7 +395,6 @@ const LandingPage = () => {
       <main className="body">
         <LargeHeroSection
           bgImage="/images/HotMealDay.jpg"
-          heroHeight="85vh"
           opacity="20"
         >
           <LargeHeroContent
