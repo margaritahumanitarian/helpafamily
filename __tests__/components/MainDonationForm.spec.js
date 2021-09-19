@@ -23,22 +23,25 @@ describe('MainDonationForm', () => {
     render(<MainDonationForm />);
   });
 
-  it('should render switch, select and button', () => {
-    expect(screen.getByRole('button')).toBeInTheDocument();
+  it('should render toggle switch, dropdown select combo box, and bottom button', () => {
+    expect(
+      screen.getByRole('checkbox', { name: /anyone in need/i })
+    ).toBeInTheDocument();
     expect(screen.getByRole('combobox')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /donate/i })).toBeInTheDocument();
   });
 
-  it('should show error dialog if amount not selected', () => {
+  it('should show error dialog if the form is submitted without an amount selected', () => {
     const errorMessage = 'Please choose an amount to give';
     expect(screen.queryByText(errorMessage)).not.toBeInTheDocument();
-    userEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getByRole('button', { name: /donate/i }));
     expect(screen.queryByText(errorMessage)).toBeInTheDocument();
     expect(mockHandleSubmit).not.toBeCalled();
   });
 
-  it('should not show error when amount selected and submit the form', () => {
+  it('should not show an error when the form is submitted with an amount correctly selected', () => {
     userEvent.selectOptions(screen.getByRole('combobox'), ['5']);
-    userEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getByRole('button', { name: /donate/i }));
     expect(mockHandleSubmit).toBeCalledWith({
       amount: '5',
       cause: 'Anyone in Need',
@@ -46,17 +49,25 @@ describe('MainDonationForm', () => {
   });
 
   it('should show checkboxes if switch is off', () => {
+    expect(
+      screen.getByRole('checkbox', { name: /anyone in need/i })
+    ).toBeChecked();
     expect(screen.getAllByRole('checkbox')).toHaveLength(1);
-    userEvent.click(screen.getByRole('checkbox'));
+    userEvent.click(screen.getByRole('checkbox', { name: /anyone in need/i }));
+    expect(
+      screen.getByRole('checkbox', { name: /anyone in need/i })
+    ).not.toBeChecked();
     expect(screen.getAllByRole('checkbox')).toHaveLength(5);
   });
 
   it('should submit selected amount and cause', () => {
-    userEvent.click(screen.getByRole('checkbox'));
-    userEvent.click(screen.getByLabelText('Students in Need'));
-    userEvent.click(screen.getByLabelText('Seniors in Need'));
+    userEvent.click(screen.getByRole('checkbox', { name: /anyone in need/i }));
+    userEvent.click(
+      screen.getByRole('checkbox', { name: /students in need/i })
+    );
+    userEvent.click(screen.getByRole('checkbox', { name: /seniors in need/i }));
     userEvent.selectOptions(screen.getByRole('combobox'), ['5']);
-    userEvent.click(screen.getByRole('button'));
+    userEvent.click(screen.getByRole('button', { name: /donate/i }));
     expect(mockHandleSubmit).toBeCalledWith({
       amount: '5',
       cause: 'Students in Need, Seniors in Need',
