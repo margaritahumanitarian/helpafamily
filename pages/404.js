@@ -10,21 +10,21 @@ export default function NotFound() {
         <title>{'404 Not Found'}</title>
       </head>
       <body>
-        <div className="hero min-h-screen bg-base-200 bg-white">
+        <div className="hero min-h-screen bg-base-200 bg-white bg-gradient-to-r from-yellow-200 to-green-300">
           <div className="text-center hero-content">
             <div className="">
               <div className="flex justify-center items-center">
                 <div className="lg:w-1/2 pr-10 pl-4">
                   <AstronautLottie />
                 </div>
-                <h1 className="mx-auto mb-2 text-3xl font-bold leading-10">
+                <h1 className="mx-auto mb-2 text-3xl font-bold leading-10 text-gray-600">
                   {'Oops!!!'}
                   <br />
                   {'404 page not found'}
                 </h1>
               </div>
               <div>
-                <p className="text-blue-300 mt-5">
+                <p className="text-gray-600 mt-5">
                   {
                     'The page you requested was not found. Always act in kindness by reporting errors like this '
                   }
