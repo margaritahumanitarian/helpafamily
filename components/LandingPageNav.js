@@ -1,7 +1,6 @@
 // @ts-check
 // eslint-disable-next-line no-unused-vars
 import { ReactElement, useEffect, useState } from 'react'; // ReactElement is only imported for typechecking
-import PropTypes from 'prop-types';
 // import { BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
 

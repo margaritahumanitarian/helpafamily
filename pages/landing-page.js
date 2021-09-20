@@ -1,15 +1,13 @@
 // @ts-check
 // eslint-disable-next-line no-unused-vars
 import { ReactElement, useEffect, useState } from 'react'; // ReactElement is only imported for typechecking
+import Footer from '../components/Footer';
+import Head from 'next/head';
 import LandingPageNav from '../components/LandingPageNav';
 import LargeHeroContent from '../components/LargeHeroContent';
 import LargeHeroSection from '../components/LargeHeroSection';
-import TestimonialCard from '../components/TestimonialCard';
-import Footer from '../components/Footer';
-import Head from 'next/head';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
-
+import TestimonialCard from '../components/TestimonialCard';
 
 /** -----------------------------------------------------------------------------------------------------------------------
  *
@@ -22,14 +20,10 @@ import PropTypes from 'prop-types';
  *
  */ // --------------------------------------------------------------------------------------------------------------------
 
-
-
 // -----------------------------------------------------------------------------------------------------------------------
 // TODO: Export TestimonialCard to components folder or leave it here as it's not the most reusable component.
 // FIXME: Find correct images for these cards and fix the sizing issues
 // -----------------------------------------------------------------------------------------------------------------------
-
-
 
 // -----------------------------------------------------------------------------------------------------------------------
 // Export LandingPageNav end.
