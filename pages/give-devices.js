@@ -100,7 +100,7 @@ export default function GiveDevicesPage() {
   return (
     <>
       <Head>
-        <title> {'Donate Devices'} </title>
+        <title>{'Donate Devices'}</title>
       </Head>
       <Navbar />
       <main>
