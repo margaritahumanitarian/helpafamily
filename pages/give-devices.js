@@ -100,8 +100,8 @@ export default function GiveDevicesPage() {
   return (
     <>
       <Head>
-        <title> {'Donate Devices'} </title>{' '}
-      </Head>{' '}
+        <title> {'Donate Devices'} </title>
+      </Head>
       <Navbar />
       <main>
         <div className="p-4">
@@ -111,23 +111,20 @@ export default function GiveDevicesPage() {
                 <div className="md:col-span-1 mb-5">
                   <div className="px-4 sm:px-0">
                     <h3 className="text-lg font-medium leading-6 text-gray-900">
-                      {' '}
-                      {'Laptop Donations for Families'}{' '}
-                    </h3>{' '}
+                      {'Laptop Donations for Families'}
+                    </h3>
                     <p className="mt-1 text-sm text-gray-600">
-                      {' '}
-                      {`Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use.`}{' '}
-                    </p>{' '}
-                  </div>{' '}
-                </div>{' '}
+                      {`Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use.`}
+                    </p>
+                  </div>
+                </div>
                 <div className="md:mt-0 md-mt-10 md:col-span-2">
                   <div className="card shadow-2xl">
                     <div className="card-body bg-green-50">
                       <form onSubmit={handleSubmit}>
                         <h3 className="text-lg font-medium leading-6 text-red-900">
-                          {' '}
-                          {'Required fields are marked with *'}{' '}
-                        </h3>{' '}
+                          {'Required fields are marked with *'}
+                        </h3>
                         <InputFormControl
                           error={errors['name']}
                           id="name"
@@ -135,7 +132,7 @@ export default function GiveDevicesPage() {
                           onChange={handleChange('name')}
                           required
                           value={formData['name']}
-                        />{' '}
+                        />
                         <InputFormControl
                           error={errors['email']}
                           id="email"
@@ -144,14 +141,14 @@ export default function GiveDevicesPage() {
                           required
                           type="email"
                           value={formData['email']}
-                        />{' '}
+                        />
                         <SelectFormControl
                           id="country"
                           label="Country / Region"
                           onChange={handleChange('country')}
                           options={COUNTRIES}
                           value={formData['country']}
-                        />{' '}
+                        />
                         <InputFormControl
                           error={errors['streetAddress']}
                           id="streetAddress"
@@ -160,24 +157,22 @@ export default function GiveDevicesPage() {
                           placeholder="Use an address where you can receive mail."
                           required
                           value={formData['streetAddress']}
-                        />{' '}
+                        />
                         <InputFormControl
                           id="streetAddress2"
                           label="Street address 2"
                           onChange={handleChange('streetAddress2')}
                           placeholder="Extra address data can go here"
                           value={formData['streetAddress2']}
-                        />{' '}
-                        {
-                          <InputFormControl
-                            error={errors['city']}
-                            id="city"
-                            label="City"
-                            onChange={handleChange('city')}
-                            required
-                            value={formData['city']}
-                          />
-                        }{' '}
+                        />
+                        <InputFormControl
+                          error={errors['city']}
+                          id="city"
+                          label="City"
+                          onChange={handleChange('city')}
+                          required
+                          value={formData['city']}
+                        />
                         <InputFormControl
                           error={errors['state']}
                           id="state"
@@ -185,7 +180,7 @@ export default function GiveDevicesPage() {
                           onChange={handleChange('state')}
                           required
                           value={formData['state']}
-                        />{' '}
+                        />
                         <InputFormControl
                           error={errors['postalCode']}
                           id="postalCode"
@@ -193,45 +188,45 @@ export default function GiveDevicesPage() {
                           onChange={handleChange('postalCode')}
                           required
                           value={formData['postalCode']}
-                        />{' '}
+                        />
                         <InputFormControl
                           id="phone"
                           label="Phone Number"
                           onChange={handleChange('phone')}
                           type="tel"
                           value={formData['phone']}
-                        />{' '}
+                        />
                         <InputFormControl
                           id="originalPurchasePrice"
                           label="Original Purchase Price"
                           onChange={handleChange('originalPurchasePrice')}
                           value={formData['originalPurchasePrice']}
-                        />{' '}
+                        />
                         <TextareaFormControl
                           id="description"
                           label="Additional information"
                           onChange={handleChange('description')}
                           placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
                           value={formData['description']}
-                        />{' '}
+                        />
                         <div className="py-2">
                           <button
                             className="btn btn-accent w-2/5"
                             type="submit"
                           >
-                            {'Send'}{' '}
-                          </button>{' '}
-                        </div>{' '}
-                      </form>{' '}
-                    </div>{' '}
-                  </div>{' '}
-                </div>{' '}
-              </div>{' '}
-            </div>{' '}
-          </div>{' '}
-        </div>{' '}
+                            {'Send'}
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <Footer />
-      </main>{' '}
+      </main>
     </>
   );
 }
