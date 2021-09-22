@@ -10,4 +10,7 @@
   .shaded-text {
     @apply bg-black bg-opacity-10 py-2 rounded-lg;
   }
+  .txt-orange {
+    color: #F1511A;
+  }
 }
