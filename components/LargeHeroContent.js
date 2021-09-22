@@ -22,7 +22,7 @@ import PropTypes from 'prop-types';
 
 const LargeHeroContent = ({
   children,
-  fadeInSpeed = '700',
+  fadeInSpeed = '1000',
   mainTextSize = 'md',
   title,
   titleSize = '5xl',

@@ -1,6 +1,3 @@
-// @ts-check
-// eslint-disable-next-line no-unused-vars
-import { ReactElement, useEffect, useState } from 'react'; // ReactElement is only imported for typechecking
 import Footer from '../components/Footer';
 import Head from 'next/head';
 import LandingPageNav from '../components/LandingPageNav';
@@ -9,29 +6,16 @@ import LargeHeroSection from '../components/LargeHeroSection';
 import Link from 'next/link';
 import TestimonialCard from '../components/TestimonialCard';
 
-/** -----------------------------------------------------------------------------------------------------------------------
+/** ------------------------------------------------------------------------------
  *
  * TODO: Change all of the placeholder text to good copy.
  * TODO: Change the call to action link to point to the appropriate destination.
- * TODO: Refactor code by exporting components to proper folders.
+ * DONE: Refactor code by exporting components to proper folders.
  *
  * FIXME: The images are placeholders and need to be changed.
  * FIXME: There's a better way to handle images as per @RedFox0x20 recommendation.
- *
- */ // --------------------------------------------------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------------------------------------------------
-// TODO: Export TestimonialCard to components folder or leave it here as it's not the most reusable component.
-// FIXME: Find correct images for these cards and fix the sizing issues
-// -----------------------------------------------------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------------------------------------------------
-// Export LandingPageNav end.
-// -----------------------------------------------------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------------------------------------------------
-// TODO: Export TestimonialSection to components folder or leave it here as it's not the most reusable component.
-// -----------------------------------------------------------------------------------------------------------------------
+ */
+// -------------------------------------------------------------------------------
 
 const TestimonialSection = () => {
   return (
@@ -40,11 +24,11 @@ const TestimonialSection = () => {
         <h2>{'See What People Are Saying'}</h2>
       </div>
       <div
-        className=" bg-gradient-to-r from-accent to-blue-400 shadow-md md:flex md:p-32 "
+        className="bg-gradient-to-r from-accent to-blue-400 shadow-md grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center align-center content-center sm:p-24"
         id="cards-section"
       >
         <TestimonialCard
-          content="We haven't met a more generous group of giving souls."
+          content="We haven't met a more generous group of giving souls. They even went out of their way to give us our requested supplies out here in the desert."
           image="/images/HealthWorkShop.jpg"
           title="Lovely People"
         />
@@ -62,10 +46,6 @@ const TestimonialSection = () => {
     </section>
   );
 };
-
-// -----------------------------------------------------------------------------------------------------------------------
-// Export TestimonialSection end.
-// -----------------------------------------------------------------------------------------------------------------------
 
 const LandingPage = () => {
   return (

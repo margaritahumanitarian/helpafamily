@@ -14,7 +14,7 @@ import { FaRegHeart } from 'react-icons/fa';
  * @param {String} [props.fadeInSpeed = '700' ] - change the speed of fade in "ease-in duration-`fadeInSpeed`" | Example: `"700"` : [tailwind durations](https://tailwindcss.com/docs/transition-duration)
  * @returns {ReactElement} JSX
  */
-const LandingPageNav = ({ fadeInSpeed = '700' }) => {
+const LandingPageNav = ({ fadeInSpeed = '1000' }) => {
   const [navOpacity, setnavOpacity] = useState(0);
   useEffect(() => {
     setnavOpacity(100);
