@@ -2,6 +2,8 @@ import Image from 'next/image';
 import React from 'react';
 
 import Footer from '../components/Footer';
+import ReceiptPreview from '../components/ReceiptPreview';
+import { receipt_preview } from '../data/receipt-preview';
 
 export default function Home() {
   return (
@@ -10,46 +12,55 @@ export default function Home() {
         <title>{'Thank You!'}</title>
       </head>
       <body>
-        <div className="min-h-screen bg-base-200 flex flex-col justify-evenly">
-          <div className="hero my-4">
-            <div className="text-center hero-content">
-              <div className="max-w-md">
-                <h1 className="mb-5 text-5xl font-bold">{'Thank You!'}</h1>
-                <p>
-                  {'With gratitude from Margarita Humanitarian Foundation.'}
-                </p>
-                <p>
-                  {
-                    'Thanks so much for your generosity. We promise to use it to help the causes you indicated your support for, and to be extra thoughtful about putting it to good use.'
-                  }
-                </p>
+        <div className="grid-container grid md:grid-cols-6">
+          <div className="md:col-span-2">
+            <div className="text-center">
+              <div className="hero my-4 md:mt-12">
+                <div className="text-center hero-content">
+                  <div className="max-w-md">
+                    <h1 className="mb-5 text-5xl font-bold">{'Thank You!'}</h1>
+                    <p>
+                      {'With gratitude from Margarita Humanitarian Foundation.'}
+                    </p>
+                    <p>
+                      {
+                        'Thanks so much for your generosity. We promise to use it to help the causes you indicated your support for, and to be extra thoughtful about putting it to good use.'
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="ml-3">
+                <Image
+                  alt="Logo of the Margarita Humanitarian Foundation"
+                  height="300"
+                  src="/images/MHF-Color-300x300.png"
+                  width="300"
+                />
+              </div>
+              <div>
+                <div className="px-4">
+                  <h2 className="m-0 mt-10 mb-2 text-3xl font-bold">
+                    {'Receipt to Follow'}
+                  </h2>
+                  <p>
+                    {
+                      "Your donation is fully tax-deductible. We'll email you a fully-compliant IRS 501(c)(3) donation receipt for your records shortly."
+                    }
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div className="self-center">
-            <Image
-              alt="Logo of the Margarita Humanitarian Foundation"
-              height="300"
-              src="/images/MHF-Color-300x300.png"
-              width="300"
-            />
-          </div>
-
-          <div className="self-center text-center">
-            <div className="max-w-xl px-4">
-              <h2 className="m-0 mt-10 mb-2 text-3xl font-bold">
-                {'Receipt to Follow'}
-              </h2>
-              <p>
-                {
-                  "Your donation is fully tax-deductible. We'll email you a fully-compliant IRS 501(c)(3) donation receipt for your records shortly."
-                }
-              </p>
+          <div className="md:col-span-4">
+            <div className="py-8 mx-4">
+              <ReceiptPreview data={receipt_preview} />
             </div>
           </div>
-
-          <div className="self-center text-center">
-            <div className="max-w-3xl px-4">
+        </div>
+        <div className="grid grid-cols-1 text-center pb-8 mb-8">
+          <div className="place-self-center px-4">
+            <div className="md:w-96">
               <h2 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'About Our Donation Software'}
               </h2>
@@ -60,9 +71,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <div className="self-center text-center">
-            <div className="max-w-3xl px-4">
+          <div className="place-self-center px-4">
+            <div className="md:w-96">
               <h3 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'Improve our Donation Software'}
               </h3>
@@ -80,9 +90,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-
-          <div className="self-center text-center">
-            <div className="max-w-md px-4">
+          <div className="place-self-center px-4">
+            <div className="md:w-96">
               <h3 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'Reach Out to Us'}
               </h3>
@@ -90,7 +99,7 @@ export default function Home() {
                 {'Follow Margarita Humanitarian Foundation for more updates: '}
               </p>
             </div>
-            <div className="self-center text-center">
+            <div>
               <a
                 className="link link-secondary"
                 href="https://www.instagram.com/margaritahforg/"
