@@ -1,0 +1,21 @@
+name: Lighthouse
+on: [push, pull_request]
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+      - run: |
+          yarn install
+          yarn build
+      - name: run Lighthouse CI
+        run: |
+          yarn global add @lhci/cli@0.8.x
+          lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
+  
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+

@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import React from 'react';
+import clsx from 'clsx';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
-    <div className="card shadow-xl image-full">
+    <div className="card filter brightness-105 shadow-xl image-full">
       {backgroundImageSource && (
         <figure>
           <Image
@@ -14,7 +15,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
           />
         </figure>
       )}
-      <div className="card-body justify-end space-y-3">{children}</div>
+      <div className="card-body space-y-3">{children}</div>
     </div>
   );
 }
@@ -43,16 +44,16 @@ CardParagraph.propTypes = {
 
 export function CardAction({ children, linkTo, isPending, onClick }) {
   return (
-    <div className="pt-5">
+    <div className="pt-5" style={{ marginTop: 'auto' }}>
       {linkTo ? (
-        <a className="btn btn-primary" href={linkTo}>
+        <a className="btn btn-accent" href={linkTo}>
           {children}
         </a>
       ) : (
         <button
-          className={`btn btn-primary h-16 md:h-13 ${
-            isPending ? 'loading' : ''
-          }`}
+          className={clsx('btn btn-accent w-full h-auto', {
+            loading: isPending,
+          })}
           onClick={onClick}
           type="button"
         >
@@ -72,8 +73,8 @@ CardAction.propTypes = {
 
 export function CardAddress({ children, label }) {
   return (
-    <div className="shaded-text">
-      <div>{label}</div>
+    <div className="shaded-text my-auto">
+      <div className="font-semibold">{label}</div>
       <span>{children}</span>
     </div>
   );
@@ -82,6 +83,24 @@ export function CardAddress({ children, label }) {
 CardAddress.propTypes = {
   children: PropTypes.node,
   label: PropTypes.string,
+};
+
+export function PositionRequirements({ label, children }) {
+  return (
+    <div className="p-2 mt-auto shaded-text">
+      <span className="font-semibold">{label}</span>
+      <ul className="list-disc text-left pl-6">
+        {children.map((listItem, index) => (
+          <li key={index}>{listItem}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+PositionRequirements.propTypes = {
+  label: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Card;

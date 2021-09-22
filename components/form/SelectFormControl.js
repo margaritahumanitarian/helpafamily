@@ -12,7 +12,7 @@ function SelectFormControl({ id, label, options, value, onChange }) {
         </label>
       )}
       <select
-        className="select select-bordered w-full max-w-xs select-sm"
+        className="select select-bordered w-full select-sm"
         id={id}
         name={id}
         onChange={handleChange}
@@ -33,11 +33,17 @@ SelectFormControl.propTypes = {
   label: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([
+        PropTypes.string.isRequired,
+        PropTypes.number.isRequired,
+      ]),
     })
   ),
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
   onChange: PropTypes.func.isRequired,
 };
 

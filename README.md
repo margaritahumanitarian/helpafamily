@@ -8,7 +8,7 @@ Learn more about [Margarita Humanitarian Foundation](https://www.margaritahumani
 
 ## Contributing and installation
 
-If you would like to help us with this project you can learn more [here](CONTRIBUTING.md)
+If you would like to help us with this project you can learn more from our [Help-a-Family Manual](https://margaritahumanitarian.gitbook.io/help-a-family-manual/) and our [CONTRIBUTING](CONTRIBUTING.md) file.
 
 ## Community
 
@@ -17,6 +17,7 @@ are active online vary.
 
 Come say hi in:
 
+- Our [#help-a-family Discord server](https://discord.gg/zCe3XDGa)
 - Our [#mhf chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
 
 We're still getting this started, so be patient and hang around if no one's there.

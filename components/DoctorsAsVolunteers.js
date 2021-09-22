@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Card, { CardParagraph, CardTitle } from './Card';
+import Card, { CardParagraph, CardTitle, PositionRequirements } from './Card';
 
 function DoctorsAsVolunteers() {
   return (
@@ -23,13 +23,11 @@ function DoctorsAsVolunteers() {
       <CardParagraph>
         {'Scheduling is flexible and based on your availability.'}
       </CardParagraph>
-
-      <CardParagraph>{'Requirements:'}</CardParagraph>
-
-      <ul className="list-disc text-left pl-6">
-        <li>{'Current medical board license for your region and country'}</li>
-        <li>{'Fluency in English or Spanish'}</li>
-      </ul>
+      <br />
+      <PositionRequirements label={'Requirements:'}>
+        {'Current medical board license for your region and country'}
+        {'Fluency in English or Spanish'}
+      </PositionRequirements>
     </Card>
   );
 }

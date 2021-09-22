@@ -1,18 +1,34 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import clsx from 'clsx';
 
-function InputFormControl({ id, label, placeholder, type, value, onChange }) {
+import styles from './InputFormControl.module.css';
+
+function InputFormControl({
+  error,
+  id,
+  label,
+  placeholder,
+  required = false,
+  type,
+  value,
+  onChange,
+}) {
   const handleChange = (event) => onChange(event.target.value);
 
   return (
     <div className="form-control">
       {label && (
         <label className="label" htmlFor={id}>
-          <span className="label-text">{label}</span>
+          <span className={clsx('label-text', { [styles.required]: required })}>
+            {label}
+          </span>
         </label>
       )}
       <input
-        className="input input-bordered input-sm"
+        className={clsx('input input-bordered input-sm', {
+          'input-error': error,
+        })}
         id={id}
         name={id}
         onChange={handleChange}
@@ -20,6 +36,11 @@ function InputFormControl({ id, label, placeholder, type, value, onChange }) {
         type={type || 'text'}
         value={value}
       />
+      {error && (
+        <label className="label">
+          <span className="label-text-alt text-red-500">{error}</span>
+        </label>
+      )}
     </div>
   );
 }
