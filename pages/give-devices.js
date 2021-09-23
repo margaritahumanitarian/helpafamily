@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 import { useRouter } from 'next/router';
 
+import CountryData from '../data/country-data.json';
 import Footer from '../components/Footer';
 import InputFormControl from '../components/form/InputFormControl';
 import Navbar from '../components/Navbar';
@@ -9,19 +10,13 @@ import SelectFormControl from '../components/form/SelectFormControl';
 import TextareaFormControl from '../components/form/TextareaFormControl';
 
 // Use ISO 3166 country codes per https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
-const countryList = require('country-list');
 
-const COUNTRIES = countryList
-  .getNames()
-  .sort((a, b) => (a > b && 1) || -1)
-  .map((value) => {
-    return { label: value };
-  });
+CountryData.map((value) => ({ label: value }));
 
 const formDataInitialState = {
   name: '',
   email: '',
-  country: COUNTRIES[235].label,
+  country: CountryData[235].value,
   streetAddress: '',
   streetAddress2: '',
   city: '',
@@ -146,7 +141,7 @@ export default function GiveDevicesPage() {
                           id="country"
                           label="Country / Region"
                           onChange={handleChange('country')}
-                          options={COUNTRIES}
+                          options={CountryData}
                           value={formData['country']}
                         />
                         <InputFormControl
