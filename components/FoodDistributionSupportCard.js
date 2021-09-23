@@ -6,10 +6,13 @@ import useStripeSession from '../hooks/useStripeSession';
 const actionCost = 150;
 
 function FoodDistributionSupportCard() {
-  const [handleSubmit, isPending] = useStripeSession({
-    amount: actionCost,
-    cause: 'Producing Food Distribution',
-  });
+  const [handleSubmit, isPending] = useStripeSession();
+
+  const handleOnClick = () =>
+    handleSubmit({
+      amount: actionCost,
+      cause: 'Producing Food Distribution',
+    });
 
   return (
     <Card
@@ -22,7 +25,7 @@ function FoodDistributionSupportCard() {
           'Help us cover our staffing costs for providing free food boxes for hungry families, such as paid time to manage volunteers for food distribution events or coordination with community groups.'
         }
       </CardParagraph>
-      <CardAction isPending={isPending} onClick={handleSubmit}>
+      <CardAction isPending={isPending} onClick={handleOnClick}>
         {`Support Food Distribution for $${actionCost}`}
       </CardAction>
     </Card>

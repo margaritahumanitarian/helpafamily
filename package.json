@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write . && eslint . --fix"
+    "format": "prettier --write . && eslint . --fix",
+    "test": "yarn jest"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.2.0",
@@ -24,15 +25,23 @@
     "stripe": "^8.168.0"
   },
   "devDependencies": {
+    "@testing-library/dom": "^8.5.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.0",
+    "@testing-library/user-event": "^13.2.1",
     "autoprefixer": "^10.2.6",
+    "babel-jest": "^27.2.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
     "http-status-codes": "^2.1.4",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.0",
     "postcss": "^8.3.5",
     "prettier": "^2.3.2",
+    "react-test-renderer": "^17.0.2",
     "tailwindcss": "^2.2.4"
   }
 }

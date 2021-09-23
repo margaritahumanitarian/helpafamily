@@ -42,13 +42,16 @@ export async function getServerSideProps() {
 }
 
 function StripeAction({ amount, text }) {
-  const [handleSubmit, isPending] = useStripeSession({
-    amount,
-    cause: text,
-  });
+  const [handleSubmit, isPending] = useStripeSession();
+
+  const handleOnClick = () =>
+    handleSubmit({
+      amount,
+      cause: text,
+    });
 
   return (
-    <CardAction isPending={isPending} onClick={handleSubmit}>
+    <CardAction isPending={isPending} onClick={handleOnClick}>
       {text}
     </CardAction>
   );
