@@ -48,11 +48,14 @@ function Card(props) {
             <p className="mb-4">{donor.phone}</p>
             <p className="font-semibold">{'Donation Value'}</p>
             <p className="mb-4">
-              {`$ ${donation.value}`}
+              {'$ '}
+              {donation.value}
             </p>
             <p className="font-semibold">{'Donation Description'}</p>
             <p className="mb-2">
-              {`${capitalize(donation.payment)} for $ ${donation.value} from ${fullName}`}
+              {capitalize(donation.payment)}
+              {' for $ '} {donation.value}
+              {' from'} {fullName}
             </p>
             <p className="mb-4">{donation.disclaimer}</p>
             <p className="mb-2">
