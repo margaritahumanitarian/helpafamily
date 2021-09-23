@@ -6,7 +6,7 @@ function Card(props) {
     data: { header, donation },
   } = props;
   const { donor } = donation;
-  const full_name = `${donor.name} ${donor.middlename} ${donor.surname}`;
+  const fullName = `${donor.name} ${donor.middlename} ${donor.surname}`;
 
   return (
     <div className="card shadow-xl p-4 mt-5">
@@ -39,7 +39,7 @@ function Card(props) {
             <p className="font-semibold">{'Donation Date'}</p>
             <p className="mb-4">{donation.date}</p>
             <p className="font-semibold">{"Donor's Name"}</p>
-            <p className="mb-4">{full_name}</p>
+            <p className="mb-4">{fullName}</p>
             <p className="font-semibold">{"Donor's Mailing Address"}</p>
             <p>{donor.address.street}</p>
             <p>{donor.address.place}</p>
@@ -53,9 +53,7 @@ function Card(props) {
             </p>
             <p className="font-semibold">{'Donation Description'}</p>
             <p className="mb-2">
-              {capitalize(donation.payment)}
-              {' for $ '} {donation.value}
-              {' from'} {full_name}
+              {`${capitalize(donation.payment)} for $ ${donation.value} from ${fullName}`}
             </p>
             <p className="mb-4">{donation.disclaimer}</p>
             <p className="mb-2">
