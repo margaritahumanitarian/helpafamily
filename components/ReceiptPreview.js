@@ -48,8 +48,7 @@ function Card(props) {
             <p className="mb-4">{donor.phone}</p>
             <p className="font-semibold">{'Donation Value'}</p>
             <p className="mb-4">
-              {'$ '}
-              {donation.value}
+              {`$ ${donation.value}`}
             </p>
             <p className="font-semibold">{'Donation Description'}</p>
             <p className="mb-2">
