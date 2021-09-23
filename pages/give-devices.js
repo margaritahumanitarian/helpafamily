@@ -9,10 +9,6 @@ import Navbar from '../components/Navbar';
 import SelectFormControl from '../components/form/SelectFormControl';
 import TextareaFormControl from '../components/form/TextareaFormControl';
 
-// Use ISO 3166 country codes per https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
-
-CountryData.map((value) => ({ label: value }));
-
 const formDataInitialState = {
   name: '',
   email: '',
