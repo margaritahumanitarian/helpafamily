@@ -11,17 +11,17 @@ import TextareaFormControl from '../components/form/TextareaFormControl';
 // Use ISO 3166 country codes per https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 const countryList = require('country-list');
 
-const countries = countryList.getData();
-countries.sort((a, b) => (a.name > b.name && 1) || -1);
-const COUNTRIES = [];
-countries.forEach((element) => {
-  COUNTRIES.push({ value: element.code, label: element.name });
-});
+const COUNTRIES = countryList
+  .getNames()
+  .sort((a, b) => (a > b && 1) || -1)
+  .map((value) => {
+    return { label: value };
+  });
 
 const formDataInitialState = {
   name: '',
   email: '',
-  country: COUNTRIES[235].value,
+  country: COUNTRIES[235].label,
   streetAddress: '',
   streetAddress2: '',
   city: '',
@@ -100,7 +100,7 @@ export default function GiveDevicesPage() {
   return (
     <>
       <Head>
-        <title> {'Donate Devices'} </title>
+        <title>{'Donate Devices'}</title>
       </Head>
       <Navbar />
       <main>
