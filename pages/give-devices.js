@@ -21,7 +21,7 @@ const COUNTRIES = countryList
 const formDataInitialState = {
   name: '',
   email: '',
-  country: COUNTRIES[235].value,
+  country: COUNTRIES[235].label,
   streetAddress: '',
   streetAddress2: '',
   city: '',
