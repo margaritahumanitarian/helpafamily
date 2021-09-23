@@ -2,7 +2,9 @@ import React from 'react';
 import { capitalize } from '../utils';
 
 function Card(props) {
-  const { header, donation } = props.data;
+  const {
+    data: { header, donation },
+  } = props;
   const { donor } = donation;
   const full_name = `${donor.name} ${donor.middlename} ${donor.surname}`;
 
