@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
-import AstronautLottie from '../components/Astronaout';
+import AstronautLottie from '../components/Astronaut';
 
 export default function NotFound() {
   return (
