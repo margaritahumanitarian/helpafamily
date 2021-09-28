@@ -6,10 +6,13 @@ import useStripeSession from '../hooks/useStripeSession';
 const actionCost = 250;
 
 function HotMealDayCard() {
-  const [handleSubmit, isPending] = useStripeSession({
-    amount: actionCost,
-    cause: 'Hot Meal for 60 Hungry People.',
-  });
+  const [handleSubmit, isPending] = useStripeSession();
+
+  const handleOnClick = () =>
+    handleSubmit({
+      amount: actionCost,
+      cause: 'Hot Meal for 60 Hungry People.',
+    });
 
   return (
     <Card
@@ -22,7 +25,7 @@ function HotMealDayCard() {
           'Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California.'
         }
       </CardParagraph>
-      <CardAction isPending={isPending} onClick={handleSubmit}>
+      <CardAction isPending={isPending} onClick={handleOnClick}>
         {`Feed 60 people for $${actionCost}`}
       </CardAction>
     </Card>

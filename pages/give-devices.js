@@ -2,28 +2,17 @@ import Head from 'next/head';
 import React from 'react';
 import { useRouter } from 'next/router';
 
+import CountryData from '../data/country-data.json';
 import Footer from '../components/Footer';
 import InputFormControl from '../components/form/InputFormControl';
 import Navbar from '../components/Navbar';
 import SelectFormControl from '../components/form/SelectFormControl';
 import TextareaFormControl from '../components/form/TextareaFormControl';
 
-// Use ISO 3166 country codes per https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
-const COUNTRIES = [
-  { value: 'US', label: 'United States' },
-  { value: 'CA', label: 'Canada' },
-  { value: 'MX', label: 'Mexico' },
-  { value: 'DE', label: 'Germany' },
-  { value: 'LV', label: 'Latvia' },
-  { value: 'IN', label: 'India' },
-  { value: 'BD', label: 'Bangladesh' },
-  { value: 'PH', label: 'Philippines' },
-];
-
 const formDataInitialState = {
   name: '',
   email: '',
-  country: COUNTRIES[0].value,
+  country: CountryData[235].value,
   streetAddress: '',
   streetAddress2: '',
   city: '',
@@ -148,7 +137,7 @@ export default function GiveDevicesPage() {
                           id="country"
                           label="Country / Region"
                           onChange={handleChange('country')}
-                          options={COUNTRIES}
+                          options={CountryData}
                           value={formData['country']}
                         />
                         <InputFormControl

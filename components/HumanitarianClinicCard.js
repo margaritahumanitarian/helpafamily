@@ -6,10 +6,13 @@ import useStripeSession from '../hooks/useStripeSession';
 const actionCost = 30;
 
 function HumanitarianClinicCard() {
-  const [handleSubmit, isPending] = useStripeSession({
-    amount: actionCost,
-    cause: '1 patient at a free humanitarian clinic',
-  });
+  const [handleSubmit, isPending] = useStripeSession();
+
+  const handleOnClick = () =>
+    handleSubmit({
+      amount: actionCost,
+      cause: '1 patient at a free humanitarian clinic',
+    });
 
   return (
     <Card
@@ -22,7 +25,7 @@ function HumanitarianClinicCard() {
           'Provide a free, anonymous phone or video telehealth consultation for someone afraid to see a doctor, such as a migrant or refugee who lacks identification.'
         }
       </CardParagraph>
-      <CardAction isPending={isPending} onClick={handleSubmit}>
+      <CardAction isPending={isPending} onClick={handleOnClick}>
         {`Help 1 Patient for $${actionCost}`}
       </CardAction>
     </Card>
