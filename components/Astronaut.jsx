@@ -1,5 +1,5 @@
+import React, { useEffect, useState } from 'react';
 import Lottie from 'react-lottie';
-import React from 'react';
 import animationData from '../lotties/astronaut.json';
 
 const defaultOptions = {
@@ -11,6 +11,31 @@ const defaultOptions = {
   },
 };
 
-export default function AstronautLottie() {
-  return <Lottie height={400} options={defaultOptions} width={400} />;
+export default function Astronaut() {
+  const REGULAR_LOTTIE_DIMENSIONS = 400;
+  const [dimensions, setDimensions] = useState(REGULAR_LOTTIE_DIMENSIONS);
+  const [isInitialMobileCheck, setIsInitialMobileCheck] = useState(true);
+
+  const isMobile = () => {
+    return window.innerWidth < 768;
+  };
+
+  const getDimensions = (isMobile) => {
+    return isMobile ? '100%' : REGULAR_LOTTIE_DIMENSIONS;
+  };
+
+  useEffect(() => {
+    if (isInitialMobileCheck) {
+      setDimensions(getDimensions(isMobile()));
+      setIsInitialMobileCheck(false);
+
+      window.addEventListener('resize', () => {
+        setDimensions(getDimensions(isMobile()));
+      });
+    }
+  }, [isInitialMobileCheck]);
+
+  return (
+    <Lottie height={dimensions} options={defaultOptions} width={dimensions} />
+  );
 }

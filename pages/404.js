@@ -13,7 +13,7 @@ export default function NotFound() {
         <div className="hero min-h-screen bg-base-200 bg-white bg-gradient-to-r from-yellow-200 to-green-300">
           <div className="text-center hero-content">
             <div className="">
-              <div className="flex justify-center items-center">
+              <div className="md:flex md:justify-center md:items-center">
                 <div className="lg:w-1/2 pr-10 pl-4">
                   <AstronautLottie />
                 </div>
