@@ -71,10 +71,8 @@ export default function PartnerWithUs({
           <Card backgroundImageSource={`https:${url}`} key={id}>
             <CardTitle>{title}</CardTitle>
             {documentToReactComponents(rawRichTextField, options)}
-            <CardAddress label="Email us to learn more at:">
-              <a style={{ color: 'yellow' }}>
-                {documentToReactComponents(emailRichTextFeild, options)}
-              </a>
+            <CardAddress>
+              {documentToReactComponents(emailRichTextFeild, options)}
             </CardAddress>
           </Card>
         );
