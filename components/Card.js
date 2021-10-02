@@ -14,7 +14,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
           <Image
             alt={backgroundImageAltText}
             height="280"
-            layout="fixed"
+            layout="responsive"
             src={backgroundImageSource}
             width="350"
           />
