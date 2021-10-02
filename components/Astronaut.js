@@ -20,8 +20,8 @@ export default function Astronaut() {
     return window.innerWidth < 768;
   };
 
-  const getDimensions = (isMobile) => {
-    return isMobile ? '100%' : REGULAR_LOTTIE_DIMENSIONS;
+  const getDimensions = (isMobileSize) => {
+    return isMobileSize ? '100%' : REGULAR_LOTTIE_DIMENSIONS;
   };
 
   useEffect(() => {
