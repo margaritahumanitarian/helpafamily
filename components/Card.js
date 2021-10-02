@@ -13,7 +13,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
         <figure>
           <Image
             alt={backgroundImageAltText}
-            height="250"
+            height="280"
             layout="fixed"
             src={backgroundImageSource}
             width="350"
