@@ -5,7 +5,7 @@ import AstronautLottie from '../components/Astronaut';
 
 export default function NotFound() {
   return (
-    <html>
+    <html lang="en-us">
       <head>
         <title>{'404 Not Found'}</title>
       </head>
