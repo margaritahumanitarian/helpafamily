@@ -19,15 +19,13 @@ import PropTypes from 'prop-types';
 
 const LargeHeroSection = ({ bgImage, children, opacity = '60' }) => {
   return (
-    <>
-      <div
-        className="hero min-h-screen"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      >
-        <div className={`hero-overlay bg-opacity-${opacity}`} />
-        {children}
-      </div>
-    </>
+    <div
+      className="hero min-h-screen"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className={`hero-overlay bg-opacity-${opacity}`} />
+      {children}
+    </div>
   );
 };
 
