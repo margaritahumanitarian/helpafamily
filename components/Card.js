@@ -5,17 +5,25 @@ import clsx from 'clsx';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
-    <div className="card filter brightness-105 shadow-xl image-full">
+    <div className="card filter brightness-105 shadow-xl card-shadow">
       {backgroundImageSource && (
         <figure>
           <Image
             alt={backgroundImageAltText}
-            layout="fill"
+            height="280"
+            layout="responsive"
             src={backgroundImageSource}
+            width="400"
           />
         </figure>
       )}
       <div className="card-body space-y-3">{children}</div>
+      <style jsx>{`
+        .card-shadow {
+          box-shadow: rgba(14, 30, 37, 0.1) 0px 0px 4px 0px,
+            rgba(14, 30, 37, 0.15) 0px 0px 16px 0px;
+        }
+      `}</style>
     </div>
   );
 }
