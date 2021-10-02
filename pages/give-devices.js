@@ -117,88 +117,88 @@ export default function GiveDevicesPage() {
                           {'Required fields are marked with *'}
                         </h3>
                         <InputFormControl
-                          error={errors['name']}
+                          error={errors.name}
                           id="name"
                           label="Name"
                           onChange={handleChange('name')}
                           required
-                          value={formData['name']}
+                          value={formData.name}
                         />
                         <InputFormControl
-                          error={errors['email']}
+                          error={errors.email}
                           id="email"
                           label="Email address"
                           onChange={handleChange('email')}
                           required
                           type="email"
-                          value={formData['email']}
+                          value={formData.email}
                         />
                         <SelectFormControl
                           id="country"
                           label="Country / Region"
                           onChange={handleChange('country')}
                           options={CountryData}
-                          value={formData['country']}
+                          value={formData.country}
                         />
                         <InputFormControl
-                          error={errors['streetAddress']}
+                          error={errors.streetAddress}
                           id="streetAddress"
                           label="Street address"
                           onChange={handleChange('streetAddress')}
                           placeholder="Use an address where you can receive mail."
                           required
-                          value={formData['streetAddress']}
+                          value={formData.streetAddress}
                         />
                         <InputFormControl
                           id="streetAddress2"
                           label="Street address 2"
                           onChange={handleChange('streetAddress2')}
                           placeholder="Extra address data can go here"
-                          value={formData['streetAddress2']}
+                          value={formData.streetAddress2}
                         />
                         <InputFormControl
-                          error={errors['city']}
+                          error={errors.city}
                           id="city"
                           label="City"
                           onChange={handleChange('city')}
                           required
-                          value={formData['city']}
+                          value={formData.city}
                         />
                         <InputFormControl
-                          error={errors['state']}
+                          error={errors.state}
                           id="state"
                           label="State / Province"
                           onChange={handleChange('state')}
                           required
-                          value={formData['state']}
+                          value={formData.state}
                         />
                         <InputFormControl
-                          error={errors['postalCode']}
+                          error={errors.postalCode}
                           id="postalCode"
                           label="ZIP / Postal"
                           onChange={handleChange('postalCode')}
                           required
-                          value={formData['postalCode']}
+                          value={formData.postalCode}
                         />
                         <InputFormControl
                           id="phone"
                           label="Phone Number"
                           onChange={handleChange('phone')}
                           type="tel"
-                          value={formData['phone']}
+                          value={formData.phone}
                         />
                         <InputFormControl
                           id="originalPurchasePrice"
                           label="Original Purchase Price"
                           onChange={handleChange('originalPurchasePrice')}
-                          value={formData['originalPurchasePrice']}
+                          value={formData.originalPurchasePrice}
                         />
                         <TextareaFormControl
                           id="description"
                           label="Additional information"
                           onChange={handleChange('description')}
                           placeholder="Tell us about each laptop, tablet, and/or smartphone you'd like to donate"
-                          value={formData['description']}
+                          value={formData.description}
                         />
                         <div className="py-2">
                           <button
