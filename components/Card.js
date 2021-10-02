@@ -5,7 +5,10 @@ import clsx from 'clsx';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   return (
-    <div className="card filter brightness-105 shadow-xl">
+    <div className="card filter brightness-105 shadow-xl  style={{
+        boxShadow:
+          'rgba(14, 30, 37, 0.1) 0px 0px 4px 0px, rgba(14, 30, 37, 0.15) 0px 0px 16px 0px;',
+      }}">
       {backgroundImageSource && (
         <figure>
           <Image
