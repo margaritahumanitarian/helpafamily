@@ -61,7 +61,7 @@ export default function PartnerWithUs({
               },
             },
             description: rawRichTextField,
-            email: emailRichTextFeild,
+            contactInstructionsRTF: contactInstructions,
             title,
           },
           sys: { id },
@@ -72,7 +72,7 @@ export default function PartnerWithUs({
             <CardTitle>{title}</CardTitle>
             {documentToReactComponents(rawRichTextField, options)}
             <CardAddress>
-              {documentToReactComponents(emailRichTextFeild, options)}
+              {documentToReactComponents(contactInstructions, options)}
             </CardAddress>
           </Card>
         );
