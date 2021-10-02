@@ -16,7 +16,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
             height="280"
             layout="responsive"
             src={backgroundImageSource}
-            width="350"
+            width="400"
           />
         </figure>
       )}
