@@ -20,11 +20,11 @@ import TestimonialCard from '../components/TestimonialCard';
 const TestimonialSection = () => {
   return (
     <section className="flex flex-col items-center justify-center h-1/2 py-28">
-      <div className="text-gray-500 text-2xl font-semibold pb-28">
+      <div className="text-2xl font-semibold text-gray-500 pb-28">
         <h2>{'See What People Are Saying'}</h2>
       </div>
       <div
-        className="bg-gradient-to-r from-accent to-blue-400 shadow-md grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center align-center content-center sm:p-24"
+        className="grid content-center justify-center grid-cols-1 shadow-md bg-gradient-to-r from-accent to-blue-400 md:grid-cols-2 xl:grid-cols-3 align-center sm:p-24"
         id="cards-section"
       >
         <TestimonialCard
@@ -70,8 +70,10 @@ const LandingPage = () => {
               }
             </p>
 
-            <Link href="/in-kind">
-              <a className="btn btn-accent rounded-btn">{'Feed A Family'}</a>
+            <Link href="/in-kind" passHref>
+              <a className="btn btn-accent rounded-btn" href="#">
+                {'Feed A Family'}
+              </a>
             </Link>
           </LargeHeroContent>
         </LargeHeroSection>
