@@ -8,7 +8,8 @@
     "format": "prettier --write . && eslint . --fix",
     "postinstall": "git config core.hooksPath .githooks",
     "precommit": "lint-staged",
-    "test": "yarn jest"
+    "test": "yarn jest",
+    "test:coverage": "yarn jest --coverage"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.2.0",

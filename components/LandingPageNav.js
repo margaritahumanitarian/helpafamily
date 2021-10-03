@@ -20,17 +20,16 @@ const LandingPageNav = ({ fadeInSpeed = '1000' }) => {
     setnavOpacity(100);
   }, []);
   return (
-    <>
-      <div
-        className={`fixed h-20 nav-bar mb-2 shadow-lg text-neutral-content flex justify-between items-center top-0 left-0 right-0 z-50 opacity-${navOpacity} ease-in duration-${fadeInSpeed}`}
-      >
-        <div className="flex-none px-6 mx-2">
-          <span className="text-lg font-bold">
-            {'Margarita Humanitarian Foundation'}
-          </span>
-        </div>
-        {/* <div className="px-2 mx-2 hidden md:flex flex-grow "> */}
-        {/* <div className="items-stretch hidden lg:flex">
+    <div
+      className={`fixed h-20 nav-bar mb-2 shadow-lg text-neutral-content flex justify-between items-center top-0 left-0 right-0 z-50 opacity-${navOpacity} ease-in duration-${fadeInSpeed}`}
+    >
+      <div className="flex-none px-6 mx-2">
+        <span className="text-lg font-bold">
+          {'Margarita Humanitarian Foundation'}
+        </span>
+      </div>
+      {/* <div className="px-2 mx-2 hidden md:flex flex-grow "> */}
+      {/* <div className="items-stretch hidden lg:flex">
               <Link href="/">
                 <a className="btn btn-ghost btn-sm rounded-btn">{'Home'}</a>
               </Link>
@@ -51,23 +50,22 @@ const LandingPageNav = ({ fadeInSpeed = '1000' }) => {
                 </a>
               </Link>
             </div> */}
-        {/* </div> */}
-        <div className="flex items-center">
-          <div className="pr-7 hidden md:block">{' Help Families in Need'}</div>
-          <div className="flex-row hidden sm:flex">
-            <button className="btn btn-square btn-ghost pr-6" type="button">
-              <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
-            </button>
-          </div>
+      {/* </div> */}
+      <div className="flex items-center">
+        <div className="pr-7 hidden md:block">{' Help Families in Need'}</div>
+        <div className="flex-row hidden sm:flex">
+          <button className="btn btn-square btn-ghost pr-6" type="button">
+            <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
+          </button>
         </div>
+      </div>
 
-        {/* <div className="flex-none hidden sm:flex">
+      {/* <div className="flex-none hidden sm:flex">
             <button className="btn btn-square btn-ghost" type="button">
               <BsSearch className="inline-block w-5 h-5 stroke-current" />
             </button>
           </div> */}
-      </div>
-    </>
+    </div>
   );
 };
 
