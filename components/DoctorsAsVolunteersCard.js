@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card, { CardParagraph, CardTitle, PositionRequirements } from './Card';
 
-function DoctorsAsVolunteers() {
+function DoctorsAsVolunteersCard() {
   return (
     <Card backgroundImageSource="/images/Volunteer.jpg">
       <CardTitle>{'Doctors as Volunteers'}</CardTitle>
@@ -32,4 +32,4 @@ function DoctorsAsVolunteers() {
   );
 }
 
-export default DoctorsAsVolunteers;
+export default DoctorsAsVolunteersCard;
