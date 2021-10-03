@@ -54,15 +54,15 @@ const LandingPageNav = ({ fadeInSpeed = '1000' }) => {
       <div className="flex items-center">
         <div className="pr-7 hidden md:block">{' Help Families in Need'}</div>
         <div className="flex-row hidden sm:flex">
-          <button className="btn btn-square btn-ghost pr-6" type="button">
-            <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
+          <button className="nav-btn pr-6" type="button">
+            <FaRegHeart className="nav-icon" />
           </button>
         </div>
       </div>
 
       {/* <div className="flex-none hidden sm:flex">
-            <button className="btn btn-square btn-ghost" type="button">
-              <BsSearch className="inline-block w-5 h-5 stroke-current" />
+            <button className="nav-btn" type="button">
+              <BsSearch className="nav-icon" />
             </button>
           </div> */}
     </div>
