@@ -13,11 +13,6 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.2.0",
     "@contentful/rich-text-types": "^15.1.0",
-    "@testing-library/dom": "^8.7.1",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.1",
-    "@testing-library/user-event": "^13.2.1",
-    "ansi-regex": "^6.0.1",
     "clsx": "^1.1.1",
     "contentful": "^8.5.0",
     "daisyui": "^1.14.0",
