@@ -1,3 +1,4 @@
+import ReCaptchaV2 from 'react-google-recaptcha';
 import React from 'react';
 import clsx from 'clsx';
 
@@ -35,6 +36,7 @@ export default function MainDonationForm() {
   const [selectedCauses, setSelectedCauses] = React.useState({});
   const [isAnyoneInNeed, setIsAnyoneInNeed] = React.useState(true);
   const [cause, setCause] = React.useState('');
+  const [reCaptchaToken, setReCaptchaToken] = React.useState('');
   const [handleSubmit, isPending] = useStripeSession();
 
   React.useEffect(() => {
@@ -79,6 +81,11 @@ export default function MainDonationForm() {
       return;
     }
 
+    if (reCaptchaToken === '') {
+      showModal('Please submit the captcha');
+      return;
+    }
+
     handleSubmit({ amount, cause });
   };
 
@@ -114,6 +121,12 @@ export default function MainDonationForm() {
             onChange={setAmount}
             options={AMOUNTS}
             value={amount}
+          />
+          <ReCaptchaV2
+            id="captcha"
+            onChange={(token) => setReCaptchaToken(token)}
+            onExpired={() => setReCaptchaToken('')}
+            sitekey={'6LcjyaccAAAAAAjE2z6vBhs2tOdhC-t0F2OCMj7z'} //need to use env variables process.env.REACT_APP_SITE_KEY
           />
           <button
             className={clsx('btn btn-primary', { loading: isPending })}
