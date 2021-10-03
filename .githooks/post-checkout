@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+updatedFiles="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+Color_Off='\033[0m'
+Yellow='\033[0;33m'
+
+checkUpdates() {
+    echo "$updatedFiles" | grep --quiet "$1" && eval "$2"
+}
+
+packageJsonUpdated() {
+  echo -e "${Yellow}Your package.json has changed.. \nConsider running 'npm install' or 'yarn install' ;)${Color_Off}"
+}
+
+checkUpdates package.json packageJsonUpdated
