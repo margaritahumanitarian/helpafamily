@@ -16,8 +16,7 @@ const options = {
       <ul className="list-disc text-left pl-6">
         {children.map((item) => {
           const { key, props } = item;
-
-          return `<li·key={key}>{props.children[0].props.children[0]}</li>`;
+          return <li key={key}>{props.children[0].props.children[0]}</li>;
         })}
       </ul>
     ),
