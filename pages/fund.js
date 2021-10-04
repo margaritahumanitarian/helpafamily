@@ -14,9 +14,13 @@ const options = {
     ),
     [BLOCKS.UL_LIST]: (_, children) => (
       <ul className="list-disc text-left pl-6">
-        {children.map((item) => (
-          <li key={item.key}>{item.props.children[0].props.children[0]}</li>
-        ))}
+        {children.map((item) => {
+          const { key, props } = item;
+
+          return (
+            <li key={key}>{props.children[0].props.children[0]}</li>
+          );
+        })}
       </ul>
     ),
   },
@@ -62,11 +66,11 @@ function LocalAction({ link, text }) {
 }
 
 const renderAction = ({ actionText, actionAmount, actionLink }) => {
-  return actionAmount ? (
-    <StripeAction amount={actionAmount} text={actionText} />
-  ) : (
-    <LocalAction link={actionLink} text={actionText} />
-  );
+  if (actionAmount) {
+    return <StripeAction amount={actionAmount} text={actionText} />;
+  } else {
+    return <LocalAction link={actionLink} text={actionText} />;
+  }
 };
 
 export default function Home({
