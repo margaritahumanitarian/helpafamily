@@ -66,11 +66,11 @@ function LocalAction({ link, text }) {
 }
 
 const renderAction = ({ actionText, actionAmount, actionLink }) => {
-  if (actionAmount) {
-    return <StripeAction amount={actionAmount} text={actionText} />;
-  } else {
-    return <LocalAction link={actionLink} text={actionText} />;
-  }
+  return actionAmount ? (
+    <StripeAction amount={actionAmount} text={actionText} />
+  ) : (
+    <LocalAction link={actionLink} text={actionText} />
+  );
 };
 
 export default function Home({
