@@ -39,6 +39,7 @@ export default function MainDonationForm() {
   const [reCaptchaToken, setReCaptchaToken] = React.useState('');
   const [handleSubmit, isPending] = useStripeSession();
 
+  console.log(process.env.NEXT_PUBLIC_SITE_KEY);
   React.useEffect(() => {
     const allSelected = Object.values(selectedCauses).filter(Boolean);
     if (allSelected.length === CAUSES.length) {
@@ -126,7 +127,7 @@ export default function MainDonationForm() {
             id="captcha"
             onChange={(token) => setReCaptchaToken(token)}
             onExpired={() => setReCaptchaToken('')}
-            sitekey={'6LcjyaccAAAAAAjE2z6vBhs2tOdhC-t0F2OCMj7z'} //need to use env variables process.env.REACT_APP_SITE_KEY
+            sitekey={process.env.NEXT_PUBLIC_SITE_KEY} //need to use env variables process.env.REACT_APP_SITE_KEY
           />
           <button
             className={clsx('btn btn-primary', { loading: isPending })}
