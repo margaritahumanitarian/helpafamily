@@ -10,4 +10,16 @@
   .shaded-text {
     @apply bg-black bg-opacity-10 py-2 rounded-lg;
   }
+
+  .nav-link {
+    @apply btn btn-ghost btn-sm rounded-btn;
+  }
+
+  .nav-btn {
+    @apply btn btn-square btn-ghost;
+  }
+
+  .nav-icon {
+    @apply inline-block w-5 h-5 stroke-current;
+  }
 }
