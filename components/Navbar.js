@@ -15,35 +15,31 @@ export default function Navbar() {
       <div className="flex-1 px-2 mx-2 hidden md:flex">
         <div className="items-stretch hidden lg:flex">
           <Link href="/">
-            <a className="btn btn-ghost btn-sm rounded-btn">{'Home'}</a>
+            <a className="nav-link">{'Home'}</a>
           </Link>
           <Link href="/in-kind">
-            <a className="btn btn-ghost btn-sm rounded-btn">{'In-Kind'}</a>
+            <a className="nav-link">{'In-Kind'}</a>
           </Link>
           <Link href="/fund">
-            <a className="btn btn-ghost btn-sm rounded-btn">{'Fund'}</a>
+            <a className="nav-link">{'Fund'}</a>
           </Link>
           <Link href="/give-your-time">
-            <a className="btn btn-ghost btn-sm rounded-btn">
-              {'Give Your Time'}
-            </a>
+            <a className="nav-link">{'Give Your Time'}</a>
           </Link>
           <Link href="/partner-with-us">
-            <a className="btn btn-ghost btn-sm rounded-btn">
-              {'Partner With Us'}
-            </a>
+            <a className="nav-link">{'Partner With Us'}</a>
           </Link>
         </div>
       </div>
       <div className="flex-none hidden sm:flex">
         {'Help Families in Need'}
-        <button className="btn btn-square btn-ghost" type="button">
-          <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
+        <button className="nav-btn" type="button">
+          <FaRegHeart className="nav-icon" />
         </button>
       </div>
       <div className="flex-none hidden sm:flex">
-        <button className="btn btn-square btn-ghost" type="button">
-          <BsSearch className="inline-block w-5 h-5 stroke-current" />
+        <button className="nav-btn" type="button">
+          <BsSearch className="nav-icon" />
         </button>
       </div>
     </div>
