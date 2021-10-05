@@ -25,8 +25,8 @@ export default function Navbar() {
             <GiHamburgerMenu className="inline-block w-5 h-5 stroke-current " />
           )}
         </button>
-        <div className="flex-auto px-2 mx-2">
-          <span className="text-sm font-bold ml-4 sm:text-lg">
+        <div className="flex flex-auto justify-center px-2 mx-2">
+          <span className="text-sm font-bold ml-4  sm:text-lg">
             {'Margarita Humanitarian Foundation'}
           </span>
         </div>
