@@ -3,8 +3,8 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="p-4 grid md:grid-cols-2 bg-neutral text-neutral-content">
-      <div className="flex items-center justify-evenly">
+    <footer className="p-4 grid md:flex bg-neutral text-neutral-content">
+      <div className="flex md:flex-auto items-center md:mr-4">
         <div>
           <Image
             alt="mhf logo"
@@ -19,7 +19,7 @@ export default function Footer() {
           }
         </div>
       </div>
-      <div className="flex items-center ml-auto">
+      <div className="flex md:flex-initial items-center ml-auto">
         <a
           className="mr-4 mt-2"
           href="https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss"
