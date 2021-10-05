@@ -5,8 +5,8 @@ function SideNavbar({ show, setShow }) {
   return (
     <div
       className={`${
-        show ? 'flex' : 'hidden'
-      } fixed h-screen top-0 left-0 shadow-lg bg-neutral text-neutral-content z-10 transition-all lg:hidden`}
+        show ? 'translate-x-0' : '-translate-x-full'
+      } fixed h-screen bg-neutral text-neutral-content transform top-0 left-0 w-64 overflow-auto ease-in-out transition-all duration-300 z-30  lg:hidden`}
     >
       <div className="flex-1 px-2 mx-2 pt-20 md:flex">
         <div

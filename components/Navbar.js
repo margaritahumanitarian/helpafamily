@@ -13,9 +13,9 @@ export default function Navbar() {
   return (
     <>
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
-      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content justify-center sticky top-0 z-50">
+      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content justify-center sticky top-0 z-50 lg:space-between">
         <button
-          className=" btn-ghost flex  lg:hidden"
+          className=" btn-ghost flex absolute left-3  lg:hidden"
           onClick={() => setShowSideNav(!showSideNav)}
           type="button"
         >
@@ -25,12 +25,12 @@ export default function Navbar() {
             <GiHamburgerMenu className="inline-block w-5 h-5 stroke-current " />
           )}
         </button>
-        <div className="flex-none px-2 mx-2">
-          <span className="text-lg font-bold">
+        <div className="flex-auto px-2 mx-2">
+          <span className="text-sm font-bold ml-4 sm:text-lg">
             {'Margarita Humanitarian Foundation'}
           </span>
         </div>
-        <div className="flex-1 px-2 mx-2 hidden md:flex">
+        <div className="flex-auto px-2 mx-2 hidden lg:flex">
           <div className="items-stretch hidden lg:flex">
             <Link href="/">
               <a className="btn btn-ghost btn-sm rounded-btn">{'Home'}</a>
@@ -53,7 +53,7 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-        <div className="flex-none hidden sm:flex">
+        <div className="flex-none hidden sm:flex lg:hidden xl:flex">
           {'Help Families in Need'}
           <button className="btn btn-square btn-ghost" type="button">
             <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
