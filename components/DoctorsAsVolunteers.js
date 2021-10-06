@@ -28,7 +28,7 @@ function DoctorsAsVolunteers() {
       <CardParagraph>
         {'Scheduling is flexible and based on your availability.'}
       </CardParagraph>
-      <br />
+
       <PositionRequirements label={'Requirements:'}>
         {'Current medical board license for your region and country'}
         {'Fluency in English or Spanish'}
