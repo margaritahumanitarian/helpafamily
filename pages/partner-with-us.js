@@ -1,4 +1,4 @@
-import { BLOCKS } from '@contentful/rich-text-types';
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import React from 'react';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -22,6 +22,24 @@ const options = {
           <li key={item.key}>{item.props.children[0].props.children[0]}</li>
         ))}
       </ul>
+    ),
+  },
+};
+
+const options_for_contact = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (_, children) => (
+      <CardParagraph>{children}</CardParagraph>
+    ),
+    [BLOCKS.UL_LIST]: (_, children) => (
+      <ul className="list-disc text-left pl-6">
+        {children.map((item) => (
+          <li key={item.key}>{item}</li>
+        ))}
+      </ul>
+    ),
+    [INLINES.HYPERLINK]: (_, children) => (
+      <a className="text-green-700">{children}</a>
     ),
   },
 };
@@ -66,13 +84,18 @@ export default function PartnerWithUs({
           },
           sys: { id },
         } = partnerCard;
-
+        {
+          console.log(contactInstructions);
+        }
         return (
           <Card backgroundImageSource={`https:${url}`} key={id}>
             <CardTitle>{title}</CardTitle>
             {documentToReactComponents(rawRichTextField, options)}
             <CardAddress>
-              {documentToReactComponents(contactInstructions, options)}
+              {documentToReactComponents(
+                contactInstructions,
+                options_for_contact
+              )}
             </CardAddress>
           </Card>
         );
