@@ -22,4 +22,9 @@
   .nav-icon {
     @apply inline-block w-5 h-5 stroke-current;
   }
+
+  .side-nav-btn {
+    @apply btn btn-ghost btn-sm rounded-btn drop-shadow-none;
+    box-shadow: none; /* We can't use TW class in @apply because it conflicts with .btn, so let's use simple property */
+  }
 }
