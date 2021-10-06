@@ -79,9 +79,9 @@ CardAction.propTypes = {
   onClick: PropTypes.func,
 };
 
-export function CardAddress({ children, label }) {
+export function CardAddress({ children, label, style }) {
   return (
-    <div className="shaded-text my-auto">
+    <div className="shaded-text my-auto" style={style}>
       <div className="font-semibold">{label}</div>
       <span>{children}</span>
     </div>
@@ -91,6 +91,7 @@ export function CardAddress({ children, label }) {
 CardAddress.propTypes = {
   children: PropTypes.node,
   label: PropTypes.string,
+  style: PropTypes.object,
 };
 
 export function PositionRequirements({ label, children }) {
