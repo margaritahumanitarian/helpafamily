@@ -11,10 +11,7 @@ function ElectronicsDropOffCard() {
           "Any organization or business around the world can help families get access to technology. Put a donation box in your office for used laptops, tablets, and smartphones. Volunteers will pick up the items periodically, fix them up, and provide them to families in need. You can optionally be involved with refurbishment and placement too if you'd like."
         }
       </CardParagraph>
-      <CardAddress
-        label="Email us to learn more at:"
-        style={{ marginTop: 'auto' }}
-      >
+      <CardAddress label="Email us to learn more at:">
         {
           <a href="mailto:hi@mhfcares.org?subject=Electronics%20Drop-Off%20Box">
             {'hi@mhfcares.org'}
