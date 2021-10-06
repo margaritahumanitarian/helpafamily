@@ -99,8 +99,8 @@ export function PositionRequirements({ label, children }) {
     <div className="p-2 mt-auto shaded-text">
       <span className="font-semibold">{label}</span>
       <ul className="list-disc text-left pl-6">
-        {children.map((listItem, index) => (
-          <li key={index}>{listItem}</li>
+        {React.Children.map(children, (listItem) => (
+          <li>{listItem}</li>
         ))}
       </ul>
     </div>
