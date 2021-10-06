@@ -47,7 +47,7 @@ export default function Home() {
             >
               {'Instagram'}
             </a>
-            {'and '}
+            {' and '}
             <a
               className="link link-secondary"
               href="https://twitter.com/margaritahforg"
@@ -55,8 +55,8 @@ export default function Home() {
               {'Twitter'}
             </a>
           </div>
-          <div className="flex flex-row justify-evenly grid-cols-3 inset-x-0 bottom-0 ">
-            <div className="max-w-lg text-center">
+          <div className="grid justify-evenly lg:grid-cols-3 inset-x-0 mb-10">
+            <div className="max-w-lg px-2 text-center mx-auto">
               <h2 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'Receipt to Follow'}
               </h2>
@@ -66,7 +66,7 @@ export default function Home() {
                 }
               </p>
             </div>
-            <div className="max-w-lg text-center">
+            <div className="max-w-lg px-2 text-center mx-auto">
               <h2 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'About Our Donation Software'}
               </h2>
@@ -77,7 +77,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="max-w-lg text-center">
+            <div className="max-w-lg px-2 text-center mx-auto">
               <h3 className="m-0 mt-10 mb-2 text-3xl font-bold">
                 {'Improve our Donation Software'}
               </h3>

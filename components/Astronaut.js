@@ -5,7 +5,7 @@ import animationData from '../lotties/astronaut.json';
 const defaultOptions = {
   loop: true,
   autoplay: true,
-  animationData: animationData,
+  animationData,
   rendererSettings: {
     preserveAspectRatio: 'xMidYMid slice',
   },
