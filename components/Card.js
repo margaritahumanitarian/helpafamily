@@ -17,7 +17,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
           />
         </figure>
       )}
-      <div className="card-body space-y-3">{children}</div>
+      <div className="card-body grid gap-y-3 auto-rows-card">{children}</div>
       <style jsx>{`
         .card-shadow {
           box-shadow: rgba(14, 30, 37, 0.1) 0px 0px 4px 0px,
@@ -50,9 +50,9 @@ CardParagraph.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export function CardAction({ children, linkTo, isPending, onClick }) {
+export function CardAction({ children, linkTo, isPending, onClick, style }) {
   return (
-    <div className="pt-5" style={{ marginTop: 'auto' }}>
+    <div className={`pt-5 ${style}`}>
       {linkTo ? (
         <a className="btn btn-accent" href={linkTo}>
           {children}
@@ -77,6 +77,7 @@ CardAction.propTypes = {
   isPending: PropTypes.bool,
   linkTo: PropTypes.string,
   onClick: PropTypes.func,
+  style: PropTypes.object,
 };
 
 export function CardAddress({ children, label }) {
@@ -98,8 +99,8 @@ export function PositionRequirements({ label, children }) {
     <div className="p-2 mt-auto shaded-text">
       <span className="font-semibold">{label}</span>
       <ul className="list-disc text-left pl-6">
-        {children.map((listItem, index) => (
-          <li key={index}>{listItem}</li>
+        {React.Children.map(children, (listItem) => (
+          <li>{listItem}</li>
         ))}
       </ul>
     </div>
