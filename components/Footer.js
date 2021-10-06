@@ -4,8 +4,8 @@ import React from 'react';
 export default function Footer() {
   return (
     <footer className="p-4 grid md:flex bg-neutral text-neutral-content">
-      <div className="flex md:flex-auto items-center md:mr-4">
-        <div>
+      <div className="flex flex-col md:flex-row md:flex-auto items-center md:mr-4 mb-4 md:mb-0">
+        <div className="mb-2 md:mb-0">
           <Image
             alt="mhf logo"
             height="120"
@@ -19,7 +19,7 @@ export default function Footer() {
           }
         </div>
       </div>
-      <div className="flex md:flex-initial items-center ml-auto">
+      <div className="flex md:flex-initial items-center justify-center md:ml-auto">
         <a
           className="mr-4 mt-2"
           href="https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss"
