@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import { Routes } from '../models/routes';
 
 function SideNavbar({ show, setShow }) {
   return (
@@ -13,21 +14,21 @@ function SideNavbar({ show, setShow }) {
           className="flex flex-col item-start"
           onClick={() => setShow(false)}
         >
-          <Link href="/">
+          <Link href={Routes.Home}>
             <a className="btn btn-ghost btn-sm rounded-btn">{'Home'}</a>
           </Link>
-          <Link href="/in-kind">
+          <Link href={Routes.InKind}>
             <a className="btn btn-ghost btn-sm rounded-btn">{'In-Kind'}</a>
           </Link>
-          <Link href="/fund">
+          <Link href={Routes.Fund}>
             <a className="btn btn-ghost btn-sm rounded-btn">{'Fund'}</a>
           </Link>
-          <Link href="/give-your-time">
+          <Link href={Routes.GiveYourTime}>
             <a className="btn btn-ghost btn-sm rounded-btn">
               {'Give Your Time'}
             </a>
           </Link>
-          <Link href="/partner-with-us">
+          <Link href={Routes.PartnerWithUs}>
             <a className="btn btn-ghost btn-sm rounded-btn">
               {'Partner With Us'}
             </a>
