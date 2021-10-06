@@ -38,8 +38,10 @@ const options_for_contact = {
         ))}
       </ul>
     ),
-    [INLINES.HYPERLINK]: (_, children) => (
-      <a className="text-green-700">{children}</a>
+    [INLINES.HYPERLINK]: (node, children) => (
+      <a className="text-green-700" href={node.data.uri}>
+        {children}
+      </a>
     ),
   },
 };
