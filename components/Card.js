@@ -12,6 +12,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
             alt={backgroundImageAltText}
             height="280"
             layout="responsive"
+            objectFit="cover"
             src={backgroundImageSource}
             width="400"
           />
