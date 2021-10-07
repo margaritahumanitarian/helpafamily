@@ -78,7 +78,7 @@ CardAction.propTypes = {
   isPending: PropTypes.bool,
   linkTo: PropTypes.string,
   onClick: PropTypes.func,
-  style: PropTypes.object,
+  style: PropTypes.string,
 };
 
 export function CardAddress({ children, label }) {

@@ -58,10 +58,12 @@ export default function Navbar() {
           </div>
         </div>
         <div className="flex-none hidden sm:flex lg:hidden xl:flex">
-          {'Help Families in Need'}
-          <button className="btn btn-square btn-ghost" type="button">
-            <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
-          </button>
+          <Link href={Routes.Fund}>{'Help Families in Need'}</Link>
+          <Link href={Routes.InKind}>
+            <a className="btn btn-square btn-ghost">
+              <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
+            </a>
+          </Link>
         </div>
         <div className="flex-none hidden sm:flex">
           <button className="btn btn-square btn-ghost" type="button">
