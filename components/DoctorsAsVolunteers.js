@@ -1,6 +1,11 @@
 import React from 'react';
 
-import Card, { CardParagraph, CardTitle, PositionRequirements } from './Card';
+import Card, {
+  CardAction,
+  CardParagraph,
+  CardTitle,
+  PositionRequirements,
+} from './Card';
 
 function DoctorsAsVolunteers() {
   return (
@@ -23,11 +28,14 @@ function DoctorsAsVolunteers() {
       <CardParagraph>
         {'Scheduling is flexible and based on your availability.'}
       </CardParagraph>
-      <br />
+
       <PositionRequirements label={'Requirements:'}>
         {'Current medical board license for your region and country'}
         {'Fluency in English or Spanish'}
       </PositionRequirements>
+      <CardAction linkTo="mailto:hi@mhfcares.org?subject=Volunteer%20as%20Doctor">
+        {'Contact Us'}
+      </CardAction>
     </Card>
   );
 }

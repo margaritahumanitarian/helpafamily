@@ -28,11 +28,74 @@ We will then review your pull request, during this process you may receive feedb
 
 We may request or make changes where necessary. Feedback will always be kind, considerate, and constructive! We are very grateful for all contributions!
 
+## Important Note On Style
+
+We are using **Tailwind** and **DaisyUI**. But if you feel the need to use **css** there are [some guidelines](https://margaritahumanitarian.gitbook.io/help-a-family-manual/contributing-to-the-repository/mhf-css-guide).
+
+- Avoid the `inline style` attribute.
+- Avoid `css modules` unless you are working on a whole page.
+- Use the `styled jsx` library and follow [these conventions](https://nextjs.org/blog/styling-next-with-styled-jsx).
+
+**Note:** Styled JSX is scoped, so you can be more free with the class names, just make sure it stayes scoped as for example in the case of sub components or a wrapper component.
+
+```js
+<div id="container">
+  <div className="my-class">
+    // MyComponent is considered scoped
+    <MyComponent />
+  </div>
+
+  <styled jsx>{`
+    .my-class {
+      height: 100vh;
+    }
+  `}</styled>
+</div>
+```
+
+### JSX/React style guide
+
+We are building a convention to follow [here](https://margaritahumanitarian.gitbook.io/help-a-family-manual/contributing-to-the-repository/mhf-javascript-react-style-guide). As an example, use arrow functions while creating components.
+
+```js
+const MyComponent = () => {...}
+```
+
+### Soon-ish
+
+> We are working on a visual style guide. Until then we ask that you try to match the current look and colors when styling. You may receive feedback about changes that aren't yet outlined. Bear with us!
+
+## PR Peer Review
+
+### We are looking forward to everyone's contributions at all levels
+
+If you feel you want to help by reviewing pull requests, no matter your level:
+
+1. We're excited to see that!
+2. We ask that you use our [peer review checklist](https://gist.github.com/audreyfeldroy/cc71cebbc3efae4fbf028d3e5ed37f84#peer-and-higher-additional-checklist-items) in your reviews and comments.
+
+Copy/paste this into your comment:
+
+```md
+# Peer Checklist Items
+
+- [ ] Review is clear as to what changes need to be made if any
+- [ ] Requests for changes are made as code suggestions whenever possible
+- [ ] PR review is submitted with "Request Changes" or "Approved" marked
+- [ ] If Review contains multiple suggestions they are in a bulleted list
+- [ ] Link to relevant issues if referencing them
+- [ ] PR follows [MHF Javascript/React Style Guide](https://margaritahumanitarian.gitbook.io/help-a-family-manual/contributing-to-the-repository/mhf-javascript-react-style-guide)
+- [ ] PR follows [MHF CSS Guide](https://margaritahumanitarian.gitbook.io/help-a-family-manual/contributing-to-the-repository/mhf-css-guide)
+- [ ] Submitter's comments follow Code of Conduct
+```
+
+Again, we encourage everyone at **all levels** to participate in this process as it will help you grow as a developer.
+
 ## Installation
 
 Fork this repo, then:
 
-```
+```md
 git clone <url-to-your-fork-of-helpafamily-here>
 cd helpafamily/
 cp .env.example .env
@@ -40,11 +103,11 @@ cp .env.example .env
 
 Then,
 
-### If you're familiar with Docker:
+### If you're familiar with Docker
 
 `docker-compose build` (it builds the docker container - needed only the first time or whenever the container gets removed)
 
-### If you don't wish to use Docker:
+### If you don't wish to use Docker
 
 `yarn install`
 
@@ -54,7 +117,7 @@ Then,
 
 Once you have finished the [Installation](#installation) process you can run the project with
 
-```
+```md
 yarn dev
 ```
 

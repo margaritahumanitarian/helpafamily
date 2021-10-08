@@ -25,7 +25,11 @@ module.exports = {
       xl: '1280px',
       // => @media (min-width: 1280px) { ... }
     },
-    extend: {},
+    extend: {
+      gridAutoRows: {
+        card: 'min-content 1fr min-content',
+      },
+    },
   },
   variants: {
     extend: {},

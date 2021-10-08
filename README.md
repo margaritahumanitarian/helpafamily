@@ -18,7 +18,6 @@ are active online vary.
 Come say hi in:
 
 - Our [#help-a-family Discord server](https://discord.gg/WsmqrcGqyE)
-- Our [#mhf chat room on Element](https://app.element.io/#/room/#mhf:matrix.org)
 
 We're still getting this started, so be patient and hang around if no one's there.
 Soon it'll get more active.
