@@ -12,7 +12,7 @@ import PrimaryLayout from '../components/PrimaryLayout';
 
 export default function Home() {
   return (
-    <PrimaryLayout>
+    <PrimaryLayout inNeed main>
       <LaptopForFamiliesCard />
       <HumanitarianClinicCard />
       <FallPreventionForEldersCard />
