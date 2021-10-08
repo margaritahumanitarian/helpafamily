@@ -8,7 +8,7 @@ function HeroSection({ main = false, inNeed = false }) {
   return (
     <div
       className={`text-center ${!main && 'hero-content'} md:m-auto ${
-        main && 'pb-20'
+        main && 'pb-40 md:pb-20'
       }`}
     >
       <div className={main && `bg-image hero`}>
@@ -28,13 +28,13 @@ function HeroSection({ main = false, inNeed = false }) {
             <div className={`md:col-span-${main ? 2 : 1}`}>
               <h1
                 className={`text-3xl ${
-                  main && 'text-5xl text-white text-opacity-90'
+                  main && 'md:text-5xl text-white text-opacity-90'
                 } font-bold m-4 max-w-lg`}
               >
                 {'Help Families in Need'}
               </h1>
               <p
-                className={`text-xl ${
+                className={`md:text-xl pt-5 ${
                   main && 'text-white text-opacity-90'
                 } leading-tight max-w-lg`}
               >
