@@ -84,6 +84,9 @@ Copy/paste this into your comment:
 - [ ] PR review is submitted with "Request Changes" or "Approved" marked
 - [ ] If Review contains multiple suggestions they are in a bulleted list
 - [ ] Link to relevant issues if referencing them
+- [ ] PR follows [MHF Javascript/React Style Guide](https://margaritahumanitarian.gitbook.io/help-a-family-manual/contributing-to-the-repository/mhf-javascript-react-style-guide)
+- [ ] PR follows [MHF CSS Guide](https://margaritahumanitarian.gitbook.io/help-a-family-manual/contributing-to-the-repository/mhf-css-guide)
+- [ ] Submitter's comments follow Code of Conduct
 ```
 
 Again, we encourage everyone at **all levels** to participate in this process as it will help you grow as a developer.
