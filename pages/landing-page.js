@@ -81,16 +81,12 @@ const LandingPage = ({
       <LandingPageNav />
       <main className="justify-center">
         <LargeHeroSection bgImage="/images/HotMealDay.jpg" opacity="20">
-          <LargeHeroContent
-            mainTextSize="lg"
-            title="Feed A Family Today"
-            titleSize="5xl"
-          >
+          <LargeHeroContent mainTextSize="lg" title={title} titleSize="5xl">
             <p className="mb-5">{description}</p>
 
             <Link href="/in-kind" passHref>
               <a className="btn btn-accent rounded-btn" href="#">
-                {title}
+                {'Feed A Family'}
               </a>
             </Link>
           </LargeHeroContent>
