@@ -67,7 +67,7 @@ const TestimonialSection = () => {
 
 const LandingPage = ({
   page: {
-    fields: { title, description },
+    fields: { title: landingPageTitle, description: landingPageDescription },
   },
 }) => {
   return (
@@ -81,8 +81,12 @@ const LandingPage = ({
       <LandingPageNav />
       <main className="justify-center">
         <LargeHeroSection bgImage="/images/HotMealDay.jpg" opacity="20">
-          <LargeHeroContent mainTextSize="lg" title={title} titleSize="5xl">
-            <p className="mb-5">{description}</p>
+          <LargeHeroContent
+            mainTextSize="lg"
+            title={landingPageTitle}
+            titleSize="5xl"
+          >
+            <p className="mb-5">{landingPageDescription}</p>
 
             <Link href="/in-kind" passHref>
               <a className="btn btn-accent rounded-btn" href="#">
