@@ -58,7 +58,7 @@ function HeroSection({ main = false, inNeed = false }) {
               rgba(90, 76, 16, 0.6),
               rgba(20, 81, 116, 0.3)
             ),
-            url(/images/pexels-photo-1206059.jpeg);
+            url(/images/volunteer1.png);
           object-fit: cover;
           background-repeat: no-repeat;
         }
