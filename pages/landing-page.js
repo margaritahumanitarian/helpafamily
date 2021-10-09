@@ -5,7 +5,7 @@ import LargeHeroContent from '../components/LargeHeroContent';
 import LargeHeroSection from '../components/LargeHeroSection';
 import Link from 'next/link';
 import TestimonialCard from '../components/TestimonialCard';
-
+import { createClient } from 'contentful';
 /** ------------------------------------------------------------------------------
  *
  * TODO: Change all of the placeholder text to good copy.
@@ -16,6 +16,24 @@ import TestimonialCard from '../components/TestimonialCard';
  * FIXME: There's a better way to handle images as per @RedFox0x20 recommendation.
  */
 // -------------------------------------------------------------------------------
+
+export async function getStaticProps() {
+  const client = createClient({
+    environment: process.env.CONTENTFUL_ENVIRONMENT,
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({
+    content_type: 'landingPage',
+  });
+
+  return {
+    props: {
+      page: res.items[0],
+    },
+  };
+}
 
 const TestimonialSection = () => {
   return (
@@ -47,7 +65,11 @@ const TestimonialSection = () => {
   );
 };
 
-const LandingPage = () => {
+const LandingPage = ({
+  page: {
+    fields: { title, description },
+  },
+}) => {
   return (
     <>
       <Head>
@@ -64,15 +86,11 @@ const LandingPage = () => {
             title="Feed A Family Today"
             titleSize="5xl"
           >
-            <p className="mb-5">
-              {
-                'Families are in need more than ever. The pandemic coupled with trying economic times has really put the less fortunate in a difficult position as they try to maintain a functioning household. Give what you can today to help raise up those in need.'
-              }
-            </p>
+            <p className="mb-5">{description}</p>
 
             <Link href="/in-kind" passHref>
               <a className="btn btn-accent rounded-btn" href="#">
-                {'Feed A Family'}
+                {title}
               </a>
             </Link>
           </LargeHeroContent>
