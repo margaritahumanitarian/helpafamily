@@ -54,7 +54,7 @@ const LandingPage = () => {
         <title>{'Help a Family in Need'}</title>
         <meta content={'Help a Family in Need'} name="description" />
         <link href="https://www.margaritahumanitarian.org/" rel="canonical" />
-        <link href="/favicon.ico" rel="icon" />
+        <link href="/images/favicon.ico" rel="icon" />
       </Head>
       <LandingPageNav />
       <main className="justify-center">

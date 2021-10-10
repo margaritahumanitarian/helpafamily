@@ -16,7 +16,7 @@ export default function PrimaryLayout({
     <>
       <Head>
         <title>{'Help a Family in Need'}</title>
-        <link href="/favicon.ico" rel="icon" />
+        <link href="/images/favicon.ico" rel="icon" />
       </Head>
       <div className="flex flex-col min-h-screen">
         <Navbar />
