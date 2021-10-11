@@ -86,9 +86,6 @@ export default function PartnerWithUs({
           },
           sys: { id },
         } = partnerCard;
-        {
-          console.log(contactInstructions);
-        }
         return (
           <Card backgroundImageSource={`https:${url}`} key={id}>
             <CardTitle>{title}</CardTitle>
