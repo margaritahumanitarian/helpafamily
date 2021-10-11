@@ -17,7 +17,7 @@ import { createClient } from 'contentful';
  */
 // -------------------------------------------------------------------------------
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const client = createClient({
     environment: process.env.CONTENTFUL_ENVIRONMENT,
     space: process.env.CONTENTFUL_SPACE_ID,
