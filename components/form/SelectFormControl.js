@@ -15,7 +15,7 @@ function SelectFormControl({ id, label, options, value, onChange }) {
         className="select select-bordered w-full select-sm"
         id={id}
         name={id}
-        onChange={handleChange}
+        onBlur={handleChange}
         value={value}
       >
         {options.map(({ disabled, label: optionLabel, value: optionValue }) => (
