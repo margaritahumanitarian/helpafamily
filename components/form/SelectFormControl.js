@@ -16,7 +16,7 @@ function SelectFormControl({ id, label, options, value, onChange }) {
         id={id}
         name={id}
         onBlur={handleChange}
-        value={value}
+        defaultValue={value}
       >
         {options.map(({ disabled, label: optionLabel, value: optionValue }) => (
           <option disabled={disabled} key={optionValue} value={optionValue}>
