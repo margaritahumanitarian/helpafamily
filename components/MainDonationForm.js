@@ -86,7 +86,7 @@ export default function MainDonationForm({ inNeed = false }) {
     <>
       <form onSubmit={handleSubmitForm}>
         <div
-          className="p-6 mb-5 card bordered bg-base-100 space-y-3"
+          className="p-6 mb-5 card bordered bg-base-100 space-y-3 text-black"
           data-theme="cupcake"
         >
           <h2 className="card-title" data-theme="light">

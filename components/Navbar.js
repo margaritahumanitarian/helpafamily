@@ -1,16 +1,22 @@
 import Link from 'next/link';
-import React from 'react';
 
 import { BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
+import { FaRegMoon } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { ImCross } from 'react-icons/im';
+import React from 'react';
 import { Routes } from '../models/routes';
-
 import SideNavbar from './SideNavbar';
+import { useContextTheme } from 'components/ThemeContext';
 
 export default function Navbar() {
   const [showSideNav, setShowSideNav] = React.useState(false);
+
+  const themes = useContextTheme();
+  const changeTheme = () => {
+    themes.toggleTheme();
+  };
   return (
     <>
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
@@ -70,6 +76,13 @@ export default function Navbar() {
             <BsSearch className="inline-block w-5 h-5 stroke-current" />
           </button>
         </div>
+
+        <button className="btn btn-square btn-ghost" type="button">
+          <FaRegMoon
+            className="inline-block w-5 h-4 stroke-current"
+            onClick={changeTheme}
+          />
+        </button>
       </div>
     </>
   );
