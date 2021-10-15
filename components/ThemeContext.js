@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 export const ThemeContext = React.createContext();
 
@@ -10,17 +10,41 @@ export const ThemeProvider = ({ children }) => {
 
   const toggleTheme = () => {
     if (theme === 'light') {
-      setTheme('dark');
-      setBackgroundColor('bg-gray-900');
-      setCardsBackgroundColor('bg-gray-800');
-      setTextColor('white');
+      window.localStorage.setItem('theme', 'dark');
+      setThemeColor('dark');
     } else {
+      window.localStorage.setItem('theme', 'light');
+      setThemeColor('light');
+    }
+  };
+
+  const setThemeColor = (color) => {
+    if (color === 'light') {
       setTheme('light');
       setBackgroundColor('bg-white');
       setCardsBackgroundColor('bg-white');
       setTextColor('black');
     }
+    if (color === 'dark') {
+      setTheme('dark');
+      setBackgroundColor('bg-gray-900');
+      setCardsBackgroundColor('bg-gray-800');
+      setTextColor('white');
+    }
   };
+
+  useEffect(() => {
+    let localTheme = window.localStorage.getItem('theme');
+    if (!localTheme) {
+      window.localStorage.setItem('theme', theme);
+      localTheme = theme;
+    }
+
+    setThemeColor(localTheme);
+
+    // eslint-disable-next-line
+  }, []);
+
   return (
     <ThemeContext.Provider
       value={{
