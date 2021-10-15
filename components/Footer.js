@@ -1,9 +1,16 @@
 import Image from 'next/image';
 import React from 'react';
+import { useContextTheme } from 'components/ThemeContext';
 
 export default function Footer() {
+  const { theme, cardsBackgroundColor } = useContextTheme();
+
   return (
-    <footer className="p-4 grid md:flex bg-neutral text-neutral-content">
+    <footer
+      className={`p-4 grid md:flex ${
+        theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
+      } text-neutral-content`}
+    >
       <div className="flex flex-col md:flex-row md:flex-auto items-center md:mr-4 mb-4 md:mb-0">
         <div className="mb-2 md:mb-0">
           <Image

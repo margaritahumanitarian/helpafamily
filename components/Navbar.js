@@ -1,20 +1,31 @@
 import Link from 'next/link';
-import React from 'react';
 
 import { BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
+import { FaRegMoon } from 'react-icons/fa';
+import { FiSun } from 'react-icons/fi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { ImCross } from 'react-icons/im';
+import React from 'react';
 import { Routes } from '../models/routes';
-
 import SideNavbar from './SideNavbar';
+import { useContextTheme } from 'components/ThemeContext';
 
 export default function Navbar() {
   const [showSideNav, setShowSideNav] = React.useState(false);
+
+  const { toggleTheme, cardsBackgroundColor, theme } = useContextTheme();
+  const handleThemeChange = () => {
+    toggleTheme();
+  };
   return (
     <>
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
-      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content justify-center sticky top-0 z-50 lg:space-between">
+      <div
+        className={`navbar mb-2 shadow-lg ${
+          theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
+        } text-neutral-content justify-center sticky top-0 z-50 lg:space-between`}
+      >
         <button
           className=" btn-ghost flex absolute left-3  lg:hidden"
           onClick={() => setShowSideNav(!showSideNav)}
@@ -70,6 +81,18 @@ export default function Navbar() {
             <BsSearch className="inline-block w-5 h-5 stroke-current" />
           </button>
         </div>
+
+        <button
+          className="btn btn-square btn-ghost"
+          onClick={handleThemeChange}
+          type="button"
+        >
+          {theme === 'dark' ? (
+            <FiSun className="inline-block w-5 h-5 stroke-current" />
+          ) : (
+            <FaRegMoon className="inline-block w-5 h-4 stroke-current" />
+          )}
+        </button>
       </div>
     </>
   );

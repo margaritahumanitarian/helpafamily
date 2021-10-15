@@ -2,8 +2,10 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import clsx from 'clsx';
+import { useContextTheme } from 'components/ThemeContext';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
+  const { cardsBackgroundColor, textColor } = useContextTheme();
   return (
     <div className="card filter brightness-105 shadow-xl card-shadow">
       {backgroundImageSource && (
@@ -18,7 +20,11 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
           />
         </figure>
       )}
-      <div className="card-body grid gap-y-3 auto-rows-card">{children}</div>
+      <div
+        className={`card-body grid ${cardsBackgroundColor} text-${textColor} gap-y-3 auto-rows-card`}
+      >
+        {children}
+      </div>
       <style jsx>{`
         .card-shadow {
           box-shadow: rgba(14, 30, 37, 0.1) 0px 0px 4px 0px,
@@ -36,7 +42,10 @@ Card.propTypes = {
 };
 
 export function CardTitle({ children }) {
-  return <span className="card-title m-0">{children}</span>;
+  const { cardsBackgroundColor } = useContextTheme();
+  return (
+    <span className={`card-title m-0 ${cardsBackgroundColor}`}>{children}</span>
+  );
 }
 
 CardTitle.propTypes = {
