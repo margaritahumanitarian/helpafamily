@@ -23,7 +23,13 @@ export const ThemeProvider = ({ children }) => {
   };
   return (
     <ThemeContext.Provider
-      value={{ backgroundColor, textColor, cardsBackgroundColor, toggleTheme }}
+      value={{
+        backgroundColor,
+        textColor,
+        cardsBackgroundColor,
+        toggleTheme,
+        theme,
+      }}
     >
       {children}
     </ThemeContext.Provider>

@@ -8,9 +8,7 @@ export default function Footer() {
   return (
     <footer
       className={`p-4 grid md:flex ${
-        themes.backgroundColor === 'bg-gray-900'
-          ? themes.cardsBackgroundColor
-          : 'bg-neutral'
+        themes.theme === 'dark' ? themes.cardsBackgroundColor : 'bg-neutral'
       } text-neutral-content`}
     >
       <div className="flex flex-col md:flex-row md:flex-auto items-center md:mr-4 mb-4 md:mb-0">
