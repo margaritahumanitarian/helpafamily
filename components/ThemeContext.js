@@ -11,8 +11,8 @@ export const ThemeProvider = ({ children }) => {
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
-      setBackgroundColor('bg-gray-800');
-      setCardsBackgroundColor('bg-gray-600');
+      setBackgroundColor('bg-gray-900');
+      setCardsBackgroundColor('bg-gray-800');
       setTextColor('white');
     } else {
       setTheme('light');

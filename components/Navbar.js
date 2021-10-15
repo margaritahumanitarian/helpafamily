@@ -20,7 +20,13 @@ export default function Navbar() {
   return (
     <>
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
-      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content justify-center sticky top-0 z-50 lg:space-between">
+      <div
+        className={`navbar mb-2 shadow-lg ${
+          themes.backgroundColor === 'bg-gray-900'
+            ? themes.cardsBackgroundColor
+            : 'bg-neutral'
+        } text-neutral-content justify-center sticky top-0 z-50 lg:space-between`}
+      >
         <button
           className=" btn-ghost flex absolute left-3  lg:hidden"
           onClick={() => setShowSideNav(!showSideNav)}
