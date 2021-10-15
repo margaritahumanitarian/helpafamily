@@ -3,12 +3,12 @@ import React from 'react';
 import { useContextTheme } from 'components/ThemeContext';
 
 export default function Footer() {
-  const themes = useContextTheme();
+  const { theme, cardsBackgroundColor } = useContextTheme();
 
   return (
     <footer
       className={`p-4 grid md:flex ${
-        themes.theme === 'dark' ? themes.cardsBackgroundColor : 'bg-neutral'
+        theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
       } text-neutral-content`}
     >
       <div className="flex flex-col md:flex-row md:flex-auto items-center md:mr-4 mb-4 md:mb-0">

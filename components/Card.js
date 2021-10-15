@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import { useContextTheme } from 'components/ThemeContext';
 
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
-  const theme = useContextTheme();
+  const { cardsBackgroundColor, textColor } = useContextTheme();
   return (
     <div className="card filter brightness-105 shadow-xl card-shadow">
       {backgroundImageSource && (
@@ -21,7 +21,7 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
         </figure>
       )}
       <div
-        className={`card-body grid ${theme.cardsBackgroundColor} text-${theme.textColor} gap-y-3 auto-rows-card`}
+        className={`card-body grid ${cardsBackgroundColor} text-${textColor} gap-y-3 auto-rows-card`}
       >
         {children}
       </div>
@@ -42,11 +42,9 @@ Card.propTypes = {
 };
 
 export function CardTitle({ children }) {
-  const theme = useContextTheme();
+  const { cardsBackgroundColor } = useContextTheme();
   return (
-    <span className={`card-title m-0 ${theme.cardsBackgroundColor}`}>
-      {children}
-    </span>
+    <span className={`card-title m-0 ${cardsBackgroundColor}`}>{children}</span>
   );
 }
 

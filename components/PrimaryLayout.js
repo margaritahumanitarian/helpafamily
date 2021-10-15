@@ -13,18 +13,16 @@ export default function PrimaryLayout({
   children,
   description,
 }) {
-  const theme = useContextTheme();
+  const { backgroundColor, textColor } = useContextTheme();
   return (
     <>
       <Head>
         <title>{'Help a Family in Need'}</title>
         <link href="/images/favicon.ico" rel="icon" />
       </Head>
-      <div className={`flex flex-col min-h-screen ${theme.backgroundColor}`}>
+      <div className={`flex flex-col min-h-screen ${backgroundColor}`}>
         <Navbar />
-        <main
-          className={`flex-grow ${theme.backgroundColor} text-${theme.textColor}`}
-        >
+        <main className={`flex-grow ${backgroundColor} text-${textColor}`}>
           <HeroSection inNeed={inNeed} main={main} />
           <div className="text-center hero-content md:m-auto">
             <div className="w-lg">

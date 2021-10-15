@@ -14,16 +14,16 @@ import { useContextTheme } from 'components/ThemeContext';
 export default function Navbar() {
   const [showSideNav, setShowSideNav] = React.useState(false);
 
-  const themes = useContextTheme();
-  const changeTheme = () => {
-    themes.toggleTheme();
+  const { toggleTheme, cardsBackgroundColor, theme } = useContextTheme();
+  const handleThemeChange = () => {
+    toggleTheme();
   };
   return (
     <>
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
       <div
         className={`navbar mb-2 shadow-lg ${
-          themes.theme === 'dark' ? themes.cardsBackgroundColor : 'bg-neutral'
+          theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
         } text-neutral-content justify-center sticky top-0 z-50 lg:space-between`}
       >
         <button
@@ -84,10 +84,10 @@ export default function Navbar() {
 
         <button
           className="btn btn-square btn-ghost"
-          onClick={changeTheme}
+          onClick={handleThemeChange}
           type="button"
         >
-          {themes.theme === 'dark' ? (
+          {theme === 'dark' ? (
             <FiSun className="inline-block w-5 h-5 stroke-current" />
           ) : (
             <FaRegMoon className="inline-block w-5 h-4 stroke-current" />
