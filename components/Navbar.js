@@ -37,9 +37,9 @@ export default function Navbar() {
             <GiHamburgerMenu className="inline-block w-5 h-5 stroke-current " />
           )}
         </button>
-        <div className="flex flex-auto justify-center px-2 mx-2">
+        <div className="flex flex-auto justify-center pl-8 mx-1 xs:text-lg ">
           <Link
-            className="text-sm font-bold ml-4 sm:text-lg"
+            className="text-sm font-bold ml-6 xs:text-xs sm:text-sm px-3"
             href={Routes.Home}
           >
             {'Margarita Humanitarian Foundation'}
