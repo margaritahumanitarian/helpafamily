@@ -4,7 +4,7 @@ import LandingPageNav from '../components/LandingPageNav';
 import LargeHeroContent from '../components/LargeHeroContent';
 import LargeHeroSection from '../components/LargeHeroSection';
 import Link from 'next/link';
-import TestimonialCard from '../components/TestimonialCard';
+// import TestimonialCard from '../components/TestimonialCard';
 import { createClient } from 'contentful';
 /** ------------------------------------------------------------------------------
  *
@@ -36,7 +36,8 @@ export async function getStaticProps() {
   };
 }
 
-const TestimonialSection = () => {
+const TestimonialSection = (testimonialCard) => {
+  console.log('testiMonialCard', testimonialCard);
   return (
     <section className="flex flex-col items-center justify-center h-1/2 py-28">
       <div className="text-2xl font-semibold text-gray-500 pb-28">
@@ -46,21 +47,22 @@ const TestimonialSection = () => {
         className="grid content-center justify-center grid-cols-1 shadow-md bg-gradient-to-r from-accent to-blue-400 md:grid-cols-2 xl:grid-cols-3 align-center sm:p-24"
         id="cards-section"
       >
-        <TestimonialCard
-          content="We haven't met a more generous group of giving souls. They even went out of their way to give us our requested supplies out here in the desert."
-          image="/images/HealthWorkShop.jpg"
-          title="Lovely People"
-        />
-        <TestimonialCard
-          content="I couldn't be more pleased with the way I've been treated."
-          image="/images/Volunteer.jpg"
-          title="Very Happy"
-        />
-        <TestimonialCard
-          content="I couldn't be more pleased with the way I've been treated."
-          image="/images/Humanitarian.jpg"
-          title="They Care"
-        />
+        {/* {testimonialCard.map((testimonialCard) => {
+          const {
+            fields: {
+              image: {
+                fields: {
+                  file: { url },
+                },
+              },
+
+              title,
+              content,
+            },
+          } = testimonialCard;
+
+          <TestimonialCard content={content} image={url} title={title} />;
+        })} */}
       </div>
     </section>
   );
@@ -68,7 +70,11 @@ const TestimonialSection = () => {
 
 const LandingPage = ({
   page: {
-    fields: { title: landingPageTitle, description: landingPageDescription },
+    fields: {
+      testimonialCard,
+      title: landingPageTitle,
+      description: landingPageDescription,
+    },
   },
 }) => {
   return (
@@ -96,7 +102,7 @@ const LandingPage = ({
             </Link>
           </LargeHeroContent>
         </LargeHeroSection>
-        <TestimonialSection />
+        <TestimonialSection testimonialCard={testimonialCard} />
       </main>
       <Footer />
     </>
