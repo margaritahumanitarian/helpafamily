@@ -18,22 +18,24 @@ import { createClient } from 'contentful';
 // -------------------------------------------------------------------------------
 
 export async function getStaticProps() {
-  const client = createClient({
-    environment: process.env.CONTENTFUL_ENVIRONMENT,
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
+  if (process.env.CONTENTFUL_ACCESS_TOKEN) {
+    const client = createClient({
+      environment: process.env.CONTENTFUL_ENVIRONMENT,
+      space: process.env.CONTENTFUL_SPACE_ID,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    });
 
-  const res = await client.getEntries({
-    content_type: 'landingPage',
-  });
+    const res = await client.getEntries({
+      content_type: 'landingPage',
+    });
 
-  return {
-    props: {
-      page: res.items[0],
-    },
-    revalidate: 10,
-  };
+    return {
+      props: {
+        page: res.items[0],
+      },
+      revalidate: 10,
+    };
+  }
 }
 
 const TestimonialSection = () => {
