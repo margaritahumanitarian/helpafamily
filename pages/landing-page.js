@@ -4,7 +4,7 @@ import LandingPageNav from '../components/LandingPageNav';
 import LargeHeroContent from '../components/LargeHeroContent';
 import LargeHeroSection from '../components/LargeHeroSection';
 import Link from 'next/link';
-// import TestimonialCard from '../components/TestimonialCard';
+import TestimonialCard from '../components/TestimonialCard';
 import { createClient } from 'contentful';
 /** ------------------------------------------------------------------------------
  *
@@ -36,7 +36,7 @@ export async function getStaticProps() {
   };
 }
 
-const TestimonialSection = (testimonialCard) => {
+const TestimonialSection = ({ testimonialCard }) => {
   console.log('testiMonialCard', testimonialCard);
   return (
     <section className="flex flex-col items-center justify-center h-1/2 py-28">
@@ -47,7 +47,7 @@ const TestimonialSection = (testimonialCard) => {
         className="grid content-center justify-center grid-cols-1 shadow-md bg-gradient-to-r from-accent to-blue-400 md:grid-cols-2 xl:grid-cols-3 align-center sm:p-24"
         id="cards-section"
       >
-        {/* {testimonialCard.map((testimonialCard) => {
+        {testimonialCard.map((testimonialCard, index) => {
           const {
             fields: {
               image: {
@@ -60,9 +60,15 @@ const TestimonialSection = (testimonialCard) => {
               content,
             },
           } = testimonialCard;
-
-          <TestimonialCard content={content} image={url} title={title} />;
-        })} */}
+          return (
+            <TestimonialCard
+              content={content}
+              image={`https:${url}`}
+              key={index}
+              title={title}
+            />
+          );
+        })}
       </div>
     </section>
   );
