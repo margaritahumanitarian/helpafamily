@@ -22,7 +22,7 @@ export default function Navbar() {
     <>
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
       <div
-        className={`navbar mb-2 shadow-lg ${
+        className={`navbar shadow-lg ${
           theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
         } text-neutral-content justify-center sticky top-0 z-50 lg:space-between`}
       >
