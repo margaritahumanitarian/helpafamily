@@ -13,10 +13,10 @@ function SelectFormControl({ id, label, options, value, onChange }) {
       )}
       <select
         className="select select-bordered w-full select-sm"
+        defaultValue={value}
         id={id}
         name={id}
-        onChange={handleChange}
-        value={value}
+        onBlur={handleChange}
       >
         {options.map(({ disabled, label: optionLabel, value: optionValue }) => (
           <option disabled={disabled} key={optionValue} value={optionValue}>
