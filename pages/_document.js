@@ -3,13 +3,11 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
 class MyDocument extends Document {
-  // eslint-disable-next-line
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
 
-  // eslint-disable-next-line
   render() {
     return (
       <Html data-theme="light" lang="en-us">
