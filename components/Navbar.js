@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import { BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaRegMoon } from 'react-icons/fa';
 import { FiSun } from 'react-icons/fi';
@@ -76,12 +75,6 @@ export default function Navbar() {
             </a>
           </Link>
         </div>
-        <div className="flex-none hidden sm:flex">
-          <button className="btn btn-square btn-ghost" type="button">
-            <BsSearch className="inline-block w-5 h-5 stroke-current" />
-          </button>
-        </div>
-
         <button
           className="btn btn-square btn-ghost"
           onClick={handleThemeChange}
