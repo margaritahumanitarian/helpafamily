@@ -1,5 +1,7 @@
+import EmailCapture from '@components/EmailCapture';
 import React from 'react';
 
+import CardsLayout from '../components/CardsLayout';
 import ElectronicsDropOffCard from '../components/ElectronicsDropOffCard';
 import FallPreventionForEldersCard from '../components/FallPreventionForEldersCard';
 import FoodDistributionSupportCard from '../components/FoodDistributionSupportCard';
@@ -12,15 +14,18 @@ import PrimaryLayout from '../components/PrimaryLayout';
 
 export default function Home() {
   return (
-    <PrimaryLayout description="Our Humanitarian Programs" inNeed main>
-      <LaptopForFamiliesCard />
-      <HumanitarianClinicCard />
-      <FallPreventionForEldersCard />
-      <FoodDistributionSupportCard />
-      <HygieneKitsCard />
-      <HotMealDayCard />
-      <HealthWorkshopCard />
-      <ElectronicsDropOffCard />
+    <PrimaryLayout inNeed main>
+      <CardsLayout description="Our Humanitarian Programs">
+        <LaptopForFamiliesCard />
+        <HumanitarianClinicCard />
+        <FallPreventionForEldersCard />
+        <FoodDistributionSupportCard />
+        <HygieneKitsCard />
+        <HotMealDayCard />
+        <HealthWorkshopCard />
+        <ElectronicsDropOffCard />
+      </CardsLayout>
+      <EmailCapture />
     </PrimaryLayout>
   );
 }
