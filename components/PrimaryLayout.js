@@ -4,6 +4,7 @@ import React from 'react';
 
 import Footer from './Footer';
 import HeroSection from './HeroSection';
+import HotMealDaySection from '../components/HotMealDaySection';
 import Navbar from './Navbar';
 import { useContextTheme } from './ThemeContext';
 
@@ -24,6 +25,7 @@ export default function PrimaryLayout({
         <Navbar />
         <main className={`flex-grow ${backgroundColor} text-${textColor}`}>
           <HeroSection inNeed={inNeed} main={main} />
+          {main && <HotMealDaySection />}
           <div className="text-center hero-content md:m-auto">
             <div className="w-lg">
               <h2 className="pb-20 text-3xl md:text-4xl">{description}</h2>

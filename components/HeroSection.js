@@ -8,7 +8,7 @@ function HeroSection({ main = false, inNeed = false }) {
   return (
     <div
       className={`text-center ${!main && 'hero-content'} md:m-auto ${
-        main && 'pb-40 md:pb-20'
+        main && 'pb-20 md:pb-20 hero-background'
       }`}
     >
       <div className={main && `bg-image hero`}>
@@ -63,7 +63,10 @@ function HeroSection({ main = false, inNeed = false }) {
           background-repeat: no-repeat;
         }
         .hero {
-          height: 85vh;
+          min-height: 85vh;
+        }
+        .hero-background {
+          background-color: rgba(127, 17, 70, 1);
         }
       `}</style>
     </div>
