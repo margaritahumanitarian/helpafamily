@@ -14,11 +14,12 @@ jobs:
         run: |
           yarn global add @lhci/cli@0.8.x
           lhci autorun --upload.target=temporary-public-storage || echo "LHCI failed!"
-        with:
-        urls: |
-          ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
-        uploadArtifacts: true
-        temporaryPublicStorage: true
+        # We need to integrate https://github.com/zentered/vercel-preview-url to use this build instead of building in this test
+        # with:
+        # urls: |
+        #   ${{ steps.vercel_preview_url.outputs.vercel_preview_url }}
+        # uploadArtifacts: true
+        # temporaryPublicStorage: true
   
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
