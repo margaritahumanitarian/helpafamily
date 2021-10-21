@@ -26,7 +26,10 @@ function HotMealDaySection() {
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac volutpat diam, vel dignissim turpis.'
                 }
               </p>
-              <a className="lg:ml-auto" href="/upcoming-events">
+              <a
+                className="lg:ml-auto"
+                href="https://www.margaritahumanitarian.org/upcoming-events#h.3f0nxu3620tm"
+              >
                 <button
                   className="btn btn-accent rounded-btn mt-5"
                   type="button"
