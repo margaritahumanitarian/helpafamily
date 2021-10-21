@@ -38,7 +38,7 @@ export default function Navbar() {
               <GiHamburgerMenu className="inline-block w-5 h-5 stroke-current " />
             )}
           </button>
-          <div className="flex flex-auto pl-8 mx-1 xs:text-lg justify-center md:justify-start">
+          <div className="flex flex-auto pl-8 lg:pl-0 mx-1 xs:text-lg justify-center md:justify-start">
             <div className="flex items-center hidden lg:flex">
               <Link className="" href={Routes.Home}>
                 <a className="flex items-center lg:flex">
