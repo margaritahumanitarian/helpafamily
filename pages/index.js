@@ -1,4 +1,4 @@
-import EmailCapture from '../components/EmailCapture';
+import EmailSection from '../components/EmailSection';
 import React from 'react';
 
 import CardsLayout from '../components/CardsLayout';
@@ -25,7 +25,7 @@ export default function Home() {
         <HealthWorkshopCard />
         <ElectronicsDropOffCard />
       </CardsLayout>
-      <EmailCapture />
+      <EmailSection />
     </PrimaryLayout>
   );
 }

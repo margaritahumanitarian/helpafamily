@@ -1,7 +1,10 @@
 import { BsArrowRight } from 'react-icons/bs';
 import React from 'react';
 
-export default function EmailCapture() {
+export default function EmailCapture({ changeComponent }) {
+  const handleEmailSubmit = () => {
+    changeComponent();
+  };
   return (
     <>
       <div className="email-captureBox border-4 text-center hero-content mx-auto my-10">
@@ -23,7 +26,7 @@ export default function EmailCapture() {
                   placeholder="Enter Your Email"
                 />
                 <button type="submit">
-                  <div className="btn btn-accent">
+                  <div className="btn btn-accent" onClick={handleEmailSubmit}>
                     <BsArrowRight className="inline-block w-7 h-10 " />
                   </div>
                 </button>
@@ -55,7 +58,7 @@ export default function EmailCapture() {
           align-items: center;
         }
 
-        @media screen and (max-width: 540px) {
+        @media screen and (max-width: 700px) {
           .email-content-box {
             flex-wrap: wrap;
           }
