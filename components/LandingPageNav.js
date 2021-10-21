@@ -1,6 +1,5 @@
 // @ts-check
-// eslint-disable-next-line no-unused-vars
-import { ReactElement, useEffect, useState } from 'react'; // ReactElement is only imported for typechecking
+import { useEffect, useState } from 'react';
 // import { BsSearch } from 'react-icons/bs';
 // import { Routes } from '../models/routes';
 import { FaRegHeart } from 'react-icons/fa';
@@ -13,7 +12,7 @@ import { FaRegHeart } from 'react-icons/fa';
  *
  * @param {Object} props - { fadeInSpeed }
  * @param {String} [props.fadeInSpeed = '700' ] - change the speed of fade in "ease-in duration-`fadeInSpeed`" | Example: `"700"` : [tailwind durations](https://tailwindcss.com/docs/transition-duration)
- * @returns {ReactElement} JSX
+ * @returns {JSX.Element} JSX
  */
 const LandingPageNav = ({ fadeInSpeed = '1000' }) => {
   const [navOpacity, setnavOpacity] = useState(0);

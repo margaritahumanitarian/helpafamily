@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import { BsSearch } from 'react-icons/bs';
 import { FaRegHeart } from 'react-icons/fa';
 import { FaRegMoon } from 'react-icons/fa';
 import { FiSun } from 'react-icons/fi';
@@ -22,7 +21,7 @@ export default function Navbar() {
     <>
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
       <div
-        className={`navbar mb-2 shadow-lg ${
+        className={`navbar shadow-lg ${
           theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
         } text-neutral-content justify-center sticky top-0 z-50 lg:space-between`}
       >
@@ -37,9 +36,9 @@ export default function Navbar() {
             <GiHamburgerMenu className="inline-block w-5 h-5 stroke-current " />
           )}
         </button>
-        <div className="flex flex-auto justify-center px-2 mx-2">
+        <div className="flex flex-auto justify-center pl-8 mx-1 xs:text-lg ">
           <Link
-            className="text-sm font-bold ml-4 sm:text-lg"
+            className="text-sm font-bold ml-6 xs:text-xs sm:text-sm px-3"
             href={Routes.Home}
           >
             {'Margarita Humanitarian Foundation'}
@@ -76,12 +75,6 @@ export default function Navbar() {
             </a>
           </Link>
         </div>
-        <div className="flex-none hidden sm:flex">
-          <button className="btn btn-square btn-ghost" type="button">
-            <BsSearch className="inline-block w-5 h-5 stroke-current" />
-          </button>
-        </div>
-
         <button
           className="btn btn-square btn-ghost"
           onClick={handleThemeChange}
