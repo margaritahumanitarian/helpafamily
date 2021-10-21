@@ -60,9 +60,15 @@ class MyDocument extends Document {
           <meta content="#100030" name="theme-color" />
 
           {/* Roboto Font */}
-          {/* <link href="https://fonts.gstatic.com" rel="preconnect" />
+          <link href="https://fonts.gstatic.com" rel="preconnect" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+            rel="stylesheet"
+          />
+          {/* <link href="https://fonts.googleapis.com" rel="preconnect" />
+          <link crossOrigin href="https://fonts.gstatic.com" rel="preconnect" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Source+Sans+Pro:wght@300&display=swap"
             rel="stylesheet"
           /> */}
         </Head>
