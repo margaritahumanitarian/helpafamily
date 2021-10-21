@@ -1,10 +1,11 @@
 import Link from 'next/link';
-
+// eslint-disable-next-line sort-imports
 import { FaRegHeart } from 'react-icons/fa';
 import { FaRegMoon } from 'react-icons/fa';
 import { FiSun } from 'react-icons/fi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { ImCross } from 'react-icons/im';
+import Image from 'next/image';
 import React from 'react';
 import { Routes } from '../models/routes';
 import SideNavbar from './SideNavbar';
@@ -38,11 +39,25 @@ export default function Navbar() {
             )}
           </button>
           <div className="flex flex-auto pl-8 mx-1 xs:text-lg justify-center md:justify-start">
+            <div className="flex items-center hidden lg:flex">
+              <Link className="" href={Routes.Home}>
+                <a className="flex items-center lg:flex">
+                  <Image
+                    alt="mhf logo"
+                    height="40"
+                    src="/images/MHF-Color-300x300.png"
+                    width="40"
+                  />
+                </a>
+              </Link>
+            </div>
             <Link
               className="text-sm font-bold ml-6 xs:text-xs sm:text-sm px-3"
               href={Routes.Home}
             >
-              {'Margarita Humanitarian Foundation'}
+              <a className="py-3 lg:px-5 hover:bg-gray-700 rounded ">
+                {'Margarita Humanitarian Foundation'}
+              </a>
             </Link>
           </div>
           <div className="flex-auto px-2 mx-2 hidden lg:flex">
