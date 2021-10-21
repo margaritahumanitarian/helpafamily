@@ -28,8 +28,8 @@ function HeroSection({ main = false, inNeed = false }) {
             <div className={`md:col-span-${main ? 2 : 1}`}>
               <h1
                 className={`text-3xl ${
-                  main && 'md:text-5xl text-white text-opacity-90'
-                } font-bold m-4 max-w-lg`}
+                  main && 'md:text-6xl text-white '
+                } font-extrabold m-4 max-w-lg`}
               >
                 {'Help Families in Need'}
               </h1>
