@@ -1,3 +1,4 @@
+import { BsArrowRight } from 'react-icons/bs';
 import React from 'react';
 
 export default function EmailCapture() {
@@ -16,8 +17,17 @@ export default function EmailCapture() {
             </div>
             <div className="enter-email">
               <div className="text-lg pb-5">{`Enter your Email`}</div>
-              <input placeholder="Enter Your Email" />
-              <button type="submit">{'>'}</button>
+              <div className="input-email">
+                <input
+                  className="mx-5 py-2 border-4 text-black"
+                  placeholder="Enter Your Email"
+                />
+                <button type="submit">
+                  <div className="btn btn-accent">
+                    <BsArrowRight className="inline-block w-7 h-10 " />
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -37,6 +47,12 @@ export default function EmailCapture() {
 
         .email-content-box > * {
           flex-basis: 100%;
+        }
+
+        .input-email {
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         @media screen and (max-width: 540px) {

@@ -1,4 +1,4 @@
-import EmailCapture from '@components/EmailCapture';
+import EmailCapture from '../components/EmailCapture';
 import React from 'react';
 
 import CardsLayout from '../components/CardsLayout';
