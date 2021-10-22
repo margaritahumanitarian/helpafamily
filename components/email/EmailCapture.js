@@ -1,9 +1,9 @@
 import { BsArrowRight } from 'react-icons/bs';
 import React from 'react';
 
-export default function EmailCapture({ changeComponent }) {
+export default function EmailCapture({ changeFunction }) {
   const handleEmailSubmit = () => {
-    changeComponent();
+    changeFunction();
   };
   return (
     <>

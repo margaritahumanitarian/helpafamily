@@ -1,8 +1,8 @@
-import EmailSection from '../components/EmailSection';
 import React from 'react';
 
 import CardsLayout from '../components/CardsLayout';
 import ElectronicsDropOffCard from '../components/ElectronicsDropOffCard';
+import EmailSection from '../components/email/EmailSection';
 import FallPreventionForEldersCard from '../components/FallPreventionForEldersCard';
 import FoodDistributionSupportCard from '../components/FoodDistributionSupportCard';
 import HealthWorkshopCard from '../components/HealthWorkshopCard';
