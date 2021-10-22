@@ -13,7 +13,7 @@ export default function EmailSection() {
   const componentsStack = [
     <EmailCapture changeFunction={changePointer} key={0} />,
     <ThankyouEmail changeFunction={changePointer} key={1} />,
-    <SurveySection changeFunction={changePointer} key={2} />,
+    <SurveySection key={2} />,
   ];
 
   const [componentBeingRender, setComponentBeingRender] = useState('');

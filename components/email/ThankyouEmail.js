@@ -9,23 +9,19 @@ export default function ThankyouEmail({ changeFunction }) {
       <div className="email-captureBox border-4 text-center hero-content mx-auto my-10">
         <div>
           <div className="email-content-box text-center hero-content md:m-auto">
-            <div className="description text-lg">{'Thank you'}</div>
             <div className="description text-lg">
-              {'Would you like a survey?'}
+              {
+                'Thank you for putting yourself on our email list! If you have a moment answer these questions to help us better serve you and the community'
+              }
             </div>
-            <div className="enter-email">
-              <div className="input-email">
-                <input className="mx-5 pb-2 border-4 text-black" />
-              </div>
-              <div>
-                <button
-                  className="btn btn-accent mt-5"
-                  onClick={handleButtonClick}
-                  type="submit"
-                >
-                  {'Get Started'}
-                </button>
-              </div>
+            <div>
+              <button
+                className="btn btn-accent mt-5"
+                onClick={handleButtonClick}
+                type="submit"
+              >
+                {'Get Started'}
+              </button>
             </div>
           </div>
         </div>
