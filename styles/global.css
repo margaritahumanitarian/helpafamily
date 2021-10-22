@@ -19,7 +19,7 @@
 
 @layer components {
   .btn {
-    @apply tracking-wider text-base font-normal shadow-xl;
+    @apply tracking-wider text-base font-normal shadow-lg;
   }
 
   .shaded-text {
