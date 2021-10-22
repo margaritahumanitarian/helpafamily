@@ -2,9 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf');
+  font-style: bold;
+  font-weight: 500;
+  font-display: swap;
+}
+
 @layer components {
   .btn {
-    @apply tracking-wider shadow-2xl transform transition hover:-translate-y-0.5;
+    @apply tracking-wider text-base font-normal shadow-xl;
   }
 
   .shaded-text {
