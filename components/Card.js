@@ -7,7 +7,7 @@ import { useContextTheme } from 'components/ThemeContext';
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   const { cardsBackgroundColor, textColor } = useContextTheme();
   return (
-    <div className="card filter brightness-105 shadow-xl card-shadow">
+    <div className="card filter brightness-105 card-shadow">
       {backgroundImageSource && (
         <figure>
           <Image
@@ -27,8 +27,8 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
       </div>
       <style jsx>{`
         .card-shadow {
-          box-shadow: rgba(14, 30, 37, 0.1) 0px 0px 4px 0px,
-            rgba(14, 30, 37, 0.15) 0px 0px 16px 0px;
+          box-shadow: rgba(14, 30, 37, 0.061) 6px 6px 12px 0px,
+            rgba(14, 30, 37, 0.075) 6px 6px 10px 0px;
         }
       `}</style>
     </div>

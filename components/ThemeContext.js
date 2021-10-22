@@ -4,7 +4,7 @@ export const ThemeContext = React.createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState('light');
-  const [backgroundColor, setBackgroundColor] = useState('bg-white');
+  const [backgroundColor, setBackgroundColor] = useState('bg-gray-100');
   const [textColor, setTextColor] = useState('black');
   const [cardsBackgroundColor, setCardsBackgroundColor] = useState('bg-white');
 
@@ -21,7 +21,7 @@ export const ThemeProvider = ({ children }) => {
   const setThemeColor = (color) => {
     if (color === 'light') {
       setTheme('light');
-      setBackgroundColor('bg-white');
+      setBackgroundColor('bg-gray-100');
       setCardsBackgroundColor('bg-white');
       setTextColor('black');
     }
