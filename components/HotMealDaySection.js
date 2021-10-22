@@ -1,47 +1,64 @@
+// import { CardAction } from './Card';
 import Image from 'next/image';
 import React from 'react';
+import useStripeSession from '../hooks/useStripeSession';
 
 function HotMealDaySection() {
+  const [handleSubmit, isPending] = useStripeSession();
+
+  const actionCost = 10;
+  const handleOnClick = () =>
+    handleSubmit({
+      amount: actionCost,
+      cause: 'Hot Meal Day.',
+    });
   return (
-    <div className="text-center md:m-auto pb-20 hot-meal-day">
-      <div className="w-lg p-5 pb-10 section-shadow">
+    <div className=" md:mx-10 pb-20 hot-meal-day">
+      <div className="w-lg lg:p-5 section-box">
         <div className="grid sm:grid-cols-1 md:grid-cols-2">
-          <div className="space-y-3 p-5 pr-10 md:text-left">
-            <h2 className="text-3xl md:text-5xl md:text-left font-bold">
+          <div className="space-y-3 p-14 lg:pr-10 md:text-left quote-container">
+            <h2 className="text-3xl md:text-5xl md:text-left pb-7 font-bold quote">
               {'Hot Meal Day'}
             </h2>
-            <p>
-              {
-                'Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California.'
-              }
-            </p>
-            <p>
-              {
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac volutpat diam, vel dignissim turpis. Aenean euismod ipsum a ipsum pellentesque sollicitudin. Phasellus lobortis libero in pellentesque posuere. Nulla est diam, sodales porttitor diam sed, viverra dapibus massa. Proin rhoncus a est nec aliquam. Fusce ultricies purus ultrices mi placerat interdum. Proin dignissim felis a sem iaculis sollicitudin. Donec blandit ex eu arcu consectetur feugiat. Nullam mollis felis in erat mollis finibus sed eu orci. Sed varius gravida posuere. Aliquam eu velit non ante ultrices consectetur.'
-              }
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 md:items-end">
-              <p className="md:col-span-2">
+            <div className="md:pl-5">
+              <p>
                 {
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac volutpat diam, vel dignissim turpis.'
+                  'Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California.'
                 }
               </p>
-              <a
-                className="lg:ml-auto"
-                href="https://www.margaritahumanitarian.org/upcoming-events#h.3f0nxu3620tm"
-              >
-                <button
-                  className="btn btn-accent rounded-btn mt-5"
-                  type="button"
-                >
-                  {'Read More'}
-                </button>
-              </a>
+              <div className="lg:flex md:items-end pt-5">
+                <p className="md:col-span-2 pb-5 lg:pb-0">
+                  {
+                    'Make a donation today and you can help us bring hot meals to the most needy in our society.'
+                  }
+                </p>
+                <div className="flex-buttons">
+                  <button
+                    className="btn btn-accent rounded-sm mt-5 btn-size"
+                    disabled={isPending ? true : false}
+                    onClick={handleOnClick}
+                    type="button"
+                  >
+                    {'Donate'}
+                  </button>
+                  <a
+                    className="lg:ml-auto"
+                    href="https://www.margaritahumanitarian.org/upcoming-events#h.3f0nxu3620tm"
+                  >
+                    <button
+                      className="btn rounded-sm mt-5 btn-size"
+                      type="button"
+                    >
+                      {'Read More'}
+                    </button>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
           <Image
             alt={'Hot Meal Day'}
-            height="280"
+            height="260"
             layout="responsive"
             objectFit="cover"
             src={'/images/HotMealDay.jpg'}
@@ -50,13 +67,43 @@ function HotMealDaySection() {
         </div>
       </div>
       <style jsx>{`
+        .btn-size {
+          display: flex;
+          margin: 0 5px;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          hyphens: auto;
+          white-space: nowrap;
+        }
+        .flex-buttons {
+          display: flex;
+          width: 100%;
+          margin-left: 3px;
+        }
         .hot-meal-day {
           min-height: 60vh;
+          display: flex;
+          justify-content: center;
         }
-        .section-shadow {
-          box-shadow: rgba(14, 30, 37, 0.1) 0px 0px 4px 0px,
-            rgba(14, 30, 37, 0.15) 0px 0px 16px 0px;
-          border-radius: var(--rounded-box, 1rem);
+        .quote {
+          position: relative;
+        }
+        .quote::after {
+          content: open-quote;
+          top: -0.4em;
+          left: 0;
+          font-size: 5em;
+          opacity: 0.3;
+          position: absolute;
+        }
+        @media (min-width: 768px) {
+          .section-box {
+            background: white;
+            max-width: 1280px;
+            box-shadow: rgba(14, 30, 37, 0.082) 4px 4px 4px 0px,
+              rgba(14, 30, 37, 0.096) 4px 4px 12px 0px;
+            /* border-radius: var(--rounded-box, 1rem); */
+          }
         }
       `}</style>
     </div>
