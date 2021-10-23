@@ -5,7 +5,7 @@ import LargeHeroContent from '../components/LargeHeroContent';
 import LargeHeroSection from '../components/LargeHeroSection';
 import Link from 'next/link';
 import TestimonialCard from '../components/TestimonialCard';
-
+import { createClient } from 'contentful';
 /** ------------------------------------------------------------------------------
  *
  * TODO: Change all of the placeholder text to good copy.
@@ -17,7 +17,27 @@ import TestimonialCard from '../components/TestimonialCard';
  */
 // -------------------------------------------------------------------------------
 
-const TestimonialSection = () => {
+export async function getStaticProps() {
+  const client = createClient({
+    environment: process.env.CONTENTFUL_ENVIRONMENT,
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  });
+
+  const res = await client.getEntries({
+    content_type: 'landingPage',
+  });
+
+  return {
+    props: {
+      page: res.items[0],
+    },
+    revalidate: 10,
+  };
+}
+
+const TestimonialSection = ({ testimonialCard }) => {
+  console.log('testiMonialCard', testimonialCard);
   return (
     <section className="flex flex-col items-center justify-center h-1/2 py-28">
       <div className="text-2xl font-semibold text-gray-500 pb-28">
@@ -27,48 +47,60 @@ const TestimonialSection = () => {
         className="grid content-center justify-center grid-cols-1 shadow-md bg-gradient-to-r from-accent to-blue-400 md:grid-cols-2 xl:grid-cols-3 align-center sm:p-24"
         id="cards-section"
       >
-        <TestimonialCard
-          content="We haven't met a more generous group of giving souls. They even went out of their way to give us our requested supplies out here in the desert."
-          image="/images/HealthWorkShop.jpg"
-          title="Lovely People"
-        />
-        <TestimonialCard
-          content="I couldn't be more pleased with the way I've been treated."
-          image="/images/Volunteer.jpg"
-          title="Very Happy"
-        />
-        <TestimonialCard
-          content="I couldn't be more pleased with the way I've been treated."
-          image="/images/Humanitarian.jpg"
-          title="They Care"
-        />
+        {testimonialCard.map((testimonialCard) => {
+          const {
+            fields: {
+              image: {
+                fields: {
+                  file: { url },
+                },
+              },
+
+              title,
+              content,
+            },
+            sys: { id },
+          } = testimonialCard;
+          return (
+            <TestimonialCard
+              content={content}
+              image={`https:${url}`}
+              key={id}
+              title={title}
+            />
+          );
+        })}
       </div>
     </section>
   );
 };
 
-const LandingPage = () => {
+const LandingPage = ({
+  page: {
+    fields: {
+      testimonialCard,
+      title: landingPageTitle,
+      description: landingPageDescription,
+    },
+  },
+}) => {
   return (
     <>
       <Head>
         <title>{'Help a Family in Need'}</title>
         <meta content={'Help a Family in Need'} name="description" />
         <link href="https://www.margaritahumanitarian.org/" rel="canonical" />
-        <link href="/favicon.ico" rel="icon" />
+        <link href="/images/favicon.ico" rel="icon" />
       </Head>
       <LandingPageNav />
       <main className="justify-center">
         <LargeHeroSection bgImage="/images/HotMealDay.jpg" opacity="20">
           <LargeHeroContent
             mainTextSize="lg"
-            title="Feed A Family Today"
+            title={landingPageTitle}
             titleSize="5xl"
           >
-            <p className="mb-5">
-              {
-                'Families are in need more than ever. The pandemic coupled with trying economic times has really put the less fortunate in a difficult position as they try to maintain a functioning household. Give what you can today to help raise up those in need.'
-              }
-            </p>
+            <p className="mb-5">{landingPageDescription}</p>
 
             <Link href="/in-kind" passHref>
               <a className="btn btn-accent rounded-btn" href="#">
@@ -77,7 +109,7 @@ const LandingPage = () => {
             </Link>
           </LargeHeroContent>
         </LargeHeroSection>
-        <TestimonialSection />
+        <TestimonialSection testimonialCard={testimonialCard} />
       </main>
       <Footer />
     </>

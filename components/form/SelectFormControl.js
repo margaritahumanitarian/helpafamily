@@ -5,7 +5,7 @@ function SelectFormControl({ id, label, options, value, onChange }) {
   const handleChange = (event) => onChange(event.target.value);
 
   return (
-    <div className="form-control">
+    <div className="form-control pb-5 pt-3">
       {label && (
         <label className="label" htmlFor={id}>
           <span className="label-text">{label}</span>
@@ -13,10 +13,10 @@ function SelectFormControl({ id, label, options, value, onChange }) {
       )}
       <select
         className="select select-bordered w-full select-sm"
+        defaultValue={value}
         id={id}
         name={id}
-        onChange={handleChange}
-        value={value}
+        onBlur={handleChange}
       >
         {options.map(({ disabled, label: optionLabel, value: optionValue }) => (
           <option disabled={disabled} key={optionValue} value={optionValue}>

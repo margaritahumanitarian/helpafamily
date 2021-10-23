@@ -1,6 +1,5 @@
 // @ts-check
-// eslint-disable-next-line no-unused-vars
-import { ReactElement, useEffect, useState } from 'react'; // ReactElement is only imported for typechecking
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 /**
@@ -17,7 +16,7 @@ import PropTypes from 'prop-types';
  * @param {String} props.title - The title of the hero section
  * @param {String} [props.titleSize = '5xl'] - "text-`titleSize`" | Example: `"5xl"` | [Tailwind text sizes](https://tailwindcss.com/docs/font-size)
  * @param {*} props.children - The content of the hero section
- * @returns {ReactElement} JSX
+ * @returns {JSX.Element} JSX
  */
 
 const LargeHeroContent = ({

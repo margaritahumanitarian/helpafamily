@@ -12,7 +12,7 @@ import PrimaryLayout from '../components/PrimaryLayout';
 
 export default function Home() {
   return (
-    <PrimaryLayout>
+    <PrimaryLayout description="Our Humanitarian Programs" inNeed main>
       <LaptopForFamiliesCard />
       <HumanitarianClinicCard />
       <FallPreventionForEldersCard />

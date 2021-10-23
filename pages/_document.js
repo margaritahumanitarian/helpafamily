@@ -3,13 +3,11 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
 class MyDocument extends Document {
-  // eslint-disable-next-line
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
 
-  // eslint-disable-next-line
   render() {
     return (
       <Html data-theme="light" lang="en-us">
@@ -53,32 +51,27 @@ class MyDocument extends Document {
           <meta content="@margaritahforg" name="twitter:site" />
           <meta content="@margaritahforg" name="twitter:creator" />
 
-          {/* Favicons */}
-          <link
-            href="/branding/favicons/apple-touch-icon.png"
-            rel="apple-touch-icon"
-            sizes="180x180"
-          />
-          <link
-            href="/branding/favicons/favicon-32x32.png"
-            rel="icon"
-            sizes="32x32"
-            type="image/png"
-          />
-          <link
-            href="/branding/favicons/favicon-16x16.png"
-            rel="icon"
-            sizes="16x16"
-            type="image/png"
-          />
-          <link
-            color="#f050f8"
-            href="/branding/favicons/safari-pinned-tab.svg"
-            rel="mask-icon"
-          />
+          {/* Favicon */}
+
+          <link href="/images/favicon.ico" rel="icon" />
+
           {/* Windows Tile colour */}
           <meta content="#100030" name="msapplication-TileColor" />
           <meta content="#100030" name="theme-color" />
+
+          {/* Roboto Font */}
+          <link
+            as="font"
+            crossOrigin=""
+            href="/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf"
+            rel="preload"
+          />
+          <link
+            as="font"
+            crossOrigin=""
+            href="/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf"
+            rel="preload"
+          />
         </Head>
         <body>
           <Main />

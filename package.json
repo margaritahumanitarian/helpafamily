@@ -29,9 +29,9 @@
     "stripe": "^8.168.0"
   },
   "devDependencies": {
-    "@testing-library/dom": "^8.5.0",
+    "@testing-library/dom": "^8.7.1",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.1.0",
+    "@testing-library/react": "^12.1.1",
     "@testing-library/user-event": "^13.2.1",
     "autoprefixer": "^10.2.6",
     "babel-jest": "^27.2.0",
