@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   mode: 'jit',
   purge: {
@@ -28,6 +30,10 @@ module.exports = {
     extend: {
       gridAutoRows: {
         card: 'min-content 1fr min-content',
+      },
+      fontFamily: {
+        ...fontFamily,
+        sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
       },
     },
   },

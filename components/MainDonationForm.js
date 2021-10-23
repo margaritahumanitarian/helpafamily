@@ -28,12 +28,12 @@ const CAUSES = [
   { id: 4, label: 'Seniors in Need' },
 ];
 
-export default function MainDonationForm() {
+export default function MainDonationForm({ inNeed = false }) {
   const [modalText, setModalText] = React.useState('');
   const [isModalOpen, setModalOpen] = React.useState(false);
   const [amount, setAmount] = React.useState(0);
   const [selectedCauses, setSelectedCauses] = React.useState({});
-  const [isAnyoneInNeed, setIsAnyoneInNeed] = React.useState(true);
+  const [isAnyoneInNeed, setIsAnyoneInNeed] = React.useState(!inNeed);
   const [cause, setCause] = React.useState('');
   const [handleSubmit, isPending] = useStripeSession();
 
@@ -86,19 +86,21 @@ export default function MainDonationForm() {
     <>
       <form onSubmit={handleSubmitForm}>
         <div
-          className="p-6 mb-5 card bordered bg-base-100 space-y-3"
+          className="p-6 mb-5 card bordered bg-base-100 space-y-3 text-black"
           data-theme="cupcake"
         >
           <h2 className="card-title" data-theme="light">
             {'Help us develop programs for:'}
           </h2>
-          <CheckboxFormControl
-            id="cause"
-            isChecked={isAnyoneInNeed}
-            isToggle
-            label="Anyone in Need"
-            onChange={setIsAnyoneInNeed}
-          />
+          {!inNeed && (
+            <CheckboxFormControl
+              id="cause"
+              isChecked={isAnyoneInNeed}
+              isToggle
+              label="Anyone in Need"
+              onChange={setIsAnyoneInNeed}
+            />
+          )}
           {!isAnyoneInNeed &&
             CAUSES.map(({ id, label }) => (
               <CheckboxFormControl
