@@ -28,6 +28,9 @@ module.exports = {
       // => @media (min-width: 1280px) { ... }
     },
     extend: {
+      colors: {
+        teal: '#97EFF4',
+      },
       gridAutoRows: {
         card: 'min-content 1fr min-content',
       },
