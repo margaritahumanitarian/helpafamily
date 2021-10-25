@@ -22,7 +22,7 @@ export default function Footer() {
       } text-neutral-content`}
       style={{ background: '#3D4452' }}
     >
-      <div className="flex flex-col py-4 justify-between w-11/12 sm:flex-row px-10 xxl:w-8/12">
+      <div className="flex flex-col justify-between w-11/12 max-w-screen-xl py-7 px-10 sm:flex-row sm:px-0 ">
         <div className="hidden px-4 sm:flex">
           <Image
             alt="mhf logo"
