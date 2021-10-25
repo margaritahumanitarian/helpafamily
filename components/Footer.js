@@ -4,15 +4,26 @@ import { useContextTheme } from 'components/ThemeContext';
 export default function Footer() {
   const { theme, cardsBackgroundColor } = useContextTheme();
 
+  const LineItem = ({ title, link }) => (
+    <li className="mt-2 text-gray-300 md:block md:mr-0">
+      {link ? (
+        <a className="no-underline hover:text-teal" href={link || '#'}>
+          {title}
+        </a>
+      ) : (
+        title
+      )}
+    </li>
+  );
   return (
     <footer
-      className={`flex flex-col ${
+      className={`flex flex-col items-center ${
         theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
       } text-neutral-content`}
       style={{ background: '#3D4452' }}
     >
-      <div className="flex flex-col py-4  justify-between max-w-screen-xl sm:flex-row px-10">
-        <div className="hidden sm:flex">
+      <div className="flex flex-col py-4 justify-between w-11/12 sm:flex-row px-10 xxl:w-8/12">
+        <div className="hidden px-4 sm:flex">
           <Image
             alt="mhf logo"
             className="object-contain"
@@ -21,79 +32,42 @@ export default function Footer() {
             width="120"
           />
         </div>
-        <div className="flex flex-col mt-2 items-center">
+        <div className="flex flex-col mt-2 px-4  sm:mt-0">
           <p className="uppercase font-bold text-gray-100 md:mb-2">
             {'Contact'}
           </p>
-          <ul className="list-reset mb-2 text-center sm:text-left">
-            <li className="mt-2 md:block md:mr-0">
-              <a
-                className="no-underline text-gray-300 hover:text-teal"
-                href="#"
-              >
-                {'Email'}
-              </a>
-            </li>
-            <li className="mt-2 md:block md:mr-0">
-              <a
-                className="no-underline text-gray-300 hover:text-teal"
-                href="#"
-              >
-                {'Phone'}
-              </a>
-            </li>
-            <li className="mt-2 md:block md:mr-0">
-              <a
-                className="no-underline text-gray-300 hover:text-teal"
-                href="#"
-              >
-                {'Address1'}
-              </a>
-            </li>
-            <li className="mt-2 md:block md:mr-0">
-              <a
-                className="no-underline text-gray-300 hover:text-teal"
-                href="#"
-              >
-                {'Address2'}
-              </a>
-            </li>
-            <li className="mt-2 md:block md:mr-0">
-              <a
-                className="no-underline text-gray-300 hover:text-teal"
-                href="#"
-              >
-                {'Address3'}
-              </a>
-            </li>
+          <ul className="list-reset mb-2  sm:text-left">
+            <LineItem title={'661-526-5236'} />
+            <LineItem
+              link="mailto:hi@margaritahumanitarian.org"
+              title="hi@margaritahumanitarian.org"
+            />
+            <LineItem
+              title={
+                <>
+                  {'1543 E Palmdale Blvd,'}
+                  <br /> {'Suite E. Palmdale,'}
+                  <br /> {'CA 93550'}
+                </>
+              }
+            />
           </ul>
         </div>
 
-        <div className="flex flex-col mt-4 items-center sm:mt-0 sm:items-baseline">
+        <div className="flex flex-col mt-4 px-4 sm:mt-0 sm:items-baseline">
           <p className="uppercase font-bold text-gray-100 md:mb-1">
-            {'Program'}
+            {'Programs'}
           </p>
-          <ul className="list-reset mb-2 text-center sm:text-left">
-            <li className="mt-2 md:block md:mr-0">
-              <a
-                className="no-underline text-gray-300 hover:text-teal"
-                href="#"
-              >
-                {'Hot Meal Days'}
-              </a>
-            </li>
-
-            <li className="mt-2 md:block md:mr-0">
-              <a
-                className="no-underline text-gray-300 hover:text-teal"
-                href="#"
-              >
-                {'Laptop for Families'}
-              </a>
-            </li>
+          <ul className="list-reset mb-2 sm:text-left">
+            <LineItem link="#" title="Laptops for Families" />
+            <LineItem link="#" title="Hot Meal Day" />
+            <LineItem link="#" title="Humanitarian Clinic" />
+            <LineItem link="#" title="Fall Prevention Class" />
+            <LineItem link="#" title="Food Distribution Support" />
+            <LineItem link="#" title="Health Education Workshop" />
           </ul>
         </div>
-        <div className="hidden item-center sm:flex flex-col ">
+        <div className="hidden item-center px-4 sm:flex flex-col ">
           <p className="uppercase text-center font-bold text-gray-100 md:mb-1">
             {'Guide Star'}
           </p>
@@ -112,7 +86,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="">
+      <div className="min-w-full">
         <div className="hidden sm:flex">
           <svg
             id="wave"
