@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function ThankyouEmail({ changeFunction }) {
+export default function ThankyouEmail({ changePointer }) {
   const handleButtonClick = () => {
-    changeFunction();
+    changePointer();
   };
   return (
     <>
