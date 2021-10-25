@@ -40,8 +40,8 @@ export default function Navbar() {
           </button>
           <div className="flex flex-auto pl-8 lg:pl-0 mx-1 xs:text-lg justify-center md:justify-start">
             <div className="flex items-center hidden lg:flex">
-              <Link className="" href={Routes.Home}>
-                <a className="flex items-center lg:flex">
+              <Link className="" href={Routes.Home} passHref>
+                <a className="flex items-center lg:flex" href="home">
                   <Image
                     alt="mhf logo"
                     height="40"
@@ -54,43 +54,59 @@ export default function Navbar() {
             <Link
               className="text-sm font-bold ml-6 xs:text-xs sm:text-sm px-3"
               href={Routes.Home}
+              passHref
             >
-              <a className="py-3 lg:px-5 hover:bg-gray-700 rounded ">
+              <a
+                className="py-3 lg:px-5 hover:bg-gray-700 rounded "
+                href="home"
+              >
                 {'Margarita Humanitarian Foundation'}
               </a>
             </Link>
           </div>
           <div className="flex-auto px-2 mx-2 hidden lg:flex">
             <div className="items-stretch hidden lg:flex">
-              <Link href={Routes.Home}>
-                <a className="p-3 hover:bg-gray-700 rounded ">{'Home'}</a>
+              <Link href={Routes.Home} passHref>
+                <a className="p-3 hover:bg-gray-700 rounded " href="home">
+                  {'Home'}
+                </a>
               </Link>
-              <Link href={Routes.InKind}>
-                <a className="p-3 hover:bg-gray-700 rounded ">{'In-Kind'}</a>
+              <Link href={Routes.InKind} passHref>
+                <a className="p-3 hover:bg-gray-700 rounded " href="inkind">
+                  {'In-Kind'}
+                </a>
               </Link>
-              <Link href={Routes.Fund}>
-                <a className="p-3 hover:bg-gray-700 rounded ">{'Fund'}</a>
+              <Link href={Routes.Fund} passHref>
+                <a className="p-3 hover:bg-gray-700 rounded " href="fund">
+                  {'Fund'}
+                </a>
               </Link>
-              <Link href={Routes.GiveYourTime}>
-                <a className="p-3 hover:bg-gray-700 rounded ">
+              <Link href={Routes.GiveYourTime} passHref>
+                <a
+                  className="p-3 hover:bg-gray-700 rounded "
+                  href="giveyourtime"
+                >
                   {'Give Your Time'}
                 </a>
               </Link>
-              <Link href={Routes.PartnerWithUs}>
-                <a className="p-3 hover:bg-gray-700 rounded ">
+              <Link href={Routes.PartnerWithUs} passHref>
+                <a
+                  className="p-3 hover:bg-gray-700 rounded "
+                  href="partnerwithus"
+                >
                   {'Partner With Us'}
                 </a>
               </Link>
             </div>
           </div>
           <div className="flex-none hidden sm:flex lg:hidden xl:flex">
-            <Link href={Routes.Fund}>
-              <a className="p-3 hover:bg-gray-700 rounded ">
+            <Link href={Routes.Fund} passHref>
+              <a className="p-3 hover:bg-gray-700 rounded " href="fund">
                 {'Help Families in Need'}
               </a>
             </Link>
-            <Link href={Routes.InKind}>
-              <a className="btn btn-square btn-ghost">
+            <Link href={Routes.InKind} passHref>
+              <a className="btn btn-square btn-ghost" href="inkind">
                 <FaRegHeart className="inline-block w-5 h-5 stroke-current" />
               </a>
             </Link>
