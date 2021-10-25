@@ -1,7 +1,6 @@
 import Link from 'next/link';
 // eslint-disable-next-line sort-imports
-import { FaRegHeart } from 'react-icons/fa';
-import { FaRegMoon } from 'react-icons/fa';
+import { FaRegHeart, FaRegMoon } from 'react-icons/fa';
 import { FiSun } from 'react-icons/fi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { ImCross } from 'react-icons/im';
