@@ -7,6 +7,7 @@ import FallPreventionForEldersCard from '../components/FallPreventionForEldersCa
 import FoodDistributionSupportCard from '../components/FoodDistributionSupportCard';
 import HealthWorkshopCard from '../components/HealthWorkshopCard';
 import HotMealDayCard from '../components/HotMealDayCard';
+import HotMealDaySection from '../components/HotMealDaySection';
 import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
 import HygieneKitsCard from '../components/HygieneKitsCard';
 import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
@@ -15,13 +16,14 @@ import PrimaryLayout from '../components/PrimaryLayout';
 export default function Home() {
   return (
     <PrimaryLayout inNeed main>
+      <HotMealDaySection />
       <CardsLayout description="Our Humanitarian Programs">
+        <HotMealDayCard />
         <LaptopForFamiliesCard />
         <HumanitarianClinicCard />
         <FallPreventionForEldersCard />
         <FoodDistributionSupportCard />
         <HygieneKitsCard />
-        <HotMealDayCard />
         <HealthWorkshopCard />
         <ElectronicsDropOffCard />
       </CardsLayout>

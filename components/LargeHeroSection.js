@@ -1,7 +1,6 @@
 // @ts-check
-// eslint-disable-next-line no-unused-vars
-import { ReactElement, useEffect, useState } from 'react'; // ReactElement is only imported for typechecking
 import PropTypes from 'prop-types';
+import React from 'react';
 
 /**
  * ## Large Hero Section
@@ -14,7 +13,7 @@ import PropTypes from 'prop-types';
  * @param {String} props.bgImage - Background image url
  * @param {String} [props.opacity = '60' ] "bg-opacity-`opacity`" | Example: `"30"` | [Tailwind opacity](https://tailwindcss.com/docs/background-opacity)
  * @param {*} props.children - Children elements
- * @returns {ReactElement} JSX
+ * @returns {JSX.Element} JSX
  */
 
 const LargeHeroSection = ({ bgImage, children, opacity = '60' }) => {

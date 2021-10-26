@@ -3,13 +3,11 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
 class MyDocument extends Document {
-  // eslint-disable-next-line
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
   }
 
-  // eslint-disable-next-line
   render() {
     return (
       <Html data-theme="light" lang="en-us">
@@ -60,6 +58,20 @@ class MyDocument extends Document {
           {/* Windows Tile colour */}
           <meta content="#100030" name="msapplication-TileColor" />
           <meta content="#100030" name="theme-color" />
+
+          {/* Roboto Font */}
+          <link
+            as="font"
+            crossOrigin=""
+            href="/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf"
+            rel="preload"
+          />
+          <link
+            as="font"
+            crossOrigin=""
+            href="/fonts/Source_Sans_Pro/SourceSansPro-Bold.ttf"
+            rel="preload"
+          />
         </Head>
         <body>
           <Main />

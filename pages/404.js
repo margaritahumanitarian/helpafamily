@@ -32,7 +32,7 @@ export default function NotFound() {
                     href="https://github.com/margaritahumanitarian/helpafamily/issues/new/choose"
                     passHref
                   >
-                    <span className="text-blue-500">{'here'}</span>
+                    <a className="text-blue-500">{'here.'}</a>
                   </Link>
                 </p>
               </div>
