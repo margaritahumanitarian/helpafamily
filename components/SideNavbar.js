@@ -12,7 +12,12 @@ function SideNavbar({ show, setShow }) {
       } fixed h-screen bg-neutral text-neutral-content transform top-0 left-0 w-64 overflow-auto ease-in-out transition-all duration-300 z-30  lg:hidden`}
     >
       <div className="flex-1 justify-center px-2 mx-2 pt-20 ">
-        <div className="flex flex-col item-start" onClick={hideMenu}>
+        <div
+          className="flex flex-col item-start"
+          onClick={hideMenu}
+          onKeyUp={hideMenu}
+          role="none"
+        >
           <Link href="/">
             <a className="side-nav-btn">{'Home'}</a>
           </Link>
@@ -36,4 +41,5 @@ function SideNavbar({ show, setShow }) {
     </div>
   );
 }
+
 export default SideNavbar;

@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <html>
+    <html lang="en">
       <head>
         <title>{'Thank You!'}</title>
       </head>
