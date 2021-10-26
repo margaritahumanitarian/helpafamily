@@ -1,9 +1,11 @@
-import { BLOCKS } from '@contentful/rich-text-types';
 import React from 'react';
+
+import { BLOCKS } from '@contentful/rich-text-types';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Card, { CardAction, CardParagraph, CardTitle } from '../components/Card';
+import CardsLayout from '../components/CardsLayout';
 import PrimaryLayout from '../components/PrimaryLayout';
 import useStripeSession from '../hooks/useStripeSession';
 
@@ -76,32 +78,34 @@ export default function Home({
 }) {
   return (
     <PrimaryLayout>
-      {cards.map((card) => {
-        const {
-          fields: {
-            actionText,
-            actionAmount,
-            actionLink,
-            background: {
-              fields: {
-                file: { url },
+      <CardsLayout>
+        {cards.map((card) => {
+          const {
+            fields: {
+              actionText,
+              actionAmount,
+              actionLink,
+              background: {
+                fields: {
+                  file: { url },
+                },
               },
+              content: rawRichTextField,
+              title,
             },
-            content: rawRichTextField,
-            title,
-          },
-          sys: { id },
-        } = card;
+            sys: { id },
+          } = card;
 
-        return (
-          <Card backgroundImageSource={`https:${url}`} key={id}>
-            <CardTitle>{title}</CardTitle>
-            {documentToReactComponents(rawRichTextField, options)}
-            {actionText &&
-              renderAction({ actionText, actionAmount, actionLink })}
-          </Card>
-        );
-      })}
+          return (
+            <Card backgroundImageSource={`https:${url}`} key={id}>
+              <CardTitle>{title}</CardTitle>
+              {documentToReactComponents(rawRichTextField, options)}
+              {actionText &&
+                renderAction({ actionText, actionAmount, actionLink })}
+            </Card>
+          );
+        })}
+      </CardsLayout>
     </PrimaryLayout>
   );
 }
