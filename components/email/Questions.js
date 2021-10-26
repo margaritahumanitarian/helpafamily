@@ -7,7 +7,6 @@ export default function Question({ surveyPointer, children }) {
     'How might would you like to help out',
     'Thank you! for your response',
   ];
-  console.log('SUrvey is', surveyPointer);
 
   return (
     <>

@@ -2,15 +2,9 @@ import { BsArrowRight } from 'react-icons/bs';
 import EmailCaptureHome from './EmailCaptureHome';
 import React from 'react';
 
-export default function EmailCapture({
-  changePointer,
-  handleSubmit,
-  email,
-  setEmailProp,
-}) {
+export default function EmailCapture({ changePointer, handleSubmit, email }) {
   const handleEmailSubmit = () => {
     changePointer();
-    setEmailProp('');
   };
 
   return (
@@ -20,6 +14,7 @@ export default function EmailCapture({
           data={
             'lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum'
           }
+          isEnterEmail={true}
         >
           <div className="input-email">
             <input

@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Question from './Questions';
 
-export default function SurveySection() {
+export default function SurveySection({ submitData }) {
   const [surveyPointer, setSurveyPointer] = useState(0);
   const [input, setInput] = useState('');
+  const [answers, setAnswers] = useState([]);
+
+  useEffect(() => {
+    if (answers.length === 3) {
+      submitData(answers);
+    }
+  }, [answers]);
+
+  const setAnswersToData = (answer) => {
+    console.log('answer is ', answer);
+    setAnswers((prev) => {
+      return [...prev, answer];
+    });
+  };
 
   const handleSurveyButton = () => {
-    if (surveyPointer == 3) {
-      return;
-    }
     setSurveyPointer(surveyPointer + 1);
+    setAnswersToData(input);
     setInput('');
   };
 
