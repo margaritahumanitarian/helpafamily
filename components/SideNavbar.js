@@ -15,6 +15,7 @@ function SideNavbar({ show, setShow }) {
         <div
           className="flex flex-col item-start"
           onClick={hideMenu}
+          onKeyUp={hideMenu}
           role="none"
         >
           <Link href="/">
