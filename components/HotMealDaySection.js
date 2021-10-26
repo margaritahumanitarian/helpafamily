@@ -1,10 +1,12 @@
 // import { CardAction } from './Card';
 import Image from 'next/image';
 import React from 'react';
+import { useContextTheme } from 'components/ThemeContext';
 import useStripeSession from '../hooks/useStripeSession';
 
 function HotMealDaySection() {
   const [handleSubmit, isPending] = useStripeSession();
+  const { cardsBackgroundColor } = useContextTheme();
 
   const actionCost = 10;
   const handleOnClick = () =>
@@ -14,7 +16,7 @@ function HotMealDaySection() {
     });
   return (
     <div className=" md:mx-10 pb-20 hot-meal-day">
-      <div className="w-lg lg:p-5 section-box">
+      <div className={`w-lg lg:p-5 section-box ${cardsBackgroundColor}`}>
         <div className="grid sm:grid-cols-1 md:grid-cols-2">
           <div className="space-y-3 p-14 lg:pr-10 md:text-left quote-container">
             <h2 className="text-3xl md:text-5xl md:text-left pb-7 font-bold quote">
@@ -98,7 +100,6 @@ function HotMealDaySection() {
         }
         @media (min-width: 768px) {
           .section-box {
-            background: white;
             max-width: 1280px;
             box-shadow: rgba(14, 30, 37, 0.082) 4px 4px 4px 0px,
               rgba(14, 30, 37, 0.096) 4px 4px 12px 0px;
