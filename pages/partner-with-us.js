@@ -1,5 +1,7 @@
-import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import React from 'react';
+
+import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import CardsLayout from '../components/CardsLayout';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -72,33 +74,35 @@ export default function PartnerWithUs({
 }) {
   return (
     <PrimaryLayout>
-      {partnerCards.map((partnerCard) => {
-        const {
-          fields: {
-            image: {
-              fields: {
-                file: { url },
+      <CardsLayout>
+        {partnerCards.map((partnerCard) => {
+          const {
+            fields: {
+              image: {
+                fields: {
+                  file: { url },
+                },
               },
+              description: rawRichTextField,
+              contactInstructionsRTF: contactInstructions,
+              title,
             },
-            description: rawRichTextField,
-            contactInstructionsRTF: contactInstructions,
-            title,
-          },
-          sys: { id },
-        } = partnerCard;
-        return (
-          <Card backgroundImageSource={`https:${url}`} key={id}>
-            <CardTitle>{title}</CardTitle>
-            {documentToReactComponents(rawRichTextField, options)}
-            <CardAddress>
-              {documentToReactComponents(
-                contactInstructions,
-                options_for_contact
-              )}
-            </CardAddress>
-          </Card>
-        );
-      })}
+            sys: { id },
+          } = partnerCard;
+          return (
+            <Card backgroundImageSource={`https:${url}`} key={id}>
+              <CardTitle>{title}</CardTitle>
+              {documentToReactComponents(rawRichTextField, options)}
+              <CardAddress>
+                {documentToReactComponents(
+                  contactInstructions,
+                  options_for_contact
+                )}
+              </CardAddress>
+            </Card>
+          );
+        })}
+      </CardsLayout>
     </PrimaryLayout>
   );
 }
