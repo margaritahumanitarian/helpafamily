@@ -26,7 +26,7 @@ function HygieneKitsCard() {
           }
         </CardParagraph>
         <CardAction
-          className="cardAction"
+          cardStyle={'mb-4'}
           linkTo="https://www.amazon.com/96-Kits-Hygiene-Travel-Charity/dp/B0881YKMBL"
         >
           {'96 Hygiene Kits for $153'}
@@ -36,11 +36,6 @@ function HygieneKitsCard() {
           {'1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550'}
         </CardAddress>
       </Card>
-      <style jsx>{`
-        .cardAction {
-          margin-bottom: 1rem;
-        }
-      `}</style>
     </>
   );
 }
