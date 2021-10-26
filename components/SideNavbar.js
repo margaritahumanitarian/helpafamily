@@ -18,20 +18,20 @@ function SideNavbar({ show, setShow }) {
           onKeyUp={hideMenu}
           role="none"
         >
-          <Link href="/">
-            <a className="side-nav-btn">{'Home'}</a>
+          <Link href="/" passHref>
+            <a href="home" className="side-nav-btn">{'Home'}</a>
           </Link>
-          <Link href={Routes.InKind}>
-            <a className="side-nav-btn">{'In-Kind'}</a>
+          <Link href={Routes.InKind} passHref>
+            <a href="inkind" className="side-nav-btn">{'In-Kind'}</a>
           </Link>
-          <Link href={Routes.Fund}>
-            <a className="side-nav-btn">{'Fund'}</a>
+          <Link href={Routes.Fund} passHref>
+            <a href="fund" className="side-nav-btn">{'Fund'}</a>
           </Link>
-          <Link href={Routes.GiveYourTime}>
-            <a className="side-nav-btn">{'Give Your Time'}</a>
+          <Link href={Routes.GiveYourTime} passHref>
+            <a href="giveyourtime" className="side-nav-btn">{'Give Your Time'}</a>
           </Link>
-          <Link href={Routes.PartnerWithUs}>
-            <a className="side-nav-btn">{'Partner With Us'}</a>
+          <Link href={Routes.PartnerWithUs} passHref>
+            <a href="partnerwithus" className="side-nav-btn">{'Partner With Us'}</a>
           </Link>
         </div>
         <div className="absolute bottom-0 left-0 w-full text-center mb-2">
