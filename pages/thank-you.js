@@ -1,11 +1,11 @@
-import Image from 'next/image';
 import React from 'react';
 
 import Footer from '../components/Footer';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <html>
+    <html lang="en">
       <head>
         <title>{'Thank You!'}</title>
       </head>
