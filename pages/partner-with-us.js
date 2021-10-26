@@ -18,8 +18,8 @@ const options = {
     ),
     [BLOCKS.UL_LIST]: (_, children) => (
       <ul className="list-disc text-left pl-6">
-        {children.map((item) => (
-          <li key={item.key}>{item.props.children[0].props.children[0]}</li>
+        {children.map(({ key, props: { children } }) => (
+          <li key={key}>{children[0].props.children[0]}</li>
         ))}
       </ul>
     ),
@@ -33,13 +33,13 @@ const options_for_contact = {
     ),
     [BLOCKS.UL_LIST]: (_, children) => (
       <ul className="list-disc text-left pl-6">
-        {children.map((item) => (
-          <li key={item.key}>{item}</li>
+        {children.map(({ key, ...item }) => (
+          <li key={key}>{item}</li>
         ))}
       </ul>
     ),
-    [INLINES.HYPERLINK]: (node, children) => (
-      <a className="text-green-700" href={node.data.uri}>
+    [INLINES.HYPERLINK]: ({ data: { uri } }, children) => (
+      <a className="text-green-700" href={uri}>
         {children}
       </a>
     ),
