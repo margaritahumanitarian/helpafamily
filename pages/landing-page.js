@@ -103,7 +103,7 @@ const LandingPage = ({
             <p className="mb-5">{landingPageDescription}</p>
 
             <Link href="/in-kind" passHref>
-              <a className="btn btn-accent rounded-btn" href="#">
+              <a className="btn btn-accent rounded-btn" href="inkind">
                 {'Feed A Family'}
               </a>
             </Link>
