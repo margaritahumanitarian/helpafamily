@@ -60,9 +60,15 @@ CardParagraph.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export function CardAction({ children, linkTo, isPending, onClick, style }) {
+export function CardAction({
+  children,
+  linkTo,
+  isPending,
+  onClick,
+  cardStyle,
+}) {
   return (
-    <div className={`pt-5 ${style}`}>
+    <div className={`pt-5 ${cardStyle}`}>
       {linkTo ? (
         <a className="btn btn-accent" href={linkTo}>
           {children}
