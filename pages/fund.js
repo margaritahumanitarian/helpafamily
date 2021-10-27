@@ -1,5 +1,6 @@
-import { BLOCKS } from '../contentful/rich-text-types';
 import React from 'react';
+
+import { BLOCKS } from '@contentful/rich-text-types';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '../contentful/rich-text-react-renderer';
 
@@ -15,8 +16,8 @@ const options = {
     ),
     [BLOCKS.UL_LIST]: (_, children) => (
       <ul className="list-disc text-left pl-6">
-        {children.map(({ key, props }) => (
-          <li key={key}>{props.children[0].props.children[0]}</li>
+        {children.map(({ key, props: { children } }) => (
+          <li key={key}>{children[0].props.children[0]}</li>
         ))}
       </ul>
     ),
