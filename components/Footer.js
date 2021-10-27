@@ -37,7 +37,7 @@ export default function Footer() {
             {'Contact'}
           </p>
           <ul className="list-reset mb-2  sm:text-left">
-            <LineItem title={'661-526-5236'} />
+            <LineItem link="tel:+1 661-526-5236" title={'661-526-5236'} />
             <LineItem
               link="mailto:hi@margaritahumanitarian.org"
               title="hi@margaritahumanitarian.org"
