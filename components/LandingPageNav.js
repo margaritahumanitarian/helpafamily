@@ -54,14 +54,18 @@ const LandingPageNav = ({ fadeInSpeed = '1000' }) => {
       <div className="flex items-center">
         <div className="pr-7 hidden md:block">{' Help Families in Need'}</div>
         <div className="flex-row hidden sm:flex">
-          <button className="nav-btn pr-6" type="button">
+          <button
+            aria-label="favorite-btn"
+            className="nav-btn pr-6"
+            type="button"
+          >
             <FaRegHeart className="nav-icon" />
           </button>
         </div>
       </div>
 
       {/* <div className="flex-none hidden sm:flex">
-            <button className="nav-btn" type="button">
+            <button aria-label="search-btn" className="nav-btn" type="button">
               <BsSearch className="nav-icon" />
             </button>
           </div> */}

@@ -202,6 +202,7 @@ export default function GiveDevicesPage() {
                         />
                         <div className="py-2">
                           <button
+                            aria-label="submit-btn"
                             className="btn btn-accent w-2/5"
                             type="submit"
                           >

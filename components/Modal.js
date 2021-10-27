@@ -14,7 +14,12 @@ function Modal({ children, isOpen, onClose }) {
       <div className="modal-box">
         {children}
         <div className="modal-action">
-          <button className="btn" onClick={onClose} type="button">
+          <button
+            aria-label="back-btn"
+            className="btn"
+            onClick={onClose}
+            type="button"
+          >
             {'OK'}
           </button>
         </div>

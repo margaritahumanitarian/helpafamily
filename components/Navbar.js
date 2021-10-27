@@ -27,6 +27,7 @@ export default function Navbar() {
       >
         <div className="nav-contents-container">
           <button
+            aria-label="sidenav-btn"
             className=" btn-ghost flex absolute left-3  lg:hidden"
             onClick={() => setShowSideNav(!showSideNav)}
             type="button"
@@ -111,6 +112,7 @@ export default function Navbar() {
             </Link>
           </div>
           <button
+            aria-label="theme-toggle-btn"
             className="btn btn-square btn-ghost"
             onClick={handleThemeChange}
             type="button"
