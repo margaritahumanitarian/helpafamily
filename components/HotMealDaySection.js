@@ -83,7 +83,6 @@ function HotMealDaySection() {
           margin-left: 3px;
         }
         .hot-meal-day {
-          min-height: 60vh;
           display: flex;
           justify-content: center;
         }
