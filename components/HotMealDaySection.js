@@ -36,6 +36,7 @@ function HotMealDaySection() {
                 </p>
                 <div className="flex-buttons">
                   <button
+                    aria-label="donate-btn"
                     className="btn btn-accent rounded-sm mt-5 btn-size"
                     disabled={isPending ? true : false}
                     onClick={handleOnClick}
@@ -48,6 +49,7 @@ function HotMealDaySection() {
                     href="https://www.margaritahumanitarian.org/upcoming-events#h.3f0nxu3620tm"
                   >
                     <button
+                      aria-label="read-more-btn"
                       className="btn rounded-sm mt-5 btn-size"
                       type="button"
                     >
