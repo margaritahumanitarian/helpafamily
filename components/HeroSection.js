@@ -1,10 +1,11 @@
 // import image from 'next/image';
 import Image from 'next/image';
 import React from 'react';
+import { heroImages } from 'constants/heroImages';
 
 import MainDonationForm from './MainDonationForm';
 
-function HeroSection({ main = false, inNeed = false }) {
+function HeroSection({ main = false, image, inNeed = false }) {
   return (
     <div
       className={`text-center ${!main && 'hero-content'} md:m-auto ${
@@ -58,7 +59,7 @@ function HeroSection({ main = false, inNeed = false }) {
               rgba(90, 76, 16, 0.6),
               rgba(20, 81, 116, 0.3)
             ),
-            url(/images/volunteer1.png);
+            url(${heroImages[image]});
           object-fit: cover;
           background-repeat: no-repeat;
         }

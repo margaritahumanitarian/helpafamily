@@ -12,9 +12,17 @@ import HygieneKitsCard from '../components/HygieneKitsCard';
 import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
 import PrimaryLayout from '../components/PrimaryLayout';
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const date = new Date();
+  const image = date.getDay();
+  return {
+    props: { image },
+  };
+};
+
+export default function Home({ image }) {
   return (
-    <PrimaryLayout inNeed main>
+    <PrimaryLayout image={image} inNeed main>
       <HotMealDaySection />
       <CardsLayout description="Our Humanitarian Programs">
         <LaptopForFamiliesCard />
