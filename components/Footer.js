@@ -7,7 +7,7 @@ export default function Footer() {
   const LineItem = ({ title, link }) => (
     <li className="mt-2 text-gray-300 md:block md:mr-0">
       {link ? (
-        <a className="no-underline hover:text-teal" href={link || '#'}>
+        <a className="no-underline hover:text-teal-light" href={link || '#'}>
           {title}
         </a>
       ) : (
@@ -113,7 +113,7 @@ export default function Footer() {
           </svg>
         </div>
         <div
-          className="flex flex-col bg-teal items-center text-gray-800 md:flex-auto md:mb-0"
+          className="flex flex-col bg-teal-light items-center text-gray-800 md:flex-auto md:mb-0"
           // style={{ background: '#97EFF4' }}
         >
           <div className="-mt-8 mb-4 flex flex-col sm:hidden ">

@@ -42,4 +42,7 @@
     @apply btn btn-ghost btn-sm rounded-btn drop-shadow-none;
     box-shadow: none; /* We can't use TW class in @apply because it conflicts with .btn, so let's use simple property */
   }
+  .btn-accent {
+    @apply btn text-gray-700 shadow-md outline-none border-none bg-teal-light hover:bg-teal-dark hover:text-gray-50;
+  }
 }

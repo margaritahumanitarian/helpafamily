@@ -9,7 +9,10 @@ import Card, {
 
 function DoctorsAsVolunteers() {
   return (
-    <Card backgroundImageSource="/images/Volunteer.jpg">
+    <Card
+      backgroundImageAltText="We are looking for physicians, NPs, and PAs to volunteer"
+      backgroundImageSource="/images/Volunteer.jpg"
+    >
       <CardTitle>{'Doctors as Volunteers'}</CardTitle>
 
       <CardParagraph>{'Doctors, NPs, PAs: Give 1-4 Hours/Week'}</CardParagraph>
