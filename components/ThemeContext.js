@@ -8,16 +8,6 @@ export const ThemeProvider = ({ children }) => {
   const [textColor, setTextColor] = useState('black');
   const [cardsBackgroundColor, setCardsBackgroundColor] = useState('bg-white');
 
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      window.localStorage.setItem('theme', 'dark');
-      setThemeColor('dark');
-    } else {
-      window.localStorage.setItem('theme', 'light');
-      setThemeColor('light');
-    }
-  };
-
   const setThemeColor = (color) => {
     if (color === 'light') {
       setTheme('light');
@@ -30,6 +20,16 @@ export const ThemeProvider = ({ children }) => {
       setBackgroundColor('bg-gray-900');
       setCardsBackgroundColor('bg-gray-800');
       setTextColor('white');
+    }
+  };
+
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      window.localStorage.setItem('theme', 'dark');
+      setThemeColor('dark');
+    } else {
+      window.localStorage.setItem('theme', 'light');
+      setThemeColor('light');
     }
   };
 
