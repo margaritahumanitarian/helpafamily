@@ -11,10 +11,12 @@ import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
 import HygieneKitsCard from '../components/HygieneKitsCard';
 import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
 import PrimaryLayout from '../components/PrimaryLayout';
+import heroImages from 'constants/heroImages';
 
 export const getStaticProps = async () => {
   const date = new Date();
-  const image = date.getDay();
+  const selectedImage = date.getDay();
+  const image = heroImages[selectedImage];
   return {
     props: { image },
   };

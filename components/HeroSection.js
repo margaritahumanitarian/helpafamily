@@ -1,7 +1,7 @@
 // import image from 'next/image';
 import Image from 'next/image';
 import React from 'react';
-import { heroImages } from 'constants/heroImages';
+// import { heroImages } from 'constants/heroImages';
 
 import MainDonationForm from './MainDonationForm';
 
@@ -59,7 +59,7 @@ function HeroSection({ main = false, image, inNeed = false }) {
               rgba(90, 76, 16, 0.6),
               rgba(20, 81, 116, 0.3)
             ),
-            url(${heroImages[image]});
+            url(${image});
           object-fit: cover;
           background-repeat: no-repeat;
         }
