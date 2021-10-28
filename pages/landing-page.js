@@ -37,7 +37,6 @@ export async function getStaticProps() {
 }
 
 const TestimonialSection = ({ testimonialCard }) => {
-  console.log('testiMonialCard', testimonialCard);
   return (
     <section className="flex flex-col items-center justify-center h-1/2 py-28">
       <div className="text-2xl font-semibold text-gray-500 pb-28">
