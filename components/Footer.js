@@ -20,7 +20,6 @@ export default function Footer() {
       className={`flex flex-col items-center ${
         theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
       } text-neutral-content`}
-      style={{ background: '#3D4452' }}
     >
       <div className="flex flex-col justify-between w-11/12 max-w-screen-xl py-7 px-10 sm:flex-row sm:px-0 ">
         <div className="hidden px-4 sm:flex">
