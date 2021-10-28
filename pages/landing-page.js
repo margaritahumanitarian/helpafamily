@@ -46,7 +46,7 @@ const TestimonialSection = ({ testimonialCard }) => {
         className="grid content-center justify-center grid-cols-1 shadow-md bg-gradient-to-r from-accent to-blue-400 md:grid-cols-2 xl:grid-cols-3 align-center sm:p-24"
         id="cards-section"
       >
-        {testimonialCard.map((testimonialCard) => {
+        {testimonialCard.map((card) => {
           const {
             fields: {
               image: {
@@ -59,7 +59,7 @@ const TestimonialSection = ({ testimonialCard }) => {
               content,
             },
             sys: { id },
-          } = testimonialCard;
+          } = card;
           return (
             <TestimonialCard
               content={content}
