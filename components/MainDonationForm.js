@@ -1,3 +1,4 @@
+import ReCaptchaV2 from 'react-google-recaptcha';
 import React from 'react';
 import clsx from 'clsx';
 
@@ -35,8 +36,10 @@ export default function MainDonationForm({ inNeed = false }) {
   const [selectedCauses, setSelectedCauses] = React.useState({});
   const [isAnyoneInNeed, setIsAnyoneInNeed] = React.useState(!inNeed);
   const [cause, setCause] = React.useState('');
+  const [reCaptchaToken, setReCaptchaToken] = React.useState('');
   const [handleSubmit, isPending] = useStripeSession();
 
+  console.log(process.env.NEXT_PUBLIC_SITE_KEY);
   React.useEffect(() => {
     const allSelected = Object.values(selectedCauses).filter(Boolean);
     if (allSelected.length === CAUSES.length) {
@@ -79,6 +82,11 @@ export default function MainDonationForm({ inNeed = false }) {
       return;
     }
 
+    if (reCaptchaToken === '') {
+      showModal('Please submit the captcha');
+      return;
+    }
+
     handleSubmit({ amount, cause });
   };
 
@@ -116,6 +124,12 @@ export default function MainDonationForm({ inNeed = false }) {
             onChange={setAmount}
             options={AMOUNTS}
             value={amount}
+          />
+          <ReCaptchaV2
+            id="captcha"
+            onChange={(token) => setReCaptchaToken(token)}
+            onExpired={() => setReCaptchaToken('')}
+            sitekey={process.env.NEXT_PUBLIC_SITE_KEY} //need to use env variables process.env.REACT_APP_SITE_KEY
           />
           <button
             aria-label="donate-btn"
