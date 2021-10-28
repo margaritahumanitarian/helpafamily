@@ -9,6 +9,7 @@ import { useContextTheme } from './ThemeContext';
 
 export default function PrimaryLayout({
   main = false,
+  image,
   inNeed = false,
   children,
 }) {
@@ -22,7 +23,7 @@ export default function PrimaryLayout({
       <div className={`flex flex-col min-h-screen ${backgroundColor}`}>
         <Navbar />
         <main className={`flex-grow ${backgroundColor} text-${textColor}`}>
-          <HeroSection inNeed={inNeed} main={main} />
+          <HeroSection image={image} inNeed={inNeed} main={main} />
           {children}
         </main>
         <Footer />
