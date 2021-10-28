@@ -79,7 +79,7 @@ export default function MainDonationForm({ inNeed = false }) {
       return;
     }
 
-    handleSubmit({ amount, cause });
+    await handleSubmit({ amount, cause });
   };
 
   return (
