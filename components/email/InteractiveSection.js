@@ -28,7 +28,7 @@ export default function EmailSection() {
       {componentPointer === 1 && (
         <ThankyouEmail changePointer={changePointer} />
       )}
-      {componentPointer === 2 && <SurveySection email={data.email} />}
+      {componentPointer === 2 && <SurveySection email={data.Email} />}
     </>
   );
 }
