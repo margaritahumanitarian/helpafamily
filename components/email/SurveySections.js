@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Question from './Questions';
 
-export default function SurveySection({ submitData }) {
+export default function SurveySection({ email }) {
   const [surveyPointer, setSurveyPointer] = useState(0);
   const [input, setInput] = useState('');
   const [answers, setAnswers] = useState([]);
 
+  const submitData = () => {
+    console.log(answers, 'with email as', email);
+    //backend todo
+  };
+
   useEffect(() => {
     if (answers.length === 3) {
-      submitData(answers);
+      submitData();
     }
   }, [answers]);
 
   const setAnswersToData = (answer) => {
-    console.log('answer is ', answer);
     setAnswers((prev) => {
       return [...prev, answer];
     });

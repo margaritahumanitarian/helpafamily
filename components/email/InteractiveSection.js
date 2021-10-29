@@ -5,20 +5,16 @@ import { useState } from 'react';
 
 export default function EmailSection() {
   const [componentPointer, setComponentPointer] = useState(0);
-  const [email, setEmail] = useState('');
+  const [data, setData] = useState({});
 
-  const handleSubmit = (email) => {
-    setEmail(email);
+  const getEmailSubmit = (email) => {
+    setData((prevState) => {
+      return { ...prevState, Email: email };
+    });
   };
 
   const changePointer = () => {
     setComponentPointer(componentPointer + 1);
-  };
-
-  const submit = (answers) => {
-    console.log(answers);
-    console.log(email);
-    //add backend
   };
 
   return (
@@ -26,15 +22,13 @@ export default function EmailSection() {
       {componentPointer === 0 && (
         <EmailCapture
           changePointer={changePointer}
-          email={email}
-          handleSubmit={handleSubmit}
-          setEmailProp={setEmail}
+          getEmailSubmit={getEmailSubmit}
         />
       )}
       {componentPointer === 1 && (
         <ThankyouEmail changePointer={changePointer} />
       )}
-      {componentPointer === 2 && <SurveySection submitData={submit} />}
+      {componentPointer === 2 && <SurveySection email={data.email} />}
     </>
   );
 }

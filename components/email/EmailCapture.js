@@ -1,9 +1,18 @@
+import React, { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import EmailCaptureHome from './EmailCaptureHome';
-import React from 'react';
 
-export default function EmailCapture({ changePointer, handleSubmit, email }) {
+export default function EmailCapture({ changePointer, getEmailSubmit }) {
+  const [email, setEmail] = useState('');
+
   const handleEmailSubmit = () => {
+    console.log(email);
+    //backend todo
+  };
+
+  const handleSubmit = () => {
+    getEmailSubmit(email);
+    handleEmailSubmit();
     changePointer();
   };
 
@@ -20,13 +29,13 @@ export default function EmailCapture({ changePointer, handleSubmit, email }) {
             <input
               className="mx-5 py-2 border-4 text-black"
               onChange={(value) => {
-                handleSubmit(value.target.value);
+                setEmail(value.target.value);
               }}
               placeholder="Enter Your Email"
               value={email}
             />
             <button type="submit">
-              <div className="btn btn-accent" onClick={handleEmailSubmit}>
+              <div className="btn btn-accent" onClick={handleSubmit}>
                 <BsArrowRight className="inline-block w-7 h-10 " />
               </div>
             </button>
