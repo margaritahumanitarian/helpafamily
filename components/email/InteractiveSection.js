@@ -1,34 +1,42 @@
-import EmailCapture from './EmailCapture';
-import SurveySection from './SurveySections';
-import ThankyouEmail from './ThankyouEmail';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-export default function EmailSection() {
+export default function InteractiveSection({ children }) {
   const [componentPointer, setComponentPointer] = useState(0);
   const [data, setData] = useState({});
 
-  const getEmailSubmit = (email) => {
+  const updateData = (childData) => {
     setData((prevState) => {
-      return { ...prevState, Email: email };
+      return { ...prevState, ...childData };
     });
   };
 
-  const changePointer = () => {
+  const nextComponent = () => {
     setComponentPointer(componentPointer + 1);
   };
 
-  return (
-    <>
-      {componentPointer === 0 && (
-        <EmailCapture
-          changePointer={changePointer}
-          getEmailSubmit={getEmailSubmit}
-        />
-      )}
-      {componentPointer === 1 && (
-        <ThankyouEmail changePointer={changePointer} />
-      )}
-      {componentPointer === 2 && <SurveySection email={data.Email} />}
-    </>
-  );
+  const previousComponent = () => {
+    setComponentPointer(componentPointer - 1);
+  };
+
+  const childrenWithProps = React.Children.map(children, (child) => {
+    return React.cloneElement(
+      child,
+      {
+        data: data,
+
+        updateData: (childData) => {
+          updateData(childData);
+        },
+        nextComponent: () => {
+          nextComponent();
+        },
+        previousComponent: () => {
+          previousComponent();
+        },
+      },
+      null
+    );
+  });
+
+  return <>{childrenWithProps[componentPointer]}</>;
 }

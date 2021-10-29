@@ -1,27 +1,16 @@
 import React from 'react';
 
-export default function Question({ surveyPointer, children }) {
-  const Questions = [
-    'How did you hear about us?',
-    "What are causes you're interested in?",
-    'How might would you like to help out',
-    'Thank you! for your response',
-  ];
-
+export default function Questions({ surveyPointer, children, questions }) {
   return (
     <>
-      <div className="border-4 text-center hero-content mx-auto my-10">
+      <div className="border-4 text-center hero-content mx-auto my-10 h-72">
         <div>
           <div className="email-content-box pb-10 text-center hero-content md:m-auto">
-            <div
-              className={`descryption ${
-                surveyPointer >= 3 ? 'text-4xl' : 'text-lg'
-              }`}
-            >
-              {Questions[surveyPointer]}
+            <div className="descryption text-lg">
+              {questions[surveyPointer]}
             </div>
           </div>
-          {children}
+          <div className="questions-child">{children}</div>
         </div>
       </div>
       <style jsx>{`

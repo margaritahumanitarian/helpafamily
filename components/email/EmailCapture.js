@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import EmailCaptureHome from './EmailCaptureHome';
 
-export default function EmailCapture({ changePointer, getEmailSubmit }) {
+export default function EmailCapture({ nextComponent, updateData }) {
   const [email, setEmail] = useState('');
 
   const handleEmailSubmit = () => {
@@ -11,14 +11,16 @@ export default function EmailCapture({ changePointer, getEmailSubmit }) {
   };
 
   const handleSubmit = () => {
-    getEmailSubmit(email);
+    updateData({ Email: email });
+    updateData({ Email2: 'anotherEmail' });
     handleEmailSubmit();
-    changePointer();
+    nextComponent();
+    setEmail('');
   };
 
   return (
     <>
-      <div className="email-captureBox border-4 text-center hero-content mx-auto my-10">
+      <div className="email-captureBox border-4 text-center hero-content mx-auto my-10 h-72">
         <EmailCaptureHome
           data={
             'lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum'
