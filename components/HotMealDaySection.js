@@ -4,6 +4,8 @@ import React from 'react';
 import { useContextTheme } from 'components/ThemeContext';
 import useStripeSession from '../hooks/useStripeSession';
 
+import Button from '../components/Button';
+
 function HotMealDaySection() {
   const [handleSubmit, isPending] = useStripeSession();
   const { cardsBackgroundColor } = useContextTheme();
@@ -35,26 +37,24 @@ function HotMealDaySection() {
                   }
                 </p>
                 <div className="flex-buttons">
-                  <button
-                    aria-label="donate-btn"
-                    className="btn btn-accent rounded-sm mt-5 btn-size"
-                    disabled={isPending ? true : false}
-                    onClick={handleOnClick}
-                    type="button"
-                  >
-                    {'Donate'}
-                  </button>
+                  <Button
+                    ariaLabel="donate-btn"
+                    btnClasses="btn btn-accent rounded-sm mt-5 btn-size"
+                    btnIsDisabled={isPending ? true : false}
+                    btnLabel="Donate"
+                    btnType="button"
+                    onClickHandler={handleOnClick}
+                  />
                   <a
                     className="lg:ml-auto"
                     href="https://www.margaritahumanitarian.org/upcoming-events#h.3f0nxu3620tm"
                   >
-                    <button
-                      aria-label="read-more-btn"
-                      className="btn rounded-sm mt-5 btn-size"
-                      type="button"
-                    >
-                      {'Read More'}
-                    </button>
+                    <Button
+                      ariaLabel="read-more-btn"
+                      btnClasses="btn rounded-sm mt-5 btn-size"
+                      btnLabel="Read More"
+                      btnType="button"
+                    />
                   </a>
                 </div>
               </div>

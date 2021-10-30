@@ -1,9 +1,13 @@
-import Image from 'next/image';
-import PropTypes from 'prop-types';
-import React from 'react';
-import clsx from 'clsx';
 import { useContextTheme } from 'components/ThemeContext';
 
+import Button from '../components/Button';
+
+import React from 'react';
+import clsx from 'clsx';
+
+import PropTypes from 'prop-types';
+
+import Image from 'next/image';
 function Card({ backgroundImageSource, backgroundImageAltText, children }) {
   const { cardsBackgroundColor, textColor } = useContextTheme();
   return (
@@ -60,13 +64,7 @@ CardParagraph.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export function CardAction({
-  children,
-  linkTo,
-  isPending,
-  onClick,
-  cardStyle,
-}) {
+export function CardAction({ children, linkTo, isPending, cardStyle }) {
   return (
     <div className={`pt-5 ${cardStyle}`}>
       {linkTo ? (
@@ -74,16 +72,14 @@ export function CardAction({
           {children}
         </a>
       ) : (
-        <button
-          aria-label="Card Action"
-          className={clsx('btn btn-accent shadow-md w-full h-auto', {
+        <Button
+          ariaLabel="card-action-btn"
+          btnClasses={clsx('btn btn-accent shadow-md w-full h-auto', {
             loading: isPending,
           })}
-          onClick={onClick}
-          type="button"
-        >
-          {children}
-        </button>
+          btnLabel={children}
+          btnType="button"
+        />
       )}
     </div>
   );
@@ -93,7 +89,6 @@ CardAction.propTypes = {
   children: PropTypes.node,
   isPending: PropTypes.bool,
   linkTo: PropTypes.string,
-  onClick: PropTypes.func,
   style: PropTypes.string,
 };
 

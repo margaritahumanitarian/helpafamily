@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 // import { Routes } from '../models/routes';
 import { FaRegHeart } from 'react-icons/fa';
 
+import Button from '../components/Button';
 /**
  * ### Landing Page Nav Bar
  * This component is used to create the nav bar for the landing page which has opacity and fade in options to work in conjunction with the `LargeHeroSection` component.
@@ -54,21 +55,14 @@ const LandingPageNav = ({ fadeInSpeed = '1000' }) => {
       <div className="flex items-center">
         <div className="pr-7 hidden md:block">{' Help Families in Need'}</div>
         <div className="flex-row hidden sm:flex">
-          <button
-            aria-label="favorite-btn"
-            className="nav-btn pr-6"
-            type="button"
-          >
-            <FaRegHeart className="nav-icon" />
-          </button>
+          <Button
+            ariaLabel="favorite-btn"
+            btnClasses="nav-btn pr-6"
+            btnLabel={<FaRegHeart className="nav-icon" />}
+            btnType="button"
+          />
         </div>
       </div>
-
-      {/* <div className="flex-none hidden sm:flex">
-            <button aria-label="search-btn" className="nav-btn" type="button">
-              <BsSearch className="nav-icon" />
-            </button>
-          </div> */}
     </div>
   );
 };

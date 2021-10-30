@@ -10,6 +10,8 @@ import { Routes } from '../models/routes';
 import SideNavbar from './SideNavbar';
 import { useContextTheme } from 'components/ThemeContext';
 
+import Button from '../components/Button';
+
 export default function Navbar() {
   const [showSideNav, setShowSideNav] = React.useState(false);
 
@@ -26,18 +28,19 @@ export default function Navbar() {
         } text-neutral-content sticky top-0 z-50 shadow justify-center`}
       >
         <div className="nav-contents-container">
-          <button
-            aria-label="sidenav-btn"
-            className=" btn-ghost flex absolute left-3  lg:hidden"
-            onClick={() => setShowSideNav(!showSideNav)}
-            type="button"
-          >
-            {showSideNav ? (
-              <ImCross className="inline-block w-5 h-5 stroke-current " />
-            ) : (
-              <GiHamburgerMenu className="inline-block w-5 h-5 stroke-current " />
-            )}
-          </button>
+          <Button
+            ariaLabel="side-nav-btn"
+            btnClasses="btn-ghost flex absolute left-3  lg:hidden"
+            btnLabel={
+              showSideNav ? (
+                <ImCross className="inline-block w-5 h-5 stroke-current " />
+              ) : (
+                <GiHamburgerMenu className="inline-block w-5 h-5 stroke-current " />
+              )
+            }
+            btnType="button"
+            onClickHandler={() => setShowSideNav(!showSideNav)}
+          />
           <div className="flex flex-auto pl-8 lg:pl-0 mx-1 xs:text-lg justify-center md:justify-start">
             <div className="flex items-center hidden lg:flex">
               <Link className="" href={Routes.Home} passHref>
@@ -111,18 +114,19 @@ export default function Navbar() {
               </a>
             </Link>
           </div>
-          <button
-            aria-label="theme-toggle-btn"
-            className="btn btn-square btn-ghost"
-            onClick={handleThemeChange}
-            type="button"
-          >
-            {theme === 'dark' ? (
-              <FiSun className="inline-block w-5 h-5 stroke-current" />
-            ) : (
-              <FaRegMoon className="inline-block w-5 h-4 stroke-current" />
-            )}
-          </button>
+          <Button
+            ariaLabel="theme-toggle-btn"
+            btnClasses="btn btn-square btn-ghost"
+            btnLabel={
+              theme === 'dark' ? (
+                <FiSun className="inline-block w-5 h-5 stroke-current" />
+              ) : (
+                <FaRegMoon className="inline-block w-5 h-4 stroke-current" />
+              )
+            }
+            btnType="button"
+            onClickHandler={handleThemeChange}
+          />
         </div>
       </div>
       <style jsx>{`

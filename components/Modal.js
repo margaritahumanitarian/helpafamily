@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Button from '../components/Button';
+
 function Modal({ children, isOpen, onClose }) {
   const [isMounted, setIsMounted] = React.useState(false);
 
@@ -14,14 +16,13 @@ function Modal({ children, isOpen, onClose }) {
       <div className="modal-box">
         {children}
         <div className="modal-action">
-          <button
-            aria-label="back-btn"
-            className="btn"
-            onClick={onClose}
-            type="button"
-          >
-            {'OK'}
-          </button>
+          <Button
+            ariaLabel="back-btn"
+            btnClasses="btn"
+            btnLabel="OK"
+            btnType="button"
+            onClickHandler={onClose}
+          />
         </div>
       </div>
     </div>

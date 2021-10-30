@@ -9,6 +9,8 @@ import Navbar from '../components/Navbar';
 import SelectFormControl from '../components/form/SelectFormControl';
 import TextareaFormControl from '../components/form/TextareaFormControl';
 
+import Button from '../components/Button';
+
 const formDataInitialState = {
   name: '',
   email: '',
@@ -201,13 +203,12 @@ export default function GiveDevicesPage() {
                           value={formData.description}
                         />
                         <div className="py-2">
-                          <button
-                            aria-label="submit-btn"
-                            className="btn btn-accent w-2/5"
-                            type="submit"
-                          >
-                            {'Send'}
-                          </button>
+                          <Button
+                            ariaLabel="submit-btn"
+                            btnClasses={'btn btn-accent w-2/5'}
+                            btnLabel="Send"
+                            btnType="submit"
+                          />
                         </div>
                       </form>
                     </div>

@@ -6,6 +6,8 @@ import Modal from './Modal';
 import SelectFormControl from './form/SelectFormControl';
 import useStripeSession from '../hooks/useStripeSession';
 
+import Button from '../components/Button';
+
 const AMOUNTS = [
   { value: 0, label: 'Choose your donation amount', disabled: true },
   { value: 5, label: '$5' },
@@ -117,13 +119,12 @@ export default function MainDonationForm({ inNeed = false }) {
             options={AMOUNTS}
             value={amount}
           />
-          <button
-            aria-label="donate-btn"
-            className={clsx('btn-accent', { loading: isPending })}
-            type="submit"
-          >
-            {'Donate'}
-          </button>
+          <Button
+            ariaLabel="donate-btn"
+            btnClasses={clsx('btn-accent', { loading: isPending })}
+            btnLabel="Donate"
+            btnType="submit"
+          />
         </div>
       </form>
       <Modal isOpen={isModalOpen} onClose={hideModal}>

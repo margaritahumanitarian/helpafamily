@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import AstronautLottie from '../components/Astronaut';
+import Button from '../components/Button';
 
 export default function NotFound() {
   return (
@@ -40,13 +41,12 @@ export default function NotFound() {
               </div>
               <div>
                 <Link href="/" passHref>
-                  <button
-                    aria-label="home-btn"
-                    className="bg-transparent mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-                    type="button"
-                  >
-                    {'Home'}
-                  </button>
+                  <Button
+                    ariaLabel="home-btn"
+                    btnClasses={`bg-transparent mt-10 hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded`}
+                    btnLabel="Home"
+                    btnType="button"
+                  />
                 </Link>
               </div>
             </div>
