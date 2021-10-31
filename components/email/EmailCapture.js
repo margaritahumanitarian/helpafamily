@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
-import EmailCaptureHome from './EmailCaptureHome';
+import EmailCaptureHelper from './EmailCaptureHelper';
+import { useContextTheme } from '../ThemeContext';
 
 export default function EmailCapture({ nextComponent, updateData }) {
   const [email, setEmail] = useState('');
@@ -17,35 +18,41 @@ export default function EmailCapture({ nextComponent, updateData }) {
     setEmail('');
   };
 
+  const { cardsBackgroundColor, textColor, theme } = useContextTheme();
   return (
     <>
-      <div className="email-captureBox border-4 text-center hero-content mx-auto my-10 h-72">
-        <EmailCaptureHome
+      <div
+        className={`card-shadow email-captureBox text-center hero-content mx-auto my-10 h-72
+          ${cardsBackgroundColor} tx-${textColor}`}
+      >
+        <EmailCaptureHelper
           data={
             'lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum lorem epsum'
           }
-          isEnterEmail={true}
         >
           <div className="input-email">
             <input
-              className="mx-5 py-2 border-4 text-black"
+              className="mx-5 py-2 border-2 text-black"
               onChange={(value) => {
                 setEmail(value.target.value);
               }}
               placeholder="Enter Your Email"
               value={email}
             />
-            <button type="submit">
+            <button
+              className={`${theme === 'dark' ? 'bg-white' : ''} `}
+              type="submit"
+            >
               <div
                 className="btn btn-accent"
                 disabled={!email}
                 onClick={handleSubmit}
               >
-                <BsArrowRight className="inline-block w-7 h-10 " />
+                <BsArrowRight className="inline-block w-7 h-10" />
               </div>
             </button>
           </div>
-        </EmailCaptureHome>
+        </EmailCaptureHelper>
       </div>
       <style jsx>{`
         .input-email {

@@ -52,33 +52,14 @@ export default function SurveySection({
   };
 
   return (
-    <>
-      <Questions questions={questions} surveyPointer={surveyPointer}>
-        <div className="input-email">
-          <input
-            className="mx-5 py-2 border-4 text-black"
-            onChange={(value) => setAnswersToData(value.target.value)}
-            value={answers[surveyPointer]}
-          />
-        </div>
-        <div>
-          <button
-            className="btn btn-accent mt-5"
-            onClick={handleBackButtonClick}
-            type="submit"
-          >
-            {'Back'}
-          </button>
-          <button
-            className="btn btn-accent mt-5"
-            disabled={!answers[surveyPointer]}
-            onClick={handleSurveyButton}
-            type="submit"
-          >
-            {surveyPointer < questions.length - 1 ? 'Next' : 'Submit'}
-          </button>
-        </div>
-      </Questions>
-    </>
+    <Questions
+      disabledCondition={!answers[surveyPointer]}
+      handleBackButtonClick={handleBackButtonClick}
+      handleSurveyButton={handleSurveyButton}
+      inputOnChangeFunction={(value) => setAnswersToData(value.target.value)}
+      inputValue={answers[surveyPointer]}
+      nextButtonName={surveyPointer < questions.length - 1 ? 'Next' : 'Submit'}
+      question={questions[surveyPointer]}
+    />
   );
 }
