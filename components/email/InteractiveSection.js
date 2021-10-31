@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function InteractiveSection({ children }) {
   const [componentPointer, setComponentPointer] = useState(0);
   const [data, setData] = useState({});
+
+  useEffect(() => {
+    console.log(componentPointer);
+  }, [componentPointer]);
 
   const updateData = (childData) => {
     setData((prevState) => {

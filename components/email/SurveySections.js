@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Questions from './Questions';
 
 export default function SurveySection({
@@ -12,9 +12,9 @@ export default function SurveySection({
     'How might would you like to help out',
   ];
 
-  let Answers = new Array(questions.length);
+  let Answers = new Array(questions.length).fill('');
+
   const [surveyPointer, setSurveyPointer] = useState(0);
-  const [input, setInput] = useState('');
   const [answers, setAnswers] = useState(Answers);
 
   const submitData = () => {
@@ -22,12 +22,15 @@ export default function SurveySection({
     //backend todo
   };
 
-  useEffect(() => {
-    if (!(answers[questions.length - 1] === '')) {
+  const SubmitCheck = () => {
+    if (
+      answers[questions.length - 1] != '' &&
+      surveyPointer === questions.length - 1
+    ) {
       submitData();
       nextComponent();
     }
-  }, [answers]);
+  };
 
   const setAnswersToData = (answer) => {
     let ans = answers.slice();
@@ -36,15 +39,15 @@ export default function SurveySection({
   };
 
   const handleSurveyButton = () => {
-    setAnswersToData(input);
     setSurveyPointer(surveyPointer + 1);
-    setInput('');
+    SubmitCheck();
   };
 
   const handleBackButtonClick = () => {
     if (surveyPointer == 0) {
       previousComponent();
     }
+
     setSurveyPointer(surveyPointer - 1);
   };
 
@@ -54,8 +57,8 @@ export default function SurveySection({
         <div className="input-email">
           <input
             className="mx-5 py-2 border-4 text-black"
-            onChange={(value) => setInput(value.target.value)}
-            value={input}
+            onChange={(value) => setAnswersToData(value.target.value)}
+            value={answers[surveyPointer]}
           />
         </div>
         <div>
@@ -68,6 +71,7 @@ export default function SurveySection({
           </button>
           <button
             className="btn btn-accent mt-5"
+            disabled={!answers[surveyPointer]}
             onClick={handleSurveyButton}
             type="submit"
           >

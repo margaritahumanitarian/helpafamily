@@ -12,7 +12,6 @@ export default function EmailCapture({ nextComponent, updateData }) {
 
   const handleSubmit = () => {
     updateData({ Email: email });
-    updateData({ Email2: 'anotherEmail' });
     handleEmailSubmit();
     nextComponent();
     setEmail('');
@@ -37,7 +36,11 @@ export default function EmailCapture({ nextComponent, updateData }) {
               value={email}
             />
             <button type="submit">
-              <div className="btn btn-accent" onClick={handleSubmit}>
+              <div
+                className="btn btn-accent"
+                disabled={!email}
+                onClick={handleSubmit}
+              >
                 <BsArrowRight className="inline-block w-7 h-10 " />
               </div>
             </button>
