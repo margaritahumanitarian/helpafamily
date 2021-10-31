@@ -7,9 +7,12 @@ import Card, {
   PositionRequirements,
 } from './Card';
 
-function DoctorsAsVolunteers() {
+function DoctorsAsVolunteersCard() {
   return (
-    <Card backgroundImageSource="/images/Volunteer.jpg">
+    <Card
+      backgroundImageAltText="We are looking for physicians, NPs, and PAs to volunteer"
+      backgroundImageSource="/images/Volunteer.jpg"
+    >
       <CardTitle>{'Doctors as Volunteers'}</CardTitle>
 
       <CardParagraph>{'Doctors, NPs, PAs: Give 1-4 Hours/Week'}</CardParagraph>
@@ -40,4 +43,4 @@ function DoctorsAsVolunteers() {
   );
 }
 
-export default DoctorsAsVolunteers;
+export default DoctorsAsVolunteersCard;

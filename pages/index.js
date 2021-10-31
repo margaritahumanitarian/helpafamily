@@ -16,10 +16,20 @@ import PrimaryLayout from '../components/PrimaryLayout';
 import SurveySection from '../components/email/SurveySections';
 import Thankyou from '../components/email/Thankyou';
 import ThankyouEmail from '../components/email/ThankyouEmail';
+import heroImages from 'constants/heroImages';
 
-export default function Home() {
+export const getStaticProps = async () => {
+  const date = new Date();
+  const selectedImage = date.getDay();
+  const image = heroImages[selectedImage];
+  return {
+    props: { image },
+  };
+};
+
+export default function Home({ image }) {
   return (
-    <PrimaryLayout inNeed main>
+    <PrimaryLayout image={image} inNeed main>
       <HotMealDaySection />
       <CardsLayout description="Our Humanitarian Programs">
         <HotMealDayCard />

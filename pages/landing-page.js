@@ -37,7 +37,6 @@ export async function getStaticProps() {
 }
 
 const TestimonialSection = ({ testimonialCard }) => {
-  console.log('testiMonialCard', testimonialCard);
   return (
     <section className="flex flex-col items-center justify-center h-1/2 py-28">
       <div className="text-2xl font-semibold text-gray-500 pb-28">
@@ -47,7 +46,7 @@ const TestimonialSection = ({ testimonialCard }) => {
         className="grid content-center justify-center grid-cols-1 shadow-md bg-gradient-to-r from-accent to-blue-400 md:grid-cols-2 xl:grid-cols-3 align-center sm:p-24"
         id="cards-section"
       >
-        {testimonialCard.map((testimonialCard) => {
+        {testimonialCard.map((card) => {
           const {
             fields: {
               image: {
@@ -60,7 +59,7 @@ const TestimonialSection = ({ testimonialCard }) => {
               content,
             },
             sys: { id },
-          } = testimonialCard;
+          } = card;
           return (
             <TestimonialCard
               content={content}
@@ -103,7 +102,7 @@ const LandingPage = ({
             <p className="mb-5">{landingPageDescription}</p>
 
             <Link href="/in-kind" passHref>
-              <a className="btn btn-accent rounded-btn" href="#">
+              <a className="btn btn-accent rounded-btn" href="inkind">
                 {'Feed A Family'}
               </a>
             </Link>

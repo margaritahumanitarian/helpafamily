@@ -79,7 +79,7 @@ export default function MainDonationForm({ inNeed = false }) {
       return;
     }
 
-    handleSubmit({ amount, cause });
+    await handleSubmit({ amount, cause });
   };
 
   return (
@@ -118,7 +118,8 @@ export default function MainDonationForm({ inNeed = false }) {
             value={amount}
           />
           <button
-            className={clsx('btn btn-primary', { loading: isPending })}
+            aria-label="donate-btn"
+            className={clsx('btn-accent', { loading: isPending })}
             type="submit"
           >
             {'Donate'}

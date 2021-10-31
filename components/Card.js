@@ -75,7 +75,8 @@ export function CardAction({
         </a>
       ) : (
         <button
-          className={clsx('btn btn-accent w-full h-auto', {
+          aria-label="Card Action"
+          className={clsx('btn btn-accent shadow-md w-full h-auto', {
             loading: isPending,
           })}
           onClick={onClick}
@@ -98,7 +99,7 @@ CardAction.propTypes = {
 
 export function CardAddress({ children, label }) {
   return (
-    <div className="shaded-text my-auto">
+    <div className="shaded-text my-auto shadow-md">
       <div className="font-semibold">{label}</div>
       <span>{children}</span>
     </div>

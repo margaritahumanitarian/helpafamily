@@ -4,7 +4,10 @@ import Card, { CardAddress, CardParagraph, CardTitle } from './Card';
 
 function ElectronicsDropOffCard() {
   return (
-    <Card backgroundImageSource="/images/ElectronicsDrop.jpg">
+    <Card
+      backgroundImageAltText="Help families get access to technology"
+      backgroundImageSource="/images/ElectronicsDrop.jpg"
+    >
       <CardTitle>{'Electronics Drop-Off Box'}</CardTitle>
       <CardParagraph>
         {

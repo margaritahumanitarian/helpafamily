@@ -4,8 +4,6 @@ import admin from 'firebase-admin';
 import db from '../../firebase.config';
 
 export default async function processDeviceDonation(req, res) {
-  console.log(req.method);
-
   const data = {
     city: req.body.city || '',
     country: req.body.country || '',
