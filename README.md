@@ -31,4 +31,10 @@ This project uses:
 - [Tailwind CSS](https://tailwindcss.com/docs)
 - [daisyUI Tailwind CSS Components](https://daisyui.com/)
 
+## Contributors
+
+<a href="https://github.com/margaritahumanitarian/helpafamily/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=margaritahumanitarian/helpafamily" />
+</a>
+
 [![Powered by Vercel](public/images/powered-by-vercel.svg)](https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss)
