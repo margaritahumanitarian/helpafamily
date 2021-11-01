@@ -27,12 +27,12 @@ export default function Home({ image }) {
     <PrimaryLayout image={image} inNeed main>
       <HotMealDaySection />
       <CardsLayout description="Our Humanitarian Programs">
+        <HotMealDayCard />
         <LaptopForFamiliesCard />
         <HumanitarianClinicCard />
         <FallPreventionForEldersCard />
         <FoodDistributionSupportCard />
         <HygieneKitsCard />
-        <HotMealDayCard />
         <HealthWorkshopCard />
         <ElectronicsDropOffCard />
       </CardsLayout>
