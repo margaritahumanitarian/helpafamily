@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function EmailCaptureHome({ children, data }) {
   return (
-    <div>
+    <>
       <div className="email-title text-4xl pt-5">
         <h1 className="mb-12">{'Keep In Touch'}</h1>
       </div>
@@ -25,10 +25,17 @@ export default function EmailCaptureHome({ children, data }) {
         .email-content-box {
           display: flex;
           align-items: start;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0 50px;
         }
 
         .email-content-box > * {
           flex-basis: 100%;
+        }
+
+        .description {
+          width: 400px;
         }
 
         @media screen and (max-width: 700px) {
@@ -37,6 +44,6 @@ export default function EmailCaptureHome({ children, data }) {
           }
         }
       `}</style>
-    </div>
+    </>
   );
 }

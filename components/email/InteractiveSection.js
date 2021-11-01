@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useContextTheme } from '../ThemeContext';
 
 export default function InteractiveSection({ children }) {
   const [componentPointer, setComponentPointer] = useState(0);
   const [data, setData] = useState({});
-
-  useEffect(() => {
-    console.log(componentPointer);
-  }, [componentPointer]);
+  const { cardsBackgroundColor } = useContextTheme();
 
   const updateData = (childData) => {
     setData((prevState) => {
@@ -42,5 +40,25 @@ export default function InteractiveSection({ children }) {
     );
   });
 
-  return <>{childrenWithProps[componentPointer]}</>;
+  return (
+    <>
+      <div
+        className={`text-center hero-content mx-auto my-10 h-72 ${cardsBackgroundColor} main-container card-shadow`}
+      >
+        {childrenWithProps[componentPointer]}
+      </div>
+      <style jsx>
+        {`
+          .main-container {
+            display: flex;
+            flex-direction: column;
+          }
+          .card-shadow {
+            box-shadow: rgba(14, 30, 37, 0.061) 6px 6px 12px 0px,
+              rgba(14, 30, 37, 0.075) 6px 6px 10px 0px;
+          }
+        `}
+      </style>
+    </>
+  );
 }

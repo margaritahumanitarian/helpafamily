@@ -1,8 +1,6 @@
 import React from 'react';
-import { useContextTheme } from '../ThemeContext';
 
 export default function ThankyouEmail({ nextComponent, previousComponent }) {
-  const { cardsBackgroundColor } = useContextTheme();
   const handleForwardButtonClick = () => {
     nextComponent();
   };
@@ -12,9 +10,7 @@ export default function ThankyouEmail({ nextComponent, previousComponent }) {
   };
 
   return (
-    <div
-      className={`text-center hero-content mx-auto my-10 h-72 flex flex-col card-shadow ${cardsBackgroundColor}`}
-    >
+    <>
       <div className="email-content-box pb-10 text-center hero-content md:m-auto">
         <div className="text-3xl">
           {
@@ -45,6 +41,6 @@ export default function ThankyouEmail({ nextComponent, previousComponent }) {
           width: 80%;
         }
       `}</style>
-    </div>
+    </>
   );
 }

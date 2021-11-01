@@ -32,7 +32,8 @@ export default function SurveySection({
     }
   };
 
-  const setAnswersToData = (answer) => {
+  const setAnswersToData = (e) => {
+    const answer = e.target.value;
     let ans = answers.slice();
     ans[surveyPointer] = answer;
     setAnswers(ans);
@@ -52,14 +53,50 @@ export default function SurveySection({
   };
 
   return (
-    <Questions
-      disabledCondition={!answers[surveyPointer]}
-      handleBackButtonClick={handleBackButtonClick}
-      handleSurveyButton={handleSurveyButton}
-      inputOnChangeFunction={(value) => setAnswersToData(value.target.value)}
-      inputValue={answers[surveyPointer]}
-      nextButtonName={surveyPointer < questions.length - 1 ? 'Next' : 'Submit'}
-      question={questions[surveyPointer]}
-    />
+    <>
+      <Questions
+        handleBackButtonClick={handleBackButtonClick}
+        handleSurveyButton={handleSurveyButton}
+        inputOnChangeFunction={setAnswersToData}
+        inputValue={answers[surveyPointer]}
+        question={questions[surveyPointer]}
+      />
+      <div className="buttons">
+        <button
+          className="btn btn-accent mt-5"
+          onClick={handleBackButtonClick}
+          type="submit"
+        >
+          {'Back'}
+        </button>
+        <button
+          className={`btn btn-accent mt-5`}
+          disabled={!answers[surveyPointer]}
+          onClick={handleSurveyButton}
+          type="submit"
+        >
+          {surveyPointer < questions.length - 1 ? 'Next' : 'Submit'}
+        </button>
+      </div>
+      <style jsx>
+        {`
+          .main-container {
+            display: flex;
+            flex-direction: column;
+          }
+          .buttons {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            width: 100%;
+          }
+
+          .card-shadow {
+            box-shadow: rgba(14, 30, 37, 0.061) 6px 6px 12px 0px,
+              rgba(14, 30, 37, 0.075) 6px 6px 10px 0px;
+          }
+        `}
+      </style>
+    </>
   );
 }
