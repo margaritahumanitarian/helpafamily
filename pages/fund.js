@@ -2,7 +2,7 @@ import React from 'react';
 
 import { BLOCKS } from '@contentful/rich-text-types';
 import { createClient } from 'contentful';
-import { documentToReactComponents } from '../contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Card, { CardAction, CardParagraph, CardTitle } from '../components/Card';
 import CardsLayout from '../components/CardsLayout';
