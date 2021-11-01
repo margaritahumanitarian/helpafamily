@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function EmailCaptureHome({ children, data }) {
+export default function EmailCaptureHelper({ children, data }) {
   return (
     <>
       <div className="email-title text-4xl pt-5">

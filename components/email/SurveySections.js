@@ -55,8 +55,6 @@ export default function SurveySection({
   return (
     <>
       <Questions
-        handleBackButtonClick={handleBackButtonClick}
-        handleSurveyButton={handleSurveyButton}
         inputOnChangeFunction={setAnswersToData}
         inputValue={answers[surveyPointer]}
         question={questions[surveyPointer]}

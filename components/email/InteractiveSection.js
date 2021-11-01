@@ -13,13 +13,17 @@ export default function InteractiveSection({ children }) {
   };
 
   const nextComponent = () => {
-    setComponentPointer(componentPointer + 1);
+    setComponentPointer((componentPointer) => componentPointer + 1);
   };
 
   const previousComponent = () => {
-    setComponentPointer(componentPointer - 1);
+    setComponentPointer((componentPointer) => componentPointer - 1);
   };
 
+  /**
+   * childrenWithProps is the clone of all elements wrapped inside the Interactive Section
+   * with all the nescessary props added to it through iterating over them.
+   */
   const childrenWithProps = React.Children.map(children, (child) => {
     return React.cloneElement(
       child,
