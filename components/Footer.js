@@ -1,28 +1,33 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { useContextTheme } from 'components/ThemeContext';
-export default function Footer() {
-  const { theme, cardsBackgroundColor } = useContextTheme();
 
-  const LineItem = ({ title, link }) => (
-    <li className="mt-2 text-gray-300 md:block md:mr-0">
-      {link ? (
-        <a className="no-underline hover:text-teal-light" href={link || '#'}>
+const LineItem = ({ title, link }) => (
+  <li className="mt-2 text-gray-300 md:block md:mr-0">
+    {link ? (
+      <Link href={link || '#'} passHref>
+        <a className="no-underline hover:text-teal-light" href={title}>
           {title}
         </a>
-      ) : (
-        title
-      )}
-    </li>
-  );
+      </Link>
+    ) : (
+      title
+    )}
+  </li>
+);
+
+const Footer = () => {
+  const { theme, cardsBackgroundColor } = useContextTheme();
+
   return (
     <footer
       className={`flex flex-col items-center ${
         theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
-      } text-neutral-content`}
+      } text-neutral-content mt-20`}
     >
-      <div className="flex flex-col justify-between w-11/12 max-w-screen-xl py-7 px-10 sm:flex-row sm:px-0 ">
-        <div className="hidden px-4 sm:flex">
+      <div className="flex flex-col justify-between w-11/12 max-w-screen-xl py-7 px-10 sm:flex-row sm:px-0 mt-10 sm:pt-10 sm:mt-14 sm:border-t border-gray-400">
+        <div className="hidden px-4 sm:flex ">
           <Image
             alt="mhf logo"
             className="object-contain"
@@ -58,7 +63,7 @@ export default function Footer() {
             {'Programs'}
           </p>
           <ul className="list-reset mb-2 sm:text-left">
-            <LineItem link="#" title="Laptops for Families" />
+            <LineItem link="/partner-with-us" title="Laptops for Families" />
             <LineItem link="#" title="Hot Meal Day" />
             <LineItem link="#" title="Humanitarian Clinic" />
             <LineItem link="#" title="Fall Prevention Class" />
@@ -73,7 +78,7 @@ export default function Footer() {
           <a
             className="mt-2"
             href="https://www.guidestar.org/profile/84-4323038"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             target="_blank"
           >
             <Image
@@ -143,4 +148,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
