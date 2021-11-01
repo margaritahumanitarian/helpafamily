@@ -13,7 +13,7 @@ export default function InteractiveSection({ children }) {
   };
 
   const nextComponent = () => {
-    setComponentPointer(componentPointer + 1);
+    setComponentPointer((componentPointer) => componentPointer + 1);
   };
 
   const previousComponent = () => {
