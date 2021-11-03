@@ -1,10 +1,15 @@
+import EmailCapture from '../components/email/EmailCapture';
 import Footer from '../components/Footer';
 import Head from 'next/head';
+import InteractiveSection from '../components/email/InteractiveSection';
 import LandingPageNav from '../components/LandingPageNav';
 import LargeHeroContent from '../components/LargeHeroContent';
 import LargeHeroSection from '../components/LargeHeroSection';
 import Link from 'next/link';
+import SurveySection from '../components/email/SurveySections';
 import TestimonialCard from '../components/TestimonialCard';
+import Thankyou from '../components/email/Thankyou';
+import ThankyouEmail from '../components/email/ThankyouEmail';
 import { createClient } from 'contentful';
 /** ------------------------------------------------------------------------------
  *
@@ -109,6 +114,12 @@ const LandingPage = ({
           </LargeHeroContent>
         </LargeHeroSection>
         <TestimonialSection testimonialCard={testimonialCard} />
+        <InteractiveSection>
+          <EmailCapture />
+          <ThankyouEmail />
+          <SurveySection />
+          <Thankyou />
+        </InteractiveSection>
       </main>
       <Footer />
     </>
