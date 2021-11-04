@@ -91,11 +91,7 @@ function HeroSection({ main = false, image, inNeed = false }) {
         .hero-image {
           position: relative; !important
         }
-        .description-box {
-          padding: 20px;
-          /* padding-bottom: 40px; */
-          background: linear-gradient(to right, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.473) 10% 70%, rgba(0, 0, 0, 0));
-        }
+       
       `}</style>
     </div>
   );
