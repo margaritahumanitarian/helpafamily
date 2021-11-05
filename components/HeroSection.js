@@ -1,7 +1,5 @@
-// import image from 'next/image';
 import Image from 'next/image';
 import React from 'react';
-// import { heroImages } from 'constants/heroImages';
 
 import MainDonationForm from './MainDonationForm';
 
@@ -12,7 +10,18 @@ function HeroSection({ main = false, image, inNeed = false }) {
         main && 'pb-20 md:pb-20'
       }`}
     >
-      <div className={main && `bg-image hero`}>
+      {main && (
+        <div className="hero-image-container">
+          <Image
+            alt="Background"
+            className="hero-image"
+            layout="fill"
+            objectFit="cover"
+            src={image}
+          />
+        </div>
+      )}
+      <div className={main && 'hero'}>
         <div className="w-lg p-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 gap-y-5 items-center">
             {!main && (
@@ -25,8 +34,8 @@ function HeroSection({ main = false, image, inNeed = false }) {
                 />
               </div>
             )}
-
-            <div className={`md:col-span-${main ? 2 : 1}`}>
+            {main && <div className="bg-image-filter" />}
+            <div className={`md:col-span-${main ? '2' : 1} z-10`}>
               <h1
                 className={`text-3xl ${
                   main && 'md:text-6xl text-white '
@@ -35,7 +44,7 @@ function HeroSection({ main = false, image, inNeed = false }) {
                 {'Help Families in Need'}
               </h1>
               <p
-                className={`md:text-xl pt-5 ${
+                className={`md:text-xl m-5 ${
                   main && 'text-white text-opacity-90'
                 } leading-tight max-w-lg`}
               >
@@ -54,18 +63,35 @@ function HeroSection({ main = false, image, inNeed = false }) {
       </div>
       <style jsx>{`
         .bg-image {
-          background-image: linear-gradient(
-              to right bottom,
-              rgba(90, 76, 16, 0.6),
-              rgba(20, 81, 116, 0.3)
-            ),
-            url(${image});
+          z-index: -10;
+        }
+        .bg-image-filter {
+          position: absolute;
+          z-index: 0;
+          top: 64px;
+          left: 0;
+          min-height: 85vh;
+          width: 100%;
+          background: linear-gradient(
+            to right bottom,
+            rgba(54, 38, 9, 0.6),
+            rgba(20, 81, 116, 0.3)
+          );
           object-fit: cover;
-          background-repeat: no-repeat;
         }
         .hero {
           min-height: 85vh;
         }
+        .hero-image-container {
+          min-height: 85vh;
+          width: 100vw;
+          position: absolute;
+          z-index: 0;
+        }
+        .hero-image {
+          position: relative; !important
+        }
+       
       `}</style>
     </div>
   );

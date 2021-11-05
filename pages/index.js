@@ -19,6 +19,7 @@ export const getStaticProps = async () => {
   const image = heroImages[selectedImage];
   return {
     props: { image },
+    revalidate: 86400, // every day
   };
 };
 
