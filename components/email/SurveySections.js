@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Questions from './Questions';
+import { useFormspark } from '@formspark/use-formspark';
 
 export default function SurveySection({
   data,
   nextComponent,
   previousComponent,
+  formID,
 }) {
   const questions = [
     'How did you hear about us?',
@@ -13,13 +15,15 @@ export default function SurveySection({
   ];
 
   let Answers = new Array(questions.length).fill('');
-
+  const [submit, submitting] = useFormspark({
+    formId: formID,
+  });
   const [surveyPointer, setSurveyPointer] = useState(0);
   const [answers, setAnswers] = useState(Answers);
-
-  const submitData = () => {
-    console.log(answers, 'with email as', data.Email);
-    //backend todo
+  const Email = data.Email;
+  const submitData = async () => {
+    const completeData = { Email, questions, answers };
+    await submit({ completeData });
   };
 
   const SubmitCheck = () => {
@@ -69,7 +73,7 @@ export default function SurveySection({
         </button>
         <button
           className={`btn btn-accent mt-5`}
-          disabled={!answers[surveyPointer]}
+          disabled={submitting}
           onClick={handleSurveyButton}
           type="submit"
         >

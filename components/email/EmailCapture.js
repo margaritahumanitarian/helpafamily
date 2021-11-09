@@ -2,20 +2,25 @@ import React, { useState } from 'react';
 import { BsArrowRight } from 'react-icons/bs';
 import EmailCaptureHelper from './EmailCaptureHelper';
 import { useContextTheme } from '../ThemeContext';
+import { useFormspark } from '@formspark/use-formspark';
 
-export default function EmailCapture({ nextComponent, updateData }) {
+export default function EmailCapture({ nextComponent, updateData, formID }) {
   const [email, setEmail] = useState('');
 
-  const handleEmailSubmit = () => {
-    console.log(email);
-    //backend todo
-  };
+  const [submit, submitting] = useFormspark({
+    formId: formID,
+  });
 
-  const handleSubmit = () => {
-    updateData({ Email: email });
-    handleEmailSubmit();
-    nextComponent();
-    setEmail('');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await submit({ email });
+      updateData({ Email: result.email });
+      setEmail('');
+      setTimeout(() => nextComponent(), 10);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const { theme } = useContextTheme();
@@ -35,13 +40,11 @@ export default function EmailCapture({ nextComponent, updateData }) {
           />
           <button
             className={`${theme === 'dark' ? 'bg-white' : ''} `}
+            disabled={submitting}
+            onClick={handleSubmit}
             type="submit"
           >
-            <div
-              className="btn btn-accent"
-              disabled={!email}
-              onClick={handleSubmit}
-            >
+            <div className="btn btn-accent" disabled={!email}>
               <BsArrowRight className="inline-block w-7 h-10" />
             </div>
           </button>

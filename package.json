@@ -14,6 +14,7 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.2.0",
     "@contentful/rich-text-types": "^15.1.0",
+    "@formspark/use-formspark": "^0.1.35",
     "clsx": "^1.1.1",
     "contentful": "^9.0.0",
     "daisyui": "^1.14.0",

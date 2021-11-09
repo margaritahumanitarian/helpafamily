@@ -449,6 +449,13 @@
   dependencies:
     tslib "^2.1.0"
 
+"@formspark/use-formspark@^0.1.35":
+  version "0.1.35"
+  resolved "https://registry.yarnpkg.com/@formspark/use-formspark/-/use-formspark-0.1.35.tgz#871816f3fafca2899d45a5497c43c14f98f2979a"
+  integrity sha512-Hd5mnUjDH532NaNDaAGqzC/2Q2RY9ju/XiwguruSHQjarWovun6HBq8gXTkVuG2Mo/xfG7bfdrPiJzaibKg5/A==
+  dependencies:
+    whatwg-fetch "^3.6.2"
+
 "@google-cloud/common@^3.7.0":
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/@google-cloud/common/-/common-3.7.2.tgz#2f1feef9aaeb4f392d627ceab06e7eaa03329f58"
@@ -6918,7 +6925,7 @@ whatwg-encoding@^1.0.5:
   dependencies:
     iconv-lite "0.4.24"
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@>=0.10.0, whatwg-fetch@^3.6.2:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.6.2.tgz#dced24f37f2624ed0281725d51d0e2e3fe677f8c"
   integrity sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==

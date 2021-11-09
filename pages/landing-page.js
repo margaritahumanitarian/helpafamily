@@ -33,9 +33,12 @@ export async function getStaticProps() {
     content_type: 'landingPage',
   });
 
+  const FORM_ID = process.env.FORM_ID;
+
   return {
     props: {
       page: res.items[0],
+      FORM_ID,
     },
     revalidate: 10,
   };
@@ -87,6 +90,7 @@ const LandingPage = ({
       description: landingPageDescription,
     },
   },
+  FORM_ID,
 }) => {
   return (
     <>
@@ -115,9 +119,9 @@ const LandingPage = ({
         </LargeHeroSection>
         <TestimonialSection testimonialCard={testimonialCard} />
         <InteractiveSection>
-          <EmailCapture />
+          <EmailCapture formID={FORM_ID} />
           <ThankyouEmail />
-          <SurveySection />
+          <SurveySection formID={FORM_ID} />
           <Thankyou />
         </InteractiveSection>
       </main>
