@@ -22,9 +22,8 @@ export default function SurveySection({
   const [answers, setAnswers] = useState(Answers);
   const Email = data.Email;
   const submitData = async () => {
-    console.log(answers, 'with email as', Email);
-    const complete_data = { answers, Email };
-    await submit({ complete_data });
+    const completeData = { Email, questions, answers };
+    await submit({ completeData });
   };
 
   const SubmitCheck = () => {
