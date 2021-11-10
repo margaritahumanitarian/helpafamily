@@ -71,21 +71,34 @@ const Footer = () => {
             <LineItem link="#" title="Health Education Workshop" />
           </ul>
         </div>
-        <div className="hidden item-center px-4 sm:flex flex-col ">
-          <p className="uppercase text-center font-bold text-gray-100 md:mb-1">
-            {'Guide Star'}
-          </p>
+        <div className="hidden items-center px-4 sm:flex flex-col ">
+          <div className="items-center">
+            <p className="uppercase text-center font-bold text-gray-100 md:mb-5">
+              {'Guide Star'}
+            </p>
+            <a
+              className="mt-2"
+              href="https://www.guidestar.org/profile/84-4323038"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Image
+                alt="GuideStar Seal of Transparency"
+                height="100"
+                src="/images/GuideStarSeal.svg"
+                width="100"
+              />
+            </a>
+          </div>
           <a
-            className="mt-2"
-            href="https://www.guidestar.org/profile/84-4323038"
-            rel="noopener noreferrer"
-            target="_blank"
+            className="mt-5"
+            href="https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss"
           >
             <Image
-              alt="GuideStar Seal of Transparency"
-              height="100"
-              src="/images/GuideStarSeal.svg"
-              width="100"
+              alt="Powered by Vercel"
+              height="44"
+              src="/images/powered-by-vercel.svg"
+              width="152"
             />
           </a>
         </div>
@@ -120,12 +133,12 @@ const Footer = () => {
           className="flex flex-col bg-teal-light items-center text-gray-800 md:flex-auto md:mb-0"
           // style={{ background: '#97EFF4' }}
         >
-          <div className="-mt-8 mb-4 flex flex-col sm:hidden ">
+          <div className="-mt-8 mb-4 items-center flex flex-col sm:hidden ">
             <p className="uppercase text-center font-bold text-gray-800 md:mb-1">
               {'Guide Star'}
             </p>
             <a
-              className="mt-2"
+              className="mt-5"
               href="https://www.guidestar.org/profile/84-4323038"
               rel="noreferrer"
               target="_blank"
@@ -137,13 +150,24 @@ const Footer = () => {
                 width="100"
               />
             </a>
+            <a
+              className="mt-5"
+              href="https://vercel.com?utm_source=margaritahumanitarian&utm_campaign=oss"
+            >
+              <Image
+                alt="Powered by Vercel"
+                height="44"
+                src="/images/powered-by-vercel.svg"
+                width="212"
+              />
+            </a>
           </div>
           <div className="w-9/12 hidden text-center sm:block ">
             {
               'Margarita Humanitarian Foundation is a 501(c)(3) non-profit organization that provides humanitarian aid to families in need.'
             }
           </div>
-          <div className=" my-2">{`@copyright ${new Date().getFullYear()}`}</div>
+          <div className="my-2">{`@copyright ${new Date().getFullYear()}`}</div>
         </div>
       </div>
     </footer>
