@@ -4,10 +4,22 @@ import React from 'react';
 import clsx from 'clsx';
 import { useContextTheme } from 'components/ThemeContext';
 
-function Card({ backgroundImageSource, backgroundImageAltText, children }) {
+function Card({
+  backgroundImageSource,
+  backgroundImageAltText,
+  title,
+  paragraph,
+  positional,
+  action,
+}) {
   const { cardsBackgroundColor, textColor } = useContextTheme();
+  const [isHover, setIsHover] = React.useState(false);
   return (
-    <div className="card filter brightness-105 card-shadow">
+    <div
+      className="carousel-card rounded-md overflow-hidden ml-8 hover:scale-110 duration-500 z-10"
+      onMouseLeave={() => setIsHover(false)}
+      onMouseOver={() => setIsHover(true)}
+    >
       {backgroundImageSource && (
         <figure>
           <Image
@@ -21,30 +33,40 @@ function Card({ backgroundImageSource, backgroundImageAltText, children }) {
         </figure>
       )}
       <div
-        className={`card-body grid ${cardsBackgroundColor} text-${textColor} gap-y-3 auto-rows-card`}
+        className={`carousel-body flex flex-col p-3 justify-start items-center ${cardsBackgroundColor} text-${textColor}  auto-rows-card`}
       >
-        {children}
+        <CardTitle>{title}</CardTitle>
+        <hr
+          className={`h-1  bg-teal-medium border-none text-teal-medium duration-500 transition-width ${
+            isHover && 'w-full my-1'
+          }`}
+        />
+        {paragraph}
+        {positional}
+        {isHover && action}
       </div>
       <style jsx>{`
         .card-shadow {
           box-shadow: rgba(14, 30, 37, 0.061) 6px 6px 12px 0px,
             rgba(14, 30, 37, 0.075) 6px 6px 10px 0px;
         }
+        .carousel-card {
+          min-width: 300px;
+        }
+        .carousel-body {
+          min-height: 300px;
+        }
       `}</style>
     </div>
   );
 }
 
-Card.propTypes = {
-  backgroundImageSource: PropTypes.string,
-  backgroundImageAltText: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
-
 export function CardTitle({ children }) {
   const { cardsBackgroundColor } = useContextTheme();
   return (
-    <span className={`card-title m-0 ${cardsBackgroundColor}`}>{children}</span>
+    <span className={`card-title w-full text-left m-0 ${cardsBackgroundColor}`}>
+      {children}
+    </span>
   );
 }
 
@@ -68,7 +90,7 @@ export function CardAction({
   cardStyle,
 }) {
   return (
-    <div className={`pt-5 ${cardStyle}`}>
+    <div className={`pt-5 ${cardStyle} `}>
       {linkTo ? (
         <a className="btn btn-accent" href={linkTo}>
           {children}

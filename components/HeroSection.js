@@ -89,9 +89,8 @@ function HeroSection({ main = false, image, inNeed = false }) {
           z-index: 0;
         }
         .hero-image {
-          position: relative; !important
+          position: relative;
         }
-       
       `}</style>
     </div>
   );

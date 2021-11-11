@@ -32,7 +32,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        teal: { light: '#97EFF4', dark: '#4d7d80' },
+        teal: { light: '#97EFF4', medium: '#639598', dark: '#4d7d80' },
       },
       gridAutoRows: {
         card: 'min-content 1fr min-content',
