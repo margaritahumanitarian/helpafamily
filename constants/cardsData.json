@@ -1,0 +1,93 @@
+{
+    "data":[
+        {
+            "key":1,
+            "title":"Hot Meal Day",
+            "backgroundImageAltText":"Card about Hot Meal Day",
+            "backgroundImageSource":"/images/HotMealDay.jpg",
+            "paragraphs":[
+                "Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California."
+            ],
+            "isExternal":false,
+            "address":null,
+            "action":"Feed 60 people for ",
+            "cause":"Hot Meal for 60 Hungry People.",
+            "actionCost":250
+        },
+        {
+            "key":2,
+            "title":"Laptop for Families",
+            "backgroundImageAltText":"Card about Laptops for families",
+            "backgroundImageSource":"/images/Laptop.jpeg",
+            "paragraphs":["Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use."],
+            "isExternal":true,
+            "link":"https://forms.gle/K5ua2nUyrZ9bv4s3A",
+            "address":null,
+            "action":"Donate",
+            "actionCost":null
+        },
+        {
+            "key":3,
+            "title":"Humanitarian Clinic",
+            "backgroundImageAltText":"Card about Humanitarian Clinic",
+            "backgroundImageSource":"/images/Humanitarian.jpg",
+            "paragraphs":[ "Provide a free, anonymous phone or video telehealth consultation for someone afraid to see a doctor, such as a migrant or refugee who lacks identification."],
+            "isExternal":false,
+            "address":null,
+            "action":"Help 1 Patient for ",
+            "cause":"1 patient at a free humanitarian clinic",
+            "actionCost":30
+        },
+        {
+            "key":4,
+            "title":"Fall Prevention Class",
+            "backgroundImageAltText":"Fall Prevention Card Provide an elderly person with a 6 week course in fall prevention",
+            "backgroundImageSource":"/images/FallPrevention.jpg",
+            "paragraphs":["Provide an elderly person with a 6 week course in fall prevention while covering costs such as insurance, curriculum development and review."],
+            "isExternal":false,
+            "address":null,
+            "action":"Provide 1 Seat for ",
+            "cause":"Provide 1 Fall Prevention Class Seat to an Elder",
+            "actionCost":100
+        },
+        {
+            "key":5,
+            "title":"Hygiene Kits",
+            "backgroundImageAltText":"Card about Hygiene Kits",
+            "backgroundImageSource":"/images/HygieneKit.webp",
+            "paragraphs":["Order a bulk pack of hygiene kits for us to share with people experiencing homelessness.",
+            "Each hygiene kit allows an unhoused individual to freshen up and feel more confident about their hygiene for work, school, or even just to have a better day."],
+            "address":"1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550",
+            "label":"Ship the kits to:",
+            "isExternal":true,
+            "link":"https://www.amazon.com/96-Kits-Hygiene-Travel-Charity/dp/B0881YKMBL",
+            "action":"96 Hygiene Kits for ",
+            "cause":null,
+            "actionCost":153
+        },
+        {
+            "key":6,
+            "title":"Health Education Workshop",
+            "backgroundImageAltText":"Card about Health Education Workshop",
+            "backgroundImageSource":"/images/HealthWorkshop.jpg",
+            "paragraphs":["Help in establishing one free health education workshop for a community that is facing major disparities in health conditions and to help those people who need care and attention.","Also, your donation will go toward health-themed mini gift bags to motivate people to attend a workshop, equipment such as trainer simulaids for edema and breast disease, venue costs, and to hire public health educators to prepare presentations."],
+            "address":null,
+            "isExternal":false,
+            "action":"Create 1 Workshop for ",
+            "cause":"Creating a Health Workshop",
+            "actionCost":2000
+        },
+        {
+            "key":7,
+            "title":"Electronics Drop-Off Box",
+            "backgroundImageAltText":"Help families get access to technology",
+            "backgroundImageSource":"/images/ElectronicsDrop.jpg",
+            "paragraphs":["Any organization or business around the world can help families get access to technology. Put a donation box in your office for used laptops, tablets, and smartphones. Volunteers will pick up the items periodically, fix them up, and provide them to families in need. You can optionally be involved with refurbishment and placement too if you'd like."],
+            "address":null,
+            "isExternal":true,
+            "link":"mailto:hi@mhfcares.org",
+            "action":"hi@mhfcares.org",
+            "actionCost":null
+        }
+    ]
+}

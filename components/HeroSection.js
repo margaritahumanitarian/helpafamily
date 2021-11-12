@@ -84,7 +84,7 @@ function HeroSection({ main = false, image, inNeed = false }) {
         }
         .hero-image-container {
           min-height: 85vh;
-          width: 100vw;
+          width: 100%;
           position: absolute;
           z-index: 0;
         }

@@ -2,21 +2,27 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 import React from 'react';
 import clsx from 'clsx';
+import { isAvailable } from 'utils/isAvailable';
 import { useContextTheme } from 'components/ThemeContext';
+import useStripeSession from 'hooks/useStripeSession';
 
 function Card({
   backgroundImageSource,
   backgroundImageAltText,
   title,
-  paragraph,
-  positional,
+  paragraphs,
+  cause,
   action,
+  address,
+  actionCost,
+  isExternal,
+  link,
 }) {
   const { cardsBackgroundColor, textColor } = useContextTheme();
   const [isHover, setIsHover] = React.useState(false);
   return (
     <div
-      className="carousel-card rounded-md overflow-hidden ml-8 hover:scale-110 duration-500 z-10"
+      className="carousel-card rounded-md overflow-hidden ml-8 hover:scale-110 duration-500  z-10"
       onMouseLeave={() => setIsHover(false)}
       onMouseOver={() => setIsHover(true)}
     >
@@ -33,17 +39,29 @@ function Card({
         </figure>
       )}
       <div
-        className={`carousel-body flex flex-col p-3 justify-start items-center ${cardsBackgroundColor} text-${textColor}  auto-rows-card`}
+        className={`carousel-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} rounded-b-md auto-rows-card`}
       >
         <CardTitle>{title}</CardTitle>
         <hr
-          className={`h-1  bg-teal-medium border-none text-teal-medium duration-500 transition-width ${
+          className={`h-1  bg-teal-medium border-none text-teal-medium duration-200 ${
             isHover && 'w-full my-1'
           }`}
         />
-        {paragraph}
-        {positional}
-        {isHover && action}
+        {paragraphs.map((paragraph, index) => (
+          <CardParagraph key={index}>{paragraph}</CardParagraph>
+        ))}
+        {/* not a good practice to use index as key will change later */}
+        {address && <CardAddress>{address}</CardAddress>}
+        {isHover && action && (
+          <CardAction
+            actionCost={actionCost}
+            cause={cause}
+            isExternal={isExternal}
+            link={link}
+          >
+            {action} {isAvailable(actionCost) && `$${actionCost.toString()}`}
+          </CardAction>
+        )}
       </div>
       <style jsx>{`
         .card-shadow {
@@ -84,15 +102,22 @@ CardParagraph.propTypes = {
 
 export function CardAction({
   children,
-  linkTo,
-  isPending,
-  onClick,
   cardStyle,
+  actionCost,
+  cause,
+  isExternal,
+  link,
 }) {
+  const [handleSubmit, isPending] = useStripeSession();
+  const handleOnClick = () =>
+    handleSubmit({
+      amount: actionCost,
+      cause: cause,
+    });
   return (
     <div className={`pt-5 ${cardStyle} `}>
-      {linkTo ? (
-        <a className="btn btn-accent" href={linkTo}>
+      {isExternal ? (
+        <a className="btn btn-accent" href={link}>
           {children}
         </a>
       ) : (
@@ -101,10 +126,10 @@ export function CardAction({
           className={clsx('btn btn-accent shadow-md w-full h-auto', {
             loading: isPending,
           })}
-          onClick={onClick}
+          onClick={handleOnClick}
           type="button"
         >
-          {children}
+          {!isPending && children}
         </button>
       )}
     </div>
@@ -113,15 +138,13 @@ export function CardAction({
 
 CardAction.propTypes = {
   children: PropTypes.node,
-  isPending: PropTypes.bool,
   linkTo: PropTypes.string,
-  onClick: PropTypes.func,
   style: PropTypes.string,
 };
 
 export function CardAddress({ children, label }) {
   return (
-    <div className="shaded-text my-auto shadow-md">
+    <div className="shaded-text mt-2 text-center shadow-md">
       <div className="font-semibold">{label}</div>
       <span>{children}</span>
     </div>

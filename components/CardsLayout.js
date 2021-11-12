@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import React from 'react';
+import SVGCardBackground from './SVGCardBackground';
 
 export default function CardsLayout({ children, description }) {
   return (
@@ -7,8 +7,8 @@ export default function CardsLayout({ children, description }) {
       <h2 className="pb-20 text-3xl md:text-4xl z-10 text-center">
         {description}
       </h2>
-      <div className="width-full absolute top-0 left-0 h-full w-full z-0">
-        <Image alt="vector-background" layout="fill" src="/images/BG.png" />
+      <div className="absolute top-0 left-0 h-full w-full overflow-hidden flex justify-center items-center z-0">
+        <SVGCardBackground />
       </div>
       <div className="flex overflow-x-scroll no-scrollbar p-12">{children}</div>
     </div>
