@@ -3,7 +3,6 @@ import { useContextTheme } from './ThemeContext';
 
 function SVGCardBackground() {
   const { theme } = useContextTheme();
-  console.log(theme);
   return (
     <svg
       className="max-h-full w-full"
