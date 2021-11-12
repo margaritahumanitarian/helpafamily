@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import PropTypes from 'prop-types';
 import React from 'react';
 import clsx from 'clsx';
 import { isAvailable } from 'utils/isAvailable';
@@ -22,7 +21,7 @@ function Card({
   const [isHover, setIsHover] = React.useState(false);
   return (
     <div
-      className="carousel-card rounded-md overflow-hidden ml-8 hover:scale-110 duration-500  z-10"
+      className="carousel-card rounded-md overflow-hidden ml-8 md:hover:scale-110 duration-500  z-10"
       onMouseLeave={() => setIsHover(false)}
       onMouseOver={() => setIsHover(true)}
     >
@@ -39,7 +38,7 @@ function Card({
         </figure>
       )}
       <div
-        className={`carousel-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} rounded-b-md auto-rows-card`}
+        className={`carousel-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} rounded-b-md`}
       >
         <CardTitle>{title}</CardTitle>
         <hr
@@ -69,10 +68,18 @@ function Card({
             rgba(14, 30, 37, 0.075) 6px 6px 10px 0px;
         }
         .carousel-card {
-          min-width: 300px;
+          min-width: 350px;
         }
         .carousel-body {
-          min-height: 300px;
+          min-height: 420px;
+        }
+        @media only screen and (max-width: 600px) {
+          .carousel-card {
+            min-width: 300px;
+          }
+          .carousel-body {
+            min-height: 200px;
+          }
         }
       `}</style>
     </div>
@@ -88,17 +95,9 @@ export function CardTitle({ children }) {
   );
 }
 
-CardTitle.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 export function CardParagraph({ children }) {
   return <span>{children}</span>;
 }
-
-CardParagraph.propTypes = {
-  children: PropTypes.node.isRequired,
-};
 
 export function CardAction({
   children,
@@ -136,12 +135,6 @@ export function CardAction({
   );
 }
 
-CardAction.propTypes = {
-  children: PropTypes.node,
-  linkTo: PropTypes.string,
-  style: PropTypes.string,
-};
-
 export function CardAddress({ children, label }) {
   return (
     <div className="shaded-text mt-2 text-center shadow-md">
@@ -150,11 +143,6 @@ export function CardAddress({ children, label }) {
     </div>
   );
 }
-
-CardAddress.propTypes = {
-  children: PropTypes.node,
-  label: PropTypes.string,
-};
 
 export function PositionRequirements({ label, children }) {
   return (
@@ -168,10 +156,5 @@ export function PositionRequirements({ label, children }) {
     </div>
   );
 }
-
-PositionRequirements.propTypes = {
-  label: PropTypes.string,
-  children: PropTypes.node,
-};
 
 export default Card;

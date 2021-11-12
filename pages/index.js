@@ -14,7 +14,6 @@ import CardsLayout from '../components/CardsLayout';
 import Card from '@components/Card';
 import PrimaryLayout from '../components/PrimaryLayout';
 import heroImages from 'constants/heroImages';
-
 export const getStaticProps = async () => {
   const date = new Date();
   const selectedImage = date.getDay();
