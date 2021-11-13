@@ -15,13 +15,17 @@ function Card({
   address,
   actionCost,
   isExternal,
+  simulateHover,
   link,
+  listLabel,
+  listItems,
 }) {
   const { cardsBackgroundColor, textColor } = useContextTheme();
   const [isHover, setIsHover] = React.useState(false);
+  console.log(simulateHover);
   return (
     <div
-      className="carousel-card rounded-md overflow-hidden ml-8 md:hover:scale-110 duration-500  z-10"
+      className="carousel-card rounded-md overflow-hidden ml-8 md:hover:scale-110 duration-500 z-10"
       onMouseLeave={() => setIsHover(false)}
       onMouseOver={() => setIsHover(true)}
     >
@@ -41,17 +45,22 @@ function Card({
         className={`carousel-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} rounded-b-md`}
       >
         <CardTitle>{title}</CardTitle>
-        <hr
-          className={`h-1  bg-teal-medium border-none text-teal-medium duration-200 ${
-            isHover && 'w-full my-1'
-          }`}
-        />
-        {paragraphs.map((paragraph, index) => (
+        {(isHover || simulateHover) && (
+          <hr
+            className={
+              'h-1  bg-teal-medium border-none text-teal-medium duration-200 w-full my-1'
+            }
+          />
+        )}
+        {paragraphs?.map((paragraph, index) => (
           <CardParagraph key={index}>{paragraph}</CardParagraph>
         ))}
         {/* not a good practice to use index as key will change later */}
         {address && <CardAddress>{address}</CardAddress>}
-        {isHover && action && (
+        {listLabel && (
+          <PositionRequirements items={listItems} label={listLabel} />
+        )}
+        {(isHover || simulateHover) && action && (
           <CardAction
             actionCost={actionCost}
             cause={cause}
@@ -69,6 +78,7 @@ function Card({
         }
         .carousel-card {
           min-width: 350px;
+          max-width: 350px;
         }
         .carousel-body {
           min-height: 420px;
@@ -144,13 +154,13 @@ export function CardAddress({ children, label }) {
   );
 }
 
-export function PositionRequirements({ label, children }) {
+export function PositionRequirements({ label, items }) {
   return (
     <div className="p-2 mt-auto shaded-text">
       <span className="font-semibold">{label}</span>
       <ul className="list-disc text-left pl-6">
-        {React.Children.map(children, (listItem) => (
-          <li>{listItem}</li>
+        {items.map((listItem, index) => (
+          <li key={index}>{listItem}</li>
         ))}
       </ul>
     </div>

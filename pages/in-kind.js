@@ -9,8 +9,8 @@ export default function InKindPage() {
   return (
     <PrimaryLayout>
       <CardsLayout>
-        <LaptopForFamiliesCard />
-        <HygieneKitsCard />
+        <LaptopForFamiliesCard simulateHover={true} />
+        <HygieneKitsCard simulateHover={true} />
       </CardsLayout>
     </PrimaryLayout>
   );
