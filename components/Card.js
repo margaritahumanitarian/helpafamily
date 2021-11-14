@@ -25,7 +25,7 @@ function Card({
   console.log(simulateHover);
   return (
     <div
-      className="carousel-card rounded-md overflow-hidden ml-8 md:hover:scale-110 duration-500 z-10"
+      className="card rounded-md overflow-hidden ml-8 md:hover:scale-110 duration-500 z-10"
       onMouseLeave={() => setIsHover(false)}
       onMouseOver={() => setIsHover(true)}
     >
@@ -42,7 +42,7 @@ function Card({
         </figure>
       )}
       <div
-        className={`carousel-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} `}
+        className={`card-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} `}
       >
         <CardTitle>{title}</CardTitle>
         {(isHover || simulateHover) && (
@@ -76,13 +76,13 @@ function Card({
           box-shadow: rgba(14, 30, 37, 0.061) 6px 6px 12px 0px,
             rgba(14, 30, 37, 0.075) 6px 6px 10px 0px;
         }
-        .carousel-card {
+        .card {
           min-width: 327px;
           max-width: 350px;
           min-height: 473px;
           border-radius: 12px;
         }
-        .carousel-body {
+        .card-body {
           font-size: 14px;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
