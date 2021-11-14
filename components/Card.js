@@ -42,7 +42,7 @@ function Card({
         </figure>
       )}
       <div
-        className={`carousel-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} rounded-b-md`}
+        className={`carousel-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} `}
       >
         <CardTitle>{title}</CardTitle>
         {(isHover || simulateHover) && (
@@ -77,19 +77,15 @@ function Card({
             rgba(14, 30, 37, 0.075) 6px 6px 10px 0px;
         }
         .carousel-card {
-          min-width: 350px;
+          min-width: 327px;
           max-width: 350px;
+          min-height: 473px;
+          border-radius: 12px;
         }
         .carousel-body {
-          min-height: 420px;
-        }
-        @media only screen and (max-width: 600px) {
-          .carousel-card {
-            min-width: 300px;
-          }
-          .carousel-body {
-            min-height: 200px;
-          }
+          font-size: 14px;
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
         }
       `}</style>
     </div>
