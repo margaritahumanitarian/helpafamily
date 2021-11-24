@@ -7,7 +7,7 @@ import CardsLayout from '../components/CardsLayout';
 // import FoodDistributionSupportCard from '../components/FoodDistributionSupportCard';
 // import HealthWorkshopCard from '../components/HealthWorkshopCard';
 // import HotMealDayCard from '../components/HotMealDayCard';
-// import HotMealDaySection from '../components/HotMealDaySection';
+import HotMealDaySection from '../components/HotMealDaySection';
 // import HumanitarianClinicCard from '../components/HumanitarianClinicCard';
 // import HygieneKitsCard from '../components/HygieneKitsCard';
 // import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
