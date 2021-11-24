@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
 export default function Home({ image }) {
   return (
     <PrimaryLayout image={image} inNeed main>
-      {/* <HotMealDaySection /> */}
+      <HotMealDaySection />
       <CardsLayout description="Our Humanitarian Programs">
         {cards.data.map((cardData) => (
           <Card key={cardData.key} {...cardData} />
