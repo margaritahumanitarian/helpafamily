@@ -41,6 +41,10 @@ module.exports = {
         ...fontFamily,
         sans: ['Roboto', 'ui-sans-serif', 'system-ui'],
       },
+      transitionProperty: {
+        width: 'width',
+        display: 'display',
+      },
     },
   },
   variants: {

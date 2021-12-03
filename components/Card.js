@@ -12,22 +12,23 @@ function Card({
   paragraphs,
   cause,
   action,
-  address,
+  // address,
   actionCost,
   isExternal,
-  simulateHover,
+  // simulateHover,
   link,
-  listLabel,
-  listItems,
+  // listLabel,
+  // listItems,
 }) {
   const { cardsBackgroundColor, textColor } = useContextTheme();
-  const [isHover, setIsHover] = React.useState(false);
-  console.log(simulateHover);
+  // const [isHover, setIsHover] = React.useState(false);
   return (
     <div
-      className="card rounded-md overflow-hidden ml-8 md:hover:scale-110 duration-500 z-10"
-      onMouseLeave={() => setIsHover(false)}
-      onMouseOver={() => setIsHover(true)}
+      className="group card flex rounded-md overflow-hidden ml-8 duration-500 z-10 md:hover:scale-110 "
+      // onMouseLeave={() => {
+      //   setIsHover(false);
+      // }}
+      // onMouseOver={() => setIsHover(true)}
     >
       {backgroundImageSource && (
         <figure>
@@ -42,25 +43,29 @@ function Card({
         </figure>
       )}
       <div
-        className={`card-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} text-${textColor} `}
+        className={`card-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} ${textColor} `}
       >
         <CardTitle>{title}</CardTitle>
-        {(isHover || simulateHover) && (
-          <hr
-            className={
-              'h-1  bg-teal-medium border-none text-teal-medium duration-200 w-full my-1'
-            }
-          />
-        )}
-        {paragraphs?.map((paragraph, index) => (
-          <CardParagraph key={index}>{paragraph}</CardParagraph>
-        ))}
+        <hr
+          className={
+            'h-1  bg-teal-medium border-none text-teal-medium transition-width transform duration-500 ease-in-out w-0 my-1 group-hover:w-full  '
+          }
+        />
+        <div className="flex-1 font-normal leading-5 text-gray-600 px-6">
+          {paragraphs.slice(0, 1)?.map((paragraph, index) => (
+            <CardParagraph key={index}>
+              {paragraph.length > 170
+                ? `${paragraph.slice(0, 170)}...`
+                : paragraph}
+            </CardParagraph>
+          ))}
+        </div>
         {/* not a good practice to use index as key will change later */}
-        {address && <CardAddress>{address}</CardAddress>}
+        {/* {address && <CardAddress>{address}</CardAddress>}
         {listLabel && (
           <PositionRequirements items={listItems} label={listLabel} />
-        )}
-        {(isHover || simulateHover) && action && (
+        )}*/}
+        {action && (
           <CardAction
             actionCost={actionCost}
             cause={cause}
@@ -79,7 +84,7 @@ function Card({
         .card {
           min-width: 327px;
           max-width: 350px;
-          min-height: 473px;
+          min-height: 503px;
           border-radius: 12px;
         }
         .card-body {
@@ -95,7 +100,9 @@ function Card({
 export function CardTitle({ children }) {
   const { cardsBackgroundColor } = useContextTheme();
   return (
-    <span className={`card-title w-full text-left m-0 ${cardsBackgroundColor}`}>
+    <span
+      className={`card-title w-full text-center m-0 ${cardsBackgroundColor}`}
+    >
       {children}
     </span>
   );
@@ -120,7 +127,9 @@ export function CardAction({
       cause: cause,
     });
   return (
-    <div className={`pt-5 ${cardStyle} `}>
+    <div
+      className={`pt-5 hidden transition-display transform duration-1500 ease-in-out group-hover:flex ${cardStyle} `}
+    >
       {isExternal ? (
         <a className="btn btn-accent" href={link}>
           {children}
