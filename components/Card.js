@@ -15,21 +15,14 @@ function Card({
   // address,
   actionCost,
   isExternal,
-  // simulateHover,
+  simulateHover,
   link,
-  // listLabel,
-  // listItems,
+  listLabel,
+  listItems,
 }) {
   const { cardsBackgroundColor, textColor } = useContextTheme();
-  // const [isHover, setIsHover] = React.useState(false);
   return (
-    <div
-      className="group card flex rounded-md overflow-hidden ml-8 duration-500 z-10 md:hover:scale-110 "
-      // onMouseLeave={() => {
-      //   setIsHover(false);
-      // }}
-      // onMouseOver={() => setIsHover(true)}
-    >
+    <div className="group card flex rounded-md overflow-hidden ml-8 duration-500 z-10 md:hover:scale-110">
       {backgroundImageSource && (
         <figure>
           <Image
@@ -43,34 +36,35 @@ function Card({
         </figure>
       )}
       <div
-        className={`card-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} ${textColor} `}
+        className={`card-body flex flex-col p-6 shadow-lg justify-start items-center ${cardsBackgroundColor} ${textColor}`}
       >
         <CardTitle>{title}</CardTitle>
         <hr
-          className={
-            'h-1  bg-teal-medium border-none text-teal-medium transition-width transform duration-500 ease-in-out w-0 my-1 group-hover:w-full  '
-          }
+          className={`h-1 bg-teal-medium border-none text-teal-medium transition-width transform duration-500 ease-in-out ${
+            simulateHover ? 'w-full' : 'w-0'
+          } my-1 group-hover:w-full`}
         />
         <div className="flex-1 font-normal leading-5 text-gray-600 px-6">
-          {paragraphs.slice(0, 1)?.map((paragraph, index) => (
+          {paragraphs?.slice(0, 1)?.map((paragraph, index) => (
             <CardParagraph key={index}>
-              {paragraph.length > 170
+              {paragraph?.length > 170
                 ? `${paragraph.slice(0, 170)}...`
                 : paragraph}
             </CardParagraph>
           ))}
+          {listLabel && (
+            <PositionRequirements items={listItems} label={listLabel} />
+          )}
         </div>
         {/* not a good practice to use index as key will change later */}
-        {/* {address && <CardAddress>{address}</CardAddress>}
-        {listLabel && (
-          <PositionRequirements items={listItems} label={listLabel} />
-        )}*/}
+        {/* {address && <CardAddress>{address}</CardAddress>}*/}
         {action && (
           <CardAction
             actionCost={actionCost}
             cause={cause}
             isExternal={isExternal}
             link={link}
+            simulateHover={simulateHover}
           >
             {action} {isAvailable(actionCost) && `$${actionCost.toString()}`}
           </CardAction>
@@ -109,7 +103,7 @@ export function CardTitle({ children }) {
 }
 
 export function CardParagraph({ children }) {
-  return <span>{children}</span>;
+  return <p>{children}</p>;
 }
 
 export function CardAction({
@@ -119,6 +113,7 @@ export function CardAction({
   cause,
   isExternal,
   link,
+  simulateHover,
 }) {
   const [handleSubmit, isPending] = useStripeSession();
   const handleOnClick = () =>
@@ -128,7 +123,9 @@ export function CardAction({
     });
   return (
     <div
-      className={`pt-5 hidden transition-display transform duration-1500 ease-in-out group-hover:flex ${cardStyle} `}
+      className={`pt-5 ${
+        simulateHover ? 'flex' : 'hidden'
+      } transition-display transform duration-1500 ease-in-out group-hover:flex ${cardStyle} `}
     >
       {isExternal ? (
         <a className="btn btn-accent" href={link}>
@@ -161,7 +158,7 @@ export function CardAddress({ children, label }) {
 
 export function PositionRequirements({ label, items }) {
   return (
-    <div className="p-2 mt-auto shaded-text">
+    <div className="p-2 mt-3 shaded-text">
       <span className="font-semibold">{label}</span>
       <ul className="list-disc text-left pl-6">
         {items.map((listItem, index) => (

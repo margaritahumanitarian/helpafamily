@@ -1,16 +1,19 @@
+import Card from '@components/Card';
 import React from 'react';
 
 import CardsLayout from '../components/CardsLayout';
-import HygieneKitsCard from '../components/HygieneKitsCard';
-import LaptopForFamiliesCard from '../components/LaptopForFamiliesCard';
 import PrimaryLayout from '../components/PrimaryLayout';
+import cards from '../constants/cardsData.json';
+
+const hygieneKitsCardData = cards.data[4];
+const laptopForFamiliesCardData = cards.data[1];
 
 export default function InKindPage() {
   return (
     <PrimaryLayout>
       <CardsLayout>
-        <LaptopForFamiliesCard simulateHover={true} />
-        <HygieneKitsCard simulateHover={true} />
+        <Card {...hygieneKitsCardData} />
+        <Card {...laptopForFamiliesCardData} />
       </CardsLayout>
     </PrimaryLayout>
   );

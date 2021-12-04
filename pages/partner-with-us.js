@@ -5,11 +5,7 @@ import CardsLayout from '../components/CardsLayout';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import Card, {
-  CardAddress,
-  CardParagraph,
-  CardTitle,
-} from '../components/Card';
+import Card, { CardParagraph } from '../components/Card';
 
 import PrimaryLayout from '../components/PrimaryLayout';
 
@@ -91,16 +87,19 @@ export default function PartnerWithUs({
             sys: { id },
           } = partnerCard;
           return (
-            <Card backgroundImageSource={`https:${url}`} key={id}>
-              <CardTitle>{title}</CardTitle>
-              {documentToReactComponents(rawRichTextField, options)}
-              <CardAddress>
-                {documentToReactComponents(
-                  contactInstructions,
-                  options_for_contact
-                )}
-              </CardAddress>
-            </Card>
+            <Card
+              address={documentToReactComponents(
+                contactInstructions,
+                options_for_contact
+              )}
+              backgroundImageSource={`https:${url}`}
+              key={id}
+              paragraphs={[
+                documentToReactComponents(rawRichTextField, options),
+              ]}
+              simulateHover
+              title={title}
+            />
           );
         })}
       </CardsLayout>

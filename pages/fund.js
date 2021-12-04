@@ -107,7 +107,6 @@ export default function Home({
               key={id}
               link={actionLink}
               paragraphs={[rawRichTextField.content[0].content[0].value]}
-              simulateHover={true}
               title={title}
             >
               {documentToReactComponents(rawRichTextField, options)}
