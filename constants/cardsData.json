@@ -10,7 +10,7 @@
       ],
       "isExternal": false,
       "address": null,
-      "action": "Feed 60 people for ",
+      "action": "Feed 60 people for",
       "cause": "Hot Meal for 60 Hungry People.",
       "actionCost": 250
     },
@@ -26,6 +26,7 @@
       "link": "https://forms.gle/K5ua2nUyrZ9bv4s3A",
       "address": null,
       "action": "Donate",
+      "cause": null,
       "actionCost": null
     },
     {
@@ -69,9 +70,9 @@
       "label": "Ship the kits to:",
       "isExternal": true,
       "link": "https://www.amazon.com/96-Kits-Hygiene-Travel-Charity/dp/B0881YKMBL",
-      "action": "96 Hygiene Kits for ",
+      "action": "96 Hygiene Kits for $153",
       "cause": null,
-      "actionCost": 153
+      "actionCost": null
     },
     {
       "key": 6,
@@ -84,7 +85,7 @@
       ],
       "address": null,
       "isExternal": false,
-      "action": "Create 1 Workshop for ",
+      "action": "Create 1 Workshop for",
       "cause": "Creating a Health Workshop",
       "actionCost": 2000
     },
@@ -100,7 +101,22 @@
       "isExternal": true,
       "link": "mailto:hi@mhfcares.org",
       "action": "hi@mhfcares.org",
-      "actionCost": null
+      "actionCost": null,
+      "cause": null
+    },
+    {
+      "key": 8,
+      "title": "Food Distribution Support",
+      "backgroundImageAltText": "Food Distribution Support Card Provide free food boxes for hungry families",
+      "backgroundImageSource": "/images/FoodDistribution.jpg",
+      "paragraphs": [
+        "Help us cover our staffing costs for providing free food boxes for hungry families, such as paid time to manage volunteers for food distribution events or coordination with community groups."
+      ],
+      "address": null,
+      "isExternal": false,
+      "action": "Support Food Distribution for",
+      "actionCost": 150,
+      "cause": "Producing Food Distribution"
     }
   ]
 }
