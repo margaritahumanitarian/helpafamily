@@ -5,11 +5,11 @@ function SVGCardBackground() {
   const { theme } = useContextTheme();
   return (
     <svg
-      className="max-h-full w-full"
+      className="min-w-full"
       fill="none"
-      height={1281}
+      // height="1281"
       viewBox="0 0 1440 1281"
-      width={1440}
+      // width="1440"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
@@ -20,6 +20,18 @@ function SVGCardBackground() {
         d="M215.172 225.052c-198.8 21.6-611.5 234.024-632.5 286.524-17.833 154.5 0 161 0 354 0 130.5 33 280.004 74.5 280.004s374-103.5 507.5-103.5c143.5 0 178 57.71 380 77.5 215.5 21.11 305.5-20 425.5-98.5 112.248-73.432 237.338-248.528 335.998-330.528 98.67-82 438.83-113.142 499-119.976 15-192.166 87.1-386.9 67.5-398.5-24.5-14.5-292-65.474-489 .001-102.74 34.149-431.998 128.475-647.498 134.975-215.5 6.5-272.5-109-521-82z"
         fill="#C0F1F3"
       />
+      <style jsx>{`
+        svg {
+          position: absolute;
+          height: 110%;
+          min-width: 100%;
+          left: 0%;
+          right: 0%;
+          top: -5%;
+          bottom: 5.51%;
+          border-radius: 0px;
+        }
+      `}</style>
     </svg>
   );
 }
