@@ -4,10 +4,10 @@ import { BLOCKS } from '@contentful/rich-text-types';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-import Card, { CardAction, CardParagraph, CardTitle } from '../components/Card';
+import Card, { CardParagraph } from '../components/Card';
 import CardsLayout from '../components/CardsLayout';
 import PrimaryLayout from '../components/PrimaryLayout';
-import useStripeSession from '../hooks/useStripeSession';
+// import useStripeSession from '../hooks/useStripeSession';
 
 const options = {
   renderNode: {
@@ -44,33 +44,33 @@ export async function getServerSideProps() {
   };
 }
 
-function StripeAction({ amount, text }) {
-  const [handleSubmit, isPending] = useStripeSession();
+// function StripeAction({ amount, text }) {
+//   const [handleSubmit, isPending] = useStripeSession();
 
-  const handleOnClick = () =>
-    handleSubmit({
-      amount,
-      cause: text,
-    });
+//   const handleOnClick = () =>
+//     handleSubmit({
+//       amount,
+//       cause: text,
+//     });
 
-  return (
-    <CardAction isPending={isPending} onClick={handleOnClick}>
-      {text}
-    </CardAction>
-  );
-}
+//   return (
+//     <CardAction isPending={isPending} onClick={handleOnClick}>
+//       {text}
+//     </CardAction>
+//   );
+// }
 
-function LocalAction({ link, text }) {
-  return <CardAction linkTo={link}>{text}</CardAction>;
-}
+// function LocalAction({ link, text }) {
+//   return <CardAction linkTo={link}>{text}</CardAction>;
+// }
 
-const renderAction = ({ actionText, actionAmount, actionLink }) => {
-  return actionAmount ? (
-    <StripeAction amount={actionAmount} text={actionText} />
-  ) : (
-    <LocalAction link={actionLink} text={actionText} />
-  );
-};
+// const renderAction = ({ actionText, actionAmount, actionLink }) => {
+//   return actionAmount ? (
+//     <StripeAction amount={actionAmount} text={actionText} />
+//   ) : (
+//     <LocalAction link={actionLink} text={actionText} />
+//   );
+// };
 
 export default function Home({
   page: {
@@ -80,6 +80,7 @@ export default function Home({
   return (
     <PrimaryLayout>
       <CardsLayout>
+        {/* <div className="flex flex-wrap"> */}
         {cards.map((card) => {
           const {
             fields: {
@@ -96,13 +97,21 @@ export default function Home({
             },
             sys: { id },
           } = card;
-
+          console.log(rawRichTextField, options);
           return (
-            <Card backgroundImageSource={`https:${url}`} key={id}>
-              <CardTitle>{title}</CardTitle>
+            <Card
+              action={actionText}
+              actionCost={actionAmount}
+              backgroundImageSource={`https:${url}`}
+              isExternal={true}
+              key={id}
+              link={actionLink}
+              paragraphs={[rawRichTextField.content[0].content[0].value]}
+              title={title}
+            >
               {documentToReactComponents(rawRichTextField, options)}
-              {actionText &&
-                renderAction({ actionText, actionAmount, actionLink })}
+
+              {/* {actionText && */}
             </Card>
           );
         })}
@@ -110,3 +119,4 @@ export default function Home({
     </PrimaryLayout>
   );
 }
+// renderAction({ actionText, actionAmount, actionLink })}

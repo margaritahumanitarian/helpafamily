@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Card, { CardAction, CardParagraph, CardTitle } from './Card';
+import Card, { CardAction, CardParagraph } from './Card';
 import useStripeSession from '../hooks/useStripeSession';
 
 const actionCost = 250;
@@ -16,19 +16,22 @@ function HotMealDayCard() {
 
   return (
     <Card
+      action={
+        <CardAction isPending={isPending} onClick={handleOnClick}>
+          {`Feed 60 people for $${actionCost}`}
+        </CardAction>
+      }
       backgroundImageAltText="Card about Hot Meal Day"
       backgroundImageSource="/images/HotMealDay.jpg"
-    >
-      <CardTitle>{'Hot Meal Day'}</CardTitle>
-      <CardParagraph>
-        {
-          'Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California.'
-        }
-      </CardParagraph>
-      <CardAction isPending={isPending} onClick={handleOnClick}>
-        {`Feed 60 people for $${actionCost}`}
-      </CardAction>
-    </Card>
+      paragraph={
+        <CardParagraph>
+          {
+            'Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California.'
+          }
+        </CardParagraph>
+      }
+      title={<>{'Hot Meal Day'}</>}
+    />
   );
 }
 

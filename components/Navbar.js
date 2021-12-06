@@ -23,7 +23,7 @@ export default function Navbar() {
       <div
         className={`navbar ${
           theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
-        } text-neutral-content sticky top-0 z-50 shadow justify-center`}
+        } text-neutral-content sticky top-0 z-50 shadow justify-center z-50`}
       >
         <div className="nav-contents-container">
           <button

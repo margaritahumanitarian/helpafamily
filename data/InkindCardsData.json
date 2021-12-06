@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "key": 1,
+      "title": "Laptop for Families",
+      "backgroundImageAltText": "Card about Laptops for families",
+      "backgroundImageSource": "/images/Laptop.jpeg",
+      "paragraphs": [
+        "Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use."
+      ],
+      "isExternal": true,
+      "link": "https://forms.gle/K5ua2nUyrZ9bv4s3A",
+      "address": null,
+      "action": "Donate",
+      "cause": null,
+      "actionCost": null
+    },
+    {
+      "key": 2,
+      "title": "Hygiene Kits",
+      "backgroundImageAltText": "Card about Hygiene Kits",
+      "backgroundImageSource": "/images/HygieneKit.webp",
+      "paragraphs": [
+        "Order a bulk pack of hygiene kits for us to share with people experiencing homelessness.",
+        "Each hygiene kit allows an unhoused individual to freshen up and feel more confident about their hygiene for work, school, or even just to have a better day."
+      ],
+      "address": "1543 E Palmdale Blvd, Ste E, Palmdale, CA 93550",
+      "label": "Ship the kits to:",
+      "isExternal": true,
+      "link": "https://www.amazon.com/96-Kits-Hygiene-Travel-Charity/dp/B0881YKMBL",
+      "action": "96 Hygiene Kits for $153",
+      "cause": null,
+      "actionCost": null
+    }
+  ]
+}
