@@ -3,14 +3,15 @@ import React from 'react';
 
 import CardsLayout from '../components/CardsLayout';
 import PrimaryLayout from '../components/PrimaryLayout';
-import cards from '../constants/cardsData.json';
-const doctorsAsVolunteersCardData = cards.data[8];
+import cards from '../data/GiveyourTimeCardsData.json';
 
 export default function GiveYourTimePage() {
   return (
     <PrimaryLayout>
       <CardsLayout>
-        <Card {...doctorsAsVolunteersCardData} simulateHover />
+        {cards.data.map((cardData) => (
+          <Card key={cardData.key} {...cardData} simulateHover />
+        ))}
       </CardsLayout>
     </PrimaryLayout>
   );

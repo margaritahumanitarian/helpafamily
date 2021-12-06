@@ -3,17 +3,15 @@ import React from 'react';
 
 import CardsLayout from '../components/CardsLayout';
 import PrimaryLayout from '../components/PrimaryLayout';
-import cards from '../constants/cardsData.json';
-
-const hygieneKitsCardData = cards.data[4];
-const laptopForFamiliesCardData = cards.data[1];
+import cards from '../data/InkindCardsData.json';
 
 export default function InKindPage() {
   return (
     <PrimaryLayout>
       <CardsLayout>
-        <Card {...hygieneKitsCardData} />
-        <Card {...laptopForFamiliesCardData} />
+        {cards.data.map((cardData) => (
+          <Card key={cardData.key} {...cardData} simulateHover />
+        ))}
       </CardsLayout>
     </PrimaryLayout>
   );

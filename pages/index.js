@@ -1,5 +1,5 @@
 import React from 'react';
-import cards from '../constants/cardsData.json';
+import cards from '../data/homeCardsData.json';
 
 import Card from '@components/Card';
 import CardsLayout from '../components/CardsLayout';
