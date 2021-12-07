@@ -17,7 +17,7 @@ function HotMealDaySection() {
     });
   return (
     <div className="px-0 py-0 md:px-10 md:py-32 hot-meal-day relative overflow-hidden">
-      <SVGHotMealDaySectionBackground className="absolute w-full right-6 -top-1/3 z-0" />
+      <SVGHotMealDaySectionBackground className="absolute w-full right-0 -top-1/3 z-0" />
       <div
         className={`w-lg p-5 lg:p-5 section-box z-10 ${cardsBackgroundColor}`}
       >
