@@ -7,7 +7,7 @@ function HeroSection({ main = false, image, inNeed = false }) {
   return (
     <div
       className={`text-center ${!main && 'hero-content'} md:m-auto ${
-        main && 'pb-20 md:pb-20'
+        main && 'pb-0'
       }`}
     >
       {main && (
