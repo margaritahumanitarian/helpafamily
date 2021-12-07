@@ -1,6 +1,6 @@
 import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai';
 import React, { useRef } from 'react';
-import SVGCardBackground from './SVGCardBackground';
+import { SVGCardBackground } from './SVGBackgrounds';
 import { usePosition } from 'hooks/usePosition';
 
 export default function CardsLayout({ children, description }) {

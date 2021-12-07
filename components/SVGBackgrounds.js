@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useContextTheme } from './ThemeContext';
 
-function SVGCardBackground() {
+export function SVGCardBackground() {
   const { theme } = useContextTheme();
   return (
     <svg
@@ -35,5 +35,25 @@ function SVGCardBackground() {
     </svg>
   );
 }
+export function SVGHotMealDaySectionBackground(props) {
+  const { theme } = useContextTheme();
 
-export default SVGCardBackground;
+  return (
+    <svg
+      fill="none"
+      height={1520}
+      width={1440}
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="m1518.5 104.5 322-55.5c42.67 10.333 126.6 40.7 121 79.5C1954.5 177 1861 236 1702 340s-183.5 96.5-246 152-66 77.5-80 136.5-167 261.466-265.5 284.5c-98.5 23.034-234 27.5-410.5 51.5s-223.5 161-358.5 348S103 1433.5-29 1458c-105.6 19.6-205.333 49.5-242 62l-336-304.5c70.5-53 223.2-173.6 270-232 58.5-73 260-190.5 419-242s649-134.5 742-190 130-228.5 227-325c77.6-77.2 381-90.667 467.5-122Z"
+        fill={theme === 'light' ? '#DCF8FA' : '#4d7d80'}
+      />
+      <path
+        d="M1482 55.5 1804 0c42.67 10.333 126.6 40.7 121 79.5-7 48.5-100.5 107.5-259.5 211.5s-183.5 96.5-246 152-55 145.5-69 204.5-62.5 249-225 287-273.5-24-450 0-235.5 142-370.5 329-238.5 121-370.5 145.5c-105.6 19.6-205.333 49.5-242 62l-336-304.5c70.5-53 223.2-173.6 270-232 58.5-73 260-190.5 419-242S693 578 786 522.5s242.5-180 339.5-276.5c77.6-77.2 270-159.167 356.5-190.5Z"
+        fill="#C0F1F3"
+      />
+    </svg>
+  );
+}
