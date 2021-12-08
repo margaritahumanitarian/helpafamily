@@ -100,17 +100,6 @@ function HotMealDaySection() {
         .quotes {
           z-index: -1;
         }
-        // .quote {
-        //   position: relative;
-        // }
-        // .quote::after {
-        //   content: open-quote;
-        //   top: -0.4em;
-        //   left: 0;
-        //   font-size: 5em;
-        //   opacity: 0.3;
-        //   position: absolute;
-        // }
         @media (min-width: 768px) {
           .section-box {
             max-width: 1280px;
