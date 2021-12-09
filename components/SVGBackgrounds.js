@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useContextTheme } from './ThemeContext';
 
-export function SVGCardBackground() {
+export function SVGCardBackground(props) {
   const { theme } = useContextTheme();
 
   return (
@@ -12,6 +12,7 @@ export function SVGCardBackground() {
       viewBox="0 0 1440 1281"
       // width="1440"
       xmlns="http://www.w3.org/2000/svg"
+      {...props}
     >
       <path
         d="M197.672 187.577c-219.522 24.37-608.311 20.267-631.5 79.5-19.692 174.314 101 646.206 101 709.999 0 11.282 14.174 303.004 60 303.004s156.351-133.5 345.5-133.5c203.351 0 244.5 75.93 411 92.5 196 19.5 327.566 12.24 455.5-107.5 140.498-131.5 169.548-271.487 278.498-364.003 108.95-92.517 523.96-67.277 590.4-74.987 16.56-216.812 73.75-655.426 52.1-668.513-27.05-16.36-184.93-56.43-384.5 27-149.5 62.5-453.82 286.086-691.779 293.42-237.963 7.333-311.817-187.383-586.219-156.92z"

@@ -12,10 +12,10 @@ export default function CardsLayout({ children, description }) {
       <h2 className="pb-20 text-3xl md:text-4xl z-10 text-center">
         {description}
       </h2>
-      <SVGCardBackground />
+      <SVGCardBackground className="hidden lg:block" />
       <button
         aria-label="move right"
-        className={`btn btn-accent rounded-sm btn-size absolute right-4 top-1/2  z-50 ${
+        className={`btn btn-accent rounded-sm btn-size absolute right-4 top-1/2  z-20 ${
           !hasItemsOnRight && 'hidden'
         }`}
         // todo: -translate-y-1/2 this also we need to add to make it vertically center
@@ -27,7 +27,7 @@ export default function CardsLayout({ children, description }) {
       </button>
       <button
         aria-label="move left"
-        className={`btn btn-accent rounded-sm btn-size absolute left-4 top-1/2 z-50 ${
+        className={`btn btn-accent rounded-sm btn-size absolute left-4 top-1/2 z-20 ${
           !hasItemsOnLeft && 'hidden'
         }`}
         // todo: -translate-y-1/2 this also we need to add to make it vertically center
@@ -38,7 +38,7 @@ export default function CardsLayout({ children, description }) {
         <AiOutlineLeft />
       </button>
       <div
-        className="flex overflow-x-scroll no-scrollbar p-12 relative"
+        className="flex overflow-x-scroll no-scrollbar px-2 py-12 lg:px-12 relative"
         ref={ref}
       >
         {children}
