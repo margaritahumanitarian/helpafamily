@@ -7,9 +7,9 @@ import CardsLayout from '../components/CardsLayout';
 import HotMealDaySection from '../components/HotMealDaySection';
 import InteractiveSection from '../components/email/InteractiveSection';
 import PrimaryLayout from '../components/PrimaryLayout';
-// import SurveySection from '../components/email/SurveySections';
+import SurveySection from '../components/email/SurveySections';
 // import Thankyou from '../components/email/Thankyou';
-import ThankyouEmail from '../components/email/ThankyouEmail';
+// import ThankyouEmail from '../components/email/ThankyouEmail';
 import heroImages from 'constants/heroImages';
 
 export const getStaticProps = async () => {
@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
   };
 };
 
-export default function Home({ image }) {
+export default function Home({ image, FORM_ID }) {
   return (
     <PrimaryLayout image={image} inNeed main>
       <HotMealDaySection />
@@ -34,8 +34,8 @@ export default function Home({ image }) {
       </CardsLayout>
       <InteractiveSection>
         {/* <EmailCapture formID={FORM_ID} /> */}
-        <ThankyouEmail />
-        {/* <SurveySection formID={FORM_ID} /> */}
+        {/* <ThankyouEmail /> */}
+        <SurveySection formID={FORM_ID} />
         {/* <Thankyou /> */}
       </InteractiveSection>
     </PrimaryLayout>

@@ -46,7 +46,7 @@ export default function InteractiveSection({ children }) {
 
   return (
     <div className="flex justify-center items-center mx-5 card-shadow lg:my-20">
-      <div className={`w-lg ${cardsBackgroundColor}`}>
+      <div className={`w-full ${cardsBackgroundColor}`}>
         {childrenWithProps[componentPointer]}
       </div>
       <style jsx>
