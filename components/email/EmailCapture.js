@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { SVGPlane } from '../SVGBackgrounds';
+import { useContextTheme } from '@components/ThemeContext';
 import { useFormspark } from '@formspark/use-formspark';
 
 export default function EmailCapture({ nextComponent, updateData, formID }) {
   const [email, setEmail] = useState('');
+  const { backgroundColor } = useContextTheme();
   const [submit, submitting] = useFormspark({
     formId: formID,
   });
@@ -32,7 +34,7 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
           src={'/images/keepInTouch.jpeg'}
           width="400"
         />
-        <SVGPlane className="fixed" />
+        <SVGPlane className="absolute" />
         <div className="space-y-3 p-14 lg:pr-10 md:text-left">
           <h2 className="text-3xl md:text-5xl md:text-left pb-7 font-bold">
             {'Keep In Touch'}
@@ -46,7 +48,7 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
             <p className="pt-5">{'Enter Your Email'}</p>
             <form className="lg:flex md:items-end" onSubmit={handleSubmit}>
               <input
-                className=" appearance-none border border-gray-300 rounded h-full py-3 mb-2 lg:mb-0 mr-0 lg:mr-4 w-full lg:w-3/5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className={`appearance-none border border-gray-300 rounded h-full py-3 mb-2 lg:mb-0 mr-0 lg:mr-4 w-full lg:w-3/5 px-3 text-gray-700 ${backgroundColor} leading-tight focus:outline-none focus:shadow-outline`}
                 onChange={(value) => {
                   setEmail(value.target.value);
                 }}

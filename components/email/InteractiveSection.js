@@ -12,8 +12,8 @@ export default function InteractiveSection({ children }) {
     });
   };
 
-  const nextComponent = () => {
-    setComponentPointer((componentPointer) => componentPointer + 1);
+  const nextComponent = (i = 1) => {
+    setComponentPointer((componentPointer) => componentPointer + i);
   };
 
   const previousComponent = () => {
@@ -33,8 +33,8 @@ export default function InteractiveSection({ children }) {
         updateData: (childData) => {
           updateData(childData);
         },
-        nextComponent: () => {
-          nextComponent();
+        nextComponent: (i) => {
+          nextComponent(i);
         },
         previousComponent: () => {
           previousComponent();

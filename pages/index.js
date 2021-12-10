@@ -1,15 +1,15 @@
 import React from 'react';
 import cards from '../data/homeCardsData.json';
 
+import Thankyou, { ThankyouAgain } from '../components/email/Thankyou';
 import Card from '../components/Card';
 import CardsLayout from '../components/CardsLayout';
-// import EmailCapture from '../components/email/EmailCapture';
+import EmailCapture from '../components/email/EmailCapture';
 import HotMealDaySection from '../components/HotMealDaySection';
 import InteractiveSection from '../components/email/InteractiveSection';
 import PrimaryLayout from '../components/PrimaryLayout';
 import SurveySection from '../components/email/SurveySections';
-// import Thankyou from '../components/email/Thankyou';
-// import ThankyouEmail from '../components/email/ThankyouEmail';
+import ThankyouEmail from '../components/email/ThankyouEmail';
 import heroImages from 'constants/heroImages';
 
 export const getStaticProps = async () => {
@@ -33,10 +33,11 @@ export default function Home({ image, FORM_ID }) {
         ))}
       </CardsLayout>
       <InteractiveSection>
-        {/* <EmailCapture formID={FORM_ID} /> */}
-        {/* <ThankyouEmail /> */}
+        <EmailCapture formID={FORM_ID} />
+        <ThankyouEmail />
+        <ThankyouAgain />
         <SurveySection formID={FORM_ID} />
-        {/* <Thankyou /> */}
+        <Thankyou />
       </InteractiveSection>
     </PrimaryLayout>
   );
