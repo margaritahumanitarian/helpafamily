@@ -45,10 +45,8 @@ export default function InteractiveSection({ children }) {
   });
 
   return (
-    <>
-      <div
-        className={`text-center hero-content mx-auto my-10 h-72 ${cardsBackgroundColor} main-container card-shadow`}
-      >
+    <div className="flex justify-center items-center mx-5 card-shadow lg:my-20">
+      <div className={`w-lg ${cardsBackgroundColor}`}>
         {childrenWithProps[componentPointer]}
       </div>
       <style jsx>
@@ -63,6 +61,6 @@ export default function InteractiveSection({ children }) {
           }
         `}
       </style>
-    </>
+    </div>
   );
 }

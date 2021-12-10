@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { BsArrowRight } from 'react-icons/bs';
-import EmailCaptureHelper from './EmailCaptureHelper';
-import { useContextTheme } from '../ThemeContext';
+import Image from 'next/image';
+import { SVGPlane } from '../SVGBackgrounds';
 import { useFormspark } from '@formspark/use-formspark';
 
 export default function EmailCapture({ nextComponent, updateData, formID }) {
   const [email, setEmail] = useState('');
-
   const [submit, submitting] = useFormspark({
     formId: formID,
   });
@@ -23,39 +21,71 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
     }
   };
 
-  const { theme } = useContextTheme();
   return (
     <>
-      <EmailCaptureHelper
-        data={'Please submit your email to get on our email list'}
-      >
-        <div className="input-email">
-          <input
-            className="mx-5 py-2 border-2 text-black"
-            onChange={(value) => {
-              setEmail(value.target.value);
-            }}
-            placeholder="Enter Your Email"
-            value={email}
-          />
-          <button
-            className={`${theme === 'dark' ? 'bg-white' : ''} `}
-            disabled={submitting}
-            onClick={handleSubmit}
-            type="submit"
-          >
-            <div className="btn btn-accent" disabled={!email}>
-              <BsArrowRight className="inline-block w-7 h-10" />
-            </div>
-          </button>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:p-5 ">
+        <Image
+          alt={'Hot Meal Day'}
+          height="260"
+          layout="responsive"
+          objectFit="cover"
+          src={'/images/keepInTouch.jpeg'}
+          width="400"
+        />
+        <SVGPlane className="fixed" />
+        <div className="space-y-3 p-14 lg:pr-10 md:text-left">
+          <h2 className="text-3xl md:text-5xl md:text-left pb-7 font-bold">
+            {'Keep In Touch'}
+          </h2>
+          <div className="z-10 md:pl-5">
+            <p className="text-sm">
+              {
+                'Get on our email list and we’ll keep you up to date with all that is going on with your community that we’re involved in.'
+              }
+            </p>
+            <p className="pt-5">{'Enter Your Email'}</p>
+            <form className="lg:flex md:items-end" onSubmit={handleSubmit}>
+              <input
+                className=" appearance-none border border-gray-300 rounded h-full py-3 mb-2 lg:mb-0 mr-0 lg:mr-4 w-full lg:w-3/5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                onChange={(value) => {
+                  setEmail(value.target.value);
+                }}
+                placeholder="Enter Your Email"
+                type="email"
+                value={email}
+              />
+              <button
+                aria-label="donate-btn"
+                className="btn btn-accent rounded-sm mt-5  btn-size"
+                disabled={submitting}
+                type="submit"
+              >
+                {'Submit'}
+              </button>
+            </form>
+          </div>
         </div>
-      </EmailCaptureHelper>
+      </div>
 
       <style jsx>{`
-        .input-email {
+        .btn-size {
           display: flex;
-          justify-content: center;
-          align-items: center;
+          margin: 0 5px;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          hyphens: auto;
+          white-space: nowrap;
+        }
+        .plane {
+          z-index: -1;
+        }
+        @media (min-width: 768px) {
+          .section-box {
+            max-width: 1280px;
+            box-shadow: rgba(14, 30, 37, 0.082) 4px 4px 4px 0px,
+              rgba(14, 30, 37, 0.096) 4px 4px 12px 0px;
+            /* border-radius: var(--rounded-box, 1rem); */
+          }
         }
       `}</style>
     </>
