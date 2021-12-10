@@ -25,7 +25,7 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
 
   return (
     <>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:p-5 ">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:p-5 relative">
         <Image
           alt={'Hot Meal Day'}
           height="260"
@@ -34,12 +34,12 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
           src={'/images/keepInTouch.jpeg'}
           width="400"
         />
-        <SVGPlane className="absolute" />
-        <div className="space-y-3 p-14 lg:pr-10 md:text-left">
+        <SVGPlane className="absolute plane right-0 lg:right-28 bottom-1/3 lg:bottom-1/2 z-0" />
+        <div className="space-y-3 p-14 lg:pr-10 md:text-left z-10">
           <h2 className="text-3xl md:text-5xl md:text-left pb-7 font-bold">
             {'Keep In Touch'}
           </h2>
-          <div className="z-10 md:pl-5">
+          <div className="md:pl-5">
             <p className="text-sm">
               {
                 'Get on our email list and we’ll keep you up to date with all that is going on with your community that we’re involved in.'
@@ -52,7 +52,8 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
                 onChange={(value) => {
                   setEmail(value.target.value);
                 }}
-                placeholder="Enter Your Email"
+                // placeholder="Enter Your Email"
+                required
                 type="email"
                 value={email}
               />
@@ -79,7 +80,7 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
           white-space: nowrap;
         }
         .plane {
-          z-index: -1;
+          z-index: -10;
         }
         @media (min-width: 768px) {
           .section-box {

@@ -52,7 +52,9 @@ export default function SurveySection({
   };
 
   const handleSurveyButton = () => {
-    setSurveyPointer(surveyPointer + 1);
+    if (surveyPointer < questions.length - 1) {
+      setSurveyPointer(surveyPointer + 1);
+    }
     SubmitCheck();
   };
 
