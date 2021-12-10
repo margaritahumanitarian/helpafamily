@@ -4,6 +4,7 @@ import cards from '../data/homeCardsData.json';
 import Card from '../components/Card';
 import CardsLayout from '../components/CardsLayout';
 import HotMealDaySection from '../components/HotMealDaySection';
+import KeepInTouchSection from '@components/KeepInTouchSection';
 import PrimaryLayout from '../components/PrimaryLayout';
 import heroImages from 'constants/heroImages';
 
@@ -26,6 +27,7 @@ export default function Home({ image }) {
           <Card key={cardData.key} {...cardData} />
         ))}
       </CardsLayout>
+      <KeepInTouchSection />
     </PrimaryLayout>
   );
 }
