@@ -44,7 +44,7 @@ function Card({
             simulateHover ? 'w-full' : 'w-0'
           } my-1 group-hover:w-full`}
         />
-        <div className="flex-1 font-normal leading-5 text-gray-600 px-6">
+        <div className="flex-1 font-normal leading-5 px-6">
           {paragraphs?.slice(0, 1)?.map((paragraph, index) => (
             <CardParagraph key={index}>
               {paragraph?.length > 170

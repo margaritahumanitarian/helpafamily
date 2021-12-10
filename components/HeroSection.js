@@ -5,11 +5,7 @@ import MainDonationForm from './MainDonationForm';
 
 function HeroSection({ main = false, image, inNeed = false }) {
   return (
-    <div
-      className={`text-center ${!main && 'hero-content'} md:m-auto ${
-        main && 'pb-20 md:pb-20'
-      }`}
-    >
+    <div className={`text-center ${!main && 'hero-content'} md:m-auto`}>
       {main && (
         <div className="hero-image-container">
           <Image
