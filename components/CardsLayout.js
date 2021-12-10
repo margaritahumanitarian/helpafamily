@@ -8,14 +8,14 @@ export default function CardsLayout({ children, description }) {
   const { hasItemsOnLeft, hasItemsOnRight, scrollRight, scrollLeft } =
     usePosition(ref);
   return (
-    <div className="w-full py-20 relative overflow-hidden card-layout">
-      <h2 className="pb-20 text-3xl md:text-4xl z-10 text-center">
+    <div className="w-full pb-20 relative overflow-hidden card-layout">
+      <h2 className="pb-20 lg:mt-10 text-3xl md:text-4xl z-10 text-center">
         {description}
       </h2>
-      <SVGCardBackground className="hidden lg:block" />
+      <SVGCardBackground />
       <button
         aria-label="move right"
-        className={`btn btn-accent rounded-sm btn-size absolute right-4 top-1/2  z-20 ${
+        className={`btn btn-accent rounded-sm btn-size absolute right-4 top-1/2 z-20 ${
           !hasItemsOnRight && 'hidden'
         }`}
         // todo: -translate-y-1/2 this also we need to add to make it vertically center
