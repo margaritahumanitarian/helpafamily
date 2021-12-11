@@ -12,8 +12,8 @@ export default function InteractiveSection({ children }) {
     });
   };
 
-  const nextComponent = () => {
-    setComponentPointer((componentPointer) => componentPointer + 1);
+  const nextComponent = (i = 1) => {
+    setComponentPointer((componentPointer) => componentPointer + i);
   };
 
   const previousComponent = () => {
@@ -33,8 +33,8 @@ export default function InteractiveSection({ children }) {
         updateData: (childData) => {
           updateData(childData);
         },
-        nextComponent: () => {
-          nextComponent();
+        nextComponent: (i) => {
+          nextComponent(i);
         },
         previousComponent: () => {
           previousComponent();
@@ -45,17 +45,15 @@ export default function InteractiveSection({ children }) {
   });
 
   return (
-    <>
-      <div
-        className={`text-center hero-content mx-auto my-10 h-72 ${cardsBackgroundColor} main-container card-shadow`}
-      >
+    <div className="flex justify-center items-center main-container mt-20 mx:0 lg:mx-16 card-shadow lg:my-20">
+      <div className={`w-full ${cardsBackgroundColor}`}>
         {childrenWithProps[componentPointer]}
       </div>
       <style jsx>
         {`
           .main-container {
-            display: flex;
-            flex-direction: column;
+            min-height: 473px;
+            max-height: 473px;
           }
           .card-shadow {
             box-shadow: rgba(14, 30, 37, 0.061) 6px 6px 12px 0px,
@@ -63,6 +61,6 @@ export default function InteractiveSection({ children }) {
           }
         `}
       </style>
-    </>
+    </div>
   );
 }

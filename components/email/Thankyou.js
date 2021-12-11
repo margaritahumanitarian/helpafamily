@@ -1,23 +1,30 @@
 import React from 'react';
+import SurveyContainer from './SurveyContainer';
+import { useContextTheme } from '@components/ThemeContext';
 
 const Thankyou = () => {
+  const { textColor } = useContextTheme();
   return (
-    <>
-      <div className="thankyou-content text-4xl pt-5">
-        <h1 className="mb-12">{'ThankYou !!!'}</h1>
+    <SurveyContainer bg="/images/keepInTouch.jpeg">
+      <div
+        className={`text-4xl ${textColor} text-center font-bold px-2 lg:px-16 py-5`}
+      >
+        {'Thank you for submitting your survey!'}
       </div>
-      <style jsx>{`
-        .thankyou-content {
-          margin: auto;
-          text-align: center;
-        }
-        .card-shadow {
-          box-shadow: rgba(14, 30, 37, 0.061) 6px 6px 12px 0px,
-            rgba(14, 30, 37, 0.075) 6px 6px 10px 0px;
-        }
-      `}</style>
-    </>
+    </SurveyContainer>
   );
 };
 
+export const ThankyouAgain = () => {
+  const { textColor } = useContextTheme();
+  return (
+    <SurveyContainer bg="/images/keepInTouch.jpeg">
+      <div
+        className={`text-4xl ${textColor} text-center font-bold px-2 lg:px-16 py-5`}
+      >
+        {'Thank you Again!'}
+      </div>
+    </SurveyContainer>
+  );
+};
 export default Thankyou;

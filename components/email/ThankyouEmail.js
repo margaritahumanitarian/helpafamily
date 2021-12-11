@@ -1,46 +1,45 @@
 import React from 'react';
+import SurveyContainer from './SurveyContainer';
+import { useContextTheme } from 'components/ThemeContext';
 
-export default function ThankyouEmail({ nextComponent, previousComponent }) {
+export default function ThankyouEmail({ nextComponent }) {
+  const { theme, textColor } = useContextTheme();
+
   const handleForwardButtonClick = () => {
-    nextComponent();
+    nextComponent(2);
   };
 
   const handleBackButtonClick = () => {
-    previousComponent();
+    nextComponent();
   };
 
   return (
-    <>
-      <div className="email-content-box pb-10 text-center hero-content md:m-auto">
-        <div className="text-3xl">
-          {
-            'Thank you for putting yourself on our email list! If you have a moment answer these questions to help us better serve you and the community'
-          }
-        </div>
-      </div>
-      <div className="buttons">
-        <button
-          className="btn btn-accent mt-5"
-          onClick={handleBackButtonClick}
-          type="submit"
-        >
-          {'Go Back'}
-        </button>
-        <button
-          className="btn btn-accent mt-5"
-          onClick={handleForwardButtonClick}
-          type="submit"
-        >
-          {'Get Started'}
-        </button>
-      </div>
-      <style jsx>{`
-        .buttons {
-          display: flex;
-          justify-content: space-around;
-          width: 80%;
+    <SurveyContainer bg="/images/keepInTouch.jpeg">
+      <div className={`text-5xl font-bold ${textColor}`}>{'Thanks you!'}</div>
+      <div className="mt-5 w-11/12 lg:w-2/3">
+        {
+          'You are now on our mailing list. If you have a moment to take a quick survey, it would greatly help us know how we can better serve the community and when to reach out to you.'
         }
-      `}</style>
-    </>
+      </div>
+      <div className="flex mt-5">
+        <button
+          className="btn btn-accent normal-case rounded-sm btn-size"
+          onClick={handleForwardButtonClick}
+          type="button"
+        >
+          {'Take Survey'}
+        </button>
+        <button
+          className={`btn rounded-sm ml-8 hover:bg-gray-600 bg-white text-gray-900 font-normal hover:text-white py-2 px-2 border border-gray-800 hover:border-transparent normal-case btn-size ${
+            theme === 'dark' &&
+            'text-gray-200 border-gray-600 hover:bg-gray-800 bg-gray-900'
+          }`}
+          onClick={handleBackButtonClick}
+          type="button"
+        >
+          {'No Thank You'}
+        </button>
+      </div>
+    </SurveyContainer>
   );
 }
