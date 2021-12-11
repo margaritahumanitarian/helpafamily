@@ -6,8 +6,8 @@ import { useFormspark } from '@formspark/use-formspark';
 
 const questions = [
   'How did you hear about us?',
-  "What are causes you're interested in?",
-  'How might would you like to help out',
+  'What are some causes you are interested in?',
+  'How would you like to help out?',
 ];
 const backgrounds = [
   '/images/surveySection.jpeg',

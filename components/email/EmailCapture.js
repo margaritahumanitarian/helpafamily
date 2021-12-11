@@ -25,7 +25,7 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
 
   return (
     <>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:p-5 relative">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:p-10 relative">
         <Image
           alt={'Hot Meal Day'}
           height="260"
@@ -35,20 +35,20 @@ export default function EmailCapture({ nextComponent, updateData, formID }) {
           width="400"
         />
         <SVGPlane className="absolute plane right-0 lg:right-28 bottom-1/3 lg:bottom-1/2 z-0" />
-        <div className="space-y-3 p-14 lg:pr-10 md:text-left z-10">
+        <div className="space-y-3 py-20 px-8 lg:px-28  md:text-left z-10">
           <h2 className="text-3xl md:text-5xl md:text-left pb-7 font-bold">
             {'Keep In Touch'}
           </h2>
-          <div className="md:pl-5">
-            <p className="text-sm">
+          <div className="">
+            <p className="text-sm md:pl-5 w-10/12">
               {
                 'Get on our email list and we’ll keep you up to date with all that is going on with your community that we’re involved in.'
               }
             </p>
-            <p className="pt-5">{'Enter Your Email'}</p>
+            <p className={`pt-5 text-2xl ${textColor}`}>{'Enter Your Email'}</p>
             <form className="lg:flex md:items-end" onSubmit={handleSubmit}>
               <input
-                className={`appearance-none border border-gray-300 rounded h-full py-3 mb-2 lg:mb-0 mr-0 lg:mr-4 w-full lg:w-3/5 px-3 ${textColor} ${backgroundColor} leading-tight focus:outline-none focus:shadow-outline`}
+                className={`appearance-none border border-gray-300 rounded h-full py-3 mb-2 lg:mb-0 mr-0 lg:mr-4 w-full px-3 ${textColor} ${backgroundColor} leading-tight focus:outline-none focus:shadow-outline`}
                 onChange={(value) => {
                   setEmail(value.target.value);
                 }}

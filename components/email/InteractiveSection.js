@@ -45,15 +45,15 @@ export default function InteractiveSection({ children }) {
   });
 
   return (
-    <div className="flex justify-center items-center mx-5 card-shadow lg:my-20">
+    <div className="flex justify-center items-center main-container mt-20 mx:0 lg:mx-16 card-shadow lg:my-20">
       <div className={`w-full ${cardsBackgroundColor}`}>
         {childrenWithProps[componentPointer]}
       </div>
       <style jsx>
         {`
           .main-container {
-            display: flex;
-            flex-direction: column;
+            min-height: 473px;
+            max-height: 473px;
           }
           .card-shadow {
             box-shadow: rgba(14, 30, 37, 0.061) 6px 6px 12px 0px,
