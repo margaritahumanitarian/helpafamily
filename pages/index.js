@@ -7,6 +7,7 @@ import CardsLayout from '../components/CardsLayout';
 import EmailCapture from '../components/email/EmailCapture';
 import HotMealDaySection from '../components/HotMealDaySection';
 import InteractiveSection from '../components/email/InteractiveSection';
+import LargeInfoSection from '../components/LargeInfoSection';
 import PrimaryLayout from '../components/PrimaryLayout';
 import SurveySection from '../components/email/SurveySections';
 import ThankyouEmail from '../components/email/ThankyouEmail';
@@ -27,6 +28,7 @@ export default function Home({ image, FORM_ID }) {
   return (
     <PrimaryLayout image={image} inNeed main>
       <HotMealDaySection />
+      <LargeInfoSection isLeftLayout={true} />
       <CardsLayout description="Our Humanitarian Programs">
         {cards.data.map((cardData) => (
           <Card key={cardData.key} {...cardData} />
