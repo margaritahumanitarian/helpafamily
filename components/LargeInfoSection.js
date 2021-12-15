@@ -44,7 +44,7 @@ function LargeInfoSection({ isLeftLayout }) {
       />
       <motion.div
         animate={animation}
-        className={`relative md:absolute flex flex-col w-full lg:w-5/12 h-11/12 py-12  lg:bg-gradient-to-r items-left from-transparent ${
+        className={`relative md:absolute flex flex-col w-full lg:w-5/12 h-11/12 py-12 lg:bg-gradient-to-r items-left from-transparent ${
           theme === 'dark' ? 'via-[#1A2525]' : 'via-white'
         } z-10 ${
           isLeftLayout
@@ -61,10 +61,10 @@ function LargeInfoSection({ isLeftLayout }) {
           className={`h-1 bg-gradient-to-r border-none rounded-md w-full my-1 ${
             isLeftLayout
               ? 'from-transparent to-teal-medium'
-              : 'from-teal-medium to-transparent '
+              : 'from-teal-medium to-transparent'
           }`}
         />
-        <p className="font-bold leading-5 text-sm w-full lg:w-9/12">
+        <p className="font-semibold leading-7 text-sm w-full lg:w-10/12">
           {
             'We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We...'
           }
