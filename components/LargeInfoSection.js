@@ -3,11 +3,14 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useContextTheme } from './ThemeContext';
 import { useInView } from 'react-intersection-observer';
+import useStripeSession from '../hooks/useStripeSession';
 
 function LargeInfoSection({ isLeftLayout }) {
-  const { cardsBackgroundColor, theme } = useContextTheme();
-  const { ref, inView } = useInView({ threshold: 0.4 });
   const animation = useAnimation();
+  const [handleSubmit, isPending] = useStripeSession();
+  const { ref, inView } = useInView({ threshold: 0.4 });
+  const { cardsBackgroundColor, theme } = useContextTheme();
+
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
     if (!isMobile) {
@@ -30,6 +33,13 @@ function LargeInfoSection({ isLeftLayout }) {
     }
     return () => animation.stop();
   }, [inView, animation, isLeftLayout]);
+
+  const actionCost = 10;
+  const handleOnClick = () =>
+    handleSubmit({
+      amount: actionCost,
+      cause: 'Hot Meal Day.',
+    });
   return (
     <div
       className={`py-10 lg:p-20  mb-10 h-full flex flex-col lg:flex-row items-center w-full relative ${cardsBackgroundColor}`}
@@ -73,6 +83,8 @@ function LargeInfoSection({ isLeftLayout }) {
           <button
             aria-label="donate-btn"
             className="btn btn-accent normal-case rounded-sm mt-5 btn-size"
+            disabled={isPending ? true : false}
+            onClick={handleOnClick}
             type="button"
           >
             {'Donate'}
