@@ -17,7 +17,7 @@ function LargeInfoSection({ isLeftLayout }) {
       if (inView) {
         animation.start({
           x: 0,
-          visibility: 1,
+          opacity: 1,
           transition: {
             type: 'spring',
             duration: 1,
@@ -27,7 +27,7 @@ function LargeInfoSection({ isLeftLayout }) {
       } else {
         animation.start({
           x: isLeftLayout ? '-300px' : '300px',
-          visibility: 0,
+          opacity: 0,
         });
       }
     }
