@@ -22,7 +22,7 @@ function LargeInfoSection({ mirrored }) {
     });
   return (
     <div
-      className={`py-10 px-0 lg:py-20 lg:px-10  mb-10 h-full flex flex-col lg:flex-row items-center w-full relative ${cardsBackgroundColor}`}
+      className={`py-10 px-0 lg:p-20 mb-10 h-full flex flex-col lg:flex-row items-center w-full relative ${cardsBackgroundColor}`}
     >
       <img
         alt="large-info-section"
