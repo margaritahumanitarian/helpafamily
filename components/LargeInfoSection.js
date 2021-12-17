@@ -33,7 +33,7 @@ function LargeInfoSection({ isLeftLayout }) {
         src="/images/large-info-section.png"
       />
       <div
-        className={`transition transform duration-700 opacity-0 shadow-lg translate-x-32 relative md:absolute flex flex-col w-full lg:w-5/12 h-11/12 py-12 lg:bg-gradient-to-r items-left from-transparent ${
+        className={`transition transform duration-700 opacity-100 shadow-lg relative md:absolute flex flex-col w-full lg:w-5/12 h-11/12 py-12 lg:bg-gradient-to-r items-left from-transparent ${
           theme === 'dark' ? 'via-[#1A2525]' : 'via-gray-50'
         } z-10 ${
           isLeftLayout
@@ -45,17 +45,19 @@ function LargeInfoSection({ isLeftLayout }) {
               } to-transparent lg:text-left lg:items-start`
         } ${
           isIntersecting
-            ? 'translate-x-0 opacity-100'
-            : `${isLeftLayout ? '-translate-x-32' : 'translate-x-32'} opacity-0`
+            ? 'lg:translate-x-0 lg:opacity-100'
+            : `${
+                isLeftLayout ? 'lg:-translate-x-32' : 'lg:translate-x-32'
+              } lg:opacity-0`
         }`}
         // data-class-in="translate-x-0 opacity-100"
         // data-class-out="-translate-x-32 opacity-0"
       >
         <p className="font-bold text-3xl">{'Laptops for Families'}</p>
         <hr
-          className={`h-1 bg-gradient-to-r border-none rounded-md w-full my-1 ${
+          className={`h-1 bg-gradient-to-r from-teal-medium border-none rounded-md w-full my-1 ${
             isLeftLayout
-              ? 'from-transparent to-teal-medium'
+              ? 'lg:from-transparent to-teal-medium'
               : 'from-teal-medium to-transparent'
           }`}
         />
