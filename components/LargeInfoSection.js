@@ -46,7 +46,7 @@ function LargeInfoSection({ isLeftLayout }) {
         } ${
           isIntersecting
             ? 'translate-x-0 opacity-100'
-            : '-translate-x-32 opacity-0'
+            : `${isLeftLayout ? '-translate-x-32' : 'translate-x-32'} opacity-0`
         }`}
         // data-class-in="translate-x-0 opacity-100"
         // data-class-out="-translate-x-32 opacity-0"
