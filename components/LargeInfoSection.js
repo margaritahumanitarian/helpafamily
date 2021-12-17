@@ -33,15 +33,15 @@ function LargeInfoSection({ isLeftLayout }) {
         src="/images/large-info-section.png"
       />
       <div
-        className={`transition transform duration-700 opacity-0 translate-x-32 relative md:absolute flex flex-col w-full lg:w-5/12 h-11/12 py-12 lg:bg-gradient-to-r items-left from-transparent ${
-          theme === 'dark' ? 'via-[#1A2525]' : 'via-white'
+        className={`transition transform duration-700 opacity-0 shadow-lg translate-x-32 relative md:absolute flex flex-col w-full lg:w-5/12 h-11/12 py-12 lg:bg-gradient-to-r items-left from-transparent ${
+          theme === 'dark' ? 'via-[#1A2525]' : 'via-gray-50'
         } z-10 ${
           isLeftLayout
             ? `p-4 lg:pl-28 lg:pr-8 lg:right-20 from-transparent  ${
-                theme === 'dark' ? 'to-[#1A2525]' : ':to-white'
+                theme === 'dark' ? 'to-[#1A2525]' : 'to-gray-50'
               }  lg:text-right lg:items-end`
             : `pl-0 lg:pl-8 pr-0 lg:pr-28 lg:left-20 ${
-                theme === 'dark' ? 'from-[#1A2525]' : 'from-white'
+                theme === 'dark' ? 'from-[#1A2525]' : 'from-gray-50'
               } to-transparent lg:text-left lg:items-start`
         } ${
           isIntersecting
