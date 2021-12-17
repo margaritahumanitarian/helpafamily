@@ -28,7 +28,7 @@ export default function Home({ image, FORM_ID }) {
   return (
     <PrimaryLayout image={image} inNeed main>
       <HotMealDaySection />
-      <LargeInfoSection isLeftLayout={true} />
+      <LargeInfoSection />
       <CardsLayout description="Our Humanitarian Programs">
         {cards.data.map((cardData) => (
           <Card key={cardData.key} {...cardData} />
