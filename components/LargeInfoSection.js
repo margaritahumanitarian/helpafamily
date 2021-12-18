@@ -4,11 +4,17 @@ import { useContextTheme } from './ThemeContext';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import useStripeSession from '../hooks/useStripeSession';
 function LargeInfoSection({ mirrored }) {
-  const ref = useRef(null);
+  const infoBoxRef = useRef(null);
+  const hrRef = useRef(null);
   const [handleSubmit, isPending] = useStripeSession();
   const { cardsBackgroundColor, theme } = useContextTheme();
 
-  useIntersectionObserver(ref, {
+  useIntersectionObserver(infoBoxRef, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  });
+  useIntersectionObserver(hrRef, {
     root: null,
     rootMargin: '0px',
     threshold: 0.5,
@@ -35,15 +41,20 @@ function LargeInfoSection({ mirrored }) {
         className={`flex justify-between items-center h-full w-full relative overflow-hidden lg:absolute right-0`}
       >
         <div
-          className={`info-box ${mirrored && 'box-mirrored'}`}
+          className={`info-box group ${mirrored && 'box-mirrored'}`}
           data-class-in="translate-x-0 opacity-100"
           data-class-out={`${
             mirrored ? '-translate-x-64' : 'translate-x-64'
           } opacity-0 hidden`}
-          ref={ref}
+          ref={infoBoxRef}
         >
           <p className="font-bold text-3xl">{'Laptops for Families'}</p>
-          <hr className="h-1 bg-teal-light border-none rounded-md w-full my-1" />
+          <hr
+            className="h-1 transition-width duration-700 bg-teal-light border-none rounded-md my-1"
+            data-class-in="w-full"
+            data-class-out="w-0"
+            ref={hrRef}
+          />
           <p className="font-semibold leading-7 text-sm w-full lg:w-10/12">
             {
               'We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We...'
@@ -82,6 +93,9 @@ function LargeInfoSection({ mirrored }) {
         />
       </div>
       <style jsx>{`
+        .hr-box {
+          transition: all 700ms;
+        }
         .info-box {
           transition: all 500ms;
           position: absolute;
@@ -121,8 +135,7 @@ function LargeInfoSection({ mirrored }) {
             text-align: left;
             opacity: 1;
             right: 0%;
-            /* margin-right: -18px; */
-            padding: 10px;
+            padding: 20px 25px;
           }
 
           .box-mirrored {
