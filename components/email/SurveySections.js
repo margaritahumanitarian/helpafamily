@@ -10,9 +10,9 @@ const questions = [
   'How would you like to help out?',
 ];
 const backgrounds = [
-  '/images/surveySection.jpeg',
-  '/images/surveySection2.jpeg',
-  '/images/surveySection3.jpeg',
+  '/images/tom-parsons-pVmjvK44Dao-unsplash.jpeg',
+  '/images/larm-rmah-AEaTUnvneik-unsplash.jpeg',
+  '/images/joel-muniz-BlnpElo7clE-unsplash.jpeg',
 ];
 export default function SurveySection({
   data,
