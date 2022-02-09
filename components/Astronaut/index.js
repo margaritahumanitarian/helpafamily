@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Lottie from 'react-lottie';
-import animationData from '../lotties/astronaut.json';
+import { REGULAR_LOTTIE_DIMENSIONS } from './constants';
+import animationData from '../../lotties/astronaut.json';
 
 const defaultOptions = {
   loop: true,
@@ -12,7 +13,6 @@ const defaultOptions = {
 };
 
 export default function Astronaut() {
-  const REGULAR_LOTTIE_DIMENSIONS = 400;
   const [dimensions, setDimensions] = useState(REGULAR_LOTTIE_DIMENSIONS);
   const [isInitialMobileCheck, setIsInitialMobileCheck] = useState(true);
 
