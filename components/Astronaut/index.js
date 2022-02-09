@@ -34,7 +34,7 @@ export default function Astronaut() {
       });
     }
   }, [isInitialMobileCheck]);
-  console.log(dimensions, window.innerWidth);
+
   return (
     <Lottie height={dimensions} options={defaultOptions} width={dimensions} />
   );
