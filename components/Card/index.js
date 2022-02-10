@@ -103,7 +103,7 @@ export function CardTitle({ children }) {
 }
 
 export function CardParagraph({ children }) {
-  return <p>{children}</p>;
+  return <p data-testid="card-paragraph-test">{children}</p>;
 }
 
 export function CardAction({

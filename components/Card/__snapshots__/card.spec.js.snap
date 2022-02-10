@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Card component should have snapshot 1`] = `
+<div>
+  <div
+    class="jsx-2132092508 group card flex rounded-md overflow-hidden ml-8 duration-500 z-10 md:hover:scale-110"
+  >
+    <figure
+      class="jsx-2132092508"
+    >
+      <span
+        style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+      >
+        <span
+          style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 70% 0px 0px 0px;"
+        />
+        <img
+          alt="Card about Humanitarian Clinic"
+          data-nimg="responsive"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+        />
+        <noscript />
+      </span>
+    </figure>
+    <div
+      class="jsx-2132092508 card-body flex flex-col p-6 shadow-lg justify-start items-center bg-white black"
+    >
+      <span
+        class="card-title w-full text-center m-0 bg-white"
+      >
+        Humanitarian Clinic
+      </span>
+      <hr
+        class="jsx-2132092508 h-1 bg-teal-medium border-none text-teal-medium transition-width transform duration-500 ease-in-out w-0 my-1 group-hover:w-full"
+      />
+      <div
+        class="jsx-2132092508 flex-1 font-normal leading-5 px-6"
+      >
+        <p
+          data-testid="card-paragraph-test"
+        >
+          Provide a free, anonymous phone or video telehealth consultation for someone afraid to see a doctor, such as a migrant or refugee who lacks identification.
+        </p>
+      </div>
+      <div
+        class="pt-5 hidden transition-display transform duration-1500 ease-in-out group-hover:flex undefined "
+      >
+        <button
+          aria-label="Card Action"
+          class="btn btn-accent shadow-md w-full h-auto"
+          type="button"
+        >
+          Help 1 Patient for 
+           
+          $30
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
