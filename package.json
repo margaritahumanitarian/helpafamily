@@ -18,6 +18,7 @@
     "clsx": "^1.1.1",
     "contentful": "^9.0.0",
     "daisyui": "^1.14.0",
+    "dotenv": "^16.0.0",
     "firebase-admin": "^9.11.1",
     "next": "latest",
     "prop-types": "^15.7.2",

@@ -4,6 +4,7 @@ import cards from '../data/homeCardsData.json';
 import Thankyou, { ThankyouAgain } from '../components/email/Thankyou';
 import Card from '../components/Card';
 import CardsLayout from '../components/CardsLayout';
+import Dotenv from 'dotenv';
 import EmailCapture from '../components/email/EmailCapture';
 import HotMealDaySection from '../components/HotMealDaySection';
 import InteractiveSection from '../components/email/InteractiveSection';
@@ -14,10 +15,11 @@ import ThankyouEmail from '../components/email/ThankyouEmail';
 import heroImages from 'constants/heroImages';
 
 export const getStaticProps = async () => {
+  Dotenv.config();
   const date = new Date();
   const selectedImage = date.getDay();
   const image = heroImages[selectedImage];
-  const FORM_ID = 1;
+  const FORM_ID = process.env.FORM_ID;
   return {
     props: { image, FORM_ID },
     revalidate: 86400, // every day
