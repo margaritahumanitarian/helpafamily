@@ -10,14 +10,13 @@ import { ThemeProvider } from 'components/ThemeContext';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+const mockHandleSubmit = jest.fn();
+
+jest.mock('hooks/useStripeSession', () => ({
+  __esModule: true,
+  default: () => [mockHandleSubmit, false],
+}));
 describe('Test Card component', () => {
-  const mockHandleSubmit = jest.fn();
-
-  jest.mock('hooks/useStripeSession', () => ({
-    __esModule: true,
-    default: () => [mockHandleSubmit, false],
-  }));
-
   beforeAll(() => {
     mockHandleSubmit.mockReset();
   });

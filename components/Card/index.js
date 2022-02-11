@@ -116,8 +116,8 @@ export function CardAction({
   simulateHover,
 }) {
   const [handleSubmit, isPending] = useStripeSession();
-  const handleOnClick = () =>
-    handleSubmit({
+  const handleOnClick = async () =>
+    await handleSubmit({
       amount: actionCost,
       cause: cause,
     });
