@@ -82,6 +82,12 @@ export default function MainDonationForm({ inNeed = false }) {
     await handleSubmit({ amount, cause });
   };
 
+  const reset = () => {
+    setIsAnyoneInNeed(false);
+    setSelectedCauses({});
+    setCause('');
+  };
+
   return (
     <>
       <form onSubmit={handleSubmitForm}>
@@ -92,6 +98,11 @@ export default function MainDonationForm({ inNeed = false }) {
           <h2 className="card-title" data-theme="light">
             {'Help us develop programs for:'}
           </h2>
+          {isAnyoneInNeed && (
+            <button onClick={reset} type="button">
+              {'Reset form'}
+            </button>
+          )}
           {!inNeed && (
             <CheckboxFormControl
               id="cause"
