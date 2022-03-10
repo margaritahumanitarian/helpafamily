@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import React from 'react';
 import { Routes } from '../models/routes';
+import { useState } from 'react';
 
 function SideNavbar({ show, setShow }) {
   const hideMenu = () => setShow(false);
+
+  const [ActiveLinkRef, setActiveLinkRef] = useState();
 
   return (
     <div
@@ -19,27 +22,52 @@ function SideNavbar({ show, setShow }) {
           role="none"
         >
           <Link href="/" passHref>
-            <a className="side-nav-btn" href="home">
+            <a
+              className="side-nav-btn"
+              href="home"
+              onMouseEnter={() => setActiveLinkRef(1)}
+              onMouseOut={() => setActiveLinkRef()}
+            >
               {'Home'}
             </a>
           </Link>
           <Link href={Routes.InKind} passHref>
-            <a className="side-nav-btn" href="inkind">
+            <a
+              className="side-nav-btn mt-4"
+              href="inkind"
+              onMouseEnter={() => setActiveLinkRef(2)}
+              onMouseOut={() => setActiveLinkRef()}
+            >
               {'In-Kind'}
             </a>
           </Link>
           <Link href={Routes.Fund} passHref>
-            <a className="side-nav-btn" href="fund">
+            <a
+              className="side-nav-btn mt-4"
+              href="fund"
+              onMouseEnter={() => setActiveLinkRef(3)}
+              onMouseOut={() => setActiveLinkRef()}
+            >
               {'Fund'}
             </a>
           </Link>
           <Link href={Routes.GiveYourTime} passHref>
-            <a className="side-nav-btn" href="giveyourtime">
+            <a
+              className="side-nav-btn mt-4"
+              href="giveyourtime"
+              onMouseEnter={() => setActiveLinkRef(4)}
+              onMouseOut={() => setActiveLinkRef()}
+            >
               {'Give Your Time'}
             </a>
           </Link>
           <Link href={Routes.PartnerWithUs} passHref>
-            <a className="side-nav-btn" href="partnerwithus">
+            <a
+              className="side-nav-btn mt-4"
+              href="partnerwithus"
+              onMouseEnter={() => setActiveLinkRef(5)}
+              onMouseOut={() => setActiveLinkRef()}
+            >
               {'Partner With Us'}
             </a>
           </Link>
@@ -48,6 +76,13 @@ function SideNavbar({ show, setShow }) {
           {'Help Families in Need'}
         </div>
       </div>
+      <style jsx>
+        {`
+          a:nth-child(${ActiveLinkRef}) {
+            transform: scale(1.1);
+          }
+        `}
+      </style>
     </div>
   );
 }
