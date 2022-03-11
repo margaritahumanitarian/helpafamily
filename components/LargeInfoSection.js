@@ -35,7 +35,7 @@ function LargeInfoSection({ mirrored }) {
         className={`w-full lg:w-4/5 ${cardsBackgroundColor} ${
           mirrored ? 'ml-auto' : 'mr-auto'
         }`}
-        src="/images/large-info-section.png"
+        src="/images/laptops-unsplash.png"
       />
       <div
         className={`flex justify-between items-center h-full w-full relative overflow-hidden lg:absolute right-0`}

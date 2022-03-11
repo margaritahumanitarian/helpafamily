@@ -74,7 +74,7 @@ function HotMealDaySection() {
             height="260"
             layout="responsive"
             objectFit="cover"
-            src={'/images/hotMealDaySection.jpeg'}
+            src={'/images/hotmeals-unsplash.jpeg'}
             width="400"
           />
         </div>
