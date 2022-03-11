@@ -103,7 +103,7 @@ export function CardTitle({ children }) {
 }
 
 export function CardParagraph({ children }) {
-  return <p>{children}</p>;
+  return <p data-testid="card-paragraph-test">{children}</p>;
 }
 
 export function CardAction({
@@ -116,8 +116,8 @@ export function CardAction({
   simulateHover,
 }) {
   const [handleSubmit, isPending] = useStripeSession();
-  const handleOnClick = () =>
-    handleSubmit({
+  const handleOnClick = async () =>
+    await handleSubmit({
       amount: actionCost,
       cause: cause,
     });
