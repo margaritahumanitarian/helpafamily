@@ -9,14 +9,19 @@ import React from 'react';
 import { Routes } from '../models/routes';
 import SideNavbar from './SideNavbar';
 import { useContextTheme } from 'components/ThemeContext';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const [showSideNav, setShowSideNav] = React.useState(false);
 
+  const router = useRouter();
+
   const { toggleTheme, cardsBackgroundColor, theme } = useContextTheme();
+
   const handleThemeChange = () => {
     toggleTheme();
   };
+
   return (
     <>
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
@@ -67,23 +72,40 @@ export default function Navbar() {
           <div className="flex-auto px-2 mx-2 hidden lg:flex">
             <div className="items-stretch hidden lg:flex">
               <Link href={Routes.Home} passHref>
-                <a className="p-3 hover:bg-gray-700 rounded " href="home">
+                <a
+                  className={`p-3 hover:bg-gray-700 rounded  ${
+                    router.pathname == '/' && 'active'
+                  }`}
+                  href="home"
+                >
                   {'Home'}
                 </a>
               </Link>
               <Link href={Routes.InKind} passHref>
-                <a className="p-3 hover:bg-gray-700 rounded " href="inkind">
+                <a
+                  className={`p-3 hover:bg-gray-700 rounded  ${
+                    router.pathname == Routes.InKind && 'active'
+                  }`}
+                  href="inkind"
+                >
                   {'In-Kind'}
                 </a>
               </Link>
               <Link href={Routes.Fund} passHref>
-                <a className="p-3 hover:bg-gray-700 rounded " href="fund">
+                <a
+                  className={`p-3 hover:bg-gray-700 rounded  ${
+                    router.pathname == Routes.Fund && 'active'
+                  }`}
+                  href="fund"
+                >
                   {'Fund'}
                 </a>
               </Link>
               <Link href={Routes.GiveYourTime} passHref>
                 <a
-                  className="p-3 hover:bg-gray-700 rounded "
+                  className={`p-3 hover:bg-gray-700 rounded  ${
+                    router.pathname == Routes.GiveYourTime && 'active'
+                  }`}
                   href="giveyourtime"
                 >
                   {'Give Your Time'}
@@ -91,7 +113,9 @@ export default function Navbar() {
               </Link>
               <Link href={Routes.PartnerWithUs} passHref>
                 <a
-                  className="p-3 hover:bg-gray-700 rounded "
+                  className={`p-3 hover:bg-gray-700 rounded  ${
+                    router.pathname == Routes.PartnerWithUs && 'active'
+                  }`}
                   href="partnerwithus"
                 >
                   {'Partner With Us'}
@@ -101,7 +125,7 @@ export default function Navbar() {
           </div>
           <div className="flex-none hidden sm:flex lg:hidden xl:flex">
             <Link href={Routes.Fund} passHref>
-              <a className="p-3 hover:bg-gray-700 rounded " href="fund">
+              <a className="p-3 hover:bg-gray-700 rounded" href="fund">
                 {'Help Families in Need'}
               </a>
             </Link>
@@ -131,6 +155,15 @@ export default function Navbar() {
           max-width: 1280px;
           display: flex;
           justify-content: space-between;
+        }
+        .active {
+          border-color: rgba(50, 56, 64, 0.7);
+          border-width: 2px;
+          border-style: solid;
+          box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.7);
+        }
+        .active:hover {
+          background-color: rgb(54 62 75 / 1);
         }
       `}</style>
     </>
