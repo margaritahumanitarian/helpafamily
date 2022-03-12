@@ -22,7 +22,7 @@ function Card({
 }) {
   const { cardsBackgroundColor, textColor } = useContextTheme();
   return (
-    <div className="group card flex rounded-md overflow-hidden ml-8 duration-500 z-10 md:hover:scale-110">
+    <div className="group card flex rounded-md overflow-hidden ml-8 duration-500 z-10 md:hover:scale-110 md:shadow-md md:hover:shadow-lg">
       {backgroundImageSource && (
         <figure>
           <Image
