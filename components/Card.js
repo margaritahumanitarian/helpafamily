@@ -82,7 +82,7 @@ function Card({
           border-radius: 12px;
         }
         .card-body {
-          font-size: 14px;
+          font-size: 16px;
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px;
         }
