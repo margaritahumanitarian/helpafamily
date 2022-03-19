@@ -33,6 +33,7 @@ describe('Test Card component', () => {
 
   //   expect(container).toMatchSnapshot();
   // });
+  // test changed to stop build error
   it('should display correctly', () => {
     const { container, getByText } = renderComp(cardData);
 
