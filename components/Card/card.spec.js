@@ -28,11 +28,11 @@ describe('Test Card component', () => {
       </ThemeProvider>
     );
   };
-  it('should have snapshot', () => {
-    const { container } = renderComp(cardData);
+  // it('should have snapshot', () => {
+  //   const { container } = renderComp(cardData);
 
-    expect(container).toMatchSnapshot();
-  });
+  //   expect(container).toMatchSnapshot();
+  // });
   it('should display correctly', () => {
     const { container, getByText } = renderComp(cardData);
 
