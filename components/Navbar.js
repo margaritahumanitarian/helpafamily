@@ -22,8 +22,8 @@ export default function Navbar() {
       <SideNavbar setShow={setShowSideNav} show={showSideNav} />
       <div
         className={`navbar ${
-          theme === 'dark' ? cardsBackgroundColor : 'bg-neutral'
-        } text-neutral-content sticky top-0 z-50 shadow justify-center z-50`}
+          theme === 'dark' ? cardsBackgroundColor : 'bg-gray-800'
+        } text-neutral-content sticky top-0 z-50 shadow justify-center z-50 md:h-20 md:border-b-1 border-black`}
       >
         <div className="nav-contents-container">
           <button
@@ -57,7 +57,7 @@ export default function Navbar() {
               passHref
             >
               <a
-                className="py-3 lg:px-5 hover:bg-gray-700 rounded "
+                className="py-3 lg:text-2xl lg:px-5 hover:bg-gray-700 rounded "
                 href="home"
               >
                 {'Margarita Humanitarian Foundation'}

@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import { useContextTheme } from './ThemeContext';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import useStripeSession from '../hooks/useStripeSession';
+
 function LargeInfoSection({ mirrored }) {
   const infoBoxRef = useRef(null);
   const hrRef = useRef(null);
@@ -14,6 +15,7 @@ function LargeInfoSection({ mirrored }) {
     rootMargin: '0px',
     threshold: 0.5,
   });
+
   useIntersectionObserver(hrRef, {
     root: null,
     rootMargin: '0px',
@@ -28,14 +30,14 @@ function LargeInfoSection({ mirrored }) {
     });
   return (
     <div
-      className={`py-10 px-0 lg:p-20 mb-10 h-full flex flex-col lg:flex-row items-center w-full relative ${cardsBackgroundColor}`}
+      className={`py-10 px-0 lg:p-20 mb-10 h-full flex flex-col lg:flex-row items-center w-full relative ${cardsBackgroundColor} shadow-md`}
     >
       <img
         alt="large-info-section"
         className={`w-full lg:w-4/5 ${cardsBackgroundColor} ${
           mirrored ? 'ml-auto' : 'mr-auto'
         }`}
-        src="/images/large-info-section.png"
+        src="/images/laptops-unsplash.png"
       />
       <div
         className={`flex justify-between items-center h-full w-full relative overflow-hidden lg:absolute right-0`}

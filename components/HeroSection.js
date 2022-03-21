@@ -64,7 +64,7 @@ function HeroSection({ main = false, image, inNeed = false }) {
         .bg-image-filter {
           position: absolute;
           z-index: 0;
-          top: 64px;
+          top: 80px;
           left: 0;
           min-height: 85vh;
           width: 100%;

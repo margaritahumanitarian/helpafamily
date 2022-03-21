@@ -1,6 +1,6 @@
 module.exports = {
   collectCoverageFrom: [
-    '<rootDir>/components/*.{js,jsx,ts,tsx}',
+    '<rootDir>/components/**/*.{js,jsx,ts,tsx}',
     '<rootDir>/hooks/*.{js,jsx,ts,tsx}',
     '<rootDir>/pages/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
@@ -19,6 +19,7 @@ module.exports = {
 
     '^@components/(.*)$': '<rootDir>/components/$1',
   },
+  moduleDirectories: ['node_modules', '<rootDir>'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   testEnvironment: 'jsdom',
   transform: {
