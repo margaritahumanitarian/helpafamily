@@ -19,7 +19,7 @@
     "contentful": "^9.0.0",
     "daisyui": "^1.14.0",
     "firebase-admin": "^9.11.1",
-    "next": "latest",
+    "next": "^12.1.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
