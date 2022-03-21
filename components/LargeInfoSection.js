@@ -4,7 +4,7 @@ import { useContextTheme } from './ThemeContext';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import useStripeSession from '../hooks/useStripeSession';
 
-function LargeInfoSection({ mirrored }) {
+function LargeInfoSection({ mirrored, children }) {
   const infoBoxRef = useRef(null);
   const hrRef = useRef(null);
   const [handleSubmit, isPending] = useStripeSession();
@@ -58,9 +58,7 @@ function LargeInfoSection({ mirrored }) {
             ref={hrRef}
           />
           <p className="font-semibold leading-7 text-sm w-full lg:w-10/12">
-            {
-              'We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We work with many families. We...'
-            }
+            {children}
           </p>
           <div className="">
             <button
@@ -74,7 +72,7 @@ function LargeInfoSection({ mirrored }) {
             </button>
             <a
               className="ml-4"
-              href="https://www.margaritahumanitarian.org/upcoming-events#h.3f0nxu3620tm"
+              href="https://www.margaritahumanitarian.org/low-income-aid/electronics-for-families"
             >
               <button
                 aria-label="learn-more-btn"
