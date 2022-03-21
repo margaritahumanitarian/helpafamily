@@ -74,7 +74,7 @@ function LargeInfoSection({ mirrored }) {
             </button>
             <a
               className="ml-4"
-              href="https://www.margaritahumanitarian.org/upcoming-events#h.3f0nxu3620tm"
+              href="https://www.margaritahumanitarian.org/low-income-aid/electronics-for-families"
             >
               <button
                 aria-label="learn-more-btn"
