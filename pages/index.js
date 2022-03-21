@@ -28,7 +28,11 @@ export default function Home({ image, FORM_ID }) {
   return (
     <PrimaryLayout image={image} inNeed main>
       <HotMealDaySection />
-      <LargeInfoSection />
+      <LargeInfoSection>
+        {
+          "Mail us your used or new laptop. We'll set up the donated laptops in our public computer room for the families to use for free. Some of the donated laptops will go to the families who don't have home computers, or who don't have enough computers for all their children to use."
+        }
+      </LargeInfoSection>
       <CardsLayout description="Our Humanitarian Programs">
         {cards.data.map((cardData) => (
           <Card key={cardData.key} {...cardData} />
