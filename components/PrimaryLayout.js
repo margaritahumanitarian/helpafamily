@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -16,10 +15,6 @@ export default function PrimaryLayout({
   const { backgroundColor, textColor } = useContextTheme();
   return (
     <>
-      <Head>
-        <title>{'Help a Family in Need'}</title>
-        <link href="/images/favicon.ico" rel="icon" />
-      </Head>
       <div className={`flex flex-col min-h-screen ${backgroundColor}`}>
         <Navbar />
         <main className={`flex-grow ${backgroundColor} text-${textColor}`}>
