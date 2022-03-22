@@ -3,10 +3,10 @@
 exports[`Test Card component should have snapshot 1`] = `
 <div>
   <div
-    class="jsx-2132092508 group card flex rounded-md overflow-hidden ml-8 duration-500 z-10 md:hover:scale-110"
+    class="jsx-4163568942 group card flex rounded-md overflow-hidden ml-8 duration-500 z-10 md:hover:scale-110 md:shadow-md md:hover:shadow-lg"
   >
     <figure
-      class="jsx-2132092508"
+      class="jsx-4163568942"
     >
       <span
         style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
@@ -25,7 +25,7 @@ exports[`Test Card component should have snapshot 1`] = `
       </span>
     </figure>
     <div
-      class="jsx-2132092508 card-body flex flex-col p-6 shadow-lg justify-start items-center bg-white black"
+      class="jsx-4163568942 card-body flex flex-col p-6 shadow-lg justify-start items-center bg-white black"
     >
       <span
         class="card-title w-full text-center m-0 bg-white"
@@ -33,10 +33,10 @@ exports[`Test Card component should have snapshot 1`] = `
         Humanitarian Clinic
       </span>
       <hr
-        class="jsx-2132092508 h-1 bg-teal-medium border-none text-teal-medium transition-width transform duration-500 ease-in-out w-0 my-1 group-hover:w-full"
+        class="jsx-4163568942 h-1 bg-teal-medium border-none text-teal-medium transition-width transform duration-500 ease-in-out w-0 my-1 group-hover:w-full"
       />
       <div
-        class="jsx-2132092508 flex-1 font-normal leading-5 px-6"
+        class="jsx-4163568942 flex-1 font-normal leading-5 px-6"
       >
         <p
           data-testid="card-paragraph-test"
