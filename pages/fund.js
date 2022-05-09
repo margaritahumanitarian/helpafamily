@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { BLOCKS } from '@contentful/rich-text-types';
+import Head from 'next/head';
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
@@ -25,7 +26,7 @@ const options = {
   },
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const client = createClient({
     environment: process.env.CONTENTFUL_ENVIRONMENT,
     space: process.env.CONTENTFUL_SPACE_ID,
@@ -78,45 +79,56 @@ export default function Home({
   },
 }) {
   return (
-    <PrimaryLayout>
-      <CardsLayout>
-        {/* <div className="flex flex-wrap"> */}
-        {cards.map((card) => {
-          const {
-            fields: {
-              actionText,
-              actionAmount,
-              actionLink,
-              background: {
-                fields: {
-                  file: { url },
+    <>
+      <Head>
+        <title>
+          {'Margarita Humanitarian Foundation - Fund Local Humanitarian Needs'}
+        </title>
+        <meta
+          name="description"
+          content="Here's a way to fund your local humanitarian organization in the Antelope Valley."
+        />
+      </Head>
+      <PrimaryLayout>
+        <CardsLayout>
+          {/* <div className="flex flex-wrap"> */}
+          {cards.map((card) => {
+            const {
+              fields: {
+                actionText,
+                actionAmount,
+                actionLink,
+                background: {
+                  fields: {
+                    file: { url },
+                  },
                 },
+                content: rawRichTextField,
+                title,
               },
-              content: rawRichTextField,
-              title,
-            },
-            sys: { id },
-          } = card;
-          console.log(rawRichTextField, options);
-          return (
-            <Card
-              action={actionText}
-              actionCost={actionAmount}
-              backgroundImageSource={`https:${url}`}
-              isExternal={true}
-              key={id}
-              link={actionLink}
-              paragraphs={[rawRichTextField.content[0].content[0].value]}
-              title={title}
-            >
-              {documentToReactComponents(rawRichTextField, options)}
+              sys: { id },
+            } = card;
+            console.log(rawRichTextField, options);
+            return (
+              <Card
+                action={actionText}
+                actionCost={actionAmount}
+                backgroundImageSource={`https:${url}`}
+                isExternal={true}
+                key={id}
+                link={actionLink}
+                paragraphs={[rawRichTextField.content[0].content[0].value]}
+                title={title}
+              >
+                {documentToReactComponents(rawRichTextField, options)}
 
-              {/* {actionText && */}
-            </Card>
-          );
-        })}
-      </CardsLayout>
-    </PrimaryLayout>
+                {/* {actionText && */}
+              </Card>
+            );
+          })}
+        </CardsLayout>
+      </PrimaryLayout>
+    </>
   );
 }
 // renderAction({ actionText, actionAmount, actionLink })}

@@ -133,7 +133,7 @@ export default function MainDonationForm({ inNeed = false }) {
             className={clsx('btn-accent', { loading: isPending })}
             type="submit"
           >
-            {'Donate'}
+            {'Donate Today'}
           </button>
         </div>
       </form>

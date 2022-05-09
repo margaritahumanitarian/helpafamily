@@ -42,7 +42,7 @@
     "react/jsx-max-depth": ["off"],
     "react/jsx-no-literals": ["error"],
     "react/jsx-props-no-spreading": ["off"],
-    "react/jsx-sort-props": ["error"],
+    // "react/jsx-sort-props": ["error"],
     "react/no-multi-comp": ["error", { "ignoreStateless": true }],
     "react/require-default-props": ["off"],
     "react/self-closing-comp": ["error"],
