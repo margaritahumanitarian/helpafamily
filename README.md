@@ -16,6 +16,17 @@ It is undeniable the advantages of testing software products; therefore, the aut
 
 ### What is it good for?
 ### What are the technologies involved?
+
+The project's technology stack consists of React, Next.js, Tailwind CSS, and daisyUI Tailwind CSS Components. However, we used [Selenium.js](https://www.selenium.dev) with [Jest](https://jestjs.io) for the test framework to perform an end-to-end test of the application on Chrome. For package managers, the project used NPM and Yarn.
+In conclusion, this project uses:
+
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/docs/)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [daisyUI Tailwind CSS Components](https://daisyui.com/)
+- [Jest](https://jestjs.io)
+- [Selenium.js](https://www.selenium.dev)
+
 ### Is the project in a development phase or maintenance/evolution phase?
 ## Requirements
 ## Design
@@ -47,14 +58,7 @@ Come say hi in:
 We're still getting this started, so be patient and hang around if no one's there.
 Soon it'll get more active.
 
-## How It Works
 
-This project uses:
-
-- [React](https://reactjs.org/)
-- [Next.js](https://nextjs.org/docs/)
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [daisyUI Tailwind CSS Components](https://daisyui.com/)
 
 ## Contributors
 
