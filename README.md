@@ -41,9 +41,15 @@ The core contributors also have a [Discord server](https://discord.gg/WsmqrcGqyE
 ## Requirements
 ## Design
 ### Test plan
+
+One of the best forms of test documentation there is the test plan. We used a variation of the IBM test plan model. According to the IBM documentation, the test plan describes the scope of the overall test effort and provides a record of the test planning process. Typically, a test plan identifies requirements, risks, test cases, the test environments, business and quality objectives, test schedules, and other items. However, the test plan had to have some adaptations to enable the application of restrictions imposed by the nature of the language and project. The test plan consists of six columns - Scenario, Steps, Tester Name, Approval Criteria, Actual result, and Final result. The Scenario, Tester Name, Approval Criteria, Actual, and Final results attributes are self-explanatory, but the attribute Steps come from BDD. The Steps attributes must contain a sequence of steps that allows us to conduct a test on the webpage. For example, Open the browser, click on ..., Fill in the payment form, and do other actions that combined make an acceptance test. Another essential detail is that these tests were tailored-made for a computer (MacOs) with the web browser Chrome. It is possible to conduct these tests on Firefox, Safari, Opera, significant browsers, OSs, and even devices. However, we did not perform them due to time limitations and infrastructure limitations. To do so, we needed to use a Selenium Grid and access some system configurations, for example, a Linux PC with Firefox and a Windows PC with Microsoft Edge. Only configuring and allocating this network would cost valuable time and (maybe) monetary resources, defeating the purpose of the curriculum unit. In the future, if the charity association picks up and requires more "heavy-weight" tests to ensure a higher level of accuracy, it is possible to assemble such infrastructure at some expense - time and resources manly. It is possible to find the test plan on the following [link](https://1drv.ms/x/s!AlSqQ8H6UyqqmfoxHBitd6JypCfwuw?e=OIHu26).
+
 ### Source code files
 ### Fix source code
 ## Submit the fix
+
+We submitted a pull request to the project's GitHub, which the reader can find [here](https://github.com/margaritahumanitarian/helpafamily/pull/373). At the time of the writing of this report, it has not been yet approved and merged - maybe due to the recent inactivity of the main contributors; however, we hope it will be soon because we think that it is an excellent contribution to the project.
+
 # helpafamily.margaritahumanitarian.org
 
 ## Contributors
