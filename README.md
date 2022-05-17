@@ -1,7 +1,7 @@
 # CES REPORT
 ## The issue
 
-This issue is trying to obtain a code coverage of 80% on the [helpafamily.margaritahumanitarian.org](https://helpafamily.margaritahumanitarian.org/) project code. The Margarita Humanitarian Foundation is a 501c3 nonprofit public charity located in Palmdale, California (USA) that provides free assistance for people in need. They offer many services such as youth mentorship, health, career, and education workshops and training so the less fortunate can get access to social services, healthcare, food, and more aid in the golden state. Its mission is to develop high-impact ways to help underserved and marginalized groups. Their portfolio contains some programs in the Antelope Valley region and globally. They help families who need help the most, addressing the whole family's needs, from youths to elders, always with kindness and love.
+This issue is trying to obtain [a code coverage of 80%](https://github.com/margaritahumanitarian/helpafamily/issues/367) on the [helpafamily.margaritahumanitarian.org](https://helpafamily.margaritahumanitarian.org/) project code. The Margarita Humanitarian Foundation is a 501c3 nonprofit public charity located in Palmdale, California (USA) that provides free assistance for people in need. They offer many services such as youth mentorship, health, career, and education workshops and training so the less fortunate can get access to social services, healthcare, food, and more aid in the golden state. Its mission is to develop high-impact ways to help underserved and marginalized groups. Their portfolio contains some programs in the Antelope Valley region and globally. They help families who need help the most, addressing the whole family's needs, from youths to elders, always with kindness and love.
 You can learn more about the project on the [website](https://www.margaritahumanitarian.org/).
 
 ### How alive is the project?
@@ -15,6 +15,9 @@ The project started in July of 2021. In the early stages of development, the pro
 It is undeniable the advantages of testing software products; therefore, the authors will not enumerate them here. At the time of the fork, the project only contained a few set tests. The main goal of the issue is to get to 80% code coverage, so we developed one main task plan and a test plan. We will start by implementing end-to-end tests with Selenium IDE and Jest. This setup allows us to test the main features of the web application - so we can maximize the test coverage with the time constraints that we have. In the second stage of the testing project, we intend to start to test the main modules of the project in order of criticality - also to prevent an invisible path problem situation. We aim to help the Margarita Humanitarian Foundation provide its user base with a web application that guarantees no failure with this approach and improved quality, so they can continue to help their community.
 
 ### What is it good for?
+
+The main goal of this project is to provide ways for donors to help families in the Antelope Valley - via an easy-to-use web application that allows them to make donations and contact some partners.
+
 ### What are the technologies involved?
 
 The project's technology stack consists of React, Next.js, Tailwind CSS, and daisyUI Tailwind CSS Components. However, we used [Selenium.js](https://www.selenium.dev) with [Jest](https://jestjs.io) for the test framework to perform an end-to-end test of the application on Chrome. For package managers, the project used NPM and Yarn.
@@ -28,6 +31,13 @@ In conclusion, this project uses:
 - [Selenium.js](https://www.selenium.dev)
 
 ### Is the project in a development phase or maintenance/evolution phase?
+
+We assume that the project is still in the development stage - because the main contributors did not yet implement some modules, and there are still some open issues. But, the number of commits is declining, so we assume that the project is in the development phase, but it is still - a common issue with open-source projects; sometimes, they can freeze for a time.
+
+### Community
+
+The core contributors also have a [Discord server](https://discord.gg/WsmqrcGqyE) with some community members. However, there are two disclaimers — one to the fact that the community is made up of people worldwide. So there is no standard timetable on which the community is online. The second disclaimer is that they are getting started, so it is expected not to exist as much activity on the server as expected.
+
 ## Requirements
 ## Design
 ### Test plan
@@ -35,30 +45,6 @@ In conclusion, this project uses:
 ### Fix source code
 ## Submit the fix
 # helpafamily.margaritahumanitarian.org
-
-Impactful ways to help families in need through donated meals, hygiene kits, and more.
-
-This repo contains the code behind [helpafamily.margaritahumanitarian.org](https://helpafamily.margaritahumanitarian.org/). While the short-term goal is to provide ways for donors to help families in the Antelope Valley, the long-term goal is to help families in need at a global scale through international volunteers and partnering humanitarian organizations around the world.
-
-Learn more about [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
-
-## Contributing and installation
-
-If you would like to help us with this project you can learn more from our [Help-a-Family Manual](https://margaritahumanitarian.gitbook.io/help-a-family-manual/) and our [CONTRIBUTING](CONTRIBUTING.md) file.
-
-## Community
-
-Our community is made up of people from all over the world, so times when people
-are active online vary.
-
-Come say hi in:
-
-- Our [#help-a-family Discord server](https://discord.gg/WsmqrcGqyE)
-
-We're still getting this started, so be patient and hang around if no one's there.
-Soon it'll get more active.
-
-
 
 ## Contributors
 
