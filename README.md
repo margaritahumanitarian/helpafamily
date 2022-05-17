@@ -1,6 +1,20 @@
 # CES REPORT
 ## The issue
-## Requierements
+
+This issue is trying to obtain a code coverage of 80% on the [helpafamily.margaritahumanitarian.org](https://helpafamily.margaritahumanitarian.org/) project code. The Margarita Humanitarian Foundation is a 501c3 nonprofit public charity located in Palmdale, California (USA) that provides free assistance for people in need. They offer many services such as youth mentorship, health, career, and education workshops and training so the less fortunate can get access to social services, healthcare, food, and more aid in the golden state. Its mission is to develop high-impact ways to help underserved and marginalized groups. Their portfolio contains some programs in the Antelope Valley region and globally. They help families who need help the most, addressing the whole family's needs, from youths to elders, always with kindness and love.
+You can learn more about the project on the [website](https://www.margaritahumanitarian.org/).
+
+### How alive is the project?
+
+The project started in July of 2021. In the early stages of development, the project has seen an early spike in activity. However, it now shows signs of a gradual [fade out](https://github.com/margaritahumanitarian/helpafamily/graphs/contributors) (as of the writing of this report). The project has 54 stars on GitHub and a community of 59 contributors. It also has 20 open issues and roughly 124 closed ones, with 95 forks. Despite not being a massive project, the authors of this report considered it an exciting project, and it is a way to help others in need using our skillset and field of study.
+
+![Commit contributions](https://user-images.githubusercontent.com/44166746/168834968-bcd298c5-a440-40f8-ae39-92853503c1e3.png)
+
+### How important is it?
+### What is it good for?
+### What are the technologies involved?
+### Is the project in a development phase or maintenance/evolution phase?
+## Requirements
 ## Design
 ### Test plan
 ### Source code files
