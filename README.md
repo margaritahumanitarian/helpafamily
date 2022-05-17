@@ -32,11 +32,11 @@ In conclusion, this project uses:
 
 ### Is the project in a development phase or maintenance/evolution phase?
 
-We assume that the project is still in the development stage - because the main contributors did not yet implement some modules, and there are still some open issues. But, the number of commits is declining, so we assume that the project is in the development phase, but it is still - a common issue with open-source projects; sometimes, they can freeze for a time.
+We assume that the project is still in the development stage - because the main contributors did not yet implement some modules, and there are still some open issues. But, the number of commits is declining. So we assume that the project is in the development phase, but it is slowing down - a common issue with open-source projects, sometimes, they can freeze for a while.
 
 ### Community
 
-The core contributors also have a [Discord server](https://discord.gg/WsmqrcGqyE) with some community members. However, there are two disclaimers — one to the fact that the community is made up of people worldwide. So there is no standard timetable on which the community is online. The second disclaimer is that they are getting started, so it is expected not to exist as much activity on the server as expected.
+The core contributors also have a [Discord server](https://discord.gg/WsmqrcGqyE) with some community members. However, there are two disclaimers — one to the fact that the community is made up of people worldwide. So there is no standard timetable on which the community is online. The second disclaimer is that they are *"getting started,"* so it is expected not to exist as much activity on the server as expected.
 
 ## Requirements
 ## Design
