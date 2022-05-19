@@ -56,6 +56,241 @@ The main source code files to fixe these issues are the following:
 Note: Some dependencies needed to be added; that is why the package.json and yarn.lock files were also altered.
 
 ### Fix source code
+
+We developed the test scripts with the help of Selenium IDE. The IDE allows us to perform capture and replay tests and then export the tests into JavaScript. However, the process is not as straightforward as it might first appear. After exporting the scripts, we needed to adjust the functions that find the web page elements. It is a common issue with Selenium. Selenium sometimes does not see the web page elements, especially if they are inside a combo box. Therefore, we need to search each element of the web page manually and find its exact location so that Selenium can see it. Another issue that we had during the development of the test scripts is that these tests run at CPU speeds. So they do not encompass the time that it takes for a web page to load or the time that a user takes when clicking on some element. Therefore, we adjusted the speed at which the tests run so they could wait for pages to load or for monetary transactions to take place. One final note that it is essential to mention is that the project had a *pretty* file built-in that obligated developers to follow a standard way to code. This configuration helps ensure the standardization of the contributions and provides quality standards across the project. Another aspect to consider when writing these tests is the configuration of the test environment — one of the reasons we had some initial problems when implementing the issue. We needed to align the Chrome version of our machines to the Chrome (web-driver) of the Selenium IDE; otherwise, it would not run. The readers can observe a test file below:
+``` javascript
+// Porto, 2022
+// This code was made with love by Francisco Bastos (https://www.linkedin.com/in/francisco-bastos-031369160/)
+// for the curriculum unit of Comprehension and Evolution of Software at the
+// master's in Software Engineering at the Faculty of Engineering of the University of Porto.
+// Feel free to contact the author if any questions arise.
+//
+import { Builder, By, until } from 'selenium-webdriver';
+import assert from 'assert';
+
+describe('Make a donation', function () {
+  jest.setTimeout(60000);
+  let driver;
+  // eslint-disable-next-line no-unused-vars
+  let vars;
+  beforeEach(async function () {
+    driver = await new Builder().forBrowser('chrome').build();
+    vars = {};
+  });
+  afterEach(async function () {
+    await driver.quit();
+  });
+  it('Make a donation', async function () {
+    // Test name: Make a donation
+    // Step # | name | target | value
+    // 1 | open | / |
+    await driver.get('http://localhost:3000/');
+    // 2 | setWindowSize | 1920x1080 |
+    await driver.manage().window().setRect({ width: 1920, height: 1080 });
+    // 3 | click | xpath=//input |
+    await driver.findElement(By.xpath('//input')).click();
+    // 4 | click | xpath=//label[contains(.,'People of Color in Need')] |
+    await driver
+      .findElement(By.xpath("//label[contains(.,'People of Color in Need')]"))
+      .click();
+    // 5 | click | xpath=//label[contains(.,'Immigrants in Need')] |
+    await driver
+      .findElement(By.xpath("//label[contains(.,'Immigrants in Need')]"))
+      .click();
+    // 6 | click | xpath=//label[contains(.,'Seniors in Need')] |
+    await driver
+      .findElement(By.xpath("//label[contains(.,'Seniors in Need')]"))
+      .click();
+    // Apply timeout for 10 seconds
+    await driver.manage().setTimeouts({ implicit: 10000 });
+    // 7 | click | xpath=//select |
+    await driver.findElement(By.xpath('//select')).click();
+    // 8 | select | css=#amount and xpath=//option[. = '$5'] | label=$5
+    {
+      const dropdown = await driver.findElement(By.css('#amount'));
+      await dropdown.findElement(By.xpath("//option[. = '$5']")).click();
+    }
+    // 9 | click | xpath=//form/div/button[2] |
+    await driver.findElement(By.xpath('//form/div/button[2]')).click();
+    // 10 | click | xpath=//input[@id='email'] |
+    await driver.findElement(By.xpath("//input[@id='email']")).click();
+    // 11 | type | xpath=//input[@id='email'] | francisco@gmail.com
+    await driver
+      .findElement(By.xpath("//input[@id='email']"))
+      .sendKeys('francisco@gmail.com');
+    // 12 | click | xpath=//div[@id='cardNumber-fieldset']/div/div/div/span/input |
+    await driver
+      .findElement(
+        By.xpath("//div[@id='cardNumber-fieldset']/div/div/div/span/input")
+      )
+      .click();
+    // 13 | type | xpath=//fieldset/div/div/div/div/span/input | 6011 1111 1111 1117
+    await driver
+      .findElement(By.xpath('//fieldset/div/div/div/div/span/input'))
+      .sendKeys('6011 1111 1111 1117');
+    // 14 | type | xpath=//div[@id='cardNumber-fieldset']/div[2]/div/div/span/input | 11 / 26
+    await driver
+      .findElement(
+        By.xpath("//div[@id='cardNumber-fieldset']/div[2]/div/div/span/input")
+      )
+      .sendKeys('11 / 26');
+    // 15 | type | xpath=//div[@id='cardNumber-fieldset']/div[3]/div/div/span/input | 123
+    await driver
+      .findElement(
+        By.xpath("//div[@id='cardNumber-fieldset']/div[3]/div/div/span/input")
+      )
+      .sendKeys('123');
+    // 16 | type | xpath=//div[3]/div/div/div/div/div[2]/div/div/div/div/span/input | Francisco
+    await driver
+      .findElement(
+        By.xpath('//div[3]/div/div/div/div/div[2]/div/div/div/div/span/input')
+      )
+      .sendKeys('Francisco');
+    // 17 | click | xpath=//div[3]/div/div/span/input |
+    await driver.findElement(By.xpath('//div[3]/div/div/span/input')).click();
+    // 18 | click | xpath=//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3] |
+    await driver
+      .findElement(
+        By.xpath(
+          "//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]"
+        )
+      )
+      .click();
+    // 19 | waitForElementPresent | xpath=//h1[contains(.,'Thank You!')] | 60000
+    await driver.wait(
+      until.elementLocated(By.xpath("//h1[contains(.,'Thank You!')]")),
+      60000
+    );
+    // 20 | assertText | //*[@id="__next"]/html/body/div/div[1]/div/div/h1 | Thank You!
+    assert(
+      (await driver
+        .findElement(
+          By.xpath('//*[@id="__next"]/html/body/div/div[1]/div/div/h1')
+        )
+        .getText()) == 'Thank You!'
+    );
+  });
+});
+```
+This test file portrays the test "Make a donation," and it is pretty simple to read (one of the advantages of Selenium IDE).
+In the following section, we create the test environment. We extend the test timeout to roughly 16.(6)h, so the test has time to execute. Then we initialize and create the Chrome Driver and set the behavior for after the test - quit and close the browser:
+```javascript
+jest.setTimeout(60000);
+  let driver;
+  // eslint-disable-next-line no-unused-vars
+  let vars;
+  beforeEach(async function () {
+    driver = await new Builder().forBrowser('chrome').build();
+    vars = {};
+  });
+  afterEach(async function () {
+    await driver.quit();
+  });
+```
+
+Now we access the web page and then start the search for each element of the web page filling in every form and simulating a typical user flow.
+``` javascript
+it('Make a donation', async function () {
+    // Test name: Make a donation
+    // Step # | name | target | value
+    // 1 | open | / |
+    await driver.get('http://localhost:3000/');
+    // 2 | setWindowSize | 1920x1080 |
+    await driver.manage().window().setRect({ width: 1920, height: 1080 });
+    // 3 | click | xpath=//input |
+    await driver.findElement(By.xpath('//input')).click();
+    // 4 | click | xpath=//label[contains(.,'People of Color in Need')] |
+    await driver
+      .findElement(By.xpath("//label[contains(.,'People of Color in Need')]"))
+      .click();
+    // 5 | click | xpath=//label[contains(.,'Immigrants in Need')] |
+    await driver
+      .findElement(By.xpath("//label[contains(.,'Immigrants in Need')]"))
+      .click();
+    // 6 | click | xpath=//label[contains(.,'Seniors in Need')] |
+    await driver
+      .findElement(By.xpath("//label[contains(.,'Seniors in Need')]"))
+      .click();
+    // Apply timeout for 10 seconds
+    await driver.manage().setTimeouts({ implicit: 10000 });
+    // 7 | click | xpath=//select |
+    await driver.findElement(By.xpath('//select')).click();
+    // 8 | select | css=#amount and xpath=//option[. = '$5'] | label=$5
+    {
+      const dropdown = await driver.findElement(By.css('#amount'));
+      await dropdown.findElement(By.xpath("//option[. = '$5']")).click();
+    }
+    // 9 | click | xpath=//form/div/button[2] |
+    await driver.findElement(By.xpath('//form/div/button[2]')).click();
+    // 10 | click | xpath=//input[@id='email'] |
+    await driver.findElement(By.xpath("//input[@id='email']")).click();
+    // 11 | type | xpath=//input[@id='email'] | francisco@gmail.com
+    await driver
+      .findElement(By.xpath("//input[@id='email']"))
+      .sendKeys('francisco@gmail.com');
+    // 12 | click | xpath=//div[@id='cardNumber-fieldset']/div/div/div/span/input |
+    await driver
+      .findElement(
+        By.xpath("//div[@id='cardNumber-fieldset']/div/div/div/span/input")
+      )
+      .click();
+    // 13 | type | xpath=//fieldset/div/div/div/div/span/input | 6011 1111 1111 1117
+    await driver
+      .findElement(By.xpath('//fieldset/div/div/div/div/span/input'))
+      .sendKeys('6011 1111 1111 1117');
+    // 14 | type | xpath=//div[@id='cardNumber-fieldset']/div[2]/div/div/span/input | 11 / 26
+    await driver
+      .findElement(
+        By.xpath("//div[@id='cardNumber-fieldset']/div[2]/div/div/span/input")
+      )
+      .sendKeys('11 / 26');
+    // 15 | type | xpath=//div[@id='cardNumber-fieldset']/div[3]/div/div/span/input | 123
+    await driver
+      .findElement(
+        By.xpath("//div[@id='cardNumber-fieldset']/div[3]/div/div/span/input")
+      )
+      .sendKeys('123');
+    // 16 | type | xpath=//div[3]/div/div/div/div/div[2]/div/div/div/div/span/input | Francisco
+    await driver
+      .findElement(
+        By.xpath('//div[3]/div/div/div/div/div[2]/div/div/div/div/span/input')
+      )
+      .sendKeys('Francisco');
+    // 17 | click | xpath=//div[3]/div/div/span/input |
+    await driver.findElement(By.xpath('//div[3]/div/div/span/input')).click();
+    // 18 | click | xpath=//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3] |
+    await driver
+      .findElement(
+        By.xpath(
+          "//div[@id='root']/div/div/div[2]/div/div[2]/form/div[2]/div[2]/button/div[3]"
+        )
+      )
+      .click();
+```
+
+The following instructions show that we need to extend the time for the test to run even for specific actions. We rose the timeout again for 60000 seconds.
+```javascript
+// 19 | waitForElementPresent | xpath=//h1[contains(.,'Thank You!')] | 60000
+    await driver.wait(
+      until.elementLocated(By.xpath("//h1[contains(.,'Thank You!')]")),
+      60000
+    );
+```
+
+Now we test the web page and try to assert the web page's content with the message "Thank You!" which means that a donation was correctly made.
+```javascript
+// 20 | assertText | //*[@id="__next"]/html/body/div/div[1]/div/div/h1 | Thank You!
+    assert(
+      (await driver
+        .findElement(
+          By.xpath('//*[@id="__next"]/html/body/div/div[1]/div/div/h1')
+        )
+        .getText()) == 'Thank You!'
+    );
+```
+
+The remaining tests follow a structure very similar to this one.
+
 ## Submit the fix
 
 We submitted a pull request to the project's GitHub, which the reader can find [here](https://github.com/margaritahumanitarian/helpafamily/pull/373). At the time of the writing of this report, it has not been yet approved and merged - maybe due to the recent inactivity of the main contributors; however, we hope it will be soon because we think that it is an excellent contribution to the project.
