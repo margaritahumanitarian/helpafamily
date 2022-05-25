@@ -28,19 +28,19 @@ function HotMealDaySection() {
               {'Hot Meal Day'}
             </h2>
             <div className="md:pl-5">
-              <p className="w-full md:w-10/12">
+              <p className="w-full">
                 {
                   'Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California.'
                 }
               </p>
-              <hr className="my-5 w-full md:w-10/12 border-black" />
-              <div className="lg:flex md:items-end md:w-11/12">
-                <p className="md:col-span-2 pb-5 lg:pb-0">
+              <hr className="my-5 w-full border-blue" />
+              <div className="flex1 md:items-end ">
+                <p className="md:col-span-2  lg:pb-0">
                   {
                     'Make a donation today and you can help us bring hot meals to the most needy in our society.'
                   }
                 </p>
-                <div className="flex-buttons">
+                <div className="flex-buttons pt-5">
                   <button
                     aria-label="donate-btn"
                     className="btn btn-accent normal-case rounded-sm mt-5 btn-size"
@@ -88,10 +88,13 @@ function HotMealDaySection() {
           hyphens: auto;
           white-space: nowrap;
         }
+        .flex1 {
+          display: flex;
+          flex-direction: column;
+        }
         .flex-buttons {
           display: flex;
-          width: 100%;
-          margin-left: 3px;
+          justify-content: flex-end;
         }
         .hot-meal-day {
           display: flex;
@@ -100,6 +103,11 @@ function HotMealDaySection() {
         .quotes {
           z-index: -1;
         }
+        .border-blue {
+          --tw-border-opacity: 1;
+          border-color: rgba(151, 239, 244, var(--tw-bg-opacity));
+        }
+
         @media (min-width: 768px) {
           .section-box {
             max-width: 1280px;
