@@ -1,4 +1,5 @@
 # CES REPORT
+
 ## The issue
 
 This issue is trying to obtain [a code coverage of 80%](https://github.com/margaritahumanitarian/helpafamily/issues/367) on the [helpafamily.margaritahumanitarian.org](https://helpafamily.margaritahumanitarian.org/) project code. The Margarita Humanitarian Foundation is a 501c3 nonprofit public charity located in Palmdale, California (USA) that provides free assistance for people in need. They offer many services such as youth mentorship, health, career, and education workshops and training so the less fortunate can get access to social services, healthcare, food, and more aid in the golden state. Its mission is to develop high-impact ways to help underserved and marginalized groups. Their portfolio contains some programs in the Antelope Valley region and globally. They help families who need help the most, addressing the whole family's needs, from youths to elders, always with kindness and love.
@@ -20,7 +21,7 @@ The main goal of this project is to provide ways for donors to help families in 
 
 ### What are the technologies involved?
 
-The project's technology stack consists of React, Next.js, Tailwind CSS, and daisyUI Tailwind CSS Components. However, we used [Selenium.js](https://www.selenium.dev) with [Jest](https://jestjs.io) for the test framework to perform end-to-end test of the application on Chrome. For package managers, the project used NPM and Yarn.
+The project's technology stack consists of React, Next.js, Tailwind CSS, and daisyUI Tailwind CSS Components. However, we used [Selenium.js](https://www.selenium.dev) with [Jest](https://jestjs.io) for the test framework to perform end-to-end tests of the application on Chrome. For package managers, the project used NPM and Yarn.
 In conclusion, this project uses:
 
 - [React](https://reactjs.org/)
@@ -32,24 +33,91 @@ In conclusion, this project uses:
 
 ### Is the project in a development phase or maintenance/evolution phase?
 
-We assume that the project is still in the development stage - because the main contributors did not yet implement some modules, and there are still some open issues. But, the number of commits is declining. So we assume that the project is in the development phase, but it is slowing down - a common issue with open-source projects, sometimes, they can freeze for a while.
+We assume that the project is still in the development stage - because the main contributors did not yet implement some modules, and there are still some open issues. Nevertheless, the number of commits is declining. So we assume that the project is in the development phase, but it is slowing down - a common issue with open-source projects; sometimes, they can freeze for a while.
 
 ### Community
 
-The core contributors also have a [Discord server](https://discord.gg/WsmqrcGqyE) with some community members. However, there are two disclaimers. The first disclaimer is that the community is made up of people worldwide, so there is no standard timetable on which the community is online. The second disclaimer is that they are *"getting started,"* so it is expected not to exist as much activity on the server.
+The core contributors also have a [Discord server](https://discord.gg/WsmqrcGqyE) with some community members. However, there are two disclaimers. The first disclaimer is that the community is made up of people worldwide, so there is no standard timetable on which the community is online. The second disclaimer is that they are _"getting started,"_ so it is expected not to exist as much activity on the server.
 
 ## Requirements
+
+Since the primary goal of this issue was to achieve 80% of code coverage, this section will point out some system requirements for which tests were designed.
+
+The principal purpose of this project is to help families in need to help, so to do that ...
+
+- ###### As a user i want to be able to select at least one cause so that i can make a donation.
+
+![UC1](./Readme_images/UC01.png)
+
+- To test this requirement, 3 tests were made:
+
+- Try to donate without selecting a cause.
+- Try to donate without selecting an amount.
+- Try to donate with a cause and an amount.
+
+- ###### As a user, I want to be able to learn more about the hot meal donation so that I can be more involved in the cause and make a more thoughtful hot meal donation.
+
+![UC2](./Readme_images/UC02.png)
+
+- To test this requirement, 2 tests were made:
+
+- Click on Learn more button.
+- Click on donate button and make a donation.
+
+- ###### As a user, I want to be able to learn more about the laptop for families donation so that I can be more involved in cause and make a more thoughtful donation.
+
+![UC3](./Readme_images/UC03.png)
+
+- To test this requirement, 2 tests were made:
+
+- Click on Learn more button.
+- Click on donate button and make a donation.
+
+- ###### As a user, I want to be able to contact Margarita Humanitarian Foundation so that i can volunteer as a Doctor
+
+![UC4](./Readme_images/UC04.png)
+
+- To test this requirement, 1 tests was made:
+
+- Click on contact button and send an email.
+
+- ###### As a user, I want to be able to pay a donation.
+
+![UC5](./Readme_images/UC05.png)
+
+- To test this requirement, many tests were made:
+
+- Try to enter invalid data.
+- Try to enter data.
+- Click on "Pagar" button without writing the input data needed.
+
 ## Design
+
+Since we only have access to the application's front end, we cannot provide an architecture diagram.
+
+Regarding the first issue, we only did tests; we did not fix anything, this way, in order to fix the design of the web pages, second issue, we
+paid particular attention to how the design was made.
+
+Such as how they deal with hierarchy such as:
+
+- How near do the titles come to the text?
+- What is their distance from the text above them?
+- Which elements/titles/text bodies are linked and which are not?"
+
+As requested, we also tried to match the design to the existing one. We had crucial attention to
+alignment and whitespace to make them pixel-perfect and consistent throughout anything.
+
 ### Test plan
 
-One of the best forms of test documentation there is the test plan. We used a variation of the IBM test plan model. According to the IBM documentation, the test plan describes the scope of the overall test effort and provides a record of the test planning process. Typically, a test plan identifies requirements, risks, test cases, the test environments, business and quality objectives, test schedules, and other items. However, the test plan had to have some adaptations to enable the application of restrictions imposed by the nature of the language and project. 
+One of the best forms of test documentation there is the test plan. We used a variation of the IBM test plan model. According to the IBM documentation, the test plan describes the scope of the overall test effort and provides a record of the test planning process. Typically, a test plan identifies requirements, risks, test cases, the test environments, business and quality objectives, test schedules, and other items. However, the test plan had to have some adaptations to enable the application of restrictions imposed by the nature of the language and project.
 
-The test plan consists of six columns - Scenario, Steps, Tester Name, Approval Criteria, Actual result, and Final result. The Scenario, Tester Name, Approval Criteria, Actual, and Final results attributes are self-explanatory, but the attribute *"Steps"* come from BDD. The Steps attributes must contain a sequence of steps that allows us to conduct a test on the webpage. For example, *"Open the browser," "click on ...," "Fill in the payment form,"* and other actions that combined make an acceptance test.
+The test plan consists of six columns - Scenario, Steps, Tester Name, Approval Criteria, Actual result, and Final result. The Scenario, Tester Name, Approval Criteria, Actual, and Final results attributes are self-explanatory, but the attribute _"Steps"_ come from BDD. The Steps attributes must contain a sequence of steps that allows us to conduct a test on the webpage. For example, _"Open the browser," "click on ...," "Fill in the payment form,"_ and other actions that combined make an acceptance test.
 
-Another essential detail is that these tests were tailored-made for a computer (MacOs) with the web browser Chrome. It is possible to conduct these tests on Firefox, Safari, Opera, and other significant browsers, OSs, and devices, however, we did not perform them due to time and infrastructure limitations. To do so we needed to use a Selenium Grid and create some system configurations, for example, a Linux PC with Firefox, a Windows PC with Microsoft Edge, a iPhone with Chrome. Some of this enviorments need payed liceses. Configur and allocate this network would cost valuable time and (maybe) monetary resources, defeating the purpose of the curriculum unit. In the future, if the charity association picks up and requires more "heavy-weight" tests to ensure a higher level of code quality, it is possible to assemble such infrastructure at some expense - time and resources manly. It is possible to find the test plan on the following [link](https://1drv.ms/x/s!AlSqQ8H6UyqqmfoxHBitd6JypCfwuw?e=OIHu26).
+Another essential detail is that these tests were tailored-made for a computer (MacOs) with the web browser Chrome. It is possible to conduct these tests on Firefox, Safari, Opera, and other significant browsers, OSs, and devices, however, we did not perform them due to time and infrastructure limitations. To do so we needed to use a Selenium Grid and create some system configurations, for example, a Linux PC with Firefox, a Windows PC with Microsoft Edge, and an iPhone with Chrome. Some of these environments need paid licenses. Configure and allocating this network would cost valuable time and (maybe) monetary resources, defeating the purpose of the curriculum unit. In the future, if the charity association picks up and requires more "heavy-weight" tests to ensure a higher level of code quality, it is possible to assemble such infrastructure at some expense - time and resources manly. It is possible to find the test plan on the following [link](https://1drv.ms/x/s!AlSqQ8H6UyqqmfoxHBitd6JypCfwuw?e=OIHu26).
 
 ### Source code files
-The main source code files to fixe these issues are the following:
+
+The main source code files to fix these issues are the following:
 
 ![Issue code files](https://user-images.githubusercontent.com/44166746/168874151-67eaa8a3-809d-4f3d-ba20-5f72e752b743.png)
 
@@ -57,8 +125,9 @@ Note: Some dependencies needed to be added; that is why the package.json and yar
 
 ### Fix source code
 
-We developed the test scripts with the help of Selenium IDE. The IDE allows us to perform capture and replay tests and then export the tests into JavaScript. However, the process is not as straightforward as it might first appear. After exporting the scripts, we needed to adjust the functions that find the web page elements. It is a common issue with Selenium. Selenium sometimes does not see the web page elements, especially if they are inside a combo box. Therefore, we need to search each element of the web page manually and find its exact location so that Selenium can see it. Another issue that we had during the development of the test scripts is that these tests run at CPU speeds. So they do not encompass the time that it takes for a web page to load or the time that a user takes when clicking on some element. Therefore, we adjusted the speed at which the tests run so they could wait for pages to load or for monetary transactions to take place. One final note that it is essential to mention is that the project had a *pretty* file built-in that obligated developers to follow a standard way to code. This configuration helps ensure the standardization of the contributions and provides quality standards across the project. Another aspect to consider when writing these tests is the configuration of the test environment — one of the reasons we had some initial problems when implementing the issue. We needed to align the Chrome version of our machines to the Chrome (web-driver) of the Selenium IDE; otherwise, it would not run. The readers can observe a test file below:
-``` javascript
+We developed the test scripts with the help of Selenium IDE. The IDE allows us to perform capture and replay tests and then export the tests into JavaScript. However, the process is not as straightforward as it might first appear. After exporting the scripts, we needed to adjust the functions that find the web page elements. It is a common issue with Selenium. Selenium sometimes does not see the web page elements, especially if they are inside a combo box. Therefore, we need to search each element of the web page manually and find its exact location so that Selenium can see it. Another issue that we had during the development of the test scripts is that these tests run at CPU speeds. So they do not encompass the time that it takes for a web page to load or the time that a user takes when clicking on some element. Therefore, we adjusted the speed at which the tests run so they could wait for pages to load or for monetary transactions to take place. One final note that it is essential to mention is that the project had a _pretty_ file built-in that obligated developers to follow a standard way to code. This configuration helps ensure the standardization of the contributions and provides quality standards across the project. Another aspect to consider when writing these tests is the configuration of the test environment — one of the reasons we had some initial problems when implementing the issue. We needed to align the Chrome version of our machines to the Chrome (web-driver) of the Selenium IDE; otherwise, it would not run. The readers can observe a test file below:
+
+```javascript
 // Porto, 2022
 // This code was made with love by Francisco Bastos (https://www.linkedin.com/in/francisco-bastos-031369160/)
 // for the curriculum unit of Comprehension and Evolution of Software at the
@@ -172,24 +241,27 @@ describe('Make a donation', function () {
   });
 });
 ```
+
 This test file portrays the test "Make a donation," and it is pretty simple to read (one of the advantages of Selenium IDE).
 In the following section, we create the test environment. We extend the test timeout to roughly 16.(6)h, so the test has time to execute. Then we initialize and create the Chrome Driver and set the behavior for after the test - quit and close the browser:
+
 ```javascript
 jest.setTimeout(60000);
-  let driver;
-  // eslint-disable-next-line no-unused-vars
-  let vars;
-  beforeEach(async function () {
-    driver = await new Builder().forBrowser('chrome').build();
-    vars = {};
-  });
-  afterEach(async function () {
-    await driver.quit();
-  });
+let driver;
+// eslint-disable-next-line no-unused-vars
+let vars;
+beforeEach(async function () {
+  driver = await new Builder().forBrowser('chrome').build();
+  vars = {};
+});
+afterEach(async function () {
+  await driver.quit();
+});
 ```
 
 Now we access the web page and then start the search for each element of the web page filling in every form and simulating a typical user flow.
-``` javascript
+
+```javascript
 it('Make a donation', async function () {
     // Test name: Make a donation
     // Step # | name | target | value
@@ -269,24 +341,24 @@ it('Make a donation', async function () {
 ```
 
 The following instructions show that we need to extend the time for the test to run even for specific actions. We rose the timeout again for 60000 seconds.
+
 ```javascript
 // 19 | waitForElementPresent | xpath=//h1[contains(.,'Thank You!')] | 60000
-    await driver.wait(
-      until.elementLocated(By.xpath("//h1[contains(.,'Thank You!')]")),
-      60000
-    );
+await driver.wait(
+  until.elementLocated(By.xpath("//h1[contains(.,'Thank You!')]")),
+  60000
+);
 ```
 
 Now we test the web page and try to assert the web page's content with the message "Thank You!" which means that a donation was correctly made.
+
 ```javascript
 // 20 | assertText | //*[@id="__next"]/html/body/div/div[1]/div/div/h1 | Thank You!
-    assert(
-      (await driver
-        .findElement(
-          By.xpath('//*[@id="__next"]/html/body/div/div[1]/div/div/h1')
-        )
-        .getText()) == 'Thank You!'
-    );
+assert(
+  (await driver
+    .findElement(By.xpath('//*[@id="__next"]/html/body/div/div[1]/div/div/h1'))
+    .getText()) == 'Thank You!'
+);
 ```
 
 The remaining tests follow a structure very similar to this one.
