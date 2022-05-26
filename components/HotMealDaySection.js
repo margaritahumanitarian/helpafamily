@@ -1,4 +1,3 @@
-// import { CardAction } from './Card';
 import { SVGHotMealDaySectionBackground, SVGQuotes } from './SVGBackgrounds';
 import Image from 'next/image';
 import React from 'react';
@@ -22,19 +21,19 @@ function HotMealDaySection() {
         className={`w-lg p-5 lg:p-5 section-box z-10 ${cardsBackgroundColor}`}
       >
         <div className="grid sm:grid-cols-1 md:grid-cols-2">
-          <div className="space-y-3 p-4 py-10 md:p-14 lg:pr-10 md:text-left quote-container relative z-10">
+          <div className="m-5">
             <SVGQuotes className="absolute quotes top-0 left-0" />
             <h2 className="text-3xl md:text-5xl md:text-left pb-7 font-bold quote z-10">
               {'Hot Meal Day'}
             </h2>
-            <div className="md:pl-5">
+            <div>
               <p className="w-full">
                 {
                   'Buy ingredients for 1 hot meal for 60 hungry people. Sample meals include spaghetti with Texas toast and caesar salad, chicken alfredo, enchilada taquitos. Served as take-home meal boxes at Grace Resources in Lancaster, California.'
                 }
               </p>
               <hr className="my-5 w-full border-blue" />
-              <div className="flex1 md:items-end ">
+              <div className="lg:flex md:items-end ">
                 <p className="md:col-span-2  lg:pb-0">
                   {
                     'Make a donation today and you can help us bring hot meals to the most needy in our society.'
@@ -88,7 +87,7 @@ function HotMealDaySection() {
           hyphens: auto;
           white-space: nowrap;
         }
-        .flex1 {
+        .lg:flex {
           display: flex;
           flex-direction: column;
         }

@@ -8,7 +8,7 @@ export default function CardsLayout({ children, description }) {
   const { hasItemsOnLeft, hasItemsOnRight, scrollRight, scrollLeft } =
     usePosition(ref);
   return (
-    <div className="w-full pb-20 relative overflow-hidden card-layout">
+    <div className="w-full relative overflow-hidden card-layout">
       <h2 className="pb-20 lg:mt-10 text-3xl md:text-4xl z-10 text-center">
         {description}
       </h2>
