@@ -24,6 +24,7 @@ export default async function stripeCheckoutSessionCreate(req, res) {
     mode: 'payment',
     success_url: process.env.SUCCESS_URL,
     cancel_url: process.env.CANCEL_URL,
+    customer_email: req.body.email,
   });
 
   res.status(StatusCodes.OK).json({ url: session.url });

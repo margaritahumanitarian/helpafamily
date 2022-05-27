@@ -3,7 +3,7 @@ import React from 'react';
 export default function EmailCaptureHelper({ children, data }) {
   return (
     <>
-      <div className="email-title text-4xl pt-5">
+      <div className="email-title text-4xl pt-5 pl-5">
         <h1 className="mb-12">{'Keep In Touch'}</h1>
       </div>
 
