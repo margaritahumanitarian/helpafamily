@@ -33,7 +33,7 @@ function HotMealDaySection() {
                 }
               </p>
               <hr className="my-5 w-full border-blue" />
-              <div className="lg:flex md:items-end ">
+              <div className="flex1 md:items-end ">
                 <p className="md:col-span-2  lg:pb-0">
                   {
                     'Make a donation today and you can help us bring hot meals to the most needy in our society.'
@@ -87,7 +87,7 @@ function HotMealDaySection() {
           hyphens: auto;
           white-space: nowrap;
         }
-        .lg:flex {
+        .flex1 {
           display: flex;
           flex-direction: column;
         }
