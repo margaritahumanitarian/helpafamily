@@ -5,6 +5,4 @@
 # https://seesparkbox.com/foundry/semantic_commit_messages
 
 export TYPE=$(cut -d ':' -f1 < "$1" | xargs)
-export VERB=$(cut -d ':' -f2 | cut -d ' ' -f2 < "$1")
 (echo "$TYPE" | egrep  '^(feat|chore|docs|fix|refactor|style|test)$' > /dev/null) || (echo "Missing type feat|chore|docs|fix|refactor|style|test"; exit 1)
-(grep "$VERB" .git/hooks/verbs.txt > /dev/null) || (echo "Missing a verb"; exit 1)
