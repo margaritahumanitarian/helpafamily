@@ -61,3 +61,17 @@
     }
   }
 }
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  width: 5px;
+  background-color: rgba(0, 0, 0, 1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  width: 5px;
+}

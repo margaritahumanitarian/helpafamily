@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Git hook to check for semantic commit messages in the form mentioned here
+# 
+# https://seesparkbox.com/foundry/semantic_commit_messages
+
+export TYPE=$(cut -d ':' -f1 < "$1" | xargs)
+(echo "$TYPE" | egrep  '^(feat|chore|docs|fix|refactor|style|test)$' > /dev/null) || (echo "Missing type feat|chore|docs|fix|refactor|style|test"; exit 1)
