@@ -17,7 +17,7 @@ export const getStaticProps = async () => {
   const date = new Date();
   const selectedImage = date.getDay();
   const image = heroImages[selectedImage];
-  const FORM_ID = process.env.FORM_ID;
+  const FORM_ID = String(process.env.FORM_ID);
   return {
     props: { image, FORM_ID },
     revalidate: 86400, // every day
