@@ -33,7 +33,7 @@ export async function getStaticProps() {
     content_type: 'landingPage',
   });
 
-  const FORM_ID = process.env.FORM_ID;
+  const FORM_ID = String(process.env.FORM_ID);
 
   return {
     props: {
