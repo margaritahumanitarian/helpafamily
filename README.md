@@ -2,7 +2,7 @@
 
 Impactful ways to help families in need through donated meals, hygiene kits, and more.
 
-This repo contains the code behind [helpafamily.margaritahumanitarian.org](https://helpafamily.margaritahumanitarian.org/). While the short-term goal is to provide ways for donors to help families in the Antelope Valley, the long-term goal is to help families in need at a global scale through international volunteers and partnering humanitarian organizations around the world.
+This repo contains the code behind [helpafamily.margaritahumanitarian.org](https://helpafamily-mt53a0onm-margaritahumanitarian.vercel.app/). While the short-term goal is to provide ways for donors to help families in the Antelope Valley, the long-term goal is to help families in need at a global scale through international volunteers and partnering humanitarian organizations around the world.
 
 Learn more about [Margarita Humanitarian Foundation](https://www.margaritahumanitarian.org/).
 
