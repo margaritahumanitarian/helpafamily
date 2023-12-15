@@ -3,24 +3,28 @@ import { useCallback, useEffect, useState } from 'react';
 export function usePosition(ref) {
   const [prevElement, setPrevElement] = useState(null);
   const [nextElement, setNextElement] = useState(null);
+
   useEffect(() => {
-    const element = ref.current;
-    const update = () => {
-      const rect = element.getBoundingClientRect();
-      const visibleElements = Array.from(element.children).filter((child) => {
+    const containerElement = ref.current;
+
+    const handleScroll = () => {
+      const rect = containerElement.getBoundingClientRect();
+      const visibleElements = Array.from(containerElement.children).filter((child) => {
         const childRect = child.getBoundingClientRect();
         return rect.left <= childRect.left && rect.right >= childRect.right;
       });
+
       if (visibleElements.length > 0) {
-        setPrevElement(getPrevElement(visibleElements));
-        setNextElement(getNextElement(visibleElements));
+        setPrevElement(getSiblingElement(visibleElements, 'previousElementSibling'));
+        setNextElement(getSiblingElement(visibleElements, 'nextElementSibling'));
       }
     };
 
-    update();
-    element.addEventListener('scroll', update, { passive: true });
+    handleScroll();
+    containerElement.addEventListener('scroll', handleScroll, { passive: true });
+
     return () => {
-      element.removeEventListener('scroll', update, { passive: true });
+      containerElement.removeEventListener('scroll', handleScroll, { passive: true });
     };
   }, [ref]);
 
@@ -30,9 +34,7 @@ export function usePosition(ref) {
 
       if (!currentNode || !element) return;
 
-      let newScrollPosition;
-
-      newScrollPosition =
+      const newScrollPosition =
         element.offsetLeft +
         element.getBoundingClientRect().width / 2 -
         currentNode.getBoundingClientRect().width / 2;
@@ -45,35 +47,23 @@ export function usePosition(ref) {
     [ref]
   );
 
-  function getPrevElement(list) {
-    const sibling = list[0].previousElementSibling;
+  const getSiblingElement = (list, property) => {
+    const sibling = list.length > 0 ? list[0][property] : null;
+    return sibling instanceof HTMLElement ? sibling : null;
+  };
 
-    if (sibling instanceof HTMLElement) {
-      return sibling;
-    }
-
-    return sibling;
-  }
-
-  function getNextElement(list) {
-    const sibling = list[list.length - 1].nextElementSibling;
-    if (sibling instanceof HTMLElement) {
-      return sibling;
-    }
-    return null;
-  }
-  const scrollRight = useCallback(
-    () => scrollToElement(nextElement),
-    [scrollToElement, nextElement]
+  const scroll = useCallback(
+    (direction) => {
+      const targetElement = direction === 'right' ? nextElement : prevElement;
+      scrollToElement(targetElement);
+    },
+    [scrollToElement, nextElement, prevElement]
   );
-  const scrollLeft = useCallback(
-    () => scrollToElement(prevElement),
-    [scrollToElement, prevElement]
-  );
+
   return {
     hasItemsOnLeft: prevElement !== null,
     hasItemsOnRight: nextElement !== null,
-    scrollLeft,
-    scrollRight,
+    scrollLeft: () => scroll('left'),
+    scrollRight: () => scroll('right'),
   };
 }
